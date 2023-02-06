@@ -1,0 +1,129 @@
+{
+  "sections": {
+    "main": {
+      "type": "portfolio",
+      "blocks": {
+        "f21d4c73-1af7-4401-95e8-5ea6537426fd": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/750_5108-295.jpg"
+          }
+        },
+        "bc862532-bddb-416b-9101-350e33593864": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/750_5477-368.jpg"
+          }
+        },
+        "669892c5-d8b5-4011-a9c9-9635596b181c": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/750_3661-29.jpg"
+          }
+        },
+        "7624ddcf-04c9-486e-92d4-3cdaddadcfe6": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/EmilySam_21.jpg"
+          }
+        },
+        "6d277f7d-cdaa-42a6-9dd1-98251cc6e856": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/750_5148-306.jpg"
+          }
+        },
+        "be9079e1-6699-405c-9e50-8196a17fcafe": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/750_5407-349.jpg"
+          }
+        },
+        "2bd79ebe-96a8-491f-ad3b-dd798b5262fe": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/750_5105-294_eba562cd-21d8-4a3f-b468-870134c693b3.jpg"
+          }
+        },
+        "009b2fff-50c4-437f-b598-70c63196575e": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/750_3896-71.jpg"
+          }
+        },
+        "9287f15f-b6ff-4668-8928-2ad0d37dd444": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/750_4439-181.jpg"
+          }
+        },
+        "761a605a-cd5f-45f1-a16a-889669260d3d": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/750_4857-250.jpg"
+          }
+        },
+        "81c628be-4395-43a5-bc37-236dcac64382": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/750_5112-297.jpg"
+          }
+        },
+        "1a5058bf-42e0-4600-84f0-232fcd672fff": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/750_5096-291.jpg"
+          }
+        },
+        "07037944-eae0-4a22-a9f5-f3c84881d68e": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/750_6019-470.jpg"
+          }
+        },
+        "efb54d91-1fef-4b01-b860-361b4fd9b919": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/750_4075-114.jpg"
+          }
+        },
+        "368a01b1-7959-49ac-a680-92e64555a455": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/750_3937-80.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "f21d4c73-1af7-4401-95e8-5ea6537426fd",
+        "bc862532-bddb-416b-9101-350e33593864",
+        "669892c5-d8b5-4011-a9c9-9635596b181c",
+        "7624ddcf-04c9-486e-92d4-3cdaddadcfe6",
+        "6d277f7d-cdaa-42a6-9dd1-98251cc6e856",
+        "be9079e1-6699-405c-9e50-8196a17fcafe",
+        "2bd79ebe-96a8-491f-ad3b-dd798b5262fe",
+        "009b2fff-50c4-437f-b598-70c63196575e",
+        "9287f15f-b6ff-4668-8928-2ad0d37dd444",
+        "761a605a-cd5f-45f1-a16a-889669260d3d",
+        "81c628be-4395-43a5-bc37-236dcac64382",
+        "1a5058bf-42e0-4600-84f0-232fcd672fff",
+        "07037944-eae0-4a22-a9f5-f3c84881d68e",
+        "efb54d91-1fef-4b01-b860-361b4fd9b919",
+        "368a01b1-7959-49ac-a680-92e64555a455"
+      ],
+      "settings": {
+        "title": "",
+        "photographer": "Liat.a",
+        "photographer_url": "https:\/\/liataharoni.com\/",
+        "featured_on": "",
+        "featured_on_url": "",
+        "title_color": "#707c17",
+        "text_hover_color": "#45891c",
+        "navigator_color": "#003872"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

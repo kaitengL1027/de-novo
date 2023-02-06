@@ -1,0 +1,41 @@
+{
+  "sections": {
+    "main": {
+      "type": "gallery",
+      "blocks": {
+        "ce4b712b-55e8-4182-8451-2d7e2f6c0835": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/20221026R-13.jpg",
+            "page": "jorge-marry",
+            "page_subheading": ""
+          }
+        },
+        "f80356f7-89ef-4cc9-8d5e-1ad06f79d9b9": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Shotlife_Studio_Grace_Glamour_0079_5c5dc0ee-0ef7-421e-8f20-05584ada23eb.jpg",
+            "page": "jorge-marry",
+            "page_subheading": "SDfsdfs sdfsdfsdJKLJ:LKJ"
+          }
+        }
+      },
+      "block_order": [
+        "ce4b712b-55e8-4182-8451-2d7e2f6c0835",
+        "f80356f7-89ef-4cc9-8d5e-1ad06f79d9b9"
+      ],
+      "settings": {
+        "wide_display": false,
+        "title": "Gallery",
+        "images_per_row": 4,
+        "square": true,
+        "animation": true,
+        "text_color": "#FFFFFF",
+        "text_hover_color": "#08210c"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

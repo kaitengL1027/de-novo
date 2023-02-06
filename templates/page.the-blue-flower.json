@@ -1,0 +1,87 @@
+{
+  "sections": {
+    "main": {
+      "type": "portfolio",
+      "blocks": {
+        "f21d4c73-1af7-4401-95e8-5ea6537426fd": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Shotlife_Studio_Blue_Flower_Wedluxe_0003.jpg"
+          }
+        },
+        "2bd79ebe-96a8-491f-ad3b-dd798b5262fe": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Shotlife_Studio_Blue_Flower_Wedluxe_0087.jpg"
+          }
+        },
+        "bc862532-bddb-416b-9101-350e33593864": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Shotlife_Studio_Blue_Flower_Wedluxe_0007.jpg"
+          }
+        },
+        "669892c5-d8b5-4011-a9c9-9635596b181c": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Shotlife_Studio_Blue_Flower_Wedluxe_0022_d9180518-c15b-4fbb-96cf-f943ab821633.jpg"
+          }
+        },
+        "7624ddcf-04c9-486e-92d4-3cdaddadcfe6": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Shotlife_Studio_Blue_Flower_Wedluxe_0035.jpg"
+          }
+        },
+        "6d277f7d-cdaa-42a6-9dd1-98251cc6e856": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Shotlife_Studio_Blue_Flower_Wedluxe_0071_5fa03542-f762-4072-9922-de28cef8fcf6.jpg"
+          }
+        },
+        "be9079e1-6699-405c-9e50-8196a17fcafe": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Shotlife_Studio_Blue_Flower_Wedluxe_0063.jpg"
+          }
+        },
+        "1db64014-fbfd-4782-a07e-9012cdc1827c": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Shotlife_Studio_Blue_Flower_Wedluxe_0088.jpg"
+          }
+        },
+        "5a51c118-bb84-4cd1-9bfe-1a1c7a4c5bfd": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Shotlife_Studio_Blue_Flower_Wedluxe_0053.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "f21d4c73-1af7-4401-95e8-5ea6537426fd",
+        "2bd79ebe-96a8-491f-ad3b-dd798b5262fe",
+        "bc862532-bddb-416b-9101-350e33593864",
+        "669892c5-d8b5-4011-a9c9-9635596b181c",
+        "7624ddcf-04c9-486e-92d4-3cdaddadcfe6",
+        "6d277f7d-cdaa-42a6-9dd1-98251cc6e856",
+        "be9079e1-6699-405c-9e50-8196a17fcafe",
+        "1db64014-fbfd-4782-a07e-9012cdc1827c",
+        "5a51c118-bb84-4cd1-9bfe-1a1c7a4c5bfd"
+      ],
+      "settings": {
+        "title": "",
+        "photographer": "Shotlifestudio",
+        "photographer_url": "https:\/\/shotlifestudio.com\/",
+        "featured_on": "Wedluxe",
+        "featured_on_url": "https:\/\/wedluxe.com\/2020\/01\/15\/the-blue-flower\/",
+        "title_color": "#707c17",
+        "text_hover_color": "#45891c",
+        "navigator_color": "#003872"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

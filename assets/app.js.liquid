@@ -1,0 +1,3887 @@
+/******/ (function() { // webpackBootstrap
+/******/ 	"use strict";
+/******/ 	var __webpack_modules__ = ({
+
+/***/ 923:
+/***/ (function(__unused_webpack_module, __webpack_exports__) {
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
+  try {
+    var info = gen[key](arg);
+    var value = info.value;
+  } catch (error) {
+    reject(error);
+    return;
+  }
+
+  if (info.done) {
+    resolve(value);
+  } else {
+    Promise.resolve(value).then(_next, _throw);
+  }
+}
+
+function _asyncToGenerator(fn) {
+  return function () {
+    var self = this,
+        args = arguments;
+    return new Promise(function (resolve, reject) {
+      var gen = fn.apply(self, args);
+
+      function _next(value) {
+        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);
+      }
+
+      function _throw(err) {
+        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);
+      }
+
+      _next(undefined);
+    });
+  };
+}
+
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+function _defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, descriptor.key, descriptor);
+  }
+}
+
+function _createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) _defineProperties(Constructor, staticProps);
+  return Constructor;
+}
+
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
+
+function ownKeys(object, enumerableOnly) {
+  var keys = Object.keys(object);
+
+  if (Object.getOwnPropertySymbols) {
+    var symbols = Object.getOwnPropertySymbols(object);
+    if (enumerableOnly) symbols = symbols.filter(function (sym) {
+      return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+    });
+    keys.push.apply(keys, symbols);
+  }
+
+  return keys;
+}
+
+function _objectSpread2(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i] != null ? arguments[i] : {};
+
+    if (i % 2) {
+      ownKeys(Object(source), true).forEach(function (key) {
+        _defineProperty(target, key, source[key]);
+      });
+    } else if (Object.getOwnPropertyDescriptors) {
+      Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+    } else {
+      ownKeys(Object(source)).forEach(function (key) {
+        Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+      });
+    }
+  }
+
+  return target;
+}
+
+var LOCAL_STORAGE_KEY = 'pxu-shopify-surface-pick-up';
+var loadingClass = 'surface-pick-up--loading';
+
+var isNotExpired = function isNotExpired(timestamp) {
+  return timestamp + 1000 * 60 * 60 >= Date.now();
+};
+
+var removeTrailingSlash = function removeTrailingSlash(s) {
+  return s.replace(/(.*)\/$/, '$1');
+}; // Haversine Distance
+// The haversine formula is an equation giving great-circle distances between
+// two points on a sphere from their longitudes and latitudes
+
+
+function calculateDistance(latitude1, longitude1, latitude2, longitude2, unitSystem) {
+  var dtor = Math.PI / 180;
+  var radius = unitSystem === 'metric' ? 6378.14 : 3959;
+  var rlat1 = latitude1 * dtor;
+  var rlong1 = longitude1 * dtor;
+  var rlat2 = latitude2 * dtor;
+  var rlong2 = longitude2 * dtor;
+  var dlon = rlong1 - rlong2;
+  var dlat = rlat1 - rlat2;
+  var a = Math.pow(Math.sin(dlat / 2), 2) + Math.cos(rlat1) * Math.cos(rlat2) * Math.pow(Math.sin(dlon / 2), 2);
+  var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  return radius * c;
+}
+
+function getGeoLocation() {
+  return _getGeoLocation.apply(this, arguments);
+}
+
+function _getGeoLocation() {
+  _getGeoLocation = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+    return regeneratorRuntime.wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            return _context.abrupt("return", new Promise(function (resolve, reject) {
+              var options = {
+                maximumAge: 3600000,
+                // 1 hour
+                timeout: 5000
+              };
+
+              if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function (_ref3) {
+                  var coords = _ref3.coords;
+                  return resolve(coords);
+                }, reject, options);
+              } else {
+                reject();
+              }
+            }));
+
+          case 1:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, _callee);
+  }));
+  return _getGeoLocation.apply(this, arguments);
+}
+
+function setLocation(_x) {
+  return _setLocation.apply(this, arguments);
+}
+
+function _setLocation() {
+  _setLocation = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(_ref) {
+    var latitude, longitude, newData;
+    return regeneratorRuntime.wrap(function _callee2$(_context2) {
+      while (1) {
+        switch (_context2.prev = _context2.next) {
+          case 0:
+            latitude = _ref.latitude, longitude = _ref.longitude;
+            newData = {
+              latitude: latitude,
+              longitude: longitude,
+              timestamp: Date.now()
+            };
+            localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(newData));
+            return _context2.abrupt("return", fetch('/localization.json', {
+              method: 'PUT',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({
+                latitude: latitude,
+                longitude: longitude
+              })
+            }).then(function () {
+              return {
+                latitude: latitude,
+                longitude: longitude
+              };
+            }));
+
+          case 4:
+          case "end":
+            return _context2.stop();
+        }
+      }
+    }, _callee2);
+  }));
+  return _setLocation.apply(this, arguments);
+}
+
+function getLocation() {
+  return _getLocation.apply(this, arguments);
+}
+
+function _getLocation() {
+  _getLocation = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
+    var requestLocation,
+        cachedLocation,
+        _args3 = arguments;
+    return regeneratorRuntime.wrap(function _callee3$(_context3) {
+      while (1) {
+        switch (_context3.prev = _context3.next) {
+          case 0:
+            requestLocation = _args3.length > 0 && _args3[0] !== undefined ? _args3[0] : false;
+            cachedLocation = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
+
+            if (!(cachedLocation && isNotExpired(cachedLocation.timestamp))) {
+              _context3.next = 4;
+              break;
+            }
+
+            return _context3.abrupt("return", cachedLocation);
+
+          case 4:
+            if (!requestLocation) {
+              _context3.next = 6;
+              break;
+            }
+
+            return _context3.abrupt("return", getGeoLocation().then(function (coords) {
+              setLocation(coords); // We don't need to wait for this
+
+              return coords;
+            }));
+
+          case 6:
+            return _context3.abrupt("return", null);
+
+          case 7:
+          case "end":
+            return _context3.stop();
+        }
+      }
+    }, _callee3);
+  }));
+  return _getLocation.apply(this, arguments);
+}
+
+var SurfacePickUp = /*#__PURE__*/function () {
+  function SurfacePickUp(el, options) {
+    _classCallCheck(this, SurfacePickUp);
+
+    this.el = el;
+    this.options = _objectSpread2({
+      root_url: window.Theme && window.Theme.routes && window.Theme.routes.root_url || ''
+    }, options);
+    this.options.root_url = removeTrailingSlash(this.options.root_url);
+    this.callbacks = [];
+    this.onBtnPress = null;
+    this.latestVariantId = null;
+  }
+
+  _createClass(SurfacePickUp, [{
+    key: "load",
+    value: function load(variantId) {
+      var _this = this;
+
+      // If no variant is available, empty element and quick-return
+      if (!variantId) {
+        this.el.innerHTML = '';
+        return Promise.resolve(true);
+      } // Because Shopify doesn't expose any `pick_up_enabled` data on the shop object, we
+      // don't know if the variant might be, or is definitely not available for pick up.
+      // Until we know the shop has > 0 pick up locations, we want to avoid prompting the
+      // user for location data (it's annoying, and only makes sense to do if we use it).
+      //
+      // Instead, we have to make an initial request, check and see if any pick up locations
+      // were returned, then ask for the users location, then make another request to get the
+      // location-aware pick up locations.
+      //
+      // As far as I can tell the pick up aware locations differ only in sort order - which
+      // we could do on the front end - but we're following this approach to ensure future
+      // compatibility with any changes Shopify makes (maybe disabling options based on
+      // user location, or whatever else).
+      //
+      // Shopify has indicated they will look into adding pick_up_enabled data to the shop
+      // object, which which case this method can be greatly simplifed into 2 simple cases.
+
+
+      this.latestVariantId = variantId;
+      this.el.classList.add(loadingClass);
+      return this._getData(variantId).then(function (data) {
+        return _this._injectData(data);
+      });
+    }
+  }, {
+    key: "onModalRequest",
+    value: function onModalRequest(callback) {
+      if (this.callbacks.indexOf(callback) >= 0) return;
+      this.callbacks.push(callback);
+    }
+  }, {
+    key: "offModalRequest",
+    value: function offModalRequest(callback) {
+      this.callbacks.splice(this.callbacks.indexOf(callback));
+    }
+  }, {
+    key: "unload",
+    value: function unload() {
+      this.callbacks = [];
+      this.el.innerHTML = '';
+    }
+  }, {
+    key: "_getData",
+    value: function _getData(variantId) {
+      var _this2 = this;
+
+      return new Promise(function (resolve) {
+        var xhr = new XMLHttpRequest();
+        var requestUrl = "".concat(_this2.options.root_url, "/variants/").concat(variantId, "/?section_id=surface-pick-up");
+        xhr.open('GET', requestUrl, true);
+
+        xhr.onload = function () {
+          var el = xhr.response;
+          var embed = el.querySelector('[data-html="surface-pick-up-embed"]');
+          var itemsContainer = el.querySelector('[data-html="surface-pick-up-items"]');
+          var items = itemsContainer.content.querySelectorAll('[data-surface-pick-up-item]');
+          resolve({
+            embed: embed,
+            itemsContainer: itemsContainer,
+            items: items,
+            variantId: variantId
+          });
+        };
+
+        xhr.onerror = function () {
+          resolve({
+            embed: {
+              innerHTML: ''
+            },
+            itemsContainer: {
+              innerHTML: ''
+            },
+            items: [],
+            variantId: variantId
+          });
+        };
+
+        xhr.responseType = 'document';
+        xhr.send();
+      });
+    }
+  }, {
+    key: "_injectData",
+    value: function _injectData(_ref2) {
+      var _this3 = this;
+
+      var embed = _ref2.embed,
+          itemsContainer = _ref2.itemsContainer,
+          items = _ref2.items,
+          variantId = _ref2.variantId;
+
+      if (variantId !== this.latestVariantId || items.length === 0) {
+        this.el.innerHTML = '';
+        this.el.classList.remove(loadingClass);
+        return;
+      }
+
+      this.el.innerHTML = embed.innerHTML;
+      this.el.classList.remove(loadingClass);
+      var calculatedDistances = false;
+
+      var calculateDistances = function calculateDistances() {
+        if (calculatedDistances) return Promise.resolve();
+        return getLocation(true).then(function (coords) {
+          items.forEach(function (item) {
+            var distanceEl = item.querySelector('[data-distance]');
+            var distanceUnitEl = item.querySelector('[data-distance-unit]');
+            var unitSystem = distanceUnitEl.dataset.distanceUnit;
+            var itemLatitude = parseFloat(distanceEl.dataset.latitude);
+            var itemLongitude = parseFloat(distanceEl.dataset.longitude);
+
+            if (coords && isFinite(itemLatitude) && isFinite(itemLongitude)) {
+              var distance = calculateDistance(coords.latitude, coords.longitude, itemLatitude, itemLongitude, unitSystem);
+              distanceEl.innerHTML = distance.toFixed(1);
+            } else {
+              distanceEl.remove();
+              distanceUnitEl.remove();
+            }
+          });
+        })["catch"](function (e) {
+          console.log(e);
+          items.forEach(function (item) {
+            var distanceEl = item.querySelector('[data-distance]');
+            var distanceUnitEl = item.querySelector('[data-distance-unit]');
+            distanceEl.remove();
+            distanceUnitEl.remove();
+          });
+        })["finally"](function () {
+          calculatedDistances = true;
+        });
+      };
+
+      this.el.querySelector('[data-surface-pick-up-embed-modal-btn]').addEventListener('click', function () {
+        calculateDistances().then(function () {
+          return _this3.callbacks.forEach(function (callback) {
+            return callback(itemsContainer.innerHTML);
+          });
+        });
+      });
+    }
+  }]);
+
+  return SurfacePickUp;
+}();
+
+/* harmony default export */ __webpack_exports__["Z"] = (SurfacePickUp);
+
+
+/***/ }),
+
+/***/ 880:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Z": function() { return /* binding */ PaymentTerms; }
+/* harmony export */ });
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var PaymentTerms = /*#__PURE__*/function () {
+  function PaymentTerms(el) {
+    _classCallCheck(this, PaymentTerms);
+
+    this._el = el;
+    this._reference = this._el.querySelector('[data-payment-terms-reference] shopify-payment-terms');
+    if (!this._reference) return;
+    this._target = this._el.querySelector('[data-payment-terms-target]');
+    this._input = document.createElement('input');
+    this._input.name = 'id';
+    this._input.type = 'hidden';
+
+    this._target.appendChild(this._input);
+
+    this._target.appendChild(this._reference);
+
+    this._target.style.display = null;
+  }
+
+  _createClass(PaymentTerms, [{
+    key: "update",
+    value: function update(variantId) {
+      if (!this._reference) return;
+      this._input.value = variantId;
+
+      this._input.dispatchEvent(new Event('change', {
+        bubbles: true
+      }));
+    }
+  }]);
+
+  return PaymentTerms;
+}();
+
+
+
+/***/ })
+
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		if(__webpack_module_cache__[moduleId]) {
+/******/ 			return __webpack_module_cache__[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	!function() {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = function(exports, definition) {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	}();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	!function() {
+/******/ 		__webpack_require__.o = function(obj, prop) { return Object.prototype.hasOwnProperty.call(obj, prop); }
+/******/ 	}();
+/******/ 	
+/************************************************************************/
+!function() {
+/* harmony import */ var _pixelunion_shopify_surface_pick_up__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(923);
+/* harmony import */ var _helpers_PaymentTerms__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(880);
+
+
+/*============================================================================
+  Global - header
+==============================================================================*/
+
+window.header = {
+  init: function init() {
+    // Add margin to the header logo
+    if ($('.top_bar').hasClass('top_bar--fixed-true announcementBar--false')) {
+      var topBarHeight = $('.top_bar').outerHeight();
+      $('.top_bar').css('position', 'fixed');
+      $('.header-logo').css('margin-top', topBarHeight);
+    } // Add margin to the header logo on resize
+
+
+    $(window).resize(function () {
+      if ($('.top_bar').hasClass('top_bar--fixed-true announcementBar--false')) {
+        var topBarHeight = $('.top_bar').outerHeight();
+        $('.top_bar').css('position', 'fixed');
+        $('.header-logo').css('margin-top', topBarHeight);
+      }
+    });
+    /* Promotional Banner */
+
+    if ($('.announcementBar').length) {
+      var promo_banner = Cookies.get('promo_banner');
+
+      if (promo_banner != 'dismiss') {
+        $('body').addClass('promo_banner-show');
+        $('.announcementBar').on('click', '.banner-close', function () {
+          $('body').removeClass('promo_banner-show');
+          Cookies.set('promo_banner', 'dismiss', {
+            expires: 30
+          });
+        });
+      }
+    } //Scroll check for sticky topbar with announcement
+
+
+    if ($('.announcementBar').length && $('.top_bar--fixed-true').length) {
+      var announcementBarHeight = $('.announcementBar').height();
+      $(window).scroll(function () {
+        if ($(this).scrollTop() >= announcementBarHeight) {
+          $('.top_bar--fixed-true').css({
+            'position': 'fixed',
+            'top': '0'
+          });
+          $('.announcementBar').css('margin-bottom', announcementBarHeight);
+        } else {
+          $('.top_bar--fixed-true').css('position', 'relative');
+          $('.announcementBar').css('margin-bottom', '0');
+        }
+      });
+    } // Anchor link smooth scroll to avoid text cutoff
+
+
+    if ($('.top_bar').hasClass('top_bar--fixed-true')) {
+      $('#menu li a[href^="#"]').on('click', function (e) {
+        e.preventDefault();
+        var winScroll = $(window).scrollTop();
+        var anchorlink = $(this).attr('href');
+        var headerHeight = $('.top_bar').outerHeight();
+        $('html, body').animate({
+          scrollTop: $(anchorlink).offset().top - headerHeight
+        }, 2000);
+      });
+    }
+
+    ; //Init Menu
+
+    $('#menu').slicknav({
+      init: function init() {
+        $('.mobile_currency').detach().appendTo($('.slicknav_nav'));
+      },
+      prependTo: '#mobile_nav',
+      label: '<div aria-haspopup="true" role="navigation" aria-label="' + window.Shopify.translation.menu + '"><span class="icon-menu"></span> ' + window.Shopify.translation.menu + '</div>',
+      closedSymbol: '<span class="icon-right-arrow menu-icon" aria-haspopup="true" aria-expanded="false"></span>',
+      openedSymbol: '<span class="icon-down-arrow menu-icon" aria-haspopup="true" aria-expanded="true"></span>',
+      allowParentLinks: true,
+      nestedParentLinks: false,
+      afterOpen: function afterOpen(trigger) {
+        $(trigger).parents('.slicknav_parent').first().addClass('slicknav_open');
+        $(trigger).parents('.slicknav_parent').first().removeClass('slicknav_collapsed');
+        $(trigger).siblings('.slicknav_item').find('.slicknav_arrow span').removeClass('icon-right-arrow');
+        $(trigger).siblings('.slicknav_item').find('.slicknav_arrow span').addClass('icon-down-arrow');
+      },
+      beforeClose: function beforeClose(trigger) {
+        $(trigger).parents('.slicknav_parent').first().removeClass('slicknav_open');
+        $(trigger).parents('.slicknav_parent').first().addClass('slicknav_collapsed');
+        $(trigger).siblings('.slicknav_item').find('.slicknav_arrow span').addClass('icon-right-arrow');
+        $(trigger).siblings('.slicknav_item').find('.slicknav_arrow span').removeClass('icon-down-arrow');
+      }
+    });
+
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) && window.Shopify.media_queries.large.matches) {
+      $(document).on('click', 'li.sub-menu a.sub-menu--link', function (e) {
+        var dropdownUrl = $(this).attr('href');
+
+        if ($(this).hasClass('click-active')) {
+          window.location.href = dropdownUrl;
+          $('#nav ul li a').removeClass('click-active');
+        } else {
+          $('#nav ul li a').removeClass('click-active');
+          $(this).addClass('click-active');
+        }
+
+        e.preventDefault();
+        return false;
+      });
+    } // Remove simplebar menu from mega menu on mobile
+
+
+    var $megaMenu = $('#mobile_nav').find('.megaMenu-grid-wrap');
+    $megaMenu.attr('data-simplebar', '');
+    $megaMenu.attr('data-simplebar-auto-hide', '');
+    $('body').on('mouseover', '.js-megaMenu', function () {
+      $(this).prev('.sub-menu').attr('aria-expanded', true);
+    });
+    $('body').on('mouseout', '.js-megaMenu', function () {
+      $(this).prev('.sub-menu').attr('aria-expanded', false);
+    }); //Mobile mega menu bindings
+    //No parent link (eg. /, #, '')
+
+    $('#mobile_nav .js-megaMenu-dropdown.parent-link--false').on('click', function () {
+      var dropdown = $(this);
+      var arrow = $(this).find('.arrow');
+
+      if (dropdown.find('.megaMenu-sub-submenu').length) {
+        var submenu = dropdown.find('.megaMenu-sub-submenu');
+      } else {
+        var submenu = dropdown.next();
+      }
+
+      submenu.slideToggle('fast');
+      arrow.toggleClass('icon-right-arrow');
+      arrow.toggleClass('icon-down-arrow');
+      dropdown.toggleClass('dropdown--active');
+    }); //Active parent link
+
+    $('#mobile_nav .js-megaMenu-dropdown.parent-link--true .arrow').on('click', function () {
+      var dropdown = $(this).parent('.js-megaMenu-dropdown');
+      var arrow = $(this);
+
+      if (dropdown.find('.megaMenu-sub-submenu').length) {
+        var submenu = dropdown.find('.megaMenu-sub-submenu');
+      } else {
+        var submenu = dropdown.next();
+      }
+
+      submenu.slideToggle('fast');
+      arrow.toggleClass('icon-right-arrow');
+      arrow.toggleClass('icon-down-arrow');
+      dropdown.toggleClass('dropdown--active');
+    }); //Detect hover in for mega menu
+
+    $('#nav .js-megaMenu .megaMenu-dropdown').on('mouseenter', function () {
+      $(this).addClass('dropdown--active');
+
+      if ($(this).find('span').hasClass('icon-right-arrow')) {
+        $(this).find('span').removeClass('icon-right-arrow').addClass('icon-down-arrow');
+        $(this).find('.megaMenu-sub-submenu').stop().slideToggle();
+      }
+    }); //Detect hover out for mega menu
+
+    $('#nav .js-megaMenu .megaMenu-dropdown').on('mouseleave', function () {
+      $(this).removeClass('dropdown--active');
+
+      if ($(this).find('span').hasClass('icon-down-arrow')) {
+        $(this).find('span').removeClass('icon-down-arrow').addClass('icon-right-arrow');
+        $(this).find('.megaMenu-sub-submenu').stop().slideToggle();
+      }
+    });
+  },
+  unload: function unload($target) {
+    $('a[href^="#"]').off('click');
+  }
+};
+/*============================================================================
+  FAQ
+==============================================================================*/
+
+window.faqAccordion = {
+  init: function init() {
+    var flg = 0;
+    var $faqHeading = $('.faq__accordion > dt > button');
+    $('.faq__accordion > dd').attr('aria-hidden', true);
+    $faqHeading.attr('aria-expanded', false);
+    $faqHeading.on('click activate', function () {
+      if (flg) return false;
+      flg = 1;
+      var state = $(this).attr('aria-expanded') === 'false' ? true : false;
+      $(this).attr('aria-expanded', state);
+      $(this).parent().next().slideToggle(function () {
+        flg = 0;
+      });
+      $(this).parent().next().attr('aria-hidden', !state);
+      return false;
+    });
+    $faqHeading.on('keydown', function (event) {
+      var keyCode = event.keyCode || e.which;
+
+      if (keyCode === 13) {
+        $(this).trigger('activate');
+      }
+    });
+  },
+  unload: function unload($target) {
+    $('.faq__accordion > dt > button').off('click');
+    $('.faq__accordion > dt > button').off('keydown');
+  }
+};
+/*============================================================================
+  Home page - slideshow
+==============================================================================*/
+
+window.slideshow = {
+  init: function init() {
+    $('.slideshow').each(function (index, value) {
+      var $homepageSlider = $(this);
+      var settings = {
+        slideshowSpeed: $homepageSlider.data('slideshow-speed') * 1000,
+        adaptiveHeight: $homepageSlider.data('adaptive-height')
+      }; //Initiate the slideshow
+
+      if (!$homepageSlider.hasClass('flickity-enabled')) {
+        var arrowShow = $homepageSlider.find('.slideshow__gallery-cell').length === 1 ? false : true;
+        $homepageSlider.flickity({
+          adaptiveHeight: settings.adaptiveHeight,
+          wrapAround: true,
+          cellAlign: 'left',
+          imagesLoaded: true,
+          prevNextButtons: arrowShow,
+          draggable: false,
+          pageDots: arrowShow,
+          autoPlay: settings.slideshowSpeed
+        }); // Ensures Flickity is not collapsed when loaded
+
+        setTimeout(function () {
+          $homepageSlider.flickity('resize');
+        }, 500);
+        $(window).on('load', function () {
+          $homepageSlider.flickity('resize');
+        });
+      }
+    });
+  },
+  unload: function unload($target) {
+    var $slider = $target.find('.slideshow');
+    $slider.flickity('destroy');
+  }
+};
+/*============================================================================
+  Home page - video
+==============================================================================*/
+
+window.video = {
+  init: function init() {
+    // Set up plyr for newly embedded video
+    var featuredVideos = $('[data-video-element]').get();
+    var featuredVideoPlayers = Plyr.setup(featuredVideos, {
+      controls: controls,
+      fullscreen: {
+        enabled: true,
+        fallback: true,
+        iosNative: true
+      },
+      storage: {
+        enabled: false
+      }
+    }); // Adds plyr video id to video wrapper
+
+    $.each(featuredVideoPlayers, function (index, player) {
+      var id = player.id;
+      var $video;
+
+      if (player.isHTML5) {
+        $video = $(player.elements.wrapper).find('video');
+        $video.attr('data-plyr-video-id', id);
+      } // When a video is playing, pause any other instances
+
+
+      player.on('play', function (event) {
+        var instance = event.detail.plyr;
+        $.each(featuredVideoPlayers, function (index, player) {
+          if (instance.id != player.id) {
+            player.pause();
+          }
+        });
+      });
+    });
+    $('[data-video-element]').each(function (index, video) {
+      // Variables
+      var $video = $(video);
+      var $section = $video.parents('.shopify-section').attr('id', id);
+      var $videoElement = $section.find($video);
+      var $videoWrapper = $videoElement.parents('.video-wrapper');
+      var $playButton = $videoWrapper.find('[data-play-button]');
+      var $videoText = $videoWrapper.find('[data-video-text]');
+      var $videoTextContainer = $videoWrapper.find('[data-video-text-container]');
+      var $image = $videoWrapper.find('.video-wrapper__image');
+      var $posterImage = $videoWrapper.data('poster-image-uploaded');
+      var aspectRatio = $videoWrapper.data('aspect-ratio');
+      var id = $videoWrapper.data('video-src');
+      var isAutoplay = $videoWrapper.data('autoplay');
+      var isLoopingEnabled = $videoWrapper.data('autoloop');
+      var isMuted = $videoWrapper.data('mute-video');
+      $.each(featuredVideoPlayers, function (index, player) {
+        var videoID;
+        var playerID;
+
+        if (player.isYouTube || player.isVimeo) {
+          var videoID = $videoWrapper.attr('id');
+          var playerID = $(player.elements.original).attr('id');
+        } else if (player.isHTML5) {
+          var videoID = $videoWrapper.find('[data-plyr-video-id]').data('plyr-video-id');
+          var playerID = player.id;
+          $videoElement = $section.find('.plyr--video');
+        }
+
+        if (playerID == videoID) {
+          // Reset play button icon
+          $videoWrapper.removeClass('play-button-icon--visible'); // Autoplay
+
+          if (isAutoplay) {
+            // If on desktop or player is YouTube/Vimeo
+            if (window.Shopify.media_queries.large.matches || player.isYouTube || player.isVimeo) {
+              player.autoplay = true; // Hide image
+
+              $image.hide(); // Show video
+
+              $videoElement.show(); // If display text over video unchecked
+
+              if ($videoTextContainer.hasClass('display-text-over-video--false')) {
+                $videoText.hide();
+              } else {
+                $videoText.show();
+              } // Keep play button hidden
+
+
+              $playButton.hide(); // HTML5 Mobile Video
+            } else if (window.Shopify.media_queries.medium.matches && player.isHTML5) {
+              // Hide image
+              $image.hide(); // Show video
+
+              $videoElement.show(); // Display button so that video can be played
+
+              $playButton.show();
+              player.on('play', function () {
+                // Show video
+                $videoElement.show(); // Hide play button
+
+                $playButton.hide();
+              });
+            }
+          } else {
+            // If Autoplay disabled
+            // If poster image, show image wrapper otherwise hide it
+            if ($posterImage) {
+              $image.show();
+              $videoElement.hide();
+            } else {
+              $image.hide();
+              $videoElement.show();
+            }
+          } // Clicking image will play video
+
+
+          $image.on('click', function () {
+            // Hide image
+            $(this).hide(); // Show video
+
+            $videoElement.show();
+            player.play();
+          }); // Muted
+
+          if (isMuted) {
+            player.muted = true;
+          } // Aspect Ratio
+
+
+          if (aspectRatio) {
+            player.ratio = aspectRatio;
+          } // Looping
+
+
+          if (isLoopingEnabled) {
+            player.loop = true;
+          } // Show Video Controls
+          // - video controls get hidden using a css class: '.video-controls-enabled--false'
+          // If button exists, hide text and poster
+
+
+          if ($playButton) {
+            $playButton.on('click', function () {
+              // Hide image
+              $image.hide(); // Show video
+
+              $videoElement.show(); // If display text over video unchecked
+
+              if ($videoTextContainer.hasClass('display-text-over-video--false')) {
+                $videoText.hide();
+              } else {
+                $videoText.show();
+              } // Play video
+
+
+              player.play();
+            });
+          }
+
+          player.on('play', function () {
+            // Hide image
+            $image.hide(); // Reset play button icon
+
+            $videoWrapper.removeClass('play-button-icon--visible'); // Show video
+
+            $videoElement.show(); // If display text over video unchecked
+
+            if ($videoTextContainer.hasClass('display-text-over-video--false')) {
+              $videoText.hide();
+            } else {
+              $videoText.show();
+              $videoTextContainer.show();
+            } // Hide play button
+
+
+            if ($playButton) {
+              $playButton.hide();
+            }
+          }); // If video is paused, play button icon or button must be shown
+          // If button text is filled out, use play button
+          // If button text is not filled out, use play button icon
+
+          player.on('pause', function () {
+            if ($playButton.length > 0) {
+              $playButton.show();
+              $videoWrapper.removeClass('play-button-icon--visible');
+              $videoTextContainer.hide();
+            } else {
+              $videoWrapper.addClass('play-button-icon--visible');
+            }
+          }); // If page loads with video paused and no button showing, show icon
+
+          if (!player.playing && $playButton.is(':hidden') || $playButton.length == 0) {
+            $videoWrapper.addClass('play-button-icon--visible');
+          }
+
+          return false;
+        }
+      });
+    });
+  }
+};
+/*============================================================================
+  Newsletter
+==============================================================================*/
+
+var newsletter_popup = {
+  init: function init() {
+    var popup = Cookies.get('popup');
+    var newsletter_popup_days = parseInt(window.Shopify.theme_settings.newsletter_popup_days);
+    var cookie_enabled = newsletter_popup_days != 0 ? true : false;
+
+    if (cookie_enabled && popup == 'open') {
+      return false;
+    } else {
+      newsletter_popup.open();
+    }
+
+    if (cookie_enabled) {
+      Cookies.set('popup', 'open', {
+        expires: newsletter_popup_days
+      });
+    }
+  },
+  open: function open() {
+    var newsletter_popup_seconds = parseInt(window.Shopify.theme_settings.newsletter_popup_seconds);
+
+    if (window.Shopify.theme_settings.newsletter_popup_mobile || window.Shopify.media_queries.large.matches) {
+      setTimeout(function () {
+        $.fancybox.open($('.js-newsletter-popup'), {
+          baseClass: 'newsletter_popup',
+          hash: false,
+          infobar: false,
+          toolbar: false,
+          loop: true,
+          smallBtn: true,
+          touch: false,
+          mobile: {
+            preventCaptionOverlap: false,
+            toolbar: true,
+            buttons: ["close"]
+          }
+        });
+      }, newsletter_popup_seconds * 1000);
+    }
+  }
+};
+/*============================================================================
+  Search autocomplete
+==============================================================================*/
+
+var searchAutocomplete = {
+  vars: {
+    term: '',
+    searchPath: window.Shopify.routes.search_url,
+    displayTimer: ''
+  },
+  init: function init() {
+    this.unload(); // Focus state to display search results
+
+    $('[data-autocomplete-true]').on('focus', function () {
+      $(this).parents('[data-autocomplete-true]').find('.search__results-wrapper').show();
+    }); // Clicking outside makes the results disappear
+
+    $(document).on('click focusout', function (e) {
+      if (window.Shopify.media_queries.large.matches) {
+        var searchForm = $(e.target).parents('.search__form');
+
+        if (searchForm.length === 0) {
+          $('[data-autocomplete-true] .search__results-wrapper').hide().removeClass('results-found');
+          $('body').removeClass('has-search-overlay');
+          $('.search-enabled__overlay').hide();
+        }
+      }
+    });
+    $('#header .search-button, [data-autocomplete-true] input').on('click touchstart', function (e) {
+      if (window.Shopify.media_queries.medium.matches) {
+        e.preventDefault();
+        e.stopPropagation();
+        var formType = $(this).closest('form').find('[name="type"]').val();
+        var position = $(document).scrollTop();
+        searchAutocomplete.showMobileSearch(formType, position);
+      }
+    });
+    $('.close-search').on('click touchstart', function () {
+      $('body').removeClass('is-active');
+      $('.dropdown_link').removeClass('active_link');
+      $('.dropdown_container').hide();
+      $('.mobile_nav').find('div').removeClass('open');
+      $('[data-autocomplete-true] .search__results-wrapper').hide().removeClass('results-found');
+      $('.search-enabled__overlay').hide();
+    }); // Submit wildcard searches
+
+    $("[data-autocomplete-true] form").on('submit', function (e) {
+      e.preventDefault();
+      var formValue = $(this).find('input[name="q"]').val();
+      var cleanFormValue = encodeURI(formValue);
+
+      if ($(this).find('[name="type"]').length > 0) {
+        var searchType = $(this).find('[name="type"]').val();
+      } else {
+        var searchType = window.Shopify.theme_settings.search_option;
+      }
+
+      if (cleanFormValue == null) {
+        window.location.href = window.Shopify.routes.search_url + '?type=' + searchType;
+      } else {
+        window.location.href = searchAutocomplete.vars.searchPath + '?type=' + searchType + '&q=' + cleanFormValue + '*';
+      }
+    });
+    $('[data-autocomplete-true] form').each(function () {
+      var $this = $(this);
+      var input = $this.find('input[name="q"]'); // Adding a list for showing search results.
+
+      $('<div class="search__results-wrapper"><ul class="search__results"></ul></div>').appendTo($this);
+      input.attr('autocomplete', 'off').on('input', function () {
+        clearTimeout(searchAutocomplete.vars.displayTimer);
+
+        if ($(this).val().length > 3) {
+          searchAutocomplete.vars.term = $(this).val();
+          searchAutocomplete.getResults(searchAutocomplete.vars.term, $this);
+        } else {
+          $('[data-autocomplete-true] .search__results-wrapper').hide().removeClass('results-found');
+          $('.search-enabled__overlay').hide();
+        }
+      });
+    });
+  },
+  getResults: function getResults(term, $this) {
+    if ($this.find('[name="type"]').length > 0) {
+      var searchType = $this.find('[name="type"]').val();
+    } else {
+      var searchType = window.Shopify.theme_settings.search_option;
+    }
+
+    jQuery.getJSON("/search/suggest.json", {
+      "q": term,
+      "resources": {
+        "type": searchType,
+        "limit": window.Shopify.theme_settings.search_items_to_display,
+        "options": {
+          "unavailable_products": "last",
+          "fields": "title,body,variants.title,vendor,product_type,tag"
+        }
+      }
+    }).done(function (response) {
+      var suggestions = [response.resources.results.products, response.resources.results.pages, response.resources.results.articles];
+      var filteredResults = []; // Store results in array
+
+      $.each(suggestions, function (index, suggestion) {
+        if (suggestion !== undefined && suggestion.length > 0) {
+          // Ensure suggestion exists
+          filteredResults.push(suggestion);
+        }
+      }); // Display results
+
+      searchAutocomplete.vars.displayTimer = setTimeout(function () {
+        searchAutocomplete.displayResults(filteredResults[0], $this);
+      }, 500);
+    });
+  },
+  displayResults: function displayResults(results, $this) {
+    var $resultsWrapper = $this.find('.search__results-wrapper');
+    var $resultsList = $this.find('.search__results');
+    $resultsWrapper.show();
+    $resultsList.empty();
+
+    if ($this.find('[name="type"]').length > 0) {
+      var searchType = $this.find('[name="type"]').val();
+    } else {
+      var searchType = window.Shopify.theme_settings.search_option;
+    }
+
+    if ($this.parents('.top_bar').length > 0) {
+      $('.search-enabled__overlay').show();
+    }
+
+    if (results && results.length > 0) {
+      $.each(results, function (index, result) {
+        var link = $('<a tabindex="0"></a>').attr('href', result.url);
+
+        if (window.Shopify.routes.root_url !== '/') {
+          link = $('<a tabindex="0"></a>').attr('href', window.Shopify.routes.root_url + result.url);
+        } // If result is a product
+
+
+        if (result['price']) {
+          function formatPrice(price) {
+            if (Currency.display_format === 'money_with_currency_format') {
+              return '<span class="money">' + Currency.symbol + price + ' ' + Currency.iso_code + '</span>';
+            } else {
+              return '<span class="money">' + Currency.symbol + price + '</span>';
+            }
+          }
+
+          if (result.available === true) {
+            if (result.compare_at_price_max > result.price_max || result.compare_at_price_min > result.price_min) {
+              var itemPrice = formatPrice(result.price) + ' <span class="was-price">' + formatPrice(result.compare_at_price_max) + '</span>';
+            } else {
+              if (result.price > 0) {
+                if (result.price_min != result.price_max) {
+                  var itemPrice = window.Shopify.translation.product_from + ' ' + formatPrice(result.price);
+                } else {
+                  var itemPrice = formatPrice(result.price);
+                }
+              } else {
+                var itemPrice = window.Shopify.theme_settings.free_text;
+              }
+            }
+          } else {
+            var itemPrice = window.Shopify.translation.product_sold_out;
+          } // If result has an image
+
+
+          if (result['image']) {
+            link.append('<div class="thumbnail"><img class="lazyload lazyload--fade-in" src="' + window.utilities.addImageDimension(result['image'], '_300x') + '" /></div>');
+          }
+
+          link.append('<div class="title">' + result.title + '<br><span class="item-pricing price">' + itemPrice + '</span></div>'); // If result is an article
+        } else if (result['summary_html']) {
+          if (result.image != 'NULL') {
+            link.append('<div class="thumbnail"><img class="lazyload lazyload--fade-in" src="' + window.utilities.addImageDimension(result['image'], '_300x') + '" /></div>');
+          }
+
+          link.append('<div class="title">' + result.title + '<br><span class="item-description">' + result.summary_html.replace(/(<([^>]+)>)/ig, "").slice(0, 25) + ' </span></div>'); // If result is a page
+        } else if (result['published_at']) {
+          link.append('<div class="title">' + result.title + '<br><span class="item-description">' + result.body.replace(/(<([^>]+)>)/ig, "").slice(0, 25) + ' </span></div>');
+        } // Wrap link and append to list
+
+
+        link.wrap('<li class="item-result"></li>');
+        $resultsList.append(link.parent());
+      });
+
+      if (Currency.native_multi_currency && Currency.shipping_calculator) {
+        currencyConverter.init();
+      }
+
+      $resultsList.parents('.search__results-wrapper').addClass('results-found');
+      $resultsList.prepend('<li class="all-results"><span class="see-all"><a href="' + this.vars.searchPath + '?type=' + searchType + '&q=' + this.vars.term + '*">' + window.Shopify.translation.all_results + '<span class="icon-right-arrow"></span></a></span></li>');
+    } else {
+      // if no results
+      var noResults = '<li class="item-result"><span class="no-results title">' + window.Shopify.translation.no_results + '</span></li>';
+      $resultsList.append(noResults);
+      $resultsList.parents('.search__results-wrapper').removeClass('results-found');
+    }
+
+    $resultsList.show();
+  },
+  showMobileSearch: function showMobileSearch(formType, position) {
+    $('body').css('max-height', window.innerHeight);
+    $('.mobile-search').fadeIn(200);
+
+    if (/iPad|iPhone|iPod/.test(navigator.platform) || navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1) {
+      $('.mobile-search input#q').focus();
+    } else {
+      //Set delay to ensure focus triggers on android
+      setTimeout(function () {
+        $('.mobile-search input#q').focus();
+      }, 205);
+    }
+
+    document.body.style.position = 'fixed';
+    document.body.style.top = '-' + position + 'px';
+    $('.mobile-search').css('top', position);
+    var searchHeight = window.innerHeight - 60; //Full screen height - form height
+
+    $('.mobile-search .search__results-wrapper').css('max-height', searchHeight);
+
+    if (formType) {
+      $('.mobile-search [name="type"]').val(formType);
+    } else {
+      $('.mobile-search [name="type"]').val(window.Shopify.theme_settings.search_option);
+    }
+
+    $('.search-form .close-search').on('click touchstart', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      searchAutocomplete.hideMobileSearch(position);
+      $('[data-autocomplete-true] .search__results-wrapper').hide().removeClass('results-found');
+    });
+    $('.search-form .submit-search').on('click touchstart', function (e) {
+      $(this).parents('form').submit();
+    });
+  },
+  hideMobileSearch: function hideMobileSearch(position) {
+    $('body').css('max-height', 'none');
+    document.body.style.position = '';
+    document.body.style.top = '';
+    window.scrollTo(0, position);
+    $('.mobile-search').fadeOut(200);
+    $('.mobile-search [name="q"]').val('');
+    $('body').off('focus', '.search-form .close-search');
+    $('body').off('focus', '.search-form .submit-search');
+  },
+  unload: function unload() {
+    $('body').off('focus', '[data-autocomplete-true] input');
+    $('input[name="q"]').off();
+    $('[data-dropdown-rel="search"], [data-autocomplete-true] input').off();
+    $('.search__results-wrapper').remove();
+  }
+};
+/*============================================================================
+  Product
+==============================================================================*/
+
+window.product = {
+  init: function init() {
+    var $notify_form = $('.notify_form .contact-form'); // Find product galleries on page but exclude those in the quickshop (quickshop logic handled in fancybox event)
+
+    var $productGalleries = $('.product-gallery:not([data-quickshop-gallery] .product-gallery)'); // For each product gallery, create an object and add it to an array of galleries
+
+    var galleriesArray = [];
+    globalPlayersArray = [];
+
+    if ($productGalleries.length > 0) {
+      $.each($productGalleries, function (index, gallery) {
+        var $productSection = $(gallery).closest('.product_section');
+        galleriesArray.push({
+          element: $(gallery),
+          productSection: $productSection,
+          thumbnailsEnabled: $productSection.data('thumbnails-enabled'),
+          thumbnailsSliderEnabled: $productSection.data('thumbnails-slider-enabled'),
+          thumbnailsPosition: $productSection.data('thumbnails-position'),
+          thumbnailsArrows: $productSection.data('gallery-arrows-enabled'),
+          slideshowAnimation: $productSection.data('slideshow-animation'),
+          slideShowSpeed: $productSection.data('slideshow-speed'),
+          activateZoom: $productSection.data('activate-zoom'),
+          productMediaSupported: $productSection.data('product-media-supported'),
+          loopingEnabled: $(gallery).find('.product-gallery__main').data('video-looping-enabled'),
+          sectionID: $productSection.parents('.shopify-section').attr('id')
+        });
+      });
+    }
+
+    if (galleriesArray.length > 0) {
+      // For each galleryObject, enable a Flickity slider
+      $.each(galleriesArray, function (index, galleryObject) {
+        window.product.enableSlider(galleryObject); // If product media is supported for the gallery, then also launch product media and Plyr
+
+        if (galleryObject.productMediaSupported) {
+          // Find videos within gallery section
+          var videos;
+          videos = $(galleryObject.element).find('[data-html5-video] video, [data-youtube-video]').get();
+          window.product.loadPlyr(galleryObject, videos);
+          window.product.launchProductMedia(galleryObject); // Go through each gallery, on video play, check instance ID against other player IDs
+
+          var instance;
+          $.each(galleryObject.videoPlayers, function (index, player) {
+            player.on('play', function (event) {
+              // When video starts playing grab id of instance
+              instance = event.detail.plyr;
+              $.each(globalPlayersArray, function (index, player) {
+                if (instance.id != player.id) {
+                  player.pause();
+                }
+              });
+            });
+          });
+        } // Hover to zoom
+
+
+        if (galleryObject.activateZoom) {
+          document.addEventListener('lazybeforeunveil', window.product.enableZoom);
+        }
+      });
+    }
+
+    if ($('.product-recommendations').length) {
+      this.loadProductRecommendations();
+    }
+
+    var $defaultSelector = $('.js-product_section [data-product-form]:not(.product-recommendations .js-product_section [data-product-form])');
+    $defaultSelector.each(function (_, options) {
+      var $options = $(options);
+      var productTitle = $options.data('product-title');
+      var productDetailsEl = options.closest('[data-product-details]');
+      var surfacePickUpEl = productDetailsEl.querySelector('[data-surface-pick-up]');
+      var paymentTerms = new _helpers_PaymentTerms__WEBPACK_IMPORTED_MODULE_0__/* .default */ .Z(productDetailsEl);
+      var currentVariantId = $options.data('variant-id');
+      var currentVariantTitle = $options.data('variant-title');
+      var surfacePickUp;
+
+      if (surfacePickUpEl) {
+        surfacePickUp = new _pixelunion_shopify_surface_pick_up__WEBPACK_IMPORTED_MODULE_1__/* .default */ .Z(surfacePickUpEl);
+        surfacePickUp.load(currentVariantId);
+        surfacePickUp.onModalRequest(function (contents) {
+          var surfacePickUpModal = document.querySelector('[data-surface-pick-up-modal]');
+          var fragment; // Build out pop-up content for product with no variants, else build
+          // out popup content for product with variants
+
+          if (currentVariantTitle == 'Default Title' && productTitle) {
+            fragment = document.createDocumentFragment();
+            var header = document.createElement('div');
+            var title = document.createElement('h2');
+            header.classList.add('surface-pick-up__modal-header');
+            title.classList.add('surface-pick-up__modal-title');
+            title.innerHTML = productTitle;
+            header.appendChild(title);
+            fragment.appendChild(header);
+          } else if (currentVariantTitle !== 'Default Title' && productTitle) {
+            fragment = document.createDocumentFragment();
+
+            var _header = document.createElement('div');
+
+            var _title = document.createElement('h2');
+
+            _header.classList.add('surface-pick-up__modal-header');
+
+            _title.classList.add('surface-pick-up__modal-title');
+
+            _title.innerHTML = productTitle;
+
+            _header.appendChild(_title);
+
+            if (window.currentVariant.title !== 'Default Title') {
+              var subtitle = document.createElement('span');
+              subtitle.classList.add('surface-pick-up__modal-subtitle');
+              subtitle.innerHTML = window.currentVariant.title;
+
+              _header.appendChild(subtitle);
+            }
+
+            fragment.appendChild(_header);
+          }
+
+          surfacePickUpModal.innerHTML = contents;
+          surfacePickUpModal.insertBefore(fragment, surfacePickUpModal.firstChild);
+          $.fancybox.open(surfacePickUpModal, {
+            hash: false,
+            infobar: false,
+            toolbar: false,
+            loop: true,
+            smallBtn: true,
+            touch: false,
+            video: {
+              autoStart: false
+            },
+            mobile: {
+              preventCaptionOverlap: false,
+              toolbar: true
+            }
+          });
+        });
+      }
+
+      var selectId = $options.data("select-id");
+
+      if (document.getElementById(selectId)) {
+        new Shopify.OptionSelectors($options.data('select-id'), {
+          product: $options.data('product'),
+          onVariantSelected: function onVariantSelected(variant, selector) {
+            window.currentVariant = variant;
+            paymentTerms.update(variant ? variant.id : null);
+
+            if (surfacePickUp) {
+              surfacePickUp.load(variant ? variant.id : null);
+            }
+
+            window.selectCallback(variant, selector);
+          },
+          enableHistoryState: $options.data('enable-state')
+        });
+      }
+    });
+    $('.product_form').addClass('is-visible');
+
+    if (window.Shopify.theme_settings.product_form_style == "swatches") {
+      $('.swatch :radio').change(function () {
+        var optionIndex = $(this).closest('.swatch').attr('data-option-index');
+        var optionValue = $(this).val();
+        $(this).closest('form').find('.single-option-selector').eq(optionIndex).val(optionValue).trigger('change');
+      }); //Swatches linked with selected options
+
+      if ($('.js-product_section').length) {
+        var $productForms = $('.js-product_section').find('.product_form'); //Loop through each product and set the initial option value state
+
+        $productForms.each(function () {
+          var JSONData = $(this).data('product');
+          var productID = $(this).data('product-id');
+          var productSection = '.product-' + productID + ' .js-product_section';
+          var swatchOptions = $(this).find('.swatch_options .swatch');
+
+          if (swatchOptions.length > 1) {
+            Shopify.linkOptionSelectors(JSONData, productSection);
+          }
+        });
+      } //Add click event when there is more than one product on the page (eg. Collection in Detail)
+
+
+      if ($('.js-product_section').length > 1) {
+        $('body').on('click', '.swatch-element', function () {
+          var swatchValue = $(this).data('value').toString();
+          $(this).siblings('input[value="' + swatchValue.replace(/\"/g, '\\"') + '"]').prop("checked", true).trigger("change");
+          var JSONData = $(this).parents('.product_form').data('product');
+          var productID = $(this).parents('.product_form').data('product-id');
+          var productSection = '.product-' + productID + ' .js-product_section';
+          var swatchOptions = $(this).parents('.product_form').find('.swatch_options .swatch');
+
+          if (swatchOptions.length > 1) {
+            Shopify.linkOptionSelectors(JSONData, productSection);
+          }
+        });
+      }
+    }
+  },
+  enableZoom: function enableZoom() {
+    var $image = $(event.target);
+    var zoomSrc = $image.data('zoom-src');
+
+    if (zoomSrc) {
+      $image.wrap('<span class="zoom-container"></span>').css('display', 'block').parent().zoom({
+        url: zoomSrc,
+        touch: false,
+        magnify: 1
+      });
+    }
+  },
+  enableSlider: function enableSlider(galleryObject) {
+    var $el = galleryObject.element.find('.product-gallery__main');
+    var $thumbnailProductGallery = galleryObject.element.find('.product-gallery__thumbnails');
+    var $slides = $el.find('.product-gallery__image');
+    var $thumbnails = $thumbnailProductGallery.find('.product-gallery__thumbnail');
+    var arrowShape = 'M95.04 46 21.68 46 48.18 22.8 42.91 16.78 4.96 50 42.91 83.22 48.18 77.2 21.68 54 95.04 54 95.04 46z';
+    $el.flickity({
+      wrapAround: true,
+      adaptiveHeight: true,
+      dragThreshold: 10,
+      imagesLoaded: true,
+      pageDots: false,
+      prevNextButtons: $el.data('media-count') > 1 ? true : false,
+      autoPlay: galleryObject.slideShowSpeed * 1000,
+      fade: galleryObject.slideShowAnimation === 'fade' ? true : false,
+      watchCSS: false,
+      arrowShape: arrowShape
+    });
+    var $slides = $el.find('.product-gallery__image');
+    $el.on('change.flickity', function () {
+      $slides.each(function (index, slide) {
+        // Variables to be used
+        var $slide = $(slide);
+        var mediaType = $slide.data('media-type'); // Check whether slide is active slide (featured image shown) or inactive slide (slide hidden)
+
+        if ($slide.hasClass('is-selected')) {
+          // Switch statement to go through different media types (video, model)
+          switch (mediaType) {
+            case 'model':
+              /* On slide change, if active slide contains 3d model
+              * If on desktop, on hover, unbind flickity, after hover bind flickity
+              * On model play event, unbind flickity to ensure model can be interacted with
+              * On model pause event, bind flickity so that slide can be swiped
+              * Pause all model slides when hidden
+              */
+              if (window.Shopify.media_queries.large.matches) {
+                // On mouseenter event, unbind flickity
+                $slide.on('mouseenter', function () {
+                  $el.flickity('unbindDrag');
+                }); // On mouseleave event, bind flickity
+
+                $slide.on('mouseleave', function () {
+                  $el.flickity('bindDrag');
+                });
+              } // Listen for model pause/play events
+
+
+              $slide.find('model-viewer').on('shopify_model_viewer_ui_toggle_play', function () {
+                $el.flickity('unbindDrag');
+              });
+              $slide.find('model-viewer').on('shopify_model_viewer_ui_toggle_pause', function () {
+                $el.flickity('bindDrag');
+              });
+              break;
+          }
+        } else {
+          // Below logic deals with the hidden slides when a flickity change is triggered
+          // Switch statement to go through different media types (video, model)
+          switch (mediaType) {
+            case 'model':
+              // Pause models when hidden
+              if (galleryObject.models.length > 0) {
+                $.each(galleryObject.models, function (index, model) {
+                  model.pause();
+                });
+              }
+
+              break;
+
+            case 'video':
+              // Variables
+              var $htmlVideo = $slide.find('[data-html5-video]');
+              var videoID = $htmlVideo.find('video').data('plyr-video-id'); // Pause all html5 videos for slides that are hidden
+
+              if ($htmlVideo.length) {
+                $.each(galleryObject.videoPlayers, function (index, player) {
+                  if (player.id == videoID) {
+                    player.pause();
+                  }
+                });
+              }
+
+              break;
+
+            case 'external_video':
+              // Variables
+              var $iframeVideo = $slide.find('iframe');
+              var iframeID = $iframeVideo.attr('id'); // Pause all youtube videos for slides that are hidden
+
+              if ($iframeVideo.length) {
+                $.each(galleryObject.videoPlayers, function (index, player) {
+                  if (player.media.id == iframeID) {
+                    player.pause();
+                  }
+                });
+              }
+
+              break;
+          }
+        }
+      });
+    });
+    $el.on('ready.flickity', function () {
+      // Allow timing for external video loading
+      setTimeout(function () {
+        $el.flickity('resize');
+      }, 250);
+    });
+    $el.on('settle.flickity', function () {
+      $el.flickity('resize');
+    }); // Checks for 3D Models and takes care of binding/unbinding slider
+
+    $slides.each(function (index, slide) {
+      // Variables to be used
+      var $slide = $(slide);
+      var mediaType = $slide.data('media-type'); // Check whether slide is active slide (featured image shown)
+
+      if ($slide.hasClass('is-selected')) {
+        if (mediaType == 'model') {
+          // If slide has 3D model, unbind flickity on hover on desktop
+          // Allows you to click anywhere to trigger model ui
+          if (window.Shopify.media_queries.large.matches) {
+            // On mouseenter event, unbind flickity
+            $slide.on('mouseenter', function () {
+              $el.flickity('unbindDrag');
+            }); // On mouseleave event, bind flickity
+
+            $slide.on('mouseleave', function () {
+              $el.flickity('bindDrag');
+            });
+          } // Detect keyboard 'ENTER' key on slides
+
+
+          $slide.keypress(function (event) {
+            if (event.which == 13) {
+              $slide.find('model-viewer, .product-gallery__link, .plyr').focus();
+              $el.on('settle.flickity', function (event, index) {
+                // Run video autoplay logic if featured media is a video
+                if (mediaType == 'video' || mediaType == 'external_video') {
+                  checkForVideos();
+                } // Autoplay model if featured media is a model
+
+
+                if (mediaType == 'model') {
+                  // If model container has class is-selected then play the model
+                  autoplayModel();
+                } // Unbind settle event
+
+
+                $el.off('settle.flickity');
+              });
+            }
+          });
+        }
+      }
+    });
+    var $sliderArrows = $el.find('.flickity-prev-next-button');
+
+    if (($sliderArrows || $thumbnails) && window.Shopify.media_queries.large.matches) {
+      $sliderArrows.on('click', function () {
+        // Find out media type of featured media slide
+        var mediaType = $el.find('.product-gallery__image.is-selected').data('media-type');
+        $el.on('settle.flickity', function (event, index) {
+          // Run video autoplay logic if featured media is a video
+          if (mediaType == 'video' || mediaType == 'external_video') {
+            checkForVideos();
+          } // Autoplay model if featured media is a model
+
+
+          if (mediaType == 'model') {
+            // If model container has class is-selected then play the model
+            autoplayModel();
+          } // Unbind settle event
+
+
+          $el.off('settle.flickity');
+        });
+      }); // Detect keyboard 'ENTER' key on slider arrows
+
+      $sliderArrows.on('keypress', function (event) {
+        if (event.which == 13) {
+          $el.focus();
+          $el.attr('tabindex', 0);
+          $el.find('.product-gallery__image').attr('tabindex', -1);
+        }
+      });
+      $thumbnails.on('click', function () {
+        // Change slide
+        var index = $(event.currentTarget).index();
+        $el.flickity('select', index); // Find out media type of featured media slide
+
+        var mediaType = $el.find('.product-gallery__image.is-selected').data('media-type');
+        $el.on('settle.flickity', function (event, index) {
+          // Run video autoplay logic if featured media is a video
+          if (mediaType == 'video' || mediaType == 'external_video') {
+            checkForVideos();
+          } // Autoplay model if featured media is a model
+
+
+          if (mediaType == 'model') {
+            // If model container has class is-selected then play the model
+            autoplayModel();
+          } // Unbind settle event
+
+
+          $el.off('settle.flickity');
+        });
+      }); // Added functionality for keyboard 'enter' key
+
+      $thumbnails.keypress(function (event) {
+        var index = $(event.currentTarget).index();
+
+        if (event.which == 13) {
+          // Change slide
+          $el.flickity('select', index); // Find selected slide
+
+          var $selectedSlide = $el.find('.product-gallery__image.is-selected'); // Find out media type of featured media slide
+
+          var mediaType = $selectedSlide.data('media-type'); // Bring focus to media inside selected slide once slide has finished animation
+
+          $el.on('settle.flickity', function (event, index) {
+            $selectedSlide.find('[data-youtube-video]').attr('tabindex', '0');
+            $selectedSlide.find('model-viewer, .plyr, .product-gallery__link').focus(); // Run video autoplay logic if featured media is a video
+
+            if (mediaType == 'video' || mediaType == 'external_video') {
+              checkForVideos();
+            } // Autoplay model if featured media is a model
+
+
+            if (mediaType == 'model') {
+              // If model container has class is-selected then play the model
+              autoplayModel();
+            } // Unbind settle event
+
+
+            $el.off('settle.flickity');
+          });
+        }
+      });
+    }
+
+    function autoplayModel() {
+      $.each(galleryObject.models, function (index, model) {
+        var $slide = $(model.container).parents('.product-gallery__image');
+
+        if ($slide.hasClass('is-selected')) {
+          model.play();
+        }
+      });
+    }
+
+    function checkForVideos() {
+      $slides.each(function (index, slide) {
+        // Variables
+        var $slide = $(slide);
+        var mediaType = $slide.data('media-type');
+        var videoID = $slide.find('video').data('plyr-video-id');
+        var $iframeVideo = $slide.find('iframe');
+        var iframeID = $iframeVideo.attr('id');
+
+        if ($slide.hasClass('is-selected')) {
+          if (mediaType == 'video') {
+            videoID = $slide.find('video').data('plyr-video-id');
+
+            if (videoID) {
+              autoplayVideo(videoID, $slide);
+            }
+          } else if (mediaType == 'external_video') {
+            if (iframeID) {
+              autoplayYoutubeVideo(iframeID, $slide);
+            }
+          }
+        }
+      });
+    }
+
+    function autoplayVideo(videoID, $slide) {
+      // Compare id to player object and only play that video
+      $.each(galleryObject.videoPlayers, function (index, player) {
+        if (player.id == videoID) {
+          player.play(); // On fullscreen exit, focus on the thumbnail nav
+
+          player.on('exitfullscreen', function (event) {
+            var $thumbnailProductGallery = $slide.closest('.product-gallery').find('.product-gallery__thumbnails');
+
+            if ($thumbnailProductGallery.hasClass('vertical-slider-enabled')) {
+              $thumbnailProductGallery.attr('tabindex', '0').focus();
+            } else {
+              $thumbnailProductGallery.focus();
+            }
+          });
+        }
+      });
+    }
+
+    function autoplayYoutubeVideo(iframeID, $slide) {
+      // compare id to player object and only play that video
+      $.each(galleryObject.videoPlayers, function (index, player) {
+        if (player.playing) {
+          player.pause();
+        }
+
+        if (player.media.id == iframeID) {
+          player.play(); // On fullscreen exit, focus on the thumbnail nav
+
+          player.on('exitfullscreen', function (event) {
+            var $thumbnailProductGallery = $slide.closest('.product-gallery').find('.product-gallery__thumbnails');
+
+            if ($thumbnailProductGallery.hasClass('vertical-slider-enabled')) {
+              $thumbnailProductGallery.attr('tabindex', '0').focus();
+            } else {
+              $thumbnailProductGallery.focus();
+            }
+          });
+        }
+      });
+    } // Thumbnail gallery logic begins
+
+
+    if (galleryObject.thumbnailsEnabled == true) {
+      if (galleryObject.thumbnailsSliderEnabled == true && $slides.length > 1) {
+        // If desktop determine which slider we build
+        if (window.Shopify.media_queries.large.matches) {
+          // If thumbnail position is left/right then vertical slider gets enabled
+          if (galleryObject.thumbnailsPosition == 'left-thumbnails' || galleryObject.thumbnailsPosition == 'right-thumbnails') {
+            $thumbnailProductGallery.css('max-height', $el.closest('.product-gallery').outerHeight());
+            $thumbnailProductGallery.addClass('vertical-slider-enabled');
+            $thumbnails.on('click', function (event) {
+              var index = $(event.currentTarget).index();
+              $el.flickity('select', index);
+            });
+            var navCellHeight = $thumbnails.height();
+            var navHeight = $thumbnailProductGallery.height();
+            $el.on('select.flickity', function () {
+              // set selected nav cell
+              var flkty = $el.data('flickity');
+              $thumbnailProductGallery.find('.is-nav-selected').removeClass('is-nav-selected');
+              var $selected = $thumbnails.eq(flkty.selectedIndex).addClass('is-nav-selected'); // scroll nav
+
+              var scrollY = $selected.position().top + $thumbnailProductGallery.scrollTop() - (navHeight + navCellHeight) / 2;
+              $thumbnailProductGallery.animate({
+                scrollTop: scrollY
+              });
+            });
+          } else {
+            $thumbnailProductGallery.flickity({
+              cellAlign: 'center',
+              contain: true,
+              groupCells: '80%',
+              imagesLoaded: true,
+              pageDots: false,
+              prevNextButtons: $thumbnails.length > 5 ? galleryObject.thumbnailsArrows : false,
+              asNavFor: $el[0],
+              arrowShape: arrowShape
+            }); // Ensures Flickity is not collapsed when loaded
+
+            setTimeout(function () {
+              $thumbnailProductGallery.flickity('resize');
+            }, 500);
+            $(window).on('load', function () {
+              $thumbnailProductGallery.flickity('resize');
+            }); // Once thumbnail is focused, move carousel to that cell
+
+            $.each($thumbnails, function (index, thumbnail) {
+              var $thumbnail = $(thumbnail);
+
+              if ($thumbnail.hasClass('is-selected')) {
+                $thumbnail.on('focus', function () {
+                  $thumbnailProductGallery.flickity('selectCell', index);
+                });
+              }
+            });
+          }
+        } else {
+          // If not on desktop, create standard thumbnail slider
+          $thumbnailProductGallery.flickity({
+            cellAlign: 'center',
+            contain: true,
+            groupCells: '80%',
+            imagesLoaded: true,
+            pageDots: false,
+            prevNextButtons: $thumbnails.length > 5 ? galleryObject.thumbnailsArrows : false,
+            asNavFor: $el[0],
+            arrowShape: arrowShape
+          });
+        }
+      } else {
+        // If thumbnail slider is disabled, ensure thumbnails can still navigate product images
+        $thumbnailProductGallery.find('.product-gallery__thumbnail').on('click', function () {
+          var index = $(this).index();
+          $el.flickity('selectCell', index);
+        });
+      }
+    }
+  },
+  launchProductMedia: function launchProductMedia(galleryObject) {
+    // function to check if browser is IE
+    var isIE11 = !!navigator.userAgent.match(/Trident.*rv\:11\./); // Ensure product media libraries are present
+
+    if (!isIE11) {
+      window.Shopify.loadFeatures([{
+        name: 'shopify-xr',
+        version: '1.0'
+      }, {
+        name: 'model-viewer-ui',
+        version: '1.0'
+      }], onAllFeaturesLoaded);
+    } // Enable looping for videos based off their section setting
+    // Find videos where they are contained within this section
+    // Set looping
+
+
+    $.each(galleryObject.videoPlayers, function (index, player) {
+      var $wrapper = $(player.elements.wrapper);
+
+      if (galleryObject.sectionID != null) {
+        var $section = $wrapper.parents('.shopify-section').attr('id', galleryObject.sectionID);
+        var loopingEnabled = $section.find(galleryObject.element).find('.product-gallery__main').data('video-looping-enabled');
+      } else {
+        var loopingEnabled = galleryObject.element.find('.product-gallery__main').data('video-looping-enabled');
+      }
+
+      player.loop = loopingEnabled;
+    }); // 3D Model Setup
+
+    var config = {
+      // Default control list
+      controls: ['zoom-in', 'zoom-out', 'fullscreen'],
+      focusOnPlay: false
+    };
+
+    function onAllFeaturesLoaded() {
+      // If product media enabled look for model-viewer tags and setup
+      galleryObject.models = [];
+      var $models = $($('model-viewer', galleryObject.element));
+      $models.each(function (index, model) {
+        model = new Shopify.ModelViewerUI(model, config);
+        galleryObject.models.push(model);
+      });
+    }
+  },
+  enableVideoOnHover: function enableVideoOnHover($thumbnail) {
+    var $html5Video = $thumbnail.find('[data-html5-video]');
+    var $youtubeVideo = $thumbnail.find('[data-youtube-video]');
+    var videoID;
+
+    if ($html5Video.length > 0) {
+      videoID = $html5Video.find('[data-plyr-video-id]').data('plyr-video-id');
+    } else if ($youtubeVideo.length > 0) {
+      videoID = $youtubeVideo.find('iframe').attr('id');
+    }
+
+    if (videoID) {
+      $.each(secondaryMediaPlayers, function (index, player) {
+        if (player.id == videoID || player.media.id == videoID) {
+          player.toggleControls(false);
+          player.muted = true;
+          player.play();
+        }
+      });
+    }
+  },
+  disableVideoOnHover: function disableVideoOnHover($thumbnail) {
+    var $html5Video = $thumbnail.find('[data-html5-video]');
+    var $youtubeVideo = $thumbnail.find('[data-youtube-video]');
+    var videoID;
+
+    if ($html5Video.length > 0) {
+      videoID = $html5Video.find('[data-plyr-video-id]').data('plyr-video-id');
+    } else if ($youtubeVideo.length > 0) {
+      videoID = $youtubeVideo.find('iframe').attr('id');
+    }
+
+    if (videoID) {
+      $.each(secondaryMediaPlayers, function (index, player) {
+        if (player.id == videoID || player.media.id == videoID) {
+          if (player.playing) {
+            player.pause();
+          }
+        }
+      });
+    }
+  },
+  loadPlyr: function loadPlyr(galleryObject, videos, showSecondaryMedia) {
+    // Initializes Plyr library for HTML5 and YouTube videos in Product Gallery
+    window.utilities.launchVideoPlayer(Plyr, galleryObject, videos, showSecondaryMedia);
+
+    if (galleryObject) {
+      // Adds plyr video id to video wrapper
+      $.each(galleryObject.videoPlayers, function (index, player) {
+        var source = player.provider;
+        var id = player.id;
+        var $video;
+
+        if (source == 'html5') {
+          $video = $(player.elements.wrapper).find('video');
+          $video.attr('data-plyr-video-id', id);
+        }
+      });
+    }
+  },
+  initializeQuantityBox: function initializeQuantityBox() {
+    $('body').on('click', '.js-change-quantity', function () {
+      var $this = $(this),
+          $input = $(this).siblings('input'),
+          val = parseInt($input.val()),
+          valMax = 100000000000000000000000000000,
+          valMin = $input.attr('min') || 0;
+
+      if ($input.attr('max') != null) {
+        valMax = $input.attr('max');
+      }
+
+      if (isNaN(val) || val < valMin) {
+        $input.val(valMin);
+        return false;
+      } else if (val > valMax) {
+        $input.val(valMax);
+        return false;
+      }
+
+      if ($this.data('func') == 'plus') {
+        if (val < valMax) $input.val(val + 1);
+      } else {
+        if (val > valMin) $input.val(val - 1);
+
+        if ($this.parents(".cart_item").length) {
+          if (val - 1 == 0) {
+            $this.closest('.cart_item').addClass('animated fadeOutUp');
+          }
+        }
+      }
+
+      $input.trigger('change');
+    });
+  },
+  loadProductRecommendations: function loadProductRecommendations() {
+    /* NE compatibility
+    * In NE, we will have a dynamic section ID that will need to be grabbed from the DOM like the other variables
+    * var sectionID = $productRecommendationsContainer.data('section-id');
+    Ends NE compatibility */
+    var $productRecommendations = $('.product-recommendations');
+    var $productRecommendationsContainer = $('[data-product-recommendations-container]');
+    var productID = $productRecommendations.data('product-id');
+    var limit = $productRecommendations.data('limit');
+    var recommendationsURL = $productRecommendations.data('recommendations-url');
+    var sectionEnabled = $productRecommendations.data('enabled');
+
+    if (sectionEnabled && $('[data-product-sidebar]').length) {
+      $productRecommendations.hide();
+      $productRecommendationsContainer.show();
+    } else {
+      $productRecommendations.show();
+      $productRecommendationsContainer.hide();
+    }
+    /* NE compatibility
+    * In NE, this request url will need to be updated to reflect the dynamic section ID, 'section_id=' + sectionID
+    Ends NE compatibility */
+    // Build request URL
+
+
+    var requestUrl = recommendationsURL + "?section_id=product-recommendations&limit=" + limit + "&product_id=" + productID;
+    $.ajax({
+      type: 'GET',
+      url: requestUrl,
+      success: function success(data) {
+        if (!sectionEnabled) {
+          $productRecommendationsContainer.empty();
+          return;
+        }
+
+        var $recommendedProductsElement = $(data).find('.product-recommendations').html(); // Insert product list into the product recommendations container
+
+        if (sectionEnabled && $('[data-product-sidebar]').length) {
+          $productRecommendationsContainer.html($recommendedProductsElement);
+        } else {
+          $productRecommendations.html($recommendedProductsElement);
+        } // Initialize shopify payment buttons
+
+
+        if (Shopify.PaymentButton) {
+          Shopify.PaymentButton.init();
+        }
+
+        window.collection.init();
+      }
+    });
+  },
+  unload: function unload($target) {
+    // Destroy Flickity slider
+    var $gallerySlider = $target.find('.product-gallery__main');
+    var $thumbnailSlider = $target.find('.product-gallery__thumbnails');
+    $gallerySlider.flickity('destroy');
+    $thumbnailSlider.flickity('destroy');
+    document.removeEventListener('lazybeforeunveil', window.product.enableZoom);
+    $('body').off('click', '.js-change-quantity');
+  }
+};
+/*============================================================================
+  Map
+==============================================================================*/
+
+window.map = {
+  init: function init() {
+    if ($(".shopify-section--map .map, .shopify-section--page-contact-template .map, .details-section .map, .product-details .map").hasClass('js-api-map')) {
+      var mapsToLoad = []; //Create map settings array
+
+      $('.map').each(function (i, obj) {
+        mapsToLoad.push(this);
+        mapsToLoad[i].sectionid = $(this).data('id');
+        mapsToLoad[i].address = $(this).data('address');
+        mapsToLoad[i].directions = $(this).data('directions-address');
+        mapsToLoad[i].zoom = $(this).data('zoom');
+        mapsToLoad[i].mapstyle = $(this).data('style');
+        mapsToLoad[i].showpin = $(this).data('pin');
+        mapsToLoad[i].apikey = $(this).data('api-key');
+      });
+      $.each(mapsToLoad, function (i, instance) {
+        //Enable caching to avoid duplicate google maps files
+        $.ajaxSetup({
+          cache: true
+        }); //Load maps script and find location coordinates
+
+        $.getScript('https://maps.googleapis.com/maps/api/js?key=' + mapsToLoad[i].apikey).then(function () {
+          window.map.findLocation(mapsToLoad[i]);
+          $.ajaxSetup({
+            cache: false
+          });
+        });
+      });
+    }
+  },
+  findLocation: function findLocation(mapArray) {
+    var geoLat;
+    var geoLng;
+    var geocoder = new google.maps.Geocoder(); //Find and set coordinates
+
+    geocoder.geocode({
+      'address': mapArray.address
+    }, function (results, status) {
+      if (status == google.maps.GeocoderStatus.OK) {
+        geoLat = results[0].geometry.location.lat();
+        geoLng = results[0].geometry.location.lng(); //Create map
+
+        window.map.initMap(geoLat, geoLng, mapArray);
+      }
+    });
+  },
+  initMap: function initMap(lat, lng, mapArray) {
+    var location = {
+      lat: lat,
+      lng: lng
+    };
+    var styleJson = []; //Set style JSON
+
+    if (mapArray.mapstyle == 'aubergine') {
+      styleJson = [{
+        "elementType": "geometry",
+        "stylers": [{
+          "color": "#1d2c4d"
+        }]
+      }, {
+        "elementType": "labels.text.fill",
+        "stylers": [{
+          "color": "#8ec3b9"
+        }]
+      }, {
+        "elementType": "labels.text.stroke",
+        "stylers": [{
+          "color": "#1a3646"
+        }]
+      }, {
+        "featureType": "administrative.country",
+        "elementType": "geometry.stroke",
+        "stylers": [{
+          "color": "#4b6878"
+        }]
+      }, {
+        "featureType": "administrative.land_parcel",
+        "elementType": "labels.text.fill",
+        "stylers": [{
+          "color": "#64779e"
+        }]
+      }, {
+        "featureType": "administrative.province",
+        "elementType": "geometry.stroke",
+        "stylers": [{
+          "color": "#4b6878"
+        }]
+      }, {
+        "featureType": "landscape.man_made",
+        "elementType": "geometry.stroke",
+        "stylers": [{
+          "color": "#334e87"
+        }]
+      }, {
+        "featureType": "landscape.natural",
+        "elementType": "geometry",
+        "stylers": [{
+          "color": "#023e58"
+        }]
+      }, {
+        "featureType": "poi",
+        "elementType": "geometry",
+        "stylers": [{
+          "color": "#283d6a"
+        }]
+      }, {
+        "featureType": "poi",
+        "elementType": "labels.text.fill",
+        "stylers": [{
+          "color": "#6f9ba5"
+        }]
+      }, {
+        "featureType": "poi",
+        "elementType": "labels.text.stroke",
+        "stylers": [{
+          "color": "#1d2c4d"
+        }]
+      }, {
+        "featureType": "poi.park",
+        "elementType": "geometry.fill",
+        "stylers": [{
+          "color": "#023e58"
+        }]
+      }, {
+        "featureType": "poi.park",
+        "elementType": "labels.text.fill",
+        "stylers": [{
+          "color": "#3C7680"
+        }]
+      }, {
+        "featureType": "road",
+        "elementType": "geometry",
+        "stylers": [{
+          "color": "#304a7d"
+        }]
+      }, {
+        "featureType": "road",
+        "elementType": "labels.text.fill",
+        "stylers": [{
+          "color": "#98a5be"
+        }]
+      }, {
+        "featureType": "road",
+        "elementType": "labels.text.stroke",
+        "stylers": [{
+          "color": "#1d2c4d"
+        }]
+      }, {
+        "featureType": "road.highway",
+        "elementType": "geometry",
+        "stylers": [{
+          "color": "#2c6675"
+        }]
+      }, {
+        "featureType": "road.highway",
+        "elementType": "geometry.stroke",
+        "stylers": [{
+          "color": "#255763"
+        }]
+      }, {
+        "featureType": "road.highway",
+        "elementType": "labels.text.fill",
+        "stylers": [{
+          "color": "#b0d5ce"
+        }]
+      }, {
+        "featureType": "road.highway",
+        "elementType": "labels.text.stroke",
+        "stylers": [{
+          "color": "#023e58"
+        }]
+      }, {
+        "featureType": "transit",
+        "elementType": "labels.text.fill",
+        "stylers": [{
+          "color": "#98a5be"
+        }]
+      }, {
+        "featureType": "transit",
+        "elementType": "labels.text.stroke",
+        "stylers": [{
+          "color": "#1d2c4d"
+        }]
+      }, {
+        "featureType": "transit.line",
+        "elementType": "geometry.fill",
+        "stylers": [{
+          "color": "#283d6a"
+        }]
+      }, {
+        "featureType": "transit.station",
+        "elementType": "geometry",
+        "stylers": [{
+          "color": "#3a4762"
+        }]
+      }, {
+        "featureType": "water",
+        "elementType": "geometry",
+        "stylers": [{
+          "color": "#0e1626"
+        }]
+      }, {
+        "featureType": "water",
+        "elementType": "labels.text.fill",
+        "stylers": [{
+          "color": "#4e6d70"
+        }]
+      }];
+    } else if (mapArray.mapstyle == 'retro') {
+      styleJson = [{
+        "elementType": "geometry",
+        "stylers": [{
+          "color": "#ebe3cd"
+        }]
+      }, {
+        "elementType": "labels.text.fill",
+        "stylers": [{
+          "color": "#523735"
+        }]
+      }, {
+        "elementType": "labels.text.stroke",
+        "stylers": [{
+          "color": "#f5f1e6"
+        }]
+      }, {
+        "featureType": "administrative",
+        "elementType": "geometry.stroke",
+        "stylers": [{
+          "color": "#c9b2a6"
+        }]
+      }, {
+        "featureType": "administrative.land_parcel",
+        "elementType": "geometry.stroke",
+        "stylers": [{
+          "color": "#dcd2be"
+        }]
+      }, {
+        "featureType": "administrative.land_parcel",
+        "elementType": "labels.text.fill",
+        "stylers": [{
+          "color": "#ae9e90"
+        }]
+      }, {
+        "featureType": "landscape.natural",
+        "elementType": "geometry",
+        "stylers": [{
+          "color": "#dfd2ae"
+        }]
+      }, {
+        "featureType": "poi",
+        "elementType": "geometry",
+        "stylers": [{
+          "color": "#dfd2ae"
+        }]
+      }, {
+        "featureType": "poi",
+        "elementType": "labels.text.fill",
+        "stylers": [{
+          "color": "#93817c"
+        }]
+      }, {
+        "featureType": "poi.park",
+        "elementType": "geometry.fill",
+        "stylers": [{
+          "color": "#a5b076"
+        }]
+      }, {
+        "featureType": "poi.park",
+        "elementType": "labels.text.fill",
+        "stylers": [{
+          "color": "#447530"
+        }]
+      }, {
+        "featureType": "road",
+        "elementType": "geometry",
+        "stylers": [{
+          "color": "#f5f1e6"
+        }]
+      }, {
+        "featureType": "road.arterial",
+        "elementType": "geometry",
+        "stylers": [{
+          "color": "#fdfcf8"
+        }]
+      }, {
+        "featureType": "road.highway",
+        "elementType": "geometry",
+        "stylers": [{
+          "color": "#f8c967"
+        }]
+      }, {
+        "featureType": "road.highway",
+        "elementType": "geometry.stroke",
+        "stylers": [{
+          "color": "#e9bc62"
+        }]
+      }, {
+        "featureType": "road.highway.controlled_access",
+        "elementType": "geometry",
+        "stylers": [{
+          "color": "#e98d58"
+        }]
+      }, {
+        "featureType": "road.highway.controlled_access",
+        "elementType": "geometry.stroke",
+        "stylers": [{
+          "color": "#db8555"
+        }]
+      }, {
+        "featureType": "road.local",
+        "elementType": "labels.text.fill",
+        "stylers": [{
+          "color": "#806b63"
+        }]
+      }, {
+        "featureType": "transit.line",
+        "elementType": "geometry",
+        "stylers": [{
+          "color": "#dfd2ae"
+        }]
+      }, {
+        "featureType": "transit.line",
+        "elementType": "labels.text.fill",
+        "stylers": [{
+          "color": "#8f7d77"
+        }]
+      }, {
+        "featureType": "transit.line",
+        "elementType": "labels.text.stroke",
+        "stylers": [{
+          "color": "#ebe3cd"
+        }]
+      }, {
+        "featureType": "transit.station",
+        "elementType": "geometry",
+        "stylers": [{
+          "color": "#dfd2ae"
+        }]
+      }, {
+        "featureType": "water",
+        "elementType": "geometry.fill",
+        "stylers": [{
+          "color": "#b9d3c2"
+        }]
+      }, {
+        "featureType": "water",
+        "elementType": "labels.text.fill",
+        "stylers": [{
+          "color": "#92998d"
+        }]
+      }];
+    } else if (mapArray.mapstyle == 'silver') {
+      styleJson = [{
+        "elementType": "geometry",
+        "stylers": [{
+          "color": "#f5f5f5"
+        }]
+      }, {
+        "elementType": "labels.icon",
+        "stylers": [{
+          "visibility": "off"
+        }]
+      }, {
+        "elementType": "labels.text.fill",
+        "stylers": [{
+          "color": "#616161"
+        }]
+      }, {
+        "elementType": "labels.text.stroke",
+        "stylers": [{
+          "color": "#f5f5f5"
+        }]
+      }, {
+        "featureType": "administrative.land_parcel",
+        "elementType": "labels.text.fill",
+        "stylers": [{
+          "color": "#bdbdbd"
+        }]
+      }, {
+        "featureType": "poi",
+        "elementType": "geometry",
+        "stylers": [{
+          "color": "#eeeeee"
+        }]
+      }, {
+        "featureType": "poi",
+        "elementType": "labels.text.fill",
+        "stylers": [{
+          "color": "#757575"
+        }]
+      }, {
+        "featureType": "poi.park",
+        "elementType": "geometry",
+        "stylers": [{
+          "color": "#e5e5e5"
+        }]
+      }, {
+        "featureType": "poi.park",
+        "elementType": "labels.text.fill",
+        "stylers": [{
+          "color": "#9e9e9e"
+        }]
+      }, {
+        "featureType": "road",
+        "elementType": "geometry",
+        "stylers": [{
+          "color": "#ffffff"
+        }]
+      }, {
+        "featureType": "road.arterial",
+        "elementType": "labels.text.fill",
+        "stylers": [{
+          "color": "#757575"
+        }]
+      }, {
+        "featureType": "road.highway",
+        "elementType": "geometry",
+        "stylers": [{
+          "color": "#dadada"
+        }]
+      }, {
+        "featureType": "road.highway",
+        "elementType": "labels.text.fill",
+        "stylers": [{
+          "color": "#616161"
+        }]
+      }, {
+        "featureType": "road.local",
+        "elementType": "labels.text.fill",
+        "stylers": [{
+          "color": "#9e9e9e"
+        }]
+      }, {
+        "featureType": "transit.line",
+        "elementType": "geometry",
+        "stylers": [{
+          "color": "#e5e5e5"
+        }]
+      }, {
+        "featureType": "transit.station",
+        "elementType": "geometry",
+        "stylers": [{
+          "color": "#eeeeee"
+        }]
+      }, {
+        "featureType": "water",
+        "elementType": "geometry",
+        "stylers": [{
+          "color": "#c9c9c9"
+        }]
+      }, {
+        "featureType": "water",
+        "elementType": "labels.text.fill",
+        "stylers": [{
+          "color": "#9e9e9e"
+        }]
+      }];
+    } else if (mapArray.mapstyle == 'night') {
+      styleJson = [{
+        "elementType": "geometry",
+        "stylers": [{
+          "color": "#242f3e"
+        }]
+      }, {
+        "elementType": "labels.text.fill",
+        "stylers": [{
+          "color": "#746855"
+        }]
+      }, {
+        "elementType": "labels.text.stroke",
+        "stylers": [{
+          "color": "#242f3e"
+        }]
+      }, {
+        "featureType": "administrative.locality",
+        "elementType": "labels.text.fill",
+        "stylers": [{
+          "color": "#d59563"
+        }]
+      }, {
+        "featureType": "poi",
+        "elementType": "labels.text.fill",
+        "stylers": [{
+          "color": "#d59563"
+        }]
+      }, {
+        "featureType": "poi.park",
+        "elementType": "geometry",
+        "stylers": [{
+          "color": "#263c3f"
+        }]
+      }, {
+        "featureType": "poi.park",
+        "elementType": "labels.text.fill",
+        "stylers": [{
+          "color": "#6b9a76"
+        }]
+      }, {
+        "featureType": "road",
+        "elementType": "geometry",
+        "stylers": [{
+          "color": "#38414e"
+        }]
+      }, {
+        "featureType": "road",
+        "elementType": "geometry.stroke",
+        "stylers": [{
+          "color": "#212a37"
+        }]
+      }, {
+        "featureType": "road",
+        "elementType": "labels.text.fill",
+        "stylers": [{
+          "color": "#9ca5b3"
+        }]
+      }, {
+        "featureType": "road.highway",
+        "elementType": "geometry",
+        "stylers": [{
+          "color": "#746855"
+        }]
+      }, {
+        "featureType": "road.highway",
+        "elementType": "geometry.stroke",
+        "stylers": [{
+          "color": "#1f2835"
+        }]
+      }, {
+        "featureType": "road.highway",
+        "elementType": "labels.text.fill",
+        "stylers": [{
+          "color": "#f3d19c"
+        }]
+      }, {
+        "featureType": "transit",
+        "elementType": "geometry",
+        "stylers": [{
+          "color": "#2f3948"
+        }]
+      }, {
+        "featureType": "transit.station",
+        "elementType": "labels.text.fill",
+        "stylers": [{
+          "color": "#d59563"
+        }]
+      }, {
+        "featureType": "water",
+        "elementType": "geometry",
+        "stylers": [{
+          "color": "#17263c"
+        }]
+      }, {
+        "featureType": "water",
+        "elementType": "labels.text.fill",
+        "stylers": [{
+          "color": "#515c6d"
+        }]
+      }, {
+        "featureType": "water",
+        "elementType": "labels.text.stroke",
+        "stylers": [{
+          "color": "#17263c"
+        }]
+      }];
+    } else {
+      styleJson = [];
+    } //Create google maps link
+
+
+    $('.js-map-link').attr('href', 'https://www.google.com/maps/place/' + mapArray.directions + '/@' + lat + ',' + lng); //Set map options
+
+    var mapOptions = {
+      zoom: mapArray.zoom,
+      center: location,
+      styles: styleJson,
+      disableDefaultUI: false
+    }; //Create map
+
+    var map = new google.maps.Map(document.getElementById(mapArray.sectionid), mapOptions); //Show pin
+
+    if (mapArray.showpin == true) {
+      var marker = new google.maps.Marker({
+        position: location,
+        map: map
+      });
+    }
+  }
+};
+/*============================================================================
+  Collection
+==============================================================================*/
+
+window.collection = {
+  init: function init() {
+    if (window.Shopify.theme_settings.collection_swatches) {
+      if (window.Shopify.media_queries.large.matches) {
+        $('.thumbnail').hover(function () {
+          $('.swatch span', $(this)).each(function () {
+            if ($(this).data("image").indexOf("no-image") == -1) {
+              $('<img/>')[0].src = $(this).data("image");
+            }
+          });
+        });
+        $('.swatch span').hover(function () {
+          if ($(this).data("image").indexOf("no-image") == -1) {
+            $(this).parents('.thumbnail').find('img').attr('src', $(this).data("image"));
+            $(this).parents('.thumbnail').find('img').attr('srcset', $(this).data("image"));
+          }
+        });
+      }
+    }
+
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+      $(".quick_shop").remove();
+    } else {
+      if (window.Shopify.theme_settings.collection_secondary_image) {
+        showSecondaryImage();
+      }
+
+      $(".quick_shop").fancybox({
+        baseClass: 'quick-shop__lightbox product-' + product.id,
+        hash: false,
+        infobar: false,
+        toolbar: false,
+        loop: false,
+        smallBtn: true,
+        video: {
+          autoStart: false
+        },
+        touch: false,
+        mobile: {
+          preventCaptionOverlap: false,
+          toolbar: true,
+          buttons: ["close"]
+        },
+        afterShow: function afterShow(e) {
+          var selector = $('.fancybox-is-open').find('.selector-wrapper select');
+          var $productForm = $('.fancybox-is-open .js-product_section').find('.product_form'); // Grab the fancybox element that is being clicked
+
+          var $fancyboxImageElement = $(this.opts.$orig);
+          $('.product_form').addClass('is-visible'); //Link sold out options when there is more than one option available (eg. S is selected and Yellow option appears as sold out)
+
+          if (window.Shopify.theme_settings.product_form_style == 'swatches') {
+            var JSONData = $productForm.data('product');
+            var productID = $productForm.data('product-id');
+            var productSection = '.product-' + productID + ' .js-product_section';
+            var swatchOptions = $productForm.find('.swatch_options .swatch');
+
+            if (swatchOptions.length > 1) {
+              Shopify.linkOptionSelectors(JSONData, productSection);
+            }
+          }
+
+          selector.trigger('change');
+          var $gallery = $('.' + $fancyboxImageElement.data('gallery'));
+          var galleryObject = {
+            element: $gallery,
+            thumbnailsEnabled: $gallery.parents('.product_section').data('thumbnails-enabled'),
+            thumbnailsSliderEnabled: $gallery.parents('.product_section').data('thumbnails-slider-enabled'),
+            thumbnailsPosition: $gallery.parents('.product_section').data('thumbnails-position'),
+            thumbnailsArrows: $gallery.parents('.product_section').data('gallery-arrows-enabled'),
+            slideshowAnimation: $gallery.parents('.product_section').data('slideshow-animation'),
+            slideShowSpeed: $gallery.parents('.product_section').data('slideshow-speed'),
+            activateZoom: $gallery.parents('.product_section').data('activate-zoom'),
+            productMediaSupported: $gallery.parents('.product_section').data('product-media-supported'),
+            loopingEnabled: $gallery.data('video-looping-enabled'),
+            sectionID: null
+          };
+
+          if ($('.product-recommendations').length) {
+            window.product.init();
+          }
+
+          window.product.enableSlider(galleryObject);
+
+          if (galleryObject.productMediaSupported) {
+            // Find videos within gallery section
+            var thumbnailVideos;
+            thumbnailVideos = $(galleryObject.element).find('[data-html5-video] video, [data-youtube-video]').get();
+            window.product.loadPlyr(galleryObject, thumbnailVideos);
+            window.product.launchProductMedia(galleryObject);
+          } // Hover to Zoom
+
+
+          if (galleryObject.activateZoom) {
+            $gallery.parents('.product_section').find('.image__container img').each(function (index, image) {
+              $(image).wrap('<span class="zoom-container"></span>').css('display', 'block').parent().zoom({
+                touch: false,
+                magnify: 1
+              });
+            });
+          }
+        },
+        afterClose: function afterClose() {
+          // Grab the fancybox element that is being clicked
+          var $fancyboxImageElement = $(this.opts.$orig);
+          var $gallery = $('.' + $fancyboxImageElement.data('gallery')); // Find videos in gallery
+          // Find IDs and match against player
+          // If videos are playing, pause them
+
+          var $videosInGallery = $gallery.find('.product-gallery__image[data-media-type="video"], .product-gallery__image[data-media-type="external_video"]');
+          $videosInGallery.each(function (index, video) {
+            var $iframeVideo = $(video).find('iframe');
+            var iframeID = $iframeVideo.attr('id');
+            var $html5Video = $(video).find('[data-html5-video]');
+            var videoID = $html5Video.find('video').data('plyr-video-id'); // Pause videos if IDs match
+
+            if ($html5Video.length || $iframeVideo.length) {
+              $.each(globalPlayersArray, function (index, player) {
+                if (videoID) {
+                  if (player.id == videoID && player.playing) {
+                    player.pause();
+                  }
+                } else if (iframeID) {
+                  if (player.media.id == iframeID && player.playing) {
+                    player.pause();
+                  }
+                }
+              });
+            }
+          });
+        }
+      });
+    }
+
+    $('#sort-by').val($('#sort-by').data('default-sort'));
+    $('body').on('change', '#tag_filter, #sort-by', function () {
+      var sortValue = $('#sort-by').val();
+      var filterValue = $('#tag_filter').val();
+      Shopify.queryParams.sort_by = sortValue;
+      var sortUrl = $.param(Shopify.queryParams);
+
+      if (sortValue && filterValue) {
+        window.location = filterValue + '?sort_by=' + sortValue;
+      } else if (sortValue && !filterValue) {
+        window.location = '?' + sortUrl;
+      } else if (!sortValue && filterValue) {
+        window.location = filterValue;
+      }
+    });
+  },
+  unload: function unload($target) {
+    $target.find('.thumbnail').off('mouseenter mouseleave');
+    $('body').off('change', '#tag_filter, #sort-by');
+    $target.find('.quick_shop').off('click.fb');
+  }
+};
+/*============================================================================
+  Utils
+==============================================================================*/
+
+window.utils = {
+  initializeTabs: function initializeTabs() {
+    var tabs = $('ul.tabs');
+    tabs.each(function (i) {
+      var tab = $(this).find('> li > a');
+      tab.on('click', function (e) {
+        var contentLocation = $(this).attr('href');
+
+        if (contentLocation.charAt(0) == "#") {
+          e.preventDefault();
+          tab.removeClass('active');
+          $(this).addClass('active');
+          $(this).parents('ul.tabs').next().find(contentLocation).show().css({
+            'display': 'block'
+          }).addClass('active').siblings().hide().removeClass('active');
+        }
+      });
+    });
+  },
+  initializeAccordion: function initializeAccordion() {
+    //Load Accordions
+    var allPanels = $('.accordion > dd');
+
+    for (var i = 0; i < allPanels.length; i++) {
+      if ($(allPanels[i]).parents('.size_chart_content').length == 0) {
+        $(allPanels[i]).css('height', $(allPanels[i]).outerHeight());
+      }
+    }
+
+    allPanels.hide();
+    $('.accordion > dt > a').click(function () {
+      if (!$(this).parent().next().is(':visible')) {
+        allPanels.slideUp();
+        $(this).parent().next().slideDown();
+        $('.accordion small.right').html('&#9668;');
+        $(this).find('small.right').html('&#9660;');
+      }
+
+      return false;
+    });
+    $('.accordion dd:first-of-type').show();
+  },
+  unload: function unload() {
+    $('ul.tabs > li > a').off('click');
+  }
+};
+
+var lazyload = function lazyload() {
+  $(".primary").lazyload({
+    skip_invisible: false,
+    threshold: 400,
+    effect: "fadeIn"
+  });
+};
+
+var showSecondaryImage = function showSecondaryImage() {
+  // Will be enabled on non-touch devices and screen sizes larger than 1024px
+  if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) && window.matchMedia("(min-width: 1024px)").matches) {
+    // Load Plyr for videos as secondary media
+    var secondaryMediaVideos;
+    var galleryObject = null;
+    var showSecondaryMedia = true;
+    secondaryMediaVideos = $('.thumbnail').find('[data-html5-video] video, [data-youtube-video]').get();
+    window.product.loadPlyr(galleryObject, secondaryMediaVideos, showSecondaryMedia);
+    $('.has-secondary-media-swap').on('mouseenter', function () {
+      $(this).find('.image-element__wrap img').toggleClass('secondary-media-hidden');
+      $(this).find('[data-html5-video]').toggleClass('secondary-media-hidden');
+      $(this).find('.external-video__container').toggleClass('secondary-media-hidden');
+      window.product.enableVideoOnHover($(this));
+    });
+    $('.has-secondary-media-swap').on('mouseleave', function () {
+      $(this).find('.image-element__wrap img').toggleClass('secondary-media-hidden');
+      $(this).find('[data-html5-video]').toggleClass('secondary-media-hidden');
+      $(this).find('.external-video__container').toggleClass('secondary-media-hidden');
+      window.product.disableVideoOnHover($(this));
+    });
+  }
+};
+/*============================================================================
+  Utilities
+==============================================================================*/
+
+
+var plyrUtils = {
+  playButtonIcon: '<button type="button" class="plyr__control plyr__control--overlaid" aria-label="Play, {title}" data-plyr="play"><svg class="play-icon-button-control" width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="60" height="60" fill="white"/><path fill-rule="evenodd" clip-rule="evenodd" d="M23 20V40L39 29.4248L23 20Z" fill="#323232"/></svg><span class="plyr__sr-only">Play</span></button>',
+  playButton: '<button type="button" class="plyr__controls__item plyr__control" aria-label="Play, {title}" data-plyr="play"><svg class="icon--pressed" role="presentation"><use xlink:href="#plyr-pause"></use></svg><svg class="icon--not-pressed" role="presentation"><use xlink:href="#plyr-play"></use></svg><span class="label--pressed plyr__tooltip" role="tooltip">Pause</span><span class="label--not-pressed plyr__tooltip" role="tooltip">Play</span></button>',
+  muteButton: '<button type="button" class="plyr__controls__item plyr__control" aria-label="Mute" data-plyr="mute"><svg class="icon--pressed" role="presentation"><use xlink:href="#plyr-muted"></use></svg><svg class="icon--not-pressed" role="presentation"><use xlink:href="#plyr-volume"></use></svg><span class="label--pressed plyr__tooltip" role="tooltip">Unmute</span><span class="label--not-pressed plyr__tooltip" role="tooltip">Mute</span></button>',
+  progressInput: '<div class="plyr__controls__item plyr__progress__container"><div class="plyr__progress"><input data-plyr="seek" type="range" min="0" max="100" step="0.01" value="0" aria-label="Seek"><progress class="plyr__progress__buffer" min="0" max="100" value="0">% buffered</progress><span role="tooltip" class="plyr__tooltip">00:00</span></div></div>',
+  volume: '<div class="plyr__controls__item plyr__volume"><input data-plyr="volume" type="range" min="0" max="1" step="0.05" value="1" autocomplete="off" aria-label="Volume"></div>',
+  fullscreen: '<button type="button" class="plyr__controls__item plyr__control" data-plyr="fullscreen"><svg class="icon--pressed" role="presentation"><use xlink:href="#plyr-exit-fullscreen"></use></svg><svg class="icon--not-pressed" role="presentation"><use xlink:href="#plyr-enter-fullscreen"></use></svg><span class="label--pressed plyr__tooltip" role="tooltip">Exit fullscreen</span><span class="label--not-pressed plyr__tooltip" role="tooltip">Enter fullscreen</span></button>'
+};
+var controls = plyrUtils.playButtonIcon + '<div class="plyr__controls">' + plyrUtils.playButton + plyrUtils.progressInput + plyrUtils.muteButton + plyrUtils.volume + plyrUtils.fullscreen + '</div';
+var globalPlayersArray = [];
+var secondaryMediaPlayers;
+window.utilities = {
+  listenForResize: function listenForResize() {
+    // Setup a timer
+    var resizeTimeout; // Listen for resize events
+
+    window.addEventListener('resize', function (event) {
+      // If timer is null, reset it to 66ms and run your functions.
+      // Otherwise, wait until timer is cleared
+      if (!resizeTimeout) {
+        resizeTimeout = setTimeout(function () {
+          // Reset timeout
+          resizeTimeout = null; // Run our resize functions
+        }, 66);
+      }
+    }, false);
+  },
+  enableDisclosure: function enableDisclosure() {
+    var $disclosure = $('[data-disclosure]');
+    var $toggle = $('[data-disclosure-toggle]');
+    var $disclosureWrap = $('.disclosure__list-wrap'); //Check if current opened menu is offscreen
+
+    function checkOffScreen($openedToggle) {
+      if ($openedToggle.siblings('.disclosure__list-wrap').is(':off-right')) {
+        $openedToggle.siblings('.disclosure__list-wrap').addClass('disclosure--left');
+      }
+    }
+
+    function closeDisclosures(ignoreTarget, currentTarget) {
+      if (ignoreTarget === true) {
+        $toggle.not(currentTarget).removeClass('is-clicked');
+        $toggle.not(currentTarget).attr('aria-expanded', 'false');
+      } else {
+        $toggle.removeClass('is-clicked');
+        $toggle.attr('aria-expanded', 'false');
+      }
+
+      $disclosureWrap.removeClass('disclosure--left');
+    } //Close menus on ESC
+
+
+    $('body').on('keyup', function (e) {
+      if (e.which == '27') {
+        closeDisclosures();
+      }
+    }); //Close menus on hoverout
+
+    $disclosure.on('mouseleave', function (e) {
+      closeDisclosures();
+    }); //On click/focus event for toggling options
+
+    $toggle.on('mouseenter focus', function (e) {
+      //Close all other menus
+      closeDisclosures(true, this);
+      var $target = $(e.currentTarget);
+      $target.attr('aria-expanded', 'true').addClass('is-clicked');
+      checkOffScreen($target);
+    }); //Mobile toggle logic
+
+    $toggle.on('touchstart', function (e) {
+      if (window.Shopify.media_queries.medium.matches || !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        var $target = $(e.currentTarget);
+        closeDisclosures(true, this);
+
+        if (!$target.hasClass('is-clicked')) {
+          $target.attr('aria-expanded', 'true').addClass('is-clicked');
+          checkOffScreen($target);
+        } else {
+          $target.attr('aria-expanded', 'false').removeClass('is-clicked');
+          $disclosureWrap.removeClass('disclosure--left');
+        }
+      }
+    });
+  },
+  addImageDimension: function addImageDimension(imageUrl, size) {
+    var insertPosition = imageUrl.lastIndexOf(".");
+    return imageUrl.substring(0, insertPosition) + size + imageUrl.substring(insertPosition);
+  },
+  launchVideoPlayer: function launchVideoPlayer(Plyr, galleryObject, videos, showSecondaryMedia) {
+    if (galleryObject != null) {
+      galleryObject.videoPlayers = Plyr.setup(videos, {
+        controls: controls,
+        fullscreen: {
+          enabled: true,
+          fallback: true,
+          iosNative: true
+        },
+        storage: {
+          enabled: false
+        }
+      }); // Going through galleries array and pushing players into master array
+
+      $.each(galleryObject.videoPlayers, function (index, player) {
+        globalPlayersArray.push(player);
+      });
+    } else if (showSecondaryMedia == true) {
+      // Collection page/Recommended Products secondary media
+      secondaryMediaPlayers = Plyr.setup(videos, {
+        controls: controls,
+        fullscreen: {
+          enabled: true,
+          fallback: true,
+          iosNative: true
+        },
+        storage: {
+          enabled: false
+        }
+      });
+      $.each(secondaryMediaPlayers, function (index, player) {
+        globalPlayersArray.push(player);
+      }); // Adds plyr video id to video wrapper
+
+      $.each(globalPlayersArray, function (index, player) {
+        var source = player.provider;
+        var id = player.id;
+        var $video;
+
+        if (source == 'html5') {
+          $video = $(player.elements.wrapper).find('video');
+          $video.attr('data-plyr-video-id', id);
+        }
+      });
+      return secondaryMediaPlayers;
+    }
+  },
+  unload: function unload() {
+    $('[data-disclosure]').off();
+    $('[data-disclosure-toggle]').off();
+    $('.disclosure__list-wrap').off();
+  }
+};
+
+var toggleSidebarBlocks = function toggleSidebarBlocks($toggle) {
+  if ($toggle.next('ul').is(':visible')) {
+    $toggle.next('ul').hide();
+    $toggle.children('span').html('+');
+    $toggle.attr('aria-expanded', false);
+  } else {
+    $toggle.next('ul').show();
+    $toggle.children('span').html('-');
+    $toggle.attr('aria-expanded', true);
+  }
+};
+
+var toggleSidebarMenus = function toggleSidebarMenus($toggle) {
+  $menu = $toggle.parent('li');
+  $toggleIcon = $menu.children('.menu-toggle');
+  $toggleIcon.toggleClass('active');
+  $menu.children('ul').slideToggle();
+  $toggleIcon.attr('aria-expanded', $toggleIcon.attr('aria-expanded') == 'true' ? 'false' : 'true');
+};
+
+var sliderBlock = {
+  select: function select(blockId, $parentSection) {
+    var $blocks = $parentSection.find('.slideshow__gallery-cell');
+    var blockIdsArray = $blocks.map(function () {
+      return String($(this).data('block-id'));
+    });
+    var $slider = $parentSection.find('[data-slider-id]');
+    var flkty = $slider.data('flickity');
+    $slider.flickity('pausePlayer');
+
+    for (var i = 0; i < blockIdsArray.length; i++) {
+      if (blockIdsArray[i] === blockId) {
+        var currentSlide = i;
+
+        if (currentSlide !== flkty.selectedIndex) {
+          $slider.flickity('select', parseInt(currentSlide), false, true);
+        }
+      }
+    }
+  },
+  deselect: function deselect($parentSection) {
+    var $slider = $parentSection.find('[data-slider-id]');
+
+    if ($slider) {
+      $slider.flickity('unpausePlayer');
+    }
+  }
+}; //Document ready
+
+$(function () {
+  window.lazySizesConfig = window.lazySizesConfig || {};
+  window.lazySizesConfig.expand = 1000;
+  window.lazySizesConfig.loadMode = 1; //Load sections
+
+  window.header.init();
+  window.map.init();
+  window.slideshow.init();
+  window.collection.init();
+  window.product.init();
+  window.product.initializeQuantityBox();
+  window.video.init();
+  window.faqAccordion.init(); //Init lazyload
+
+  lazyload(); //Init objectFitImages
+
+  objectFitImages();
+
+  if (Currency.native_multi_currency && Currency.shipping_calculator) {
+    currencyConverter.init();
+  }
+
+  if (window.Shopify.theme_settings.enable_autocomplete) {
+    searchAutocomplete.init();
+  }
+
+  var linkTarget = $('.js-navigation li a');
+  linkTarget.mousedown(function () {
+    $(this).data('mousedown', true);
+  });
+  linkTarget.focus(function (e) {
+    if (!$(this).data('mousedown')) {
+      $(this).parents('li.dropdown, .sub-menu').attr('aria-expanded', 'true').addClass('show-menu');
+    }
+  });
+  linkTarget.blur(function () {
+    $(this).data('mousedown', false);
+    $('li.dropdown, .sub-menu').removeClass('show-menu').attr('aria-expanded', 'false');
+  }); // Initialize Responsive Videos
+
+  enableResponsiveVideoWrapper(); //offscreen check for dropdown menu
+
+  $('.sub-menu').not('.slicknav_parent').on('mouseenter', function () {
+    if ($(this).find('.submenu_list').is(':off-right')) {
+      $(this).find('.submenu_list').addClass("submenu--align-right");
+    }
+
+    if ($(this).find('.sub_submenu_list').is(':off-right')) {
+      $(this).find('.sub_submenu_list').addClass("submenu--align-right");
+    }
+  }); //Lightbox default options
+  //https://fancyapps.com/fancybox/3/docs/#options
+
+  $.fancybox.defaults.animationEffect = 'fade';
+  $.fancybox.defaults.transitionEffect = 'fade';
+  $.fancybox.defaults.hash = false;
+  $.fancybox.defaults.infobar = false;
+  $.fancybox.defaults.toolbar = false;
+  $.fancybox.defaults.arrows = false;
+  $.fancybox.defaults.loop = true;
+  $.fancybox.defaults.smallBtn = true;
+  $.fancybox.defaults.wheel = false;
+  $.fancybox.defaults.live = false;
+  $.fancybox.defaults.zoom = false;
+  $.fancybox.defaults.btnTpl['smallBtn'] = '<a title="Close" data-fancybox-close class="fancybox-item fancybox-close" href="javascript:;"></a>';
+  $.fancybox.defaults.mobile.preventCaptionOverlap = false;
+  $.fancybox.defaults.mobile.toolbar = true;
+  $.fancybox.defaults.mobile.buttons = ['close'];
+  $.fancybox.defaults.mobile.clickSlide = 'close';
+  $.fancybox.defaults.mobile.clickContent = 'zoom';
+
+  $.fancybox.defaults.afterLoad = function (instance, slide) {
+    if (instance.current.type == 'image') {
+      slide.$content.wrapInner("<div class='fancybox-image-wrap'></div>");
+    }
+
+    if (instance.group.length > 1) {
+      slide.$content.find('.fancybox-image-wrap').append('<a title="Previous" class="fancybox-item fancybox-nav fancybox-prev ss-icon" href="javascript:;" data-fancybox-prev><span></span></a><a title="Next" class="fancybox-item fancybox-nav fancybox-next ss-icon" href="javascript:;" data-fancybox-next><span></span></a>');
+    }
+  }; //backwards compatibility with custom lightboxes
+
+
+  $('.lightbox').fancybox(); // Gallery fancybox initialization
+
+  $('[rel="gallery"]').fancybox({
+    baseClass: "gallery-section__lightbox",
+    clickContent: "nextOrClose"
+  }); // Trigger fancybox flickity product gallery images
+
+  $('.product-gallery__main .product-gallery__image .fancybox').fancybox({
+    baseClass: "product-section__lightbox",
+    clickContent: "nextOrClose",
+    transitionEffect: 'slide',
+    beforeShow: function beforeShow() {
+      // Grab the fancybox element that is being clicked
+      var $fancyboxImageElement = $(this.opts.$orig); // Add alt to fancybox image
+
+      var imageAlt = $fancyboxImageElement.data('alt');
+      $('.fancybox-image').attr('alt', imageAlt);
+    }
+  });
+
+  if (window.Shopify.theme_settings.newsletter_popup) {
+    newsletter_popup.init();
+  } // Cart page functions - check subtotal and input updates
+
+
+  $('.update_subtotal').click(function () {
+    $("#cart_form").submit();
+    return false;
+  });
+  $("#cart_form input[type='number']").change(function () {
+    $("#cart_form").submit();
+  }); //Terms and conditions agreement check
+
+  addToCartTermsCheck();
+  Shopify.queryParams = {};
+
+  if (location.search.length) {
+    for (var aKeyValue, i = 0, aCouples = location.search.substr(1).split('&'); i < aCouples.length; i++) {
+      aKeyValue = aCouples[i].split('=');
+
+      if (aKeyValue.length > 1) {
+        Shopify.queryParams[decodeURIComponent(aKeyValue[0])] = decodeURIComponent(aKeyValue[1]);
+      }
+    }
+  } //Load language/currency switchers
+
+
+  window.utilities.enableDisclosure(); //Load accordions
+
+  window.utils.initializeAccordion(); //Load tabs
+
+  window.utils.initializeTabs(); //Sidebar toggle
+
+  $(document).on('click', '.menu-toggle, .parent-link--false', function (e) {
+    toggleSidebarMenus($(this));
+  });
+  var sidebarTouched = false;
+  $(document).on('touchstart', '.toggle', function (e) {
+    if (window.Shopify.media_queries.medium.matches || $(this).parents('.sidebar').hasClass('toggle-all--true')) {
+      var $toggle = $(this);
+      toggleSidebarBlocks($toggle);
+      sidebarTouched = true;
+      e.preventDefault();
+      return false;
+    }
+  });
+  $(document).on('click', '.toggle', function (e) {
+    if (window.Shopify.media_queries.medium.matches || $(this).parents('.sidebar').hasClass('toggle-all--true')) {
+      var $toggle = $(this);
+
+      if (!sidebarTouched) {
+        toggleSidebarBlocks($toggle);
+        e.preventDefault();
+        return false;
+      }
+    }
+  });
+  $(".toggle_list").each(function () {
+    if ($(this).is(":visible")) {
+      $(this).prev(".toggle").attr("aria-expanded", true);
+    }
+  }); // Backwards compatibility with flexslider
+
+  $('.cc-slideshow, .flexslider').find('li').unwrap();
+  $('.cc-slideshow, .flexslider').flickity({
+    pageDots: false,
+    autoPlay: 6000,
+    imagesLoaded: true,
+    wrapAround: true,
+    lazyLoad: 2,
+    adaptiveHeight: true
+  });
+  /*============================================================================
+    Responsive media
+  ==============================================================================*/
+
+  function enableResponsiveVideoWrapper() {
+    // Wraps YouTube and Vimeo iframes in Plyr wrapper
+    // Does not target iframes already embedded in Plyr wrapper (video sections and product galleries)
+    $('iframe[src*="youtube.com"]:not(.plyr__video-wrapper iframe[src*="youtube.com"])').wrap('<div class="plyr__video-embed"></div>');
+    $('iframe[src*="vimeo.com"]:not(.plyr__video-wrapper iframe[src*="vimeo.com"])').wrap('<div class="plyr__video-embed"></div>');
+  }
+  /*============================================================================
+    Start of cart-related functionality
+  ==============================================================================*/
+
+
+  function ajaxSubmitCart() {
+    $cart = $("#cart");
+    $.ajax({
+      url: '/cart.js',
+      dataType: 'json',
+      type: 'post',
+      data: $cart.serialize(),
+      success: function success(data) {
+        refreshCart(data);
+      }
+    });
+  }
+
+  function refreshCart(cart) {
+    $cartBtn = $(".cart_button");
+
+    if ($cartBtn) {
+      var $cartCount = $cartBtn.find('.cart_count');
+
+      if ($cartCount.length) {
+        $cartCount.text(cart.item_count);
+      }
+    }
+  } //Terms and conditions agreement check
+
+
+  function addToCartTermsCheck() {
+    if ($('.tos_agree').length) {
+      $('body').on('click', '#checkout', function () {
+        if ($('.tos_agree').is(':checked')) {
+          $(this).submit();
+        } else {
+          alert(window.Shopify.translation.agree_to_terms_warning);
+          return false;
+        }
+      });
+    }
+  }
+
+  if (window.Shopify.theme_settings.cart_action == 'ajax') {
+    $(document).on('click', '.ajax-submit', function (e) {
+      e.preventDefault();
+      var $addToCartForm = $(this).closest('form');
+      var $addToCartInfo = $(this).parent('.product_form');
+      var $addToCartBtn = $addToCartForm.find('.add_to_cart');
+      $.ajax({
+        url: '/cart/add.js',
+        dataType: 'json',
+        type: 'post',
+        data: $addToCartForm.serialize(),
+        beforeSend: function beforeSend() {
+          $addToCartBtn.attr('disabled', 'disabled').addClass('disabled');
+          $addToCartBtn.find('span').removeClass("zoomIn").addClass('animated zoomOut');
+        },
+        success: function success(item) {
+          var itemDiscounts = item.discounts;
+          var discountMessage = "";
+
+          for (var _i = 0; _i < itemDiscounts.length; _i++) {
+            var amount = Shopify.formatMoney(itemDiscounts[_i].amount, $('body').data('money-format'));
+            var title = itemDiscounts[_i].title;
+            discountMessage = '<span class="notification-discount"><b>' + window.Shopify.translation.cart_discount + ':</b> ' + title + ' (- <span class="money">' + amount + '</span>)</span>';
+          }
+
+          $addToCartBtn.find('span').text(window.Shopify.translation.product_add_to_cart_success).removeClass('zoomOut').addClass('fadeIn');
+          var padding = [20, 40, 20, 40];
+          window.setTimeout(function () {
+            var hasImage = true;
+
+            if (item.image !== null) {
+              hasImage = true;
+            } else {
+              hasImage = false;
+            }
+
+            $.fancybox.close(); // Update the checkout URL based on the selected language
+
+            if (window.Shopify.theme_settings.primary_locale === 'true') {
+              var currentCheckout = window.Shopify.theme_settings.shop_url + 'checkout';
+            } else {
+              var currentCheckout = window.Shopify.theme_settings.shop_url + '/checkout';
+            }
+
+            if (hasImage) {
+              $.fancybox.open($("\n                <div\n                  class=\"\n                    cart-notification\n                    is-inline-flex\n                    is-align-center\n                  \"\n                >\n                  <div class=\"cart-notification__image is-hidden-mobile-only\">\n                    <img src=\"".concat(item.image.replace(/(\.[^.]*)$/, "_grande$1").replace('https:', ''), "\" alt=\"").concat(htmlEncode(item.title), "\">\n                  </div>\n                  <div class=\"cart-notification__content\">\n                    <div class=\"cart-notification__view\">\n                    </div>\n                    <h4 class=\"cart-notification__title\">\n                      <span class=\"icon-check\"></span> ").concat(window.Shopify.translation.add_to_cart_success, "\n                    </h4>\n                  <div>\n                  <strong>").concat(item.title, "</strong>\n                </div>\n                <p>").concat(item.quantity, " x <span class=\"money\">").concat(Shopify.formatMoney(item.price, $('body').data('money-format')), "</span> ").concat(discountMessage, "</p>\n                {% if settings.display_tos_checkbox %}\n                  <div class=\"popup_tos\">\n                    <div class=\"tos_checkbox\">\n                      <input\n                        class=\"tos_agree\"\n                        id=\"cart_agree\"\n                        type=\"checkbox\"\n                        required\n                      >\n                      <label class=\"tos_label\" for=\"cart_agree\">\n                        {% if settings.tos_richtext != blank %}\n                          {{ settings.tos_richtext }}\n                        {% else %}\n                          ").concat(window.Shopify.translation.agree_to_terms_html, "\n                        {% endif %}\n                      </label>\n                    </div>\n                  </div>\n                {% endif %}\n                <p>\n                  <a\n                    class=\"action_button\"\n                    id=\"checkout\"\n                    href=\"").concat(window.Shopify.routes.cart_url, "\">").concat(window.Shopify.translation.edit_cart, "</a>\n                  &nbsp;\n                  <span class=\"continue_shopping\">\n                    ").concat(window.Shopify.translation.or, "\n                    <a href=\"javascript:$.fancybox.close();\">").concat(window.Shopify.translation.continue_shopping, "\n                      <span class=\"icon-right-arrow\"></span>\n                    </a>\n                  </span>\n                </div>\n              </div>")), {
+                padding: padding,
+                wrapCSS: 'fancybox-cart-notification'
+              });
+            } else {
+              $.fancybox.open($("\n                <div\n                  class=\"\n                    cart-notification\n                    is-inline-flex\n                    is-align-center\n                  \"\n                >\n                  <div class=\"cart-notification__content\">\n                    <div class=\"cart-notification__view\">\n                      <a href=\"/cart\">".concat(window.Shopify.translation.edit_cart, "</a>\n                    </div>\n                    <h4 class=\"cart-notification__title\">\n                      <span class=\"icon-check\"></span> ").concat(window.Shopify.translation.add_to_cart_success, "\n                    </h4>\n                  <div>\n                  <strong>").concat(item.title, "</strong>\n                </div>\n                <p>").concat(item.quantity, " x <span class=\"money\">").concat(Shopify.formatMoney(item.price, $('body').data('money-format')), "</span> ").concat(discountMessage, "</p>\n                {% if settings.display_tos_checkbox %}\n                  <div class=\"popup_tos\">\n                    <div class=\"tos_checkbox\">\n                      <input\n                        class=\"tos_agree\"\n                        id=\"cart_agree\"\n                        type=\"checkbox\"\n                        required\n                      >\n                      <label class=\"tos_label\" for=\"cart_agree\">\n                        {% if settings.tos_richtext != blank %}\n                          {{ settings.tos_richtext }}\n                        {% else %}\n                          ").concat(window.Shopify.translation.agree_to_terms_html, "\n                        {% endif %}\n                      </label>\n                    </div>\n                  </div>\n                {% endif %}\n                <p>\n                  <a\n                    class=\"action_button\"\n                    id=\"checkout\"\n                    href=\"").concat(currentCheckout, "\"\n                  >\n                    ").concat(window.Shopify.translation.checkout, "\n                  </a>\n                  &nbsp;\n                  <span class=\"continue_shopping\">\n                    ").concat(window.Shopify.translation.or, "\n                    <a href=\"javascript:$.fancybox.close();\">\n                      ").concat(window.Shopify.translation.continue_shopping, "\n                      <span class=\"icon-right-arrow\"></span>\n                    </a>\n                  </span>\n                </div>\n              </div>")), {
+                padding: padding,
+                wrapCSS: 'fancybox-cart-notification'
+              });
+            } // Terms and conditions agreement check
+
+
+            addToCartTermsCheck();
+          }, 500);
+          window.setTimeout(function () {
+            $addToCartBtn.removeAttr('disabled').removeClass('disabled');
+            $addToCartBtn.find('span').addClass("fadeOut").text($addToCartBtn.data('label')).removeClass('fadeIn').removeClass("fadeOut").addClass('zoomIn');
+          }, 1000);
+          $.getJSON("/cart.js", function (cart) {
+            refreshCart(cart);
+          });
+        },
+        error: function error(XMLHttpRequest) {
+          var response = eval('(' + XMLHttpRequest.responseText + ')');
+          response = response.description;
+          $('.warning').remove();
+          var warning = '<p class="warning animated bounceIn">' + response.replace('All 1 ', 'All ') + '</p>';
+          $addToCartForm.after(warning);
+          $addToCartBtn.removeAttr('disabled').removeClass('disabled');
+          $addToCartBtn.find('span').text(window.Shopify.translation.product_add_to_cart).removeClass('zoomOut').addClass('zoomIn');
+        }
+      });
+      return false;
+    });
+  }
+}); // Function only triggers for products with variants
+
+window.selectCallback = function (variant, selector) {
+  var $product = $('.product-' + selector.product.id);
+  var $notify_form = $('.notify-form-' + selector.product.id);
+  var $productForm = $('.product_form', $product);
+  var variantInventory = $productForm.data('variant-inventory');
+  var $notifyFormInputs = $('.notify_form__inputs', $product);
+  var notifyEmail = window.Shopify.translation.product_notify_form_email;
+  var notifyEmailValue = "{{ contact.fields.email }}";
+  var notifySend = window.Shopify.translation.product_notify_form_send;
+  var notifyMessage = $notifyFormInputs.data('notify-message');
+
+  if (variant && variant.title) {
+    notifyMessage = notifyMessage + ' - ' + variant.title.replace(/"/g, '\&quot;');
+  }
+
+  if ($notifyFormInputs.hasClass('customer--true')) {
+    var notifyCustomerEmail = "{{ customer.email }}";
+    var notifyEmailInput = '<input type="hidden" class="notify_email" name="contact[email]" id="contact[email]" value="' + notifyCustomerEmail + '" />';
+  } else {
+    var notifyEmailInput = '<input required type="email" class="notify_email" name="contact[email]" id="contact[email]" placeholder="' + notifyEmail + '" value="' + notifyEmailValue + '" />';
+  }
+
+  var notifyFormHTML = notifyEmailInput + '<input type="hidden" name="challenge" value="false" /><input type="hidden" name="contact[body]" class="notify_form_message" value="' + notifyMessage + '" /><input class="action_button" type="submit" value="' + notifySend + '" style="margin-bottom:0px" />'; // Image variant feature
+
+  if (variant && variant.featured_image && $product.is(":visible")) {
+    var $sliders = $('.product-gallery__main', $product);
+    $sliders.each(function () {
+      var $slider = $(this);
+      var $sliderInstance = Flickity.data(this);
+
+      if ($slider.is(":visible") && $sliderInstance != undefined) {
+        var index = $('[data-image-id="' + variant.featured_image.id + '"]').data('index');
+        $sliderInstance.select(index, false, true);
+      }
+    });
+  } // Quick Shop
+
+
+  if (variant && variant.featured_image && $product.is(":visible")) {
+    var $popimg = $('.modal_image', $product);
+    var pop_original_image = $(".modal_image img", $product),
+        new_image = variant.featured_image;
+    Shopify.Image.switchImage(new_image, pop_original_image[0], function (new_image_src, pop_original_image, element) {
+      $popimg.html('<img src="' + variant.featured_image.src + '"/>');
+    });
+  } // Unit price
+
+
+  var unitPriceMeasurementReferenceValue = '';
+  var unitPriceOutput = '';
+
+  if (variant) {
+    if (variantInventory) {
+      variantInventory.forEach(function (v) {
+        if (v.id === variant.id) {
+          variant.inventory_quantity = v.inventory_quantity;
+          variant.inventory_management = v.inventory_management;
+          variant.inventory_policy = v.inventory_policy;
+        }
+      });
+    }
+
+    $('.sku', $product).text(variant.sku);
+
+    if (window.Shopify.theme_settings.product_form_style == "swatches") {
+      for (var i = 0, length = variant.options.length; i < length; i++) {
+        var radioButton = $productForm.find('.swatch[data-option-index="' + escape(i) + '"] :radio[value="' + variant.options[i].replace(/\"/g, '\\"') + '"]');
+
+        if (radioButton.length) {
+          radioButton.get(0).checked = true;
+        }
+      }
+    }
+
+    if (variant.unit_price_measurement) {
+      if (variant.unit_price_measurement.reference_value != 1) {
+        unitPriceMeasurementReferenceValue = variant.unit_price_measurement.reference_value;
+      }
+
+      unitPriceOutput += "<div class=\"item_unit-price\">".concat(variant.unit_price_measurement.quantity_value).concat(variant.unit_price_measurement.quantity_unit, " | ").concat(Shopify.formatMoney(variant.unit_price, $('body').data('money-format')), " / ").concat(unitPriceMeasurementReferenceValue).concat(variant.unit_price_measurement.reference_unit, "</div>");
+    }
+  }
+
+  var $unitPrice = $('.product-details__unit-price', $product);
+  $unitPrice.removeClass('product-details__unit-price--hidden');
+
+  if (variant && variant.available == true) {
+    if (variant.price < variant.compare_at_price) {
+      $('.was-price', $product).html('<span class="money">' + Shopify.formatMoney(variant.compare_at_price, $('body').data('money-format')) + '</span>');
+      $('.current-price', $product).parent().addClass('sale');
+    } else {
+      $('.was-price', $product).html('');
+      $('.current-price', $product).parent().removeClass('sale');
+    }
+
+    if (variant.inventory_management && variant.inventory_quantity > 0) {
+      if (window.Shopify.theme_settings.display_inventory_left) {
+        if (variant.inventory_quantity == 1) {
+          var items_left_text = window.Shopify.translation.items_left_count_one;
+        } else {
+          var items_left_text = window.Shopify.translation.items_left_count_other;
+        }
+
+        var inventoryThreshold = window.Shopify.theme_settings.inventory_threshold;
+
+        if (variant.inventory_quantity <= inventoryThreshold) {
+          $('.items_left', $product).html(variant.inventory_quantity + " " + items_left_text);
+        } else {
+          $('.items_left', $product).html("");
+        }
+      }
+
+      if (window.Shopify.theme_settings.limit_quantity) {
+        if (variant.inventory_policy == "deny") {
+          $('.quantity', $product).attr('max', variant.inventory_quantity);
+        }
+      }
+    } else {
+      $('.items_left', $product).text('');
+      $('.quantity', $product).removeAttr('max');
+    } // Empty sold out text
+
+
+    $('.sold-out-text', $product).text(''); // Show price, otherwise, show free price text
+
+    if (variant.price > 0) {
+      $('.current-price', $product).html('<span class="money">' + Shopify.formatMoney(variant.price, $('body').data('money-format')) + '</span>');
+
+      if (unitPriceOutput !== undefined) {
+        $unitPrice.html(unitPriceOutput);
+      } else {
+        $unitPrice.addClass('product-details__unit-price--hidden');
+      }
+    } else {
+      $('.current-price', $product).html(window.Shopify.theme_settings.free_price_text);
+      $unitPrice.addClass('product-details__unit-price--hidden');
+    } // Remove the "product__price-container--sold-out" class and updated the add to cart text
+
+
+    $('.product__price').show();
+    $('.product__price-container', $product).removeClass('product__price-container--sold-out').show();
+    $('.add_to_cart', $product).removeClass('disabled').removeAttr('disabled').find('span').text($('.add_to_cart', $product).data('label')); // Hide the back in stock notification form
+
+    $notify_form.hide(); // Show the quantity field
+
+    $('.purchase-details__quantity', $product).show(); // Remove disable from action buttons
+
+    $('.atc-btn-container', $product).removeClass('disabled');
+  } else {
+    var message = variant ? window.Shopify.translation.product_sold_out : window.Shopify.translation.product_unavailable; // Hide the quantity field
+
+    $('.purchase-details__quantity', $product).hide(); // Show the price and change the add to cart and sold out text
+
+    $('.product__price-container', $product).addClass('product__price-container--sold-out').show();
+    $('.add_to_cart', $product).find('span').text(message);
+    $('.items_left', $product).text('');
+    $('.quantity', $product).removeAttr('max');
+    $('.sold-out-text', $product).text(' - ' + message); // Disable the add to cart button and Shopify payment button when a variant is sold out
+
+    $('.atc-btn-container', $product).addClass('disabled'); // Hide the back in stock notification form
+
+    $notify_form.hide();
+    $notifyFormInputs.empty();
+
+    if (variant && !variant.available) {
+      var message = variant ? window.Shopify.translation.product_sold_out : window.Shopify.translation.product_unavailable; // Show the variant price, otherwise, show the free price text
+
+      if (variant.price > 0) {
+        $('.current-price', $product).html('<span class="money">' + Shopify.formatMoney(variant.price, $('body').data('money-format')) + '</span>');
+
+        if (unitPriceOutput !== undefined) {
+          $unitPrice.html(unitPriceOutput);
+        } else {
+          $unitPrice.addClass('product-details__unit-price--hidden');
+        }
+      } else {
+        $('.current-price', $product).html(window.Shopify.theme_settings.free_price_text);
+        $unitPrice.addClass('product-details__unit-price--hidden');
+      } // When a variant is sold out but on sale
+
+
+      if (variant.price < variant.compare_at_price) {
+        $('.was-price', $product).html('<span class="money">' + Shopify.formatMoney(variant.compare_at_price, $('body').data('money-format')) + '</span>');
+      } else {
+        $('.was-price', $product).html('');
+      } // Show the back in stock notification form
+
+
+      $notify_form.fadeIn();
+      $notifyFormInputs.empty();
+      $notifyFormInputs.append(notifyFormHTML); // Show the price and change the add to cart and sold out text
+
+      $('.product__price').show();
+      $('.product__price-container--sold-out').show();
+      $('.sold-out-text', $product).text(' - ' + message);
+      $('.add_to_cart', $product).find('span').text(message);
+    } else {
+      // When a variant is specifically unavailable
+      // Hide unit pricing when product is unavailable
+      $unitPrice.addClass('product-details__unit-price--hidden'); // Change the add to cart and sold out text to "Unavailable"
+
+      $('.add_to_cart', $product).find('span').text(window.Shopify.translation.product_unavailable);
+      $('.sold-out-text', $product).text(window.Shopify.translation.product_unavailable); // Hide the product price
+
+      $('.product__price').hide(); // Hide the back in stock notification form
+
+      $notify_form.hide();
+    }
+  }
+
+  $productForm.removeClass("init");
+};
+
+function htmlEncode(value) {
+  if (value) {
+    return $('<div/>').text(value).html();
+  } else {
+    return '';
+  }
+}
+
+Shopify.updateOptionsInSelector = function (selectorIndex, parent) {
+  switch (selectorIndex) {
+    case 0:
+      var key = 'root';
+      var selector = $(parent + ' .single-option-selector:eq(0)');
+      break;
+
+    case 1:
+      var key = $(parent + ' .single-option-selector:eq(0)').val();
+      var selector = $(parent + ' .single-option-selector:eq(1)');
+      break;
+
+    case 2:
+      var key = $(parent + ' .single-option-selector:eq(0)').val();
+      key += ' / ' + $(parent + ' .single-option-selector:eq(1)').val();
+      var selector = $(parent + ' .single-option-selector:eq(2)');
+  }
+
+  var availableOptions = Shopify.optionsMap[key];
+  $(parent + ' .swatch[data-option-index="' + selectorIndex + '"] .swatch-element').each(function () {
+    if ($.inArray($(this).attr('data-value'), availableOptions) !== -1) {
+      $(this).removeClass('soldout').find(':radio').removeAttr('disabled', 'disabled').removeAttr('checked');
+    } else {
+      $(this).addClass('soldout').find(':radio').removeAttr('checked').attr('disabled', 'disabled');
+    }
+  });
+  selector.trigger('change');
+};
+/* Linked Option Selectors */
+
+
+Shopify.linkOptionSelectors = function (product, parent) {
+  // Building our mapping object.
+  Shopify.optionsMap = {};
+
+  for (var i = 0; i < product.variants.length; i++) {
+    var variant = product.variants[i];
+
+    if (variant.available) {
+      // Gathering values for the 1st drop-down.
+      Shopify.optionsMap['root'] = Shopify.optionsMap['root'] || [];
+      Shopify.optionsMap['root'].push(variant.option1);
+      Shopify.optionsMap['root'] = Shopify.uniq(Shopify.optionsMap['root']); // Gathering values for the 2nd drop-down.
+
+      if (product.options.length > 1) {
+        var key = variant.option1;
+        Shopify.optionsMap[key] = Shopify.optionsMap[key] || [];
+        Shopify.optionsMap[key].push(variant.option2);
+        Shopify.optionsMap[key] = Shopify.uniq(Shopify.optionsMap[key]);
+      } // Gathering values for the 3rd drop-down.
+
+
+      if (product.options.length === 3) {
+        var key = variant.option1 + ' / ' + variant.option2;
+        Shopify.optionsMap[key] = Shopify.optionsMap[key] || [];
+        Shopify.optionsMap[key].push(variant.option3);
+        Shopify.optionsMap[key] = Shopify.uniq(Shopify.optionsMap[key]);
+      }
+    }
+  } // Update options right away.
+
+
+  Shopify.updateOptionsInSelector(0, parent);
+  if (product.options.length > 1) Shopify.updateOptionsInSelector(1, parent);
+  if (product.options.length === 3) Shopify.updateOptionsInSelector(2, parent); // When there is an update in the first dropdown.
+
+  $(parent + " .single-option-selector:eq(0)").change(function () {
+    Shopify.updateOptionsInSelector(1, parent);
+    if (product.options.length === 3) Shopify.updateOptionsInSelector(2, parent);
+    return true;
+  }); // When there is an update in the second dropdown.
+
+  $(parent + " .single-option-selector:eq(1)").change(function () {
+    if (product.options.length === 3) Shopify.updateOptionsInSelector(2, parent);
+    return true;
+  });
+};
+
+$(document).on('shopify:block:select', function (e) {
+  var blockId = e.detail.blockId;
+  var $parentSection = $('#shopify-section-' + e.detail.sectionId);
+
+  if ($parentSection.hasClass('shopify-section--page-details-template')) {
+    sliderBlock.select(blockId, $parentSection);
+  }
+});
+$(document).on('shopify:block:load', function (e) {
+  var blockId = e.detail.blockId;
+  var $parentSection = $('#shopify-section-' + e.detail.sectionId);
+
+  if ($parentSection.hasClass('shopify-section--page-details-template')) {
+    sliderBlock.select(blockId, $parentSection);
+  }
+});
+$(document).on('shopify:block:deselect', function (e) {
+  var $parentSection = $('#shopify-section-' + e.detail.sectionId);
+
+  if ($parentSection.hasClass('shopify-section--slideshow') || $parentSection.hasClass('shopify-section--testimonials')) {
+    sliderBlock.deselect($parentSection);
+  }
+});
+$(document).on('shopify:section:load', function (e) {
+  //Load language/currency switchers
+  window.utilities.enableDisclosure();
+
+  if (window.Shopify.theme_settings.newsletter_popup) {
+    newsletter_popup.init();
+  } // Call methods based on section classes
+
+
+  var $parentSection = $('#shopify-section-' + e.detail.sectionId);
+
+  if ($parentSection.hasClass('shopify-section--recommended-products')) {
+    window.product.loadProductRecommendations();
+  }
+
+  if ($parentSection.hasClass('shopify-section--map') || $parentSection.hasClass('shopify-section--page-contact-template') || $parentSection.hasClass('shopify-section--page-details-template') || $parentSection.hasClass('shopify-section--product-template')) {
+    window.map.init();
+    window.video.init();
+  }
+
+  if ($parentSection.hasClass('shopify-section--page-faq-template')) {
+    window.faqAccordion.init();
+  }
+
+  if ($parentSection.hasClass('shopify-section--page-details-template')) {
+    window.product.init();
+  }
+
+  if ($parentSection.hasClass('shopify-section--slideshow')) {
+    window.slideshow.init($parentSection);
+  }
+
+  if ($parentSection.hasClass('shopify-section--featured-product')) {
+    window.product.init();
+    window.product.initializeQuantityBox();
+    window.utils.initializeTabs();
+  }
+
+  if ($parentSection.hasClass('shopify-section--featured-collection')) {
+    window.collection.init();
+    window.product.init();
+    window.product.initializeQuantityBox();
+  }
+
+  if ($parentSection.hasClass('shopify-section--video')) {
+    window.video.init();
+  }
+
+  if ($parentSection.hasClass('shopify-section--product-template')) {
+    window.collection.init();
+    window.product.init();
+    window.product.initializeQuantityBox();
+    window.video.init();
+  }
+
+  if ($parentSection.hasClass('shopify-section--product-sidebar')) {
+    window.product.loadProductRecommendations();
+  }
+
+  if ($parentSection.hasClass('shopify-section--collection-template')) {
+    window.collection.init();
+    window.product.init();
+    window.product.initializeQuantityBox();
+  }
+
+  if ($parentSection.hasClass('shopify-section--search-template')) {
+    window.collection.init();
+  }
+
+  if ($parentSection.hasClass('shopify-section--header')) {
+    window.header.init();
+  }
+
+  if (window.Shopify.theme_settings.enable_autocomplete) {
+    searchAutocomplete.init();
+  }
+});
+$(document).on('shopify:section:unload', function (e) {
+  //Load language/currency switchers
+  window.utilities.unload();
+  var $target = $(e.target);
+  var $parentSection = $('#shopify-section-' + e.detail.sectionId);
+
+  if ($parentSection.hasClass('shopify-section--slideshow')) {
+    slideshow.unload($target);
+  }
+
+  if ($parentSection.hasClass('shopify-section--featured-product')) {
+    window.product.unload($target);
+    window.utils.unload($target);
+  }
+
+  if ($parentSection.hasClass('shopify-section--featured-collection')) {
+    window.collection.unload($target);
+  }
+
+  if ($parentSection.hasClass('shopify-section--product-template')) {
+    window.product.unload($target);
+  }
+
+  if ($parentSection.hasClass('shopify-section--page-faq-template')) {
+    window.faqAccordion.unload($target);
+  }
+
+  if ($parentSection.hasClass('shopify-section--collection-template')) {
+    window.collection.unload($target);
+  }
+});
+$(document).on('shopify:section:select', function (e) {
+  var $parentSection = $('#shopify-section-' + e.detail.sectionId);
+});
+$(document).on('shopify:section:deselect', function (e) {
+  var $parentSection = $('#shopify-section-' + e.detail.sectionId);
+});
+}();
+/******/ })()
+;

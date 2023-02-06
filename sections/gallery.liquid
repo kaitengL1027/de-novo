@@ -1,0 +1,311 @@
+{% comment %}
+  ** Gallery - dynamic **
+  - Draggable section
+  - Uses blocks
+{% endcomment %}
+
+{% comment %}
+  Content settings
+{% endcomment %}
+{%- assign title = section.settings.title -%}
+{%- assign blocks = section.blocks -%}
+{% comment %}
+  End content settings
+{% endcomment %}
+<section class="section {% if section.settings.wide_display == true %}is-width-wide has-no-side-gutter{% endif %}">
+  <div class="container">
+    <div class="gallery__heading one-whole column">
+      {% if title != blank %}
+        <h2 class="section-header home text-align--center">{{ title }}</h2>
+      {% endif %}
+    </div>
+
+    {% if blocks.size > 0 %}
+      {% for block in blocks %}
+        {% comment %}
+          Content settings
+        {% endcomment %}
+        {%- assign image = block.settings.image -%}
+        {%- assign page = block.settings.page -%}
+        {%- assign subheading = block.settings.page_subheading -%}
+        {% comment %}
+          End content settings
+        {% endcomment %}
+
+        <div
+          class="gallery__item {% render 'column-width', value: section.settings.images_per_row %} column medium-down--one-whole"
+          {{ block.shopify_attributes }}
+        >
+          {% if section.settings.square == true %}
+            <div class="gallery__square-image">
+              <div class="gallery__square-image-inner">
+                {% if image != blank %}
+                  <a
+                    href="{% if page != blank %}{{ page.url }}{% else %}#{% endif %}"
+                    data-fancybox="{{ section.id }}"
+                    data-src="{{ image | img_url: '2000x' }}"
+                    class="gallery gallery-{{ section.id }} {% if section.settings.select_layout == 'standard' %}add-padding{% endif %}"
+                    rel="gallery"
+                  >
+                    {% render 'image-element', image: image, alt: image.alt, stretch_width: true %}
+                  </a>
+                {% else %}
+                  {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+                {% endif %}
+              </div>
+              <div class="gallery__square-image-overlay"></div>
+              <div class="gallery__square-image-content-container">
+                <div class="gallery__square-image-content">
+                  <div class="gallery__square-image-title">
+                    <p>
+                      {% if page != blank %}
+                        {% if page.title != blank %}
+                          {{ page.title }}
+                        {% endif %}
+                      {% endif %}
+                    </p>
+                  </div>
+                  <div class="gallery__square-image-divider">
+                    <div class="gallery__square-image-divider-container">
+                      <span class="gallery__square-image-divider-default"></span>
+                      <span class="gallery__square-image-divider-hover"></span>
+                    </div>
+                  </div>
+                  <div class="gallery__square-image-subheading">
+                    {% if subheading != blank %}
+                      <p>
+                        {{ subheading }}
+                      </p>
+                    {% else %}
+                      <p>
+                        {{ page.content }}
+                      </p>
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+              <a class="gallery__square-link" href="{% if page != blank %}{{ page.url }}{% else %}#{% endif %}"> </a>
+            </div>
+          {% else %}
+            <div class="gallery__image">
+              {% if image != blank %}
+                <a
+                  href="javascript:;"
+                  data-fancybox="{{ section.id }}"
+                  data-src="{{ image | img_url: '2000x' }}"
+                  class="gallery gallery-{{ section.id }} {% if section.settings.select_layout == 'standard' %}add-padding{% endif %}"
+                  rel="gallery"
+                >
+                  {% render 'image-element', image: image, alt: image.alt, stretch_width: true %}
+                </a>
+              {% else %}
+                {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+              {% endif %}
+            </div>
+          {% endif %}
+        </div>
+      {% endfor %}
+    {% endif %}
+  </div>
+</section>
+
+<style>
+  .gallery__square-link {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+  }
+  .gallery__square-image-title {
+    color: {{ section.settings.text_color }};
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .gallery__square-image:hover .gallery__square-image-title {
+    color: {{ section.settings.text_hover_color }};
+  }
+  .gallery__square-image:hover .gallery__square-image-subheading {
+    color: {{ section.settings.text_hover_color }};
+  }
+  .gallery__square-image-title p {
+    text-align: center;
+  }
+  .gallery__square-image-subheading {
+    color: {{ section.settings.text_color }};
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .gallery__square-image-subheading p {
+    text-align: center;
+  }
+  .gallery__square-image-divider {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .gallery__square-image-divider-container {
+    width: 100%;
+    position: relative;
+  }
+  .gallery__square-image-divider-default {
+    position: absolute;
+    display: block;
+    left: 0;
+    top: 100%;
+    margin: 0 auto;
+    height: 1px;
+    background-color: {{ section.settings.text_color }};
+    width: 100%;
+  }
+  .gallery__square-image-divider-hover {
+    position: absolute;
+    display: {% if section.settings.animation == false %}none{% else %}block{% endif %};
+    left: 0;
+    right: 0;
+    top: 100%;
+    margin: 0 auto;
+    height: 1px;
+    background-color: {{ section.settings.text_hover_color }};
+    width: 0%;
+    transition: width 0.5s ease;
+  }
+  .gallery__square-image:hover .gallery__square-image-divider-default {
+    display: {% if section.settings.animation == true %}none{% endif %};
+    background-color: {{ section.settings.text_hover_color }};
+  }
+  .gallery__square-image:hover .gallery__square-image-divider-hover {
+    width: 100%;
+    display: {% if section.settings.animation == false %}none{% endif %};
+  }
+  @media only screen and (min-width: 500px) and (max-width: 797px) {
+    .gallery__square-image-title p {
+      font-size: 22px;
+    }
+    .gallery__square-image-subheading p {
+      font-size: 22px;
+    }
+  }
+  @media only screen and (min-width: 798px) {
+    .gallery__square-image-title {
+      padding-left: {% if section.settings.images_per_row == 2 %}15px{% elsif section.settings.images_per_row == 3 %}10px{% else %}5px{% endif %};
+      padding-right: {% if section.settings.images_per_row == 2 %}15px{% elsif section.settings.images_per_row == 3 %}10px{% else %}5px{% endif %};
+    }
+    .gallery__square-image-subheading {
+      padding-left: {% if section.settings.images_per_row == 2 %}15px{% elsif section.settings.images_per_row == 3 %}10px{% else %}5px{% endif %};
+      padding-right: {% if section.settings.images_per_row == 2 %}15px{% elsif section.settings.images_per_row == 3 %}10px{% else %}5px{% endif %};
+    }
+    .gallery__square-image-title p {
+      font-size: {% if section.settings.images_per_row == 2 %}25px{% elsif section.settings.images_per_row == 3 %}20px{% else %}17px{% endif %};
+    }
+    .gallery__square-image-subheading p {
+      font-size: {% if section.settings.images_per_row == 2 %}25px{% elsif section.settings.images_per_row == 3 %}20px{% else %}17px{% endif %};
+    }
+    .gallery__square-image-divider {
+      padding-left: {% if section.settings.images_per_row == 2 %}15px{% elsif section.settings.images_per_row == 3 %}10px{% else %}5px{% endif %};
+      padding-right: {% if section.settings.images_per_row == 2 %}15px{% elsif section.settings.images_per_row == 3 %}10px{% else %}5px{% endif %};
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Gallery",
+  "class": "shopify-section--gallery",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "wide_display",
+      "label": "Wide display",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Gallery"
+    },
+    {
+      "type": "range",
+      "id": "images_per_row",
+      "label": "Images per row",
+      "min": 2,
+      "max": 4,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "checkbox",
+      "id": "square",
+      "label": "Square Images",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "animation",
+      "label": "Animation",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "text_hover_color",
+      "label": "Text Hover Color",
+      "default": "#08210c"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "800 x 800px recommended"
+        },
+        {
+          "type": "page",
+          "id": "page",
+          "label": "Page"
+        },
+        {
+          "type": "text",
+          "id": "page_subheading",
+          "label": "Page Subheading"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Gallery",
+      "category": "Image",
+      "blocks": [
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

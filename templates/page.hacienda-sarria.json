@@ -1,0 +1,143 @@
+{
+  "sections": {
+    "main": {
+      "type": "portfolio",
+      "blocks": {
+        "f21d4c73-1af7-4401-95e8-5ea6537426fd": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/innayas_haciendasarriawedding_2-413_22d2c647-78cb-421d-85ce-83ebc2c9b518.jpg"
+          }
+        },
+        "bc862532-bddb-416b-9101-350e33593864": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/innayas_haciendasarriawedding_2-23.jpg"
+          }
+        },
+        "669892c5-d8b5-4011-a9c9-9635596b181c": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/innayas_haciendasarriawedding_2-152.jpg"
+          }
+        },
+        "7624ddcf-04c9-486e-92d4-3cdaddadcfe6": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/innayas_haciendasarriawedding_2-400.jpg"
+          }
+        },
+        "6d277f7d-cdaa-42a6-9dd1-98251cc6e856": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/innayas_haciendasarriawedding_2-395.jpg"
+          }
+        },
+        "be9079e1-6699-405c-9e50-8196a17fcafe": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/innayas_haciendasarriawedding_2-8.jpg"
+          }
+        },
+        "2bd79ebe-96a8-491f-ad3b-dd798b5262fe": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/innayas_haciendasarriawedding_2-408.jpg"
+          }
+        },
+        "009b2fff-50c4-437f-b598-70c63196575e": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/innayas_haciendasarriawedding_2-16.jpg"
+          }
+        },
+        "c98d13f4-d5f1-482b-b8c0-67dbaba1ab67": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/innayas_haciendasarriawedding_2-412.jpg"
+          }
+        },
+        "ba12539c-b672-4522-a83e-3935dbe25533": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/innayas_haciendasarriawedding_2-399.jpg"
+          }
+        },
+        "67995155-d6aa-43a1-bfd1-8e52d64ce312": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/innayas_haciendasarriawedding_2-153.jpg"
+          }
+        },
+        "366a3efe-5c52-43e0-a817-5d07eb54ee5d": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/innayas_haciendasarriawedding_2-68.jpg"
+          }
+        },
+        "05a8acaa-9c8b-4dce-affb-dd8a85b56456": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/innayas_haciendasarriawedding_2-401.jpg"
+          }
+        },
+        "b721453c-1a4a-4945-abdf-5510787440ce": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/innayas_haciendasarriawedding_2-397_de0dc74f-6560-4fbb-9e67-985432eb80e1.jpg"
+          }
+        },
+        "a9afbb92-9ed2-4d3f-b85d-2e58ef75ec91": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/innayas_haciendasarriawedding_2-73.jpg"
+          }
+        },
+        "c8f4cdeb-3bf3-48fa-ab22-16e4d0b5b4f0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/innayas_haciendasarriawedding_2-390.jpg"
+          }
+        },
+        "bdb4daec-503d-4cb3-b340-ad3002ec39ad": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/innayas_haciendasarriawedding_2-15.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "f21d4c73-1af7-4401-95e8-5ea6537426fd",
+        "bc862532-bddb-416b-9101-350e33593864",
+        "669892c5-d8b5-4011-a9c9-9635596b181c",
+        "7624ddcf-04c9-486e-92d4-3cdaddadcfe6",
+        "6d277f7d-cdaa-42a6-9dd1-98251cc6e856",
+        "be9079e1-6699-405c-9e50-8196a17fcafe",
+        "2bd79ebe-96a8-491f-ad3b-dd798b5262fe",
+        "009b2fff-50c4-437f-b598-70c63196575e",
+        "c98d13f4-d5f1-482b-b8c0-67dbaba1ab67",
+        "ba12539c-b672-4522-a83e-3935dbe25533",
+        "67995155-d6aa-43a1-bfd1-8e52d64ce312",
+        "366a3efe-5c52-43e0-a817-5d07eb54ee5d",
+        "05a8acaa-9c8b-4dce-affb-dd8a85b56456",
+        "b721453c-1a4a-4945-abdf-5510787440ce",
+        "a9afbb92-9ed2-4d3f-b85d-2e58ef75ec91",
+        "c8f4cdeb-3bf3-48fa-ab22-16e4d0b5b4f0",
+        "bdb4daec-503d-4cb3-b340-ad3002ec39ad"
+      ],
+      "settings": {
+        "title": "",
+        "photographer": "Innayas",
+        "photographer_url": "http:\/\/www.innayas.com\/contact\/?fbclid=IwAR1Zrba5_NmDxWeiRVoGNHWkqDtphi3YbvcBVcRyyJuDc0BPpBl0kuxQAoU",
+        "featured_on": "",
+        "featured_on_url": "",
+        "title_color": "#707c17",
+        "text_hover_color": "#45891c",
+        "navigator_color": "#003872"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

@@ -1,0 +1,150 @@
+{
+  "sections": {
+    "main": {
+      "type": "portfolio",
+      "blocks": {
+        "f21d4c73-1af7-4401-95e8-5ea6537426fd": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Shotlife_Studio_Grace_Glamour_0073_6fe524b5-ee94-450e-8a20-39320c157766.jpg"
+          }
+        },
+        "bc862532-bddb-416b-9101-350e33593864": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Shotlife_Studio_Grace_Glamour_0096.jpg"
+          }
+        },
+        "669892c5-d8b5-4011-a9c9-9635596b181c": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Shotlife_Studio_Grace_Glamour_0094_b16e3f47-c3ed-44c3-afd1-3b80209248d5.jpg"
+          }
+        },
+        "7624ddcf-04c9-486e-92d4-3cdaddadcfe6": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Shotlife_Studio_Grace_Glamour_0089.jpg"
+          }
+        },
+        "6d277f7d-cdaa-42a6-9dd1-98251cc6e856": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Shotlife_Studio_Grace_Glamour_0097_46e1a235-d8a8-4eab-a1f3-25077a422af8.jpg"
+          }
+        },
+        "be9079e1-6699-405c-9e50-8196a17fcafe": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Shotlife_Studio_Grace_Glamour_0066.jpg"
+          }
+        },
+        "2bd79ebe-96a8-491f-ad3b-dd798b5262fe": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Shotlife_Studio_Grace_Glamour_0108.jpg"
+          }
+        },
+        "009b2fff-50c4-437f-b598-70c63196575e": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Shotlife_Studio_Grace_Glamour_0130.jpg"
+          }
+        },
+        "8ba018c8-76f9-4973-a6ea-28e7634d56db": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Shotlife_Studio_Grace_Glamour_0174.jpg"
+          }
+        },
+        "adfeafe5-65da-432e-a0be-9bd539974f07": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Shotlife_Studio_Grace_Glamour_0244.jpg"
+          }
+        },
+        "bd3fbdb5-3420-4cb6-b702-18d080232032": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Shotlife_Studio_Grace_Glamour_0122.jpg"
+          }
+        },
+        "9c815ba1-8a8c-47bf-8923-2ddca48fc400": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Shotlife_Studio_Grace_Glamour_0180.jpg"
+          }
+        },
+        "c49686d9-d813-47df-9006-741b8142c2f9": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Shotlife_Studio_Grace_Glamour_0178.jpg"
+          }
+        },
+        "13dffbc6-c3cb-4a18-a4c2-f5a5c6a1240d": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Shotlife_Studio_Grace_Glamour_0105.jpg"
+          }
+        },
+        "e1924bcf-b16e-4344-8a26-86f2695ad04f": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Shotlife_Studio_Grace_Glamour_0079_492a9b72-322f-45f6-8f71-ecda177a4edd.jpg"
+          }
+        },
+        "251260c0-85db-4ceb-a4af-53feae5d068a": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Shotlife_Studio_Grace_Glamour_0182.jpg"
+          }
+        },
+        "c6b6799b-cfa2-401c-8663-d296408f457b": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Shotlife_Studio_Grace_Glamour_0102.jpg"
+          }
+        },
+        "491e1e46-2e0d-4409-b872-23c229939c8c": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Shotlife_Studio_Grace_Glamour_0179.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "f21d4c73-1af7-4401-95e8-5ea6537426fd",
+        "bc862532-bddb-416b-9101-350e33593864",
+        "669892c5-d8b5-4011-a9c9-9635596b181c",
+        "7624ddcf-04c9-486e-92d4-3cdaddadcfe6",
+        "6d277f7d-cdaa-42a6-9dd1-98251cc6e856",
+        "be9079e1-6699-405c-9e50-8196a17fcafe",
+        "2bd79ebe-96a8-491f-ad3b-dd798b5262fe",
+        "009b2fff-50c4-437f-b598-70c63196575e",
+        "8ba018c8-76f9-4973-a6ea-28e7634d56db",
+        "adfeafe5-65da-432e-a0be-9bd539974f07",
+        "bd3fbdb5-3420-4cb6-b702-18d080232032",
+        "9c815ba1-8a8c-47bf-8923-2ddca48fc400",
+        "c49686d9-d813-47df-9006-741b8142c2f9",
+        "13dffbc6-c3cb-4a18-a4c2-f5a5c6a1240d",
+        "e1924bcf-b16e-4344-8a26-86f2695ad04f",
+        "251260c0-85db-4ceb-a4af-53feae5d068a",
+        "c6b6799b-cfa2-401c-8663-d296408f457b",
+        "491e1e46-2e0d-4409-b872-23c229939c8c"
+      ],
+      "settings": {
+        "title": "",
+        "photographer": "Shotlifestudio",
+        "photographer_url": "https:\/\/shotlifestudio.com\/",
+        "featured_on": "Wedluxe",
+        "featured_on_url": "https:\/\/www.instagram.com\/p\/CRrQ1siLOkH\/?igshid=Zjc2ZTc4Nzk=",
+        "title_color": "#707c17",
+        "text_hover_color": "#45891c",
+        "navigator_color": "#003872"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

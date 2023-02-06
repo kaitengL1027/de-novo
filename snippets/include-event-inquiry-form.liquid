@@ -1,0 +1,238 @@
+{% comment %} Assign object as block or section {% endcomment %}
+{% if type == 'block' %}
+  {%- assign object = block -%}
+{% else %}
+  {%- assign object = section -%}
+{% endif %}
+
+{%- assign form_position = object.settings.contact_text_position -%}
+{%- assign text_alignment = object.settings.contact_text_alignment -%}
+{%- assign heading = object.settings.contact_heading -%}
+{%- assign subheading = object.settings.contact_subheading -%}
+{%- assign text_content = object.settings.contact_content -%}
+{%- assign image = object.settings.contact_image -%}
+
+<section class="section">
+  <div class="container is-align-center
+              {% if image != blank or subheading != blank or text_content != blank %}
+                is-flex-{{ form_position }} is-flex-{{ image_position }}
+              {% else %}
+                is-justify-center
+              {% endif %}">
+    {% if heading != blank %}
+      <div class="one-whole column">
+        <h2 class="contact__form-heading title center">
+          {{ heading }}
+        </h2>
+        <div class="feature_divider"></div>
+      </div>
+    {% endif %}
+
+    {% if image != blank or subheading != blank or text_content != blank %}
+      <div class="contact__form-content one-half column medium-down--one-whole text-align-{{ text_alignment }}">
+        {% if image != blank %}
+          {% render 'image-element',
+                  image: image,
+                  alt: image.alt,
+                  additional_classes: 'contact__form-image'
+          %}
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <div class="contact__form-form one-half column medium-down--one-whole">
+      {% if subheading != blank %}
+      <h3 class="contact__form-subheading">
+        {{ subheading }}
+      </h3>
+      {% endif %}
+
+      {% if text_content != blank %}
+      <div class="contact__form-text">
+        {{ text_content }}
+      </div>
+      {% endif %}
+      {% form 'contact', class: 'is-flex is-flex-wrap' %}
+        {% if form.posted_successfully? %}
+          <p class="quote">
+            {{ 'contact.form.post_success' | t }}
+          </p>
+        {% endif %}
+
+        {% if form.errors %}
+          <p class="quote">
+            {{ 'general.forms.post_error' | t }}
+          </p>
+
+        {% assign message = 'contact.form.message' | t %}
+          <ul class="center">
+            {% for field in form.errors %}
+              {% if field == 'form' %}
+                <li>
+                  {{ form.errors.messages[field] }}
+                </li>
+              {% else %}
+                <li>
+                  {% assign field_name = field | replace: 'body', message %}
+                  {{ 'general.forms.post_field_error_html' | t: field: field_name, error: form.errors.messages[field] }}
+                </li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        {% endif %}
+
+        <div class="contact__form-name">
+          {%- assign name_attr = 'contact.form.name' | handle -%}
+
+          <label for="contactFormName">
+            {{ 'contact.form.name' | t }} <span class="red">*</span>
+          </label>
+
+          <input type="text"
+                id="contactFormName"
+                name="contact[{{ name_attr }}]"
+                placeholder="{{ 'contact.form.name' | t }}"
+                autocapitalize="words"
+                value="{% if form[name_attr] %}{{ form[name_attr] }}{% elsif customer %}{{ customer.name }}{% endif %}"
+                required="required">
+        </div>
+
+        <div class="contact__form-phone">
+          <label for="contactFormPhone">
+            {{ 'contact.form.phone' | t }} <span class="red">*</span>
+          </label>
+
+          <input type="text"
+                id="contactFormPhone"
+                name="contact[phone]"
+                placeholder="{{ 'contact.form.phone' | t }}"
+                autocorrect="off"
+                autocapitalize="off"
+                value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}"
+                required="required">
+        </div>
+
+        <div class="contact__form-email" style="flex-basis: 100%;">
+          <label for="contactFormEmail">
+            {{ 'contact.form.email' | t }} <span class="red">*</span>
+          </label>
+
+          <input type="email"
+                id="contactFormEmail"
+                name="contact[email]"
+                placeholder="{{ 'contact.form.email' | t }}"
+                autocorrect="off"
+                autocapitalize="off"
+                value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
+                required="required">
+        </div>
+
+        <div class="contact__form-date" style="flex-basis: 48%; padding-right: 4%;">
+          <label for="contactFormDate">Event Date<span class="red">*</span>
+          </label>
+
+          <input type="date"
+                id="contactFormDate"
+                name="contact[date]"
+                placeholder="{{ 'contact.form.date' | t }}"
+                autocorrect="off"
+                autocapitalize="off"
+                value="{% if form.date %}{{ form.date }}{% endif %}"
+                required="required">
+        </div>
+
+        <div class="contact__form-time" style="flex-basis: 48%;">
+          <label for="contactFormTime">Event Time<span class="red">*</span>
+          </label>
+
+          <input type="time"
+                id="contactFormTime"
+                name="contact[time]"
+                placeholder="{{ 'contact.form.time' | t }}"
+                autocorrect="off"
+                autocapitalize="off"
+                value="{% if form.time %}{{ form.time }}{% endif %}"
+                required="required">
+        </div>
+
+        <div class="contact__form-location" style="flex-basis: 48%; padding-right: 4%;">
+          <label for="contactFormELocation">Event Location<span class="red">*</span>
+          </label>
+
+          <input type="text"
+                id="contactFormLocation"
+                name="contact[location]"
+                autocorrect="off"
+                autocapitalize="off"
+                value="{% if form.location %}{{ form.location }}{% endif %}"
+                required="required">
+        </div>
+
+      <div class="contact__form-type" style="flex-basis: 48%;">
+        <label for="contactFormType">Event Type<span class="red">*</span>
+        </label>
+
+        <input type="text"
+               id="contactFormType"
+               name="contact[type]"
+               autocorrect="off"
+               autocapitalize="off"
+               value="{% if form.type %}{{ form.type }}{% endif %}"
+               required="required">
+      </div>
+
+        <div class="contact__form-number-of-guest" style="flex-basis: 48%; padding-right: 4%;">
+          <label for="contactFormNumberOfGuests"># Of Guests<span class="red">*</span>
+          </label>
+
+          <input type="text"
+                id="contactFormNumberOfGuests"
+                name="contact[number-of-guests]"
+                autocorrect="off"
+                autocapitalize="off"
+                value="{% if form.number-of-guests %}{{ form.number-of-guests }}{% endif %}"
+                required="required">
+        </div>
+
+        <div class="contact__form-color" style="flex-basis: 48%;">
+          <label for="contactFormColor">Color Theme<span class="red">*</span>
+          </label>
+
+          <input type="text"
+                id="contactFormColor"
+                name="contact[color]"
+                autocorrect="off"
+                autocapitalize="off"
+                value="{% if form.color %}{{ form.color }}{% endif %}"
+                required="required">
+        </div>
+
+      <div class="contact__form-budget" style="flex-basis: 100%">
+        <label for="contactFormBudget">Estimated Floral Budget<span class="red">*</span>
+        </label>
+        <input type="text"
+               id="contactFormBudget"
+               name="contact[budget]"
+               autocorrect="off"
+               autocapitalize="off"
+               value="{% if form.budget %}{{ form.budget }}{% endif %}"
+               required="required">
+      </div>
+
+        <div class="contact__form-message">
+          <label for="contactFormMessage">
+            {{ 'contact.form.message' | t }} <span class="red">*</span>
+          </label>
+
+          <textarea rows="5"
+                    id="contactFormMessage"
+                    name="contact[body]"
+                    placeholder="{{ 'contact.form.message' | t }}"
+                    required="required"></textarea>
+
+          <input type="submit" class="submit action_button" value="{{ 'contact.form.send' | t }}" />
+        </div>
+      {% endform %}
+    </div>
+  </div>
+</section>

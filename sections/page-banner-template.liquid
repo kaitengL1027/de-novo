@@ -1,0 +1,40 @@
+<section class="section">
+  <div class="container">
+    <div class="one-whole column">
+      <h1 class="banner_title">{{ page.title }}</h1>
+    </div>
+  </div>
+</section>
+
+{% if section.settings.image != blank %}
+  {% render 'image-element',
+          image: section.settings.image,
+          alt: section.settings.image.alt,
+          stretch_width: true
+  %}
+{% else %}
+  {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg placeholder-svg--banner' }}
+{% endif %}
+
+<section class="section">
+  <div class="container">
+    <div class="one-whole column">
+      {{ page.content }}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Banner",
+    "class": "shopify-section--page-banner-template",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image",
+        "info": "1600 x 600px recommended"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,394 @@
+{%- assign blocks = section.blocks -%}
+
+<section class="section portfolio__MainContainer">
+  <div class="container portfolio__SubContainer">
+    <div class="one-whole column portfolio__SwiperContainer">
+      {% if blocks.size > 0 %}
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            {% for block in blocks %}
+              <div class="swiper-slide portfolio__SwiperSlide {% if block.type == 'video' %}video-slide{% endif %}" {{ block.shopify_attributes }}>
+                {% case block.type %}
+                  {% when 'video' %}
+                    <div class="portfolio__Video">
+                      {{ block.settings.video | media_tag }}
+                    </div>
+                  {% when 'image' %}
+                    {%- assign image = block.settings.image -%}
+                    {% if image != blank %}
+                      {% render 'image-element', image: image, alt: image.alt, stretch_width: true %}
+                    {% endif %}
+                {% endcase %}
+              </div>
+            {% endfor %}
+          </div>
+          <div class="swiper-button-next navigation-right"></div>
+          <div class="swiper-button-prev navigation-left"></div>
+        </div>
+        <div class="swiper gallery-thumbs">
+          <div class="swiper-wrapper">
+            {% for block in blocks %}
+              <div class="swiper-slide portfolio__Thumb" {{ block.shopify_attributes }}>
+                {% case block.type %}
+                  {% when 'video' %}
+                    {%- assign videoThumb = block.settings.video.preview_image -%}
+                    {%- assign videoAlt = block.settings.video.alt -%}
+                    {% if videoThumb != blank %}
+                      {% render 'image-element', image: videoThumb, alt: videoAlt, stretch_width: true %}
+                    {% else %}
+                      <div class="portfolio__VideoThumb">
+                      </div>
+                    {% endif %}
+                  {% when 'image' %}
+                    {%- assign thumb = block.settings.image -%}
+                    {% if thumb != blank %}
+                      {% render 'image-element', image: thumb, alt: thumb.alt, stretch_width: true %}
+                    {% endif %}
+                {% endcase %}
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      {% endif %}
+    </div>
+    <div class="one-whole column portfolio__Divider"></div>
+    <div class="one-whole column portfolio__ContentContainer">
+      <div class="portfolio__TitleContainer">
+        <h2 class="portfolio__ContentTitle">
+          {% if section.settings.title != blank %}
+            {{ section.settings.title }}
+          {% else %}
+            {{ page.title }}
+          {% endif %}
+        </h2>
+      </div>
+      <div class="portfolio__DetailContainer">
+        {% if section.settings.planner_url != blank %}
+          {% if section.settings.planner != blank %}
+            <p class="portfolio__ContentPlanner">
+              Planner: 
+              <a class="link" href="{{ section.settings.planner_url }}">
+                {{ section.settings.planner }}
+              </a>
+            </p>
+          {% endif %}
+        {% else %}
+          {% if section.settings.planner != blank %}
+            <p class="portfolio__ContentPlanner">
+              Planner: {{ section.settings.planner }}
+            </p>
+          {% endif %}
+        {% endif %}
+        {% if section.settings.photographer_url != blank %}
+          {% if section.settings.photographer != blank %}
+            <p class="portfolio__ContentPhotographer">
+              Photos: 
+              <a class="link" href="{{ section.settings.photographer_url }}">
+                {{ section.settings.photographer }}
+              </a>
+            </p>
+          {% endif %}
+        {% else %}
+          {% if section.settings.photographer != blank %}
+            <p class="portfolio__ContentPhotographer">
+              Photos: {{ section.settings.photographer }}
+            </p>
+          {% endif %}
+        {% endif %}
+        {% if section.settings.featured_on_url != blank %}
+          {% if section.settings.featured_on != blank %}
+            <p class='portfolio__ContentFeaturedOn'>
+              Featured on: 
+              <a class="link" href="{{ section.settings.featured_on_url }}">
+                {{ section.settings.featured_on }}
+              </a>
+            </p>
+          {% endif %}
+        {% else %}
+          {% if section.settings.featured_on != blank %}
+            <p class='portfolio__ContentFeaturedOn'>
+              Featured on: {{ section.settings.featured_on }}
+            </p>
+          {% endif %}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  window.addEventListener('load', function () {
+    var thumbs = new Swiper('.gallery-thumbs', {
+      slidesPerView: 'auto',
+      spaceBetween: 10,
+      centeredSlides: true,
+      freeMode: true,
+      watchSlidesProgress: true,
+      loop: true,
+    });
+
+    var swiper = new Swiper('.mySwiper', {
+      slidesPerView: 1,
+      centeredSlides: true,
+      loop: true,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      thumbs: {
+        swiper: thumbs,
+      },
+      on: {
+        transitionStart: function(){
+          let videos = document.querySelectorAll('video');
+    
+          if (videos.length > 0) {
+            Array.prototype.forEach.call(videos, function(video){
+              video.pause();
+            });
+          }
+        },
+        transitionEnd: function(){
+          let activeIndex = this.activeIndex;
+          let activeSlide = document.getElementsByClassName('swiper-slide')[activeIndex];
+          let activeSlideVideo = activeSlide.getElementsByTagName('video')[0];
+          if (activeSlideVideo && {{ section.settings.video_swipe_autoplay | json }}) {
+            activeSlideVideo.play();
+          }
+        }
+      }
+    });
+
+    if (!{{ section.settings.video_controls | json }}) {
+      //For Firefox we have to handle it in JavaScript 
+      let vids = $("video");
+
+      $.each(vids, function() { // Loop though all Video tags and set Controls as false
+        this.controls = false; 
+      }); 
+
+      $("video").click(function() {
+        if (this.paused) {
+          this.play();
+        } else {
+          this.pause();
+        }
+      });
+    }
+  });
+</script>
+
+<style>
+  .swiper.mySwiper {
+    height: 80vh;
+  }
+  .swiper.gallery-thumbs {
+    width: 100%;
+    padding: 0;
+    overflow: hidden;
+    margin-top: 30px;
+  }
+  .swiper-slide.portfolio__Thumb {
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    overflow: hidden;
+    opacity: .4;
+  }
+  .swiper-slide.portfolio__Thumb .image-element__wrap {
+    height: 100%;
+  }
+  .swiper-slide-thumb-active.portfolio__Thumb {
+    opacity: 1;
+  }
+  .swiper-slide.portfolio__Thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .swiper-slide.portfolio__SwiperSlide .image-element__wrap {
+    height: 100%;
+  }
+  .swiper-slide.portfolio__SwiperSlide img {
+    height: 100%;
+    object-fit: contain;
+    width: 100%;
+  }
+  .swiper-slide.portfolio__SwiperSlide.video-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .portfolio__Divider {
+    border-bottom: 1px solid #08210c;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    width: 100%;
+    opacity: 0.3;
+  }
+  .portfolio__ContentContainer {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+  .portfolio__DetailContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    flex-wrap: nowrap;
+  }
+  .swiper-button-next.navigation-right, .swiper-button-prev.navigation-left {
+    padding: 5px;
+  }
+  .swiper-button-next.navigation-right:hover, .swiper-button-prev.navigation-left:hover {
+    background-color: rgba(0,0,0,0.1);
+  }
+  .swiper-button-next.navigation-right:after, .swiper-button-prev.navigation-left:after {
+    color: {{ section.settings.navigator_color }};
+    opacity: 0.3;
+  }
+  .swiper-button-next.navigation-right:hover:after, .swiper-button-prev.navigation-left:hover:after {
+    opacity: 0.7;
+  }
+  .portfolio__TitleContainer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    max-width: 800px;
+  }
+  .portfolio__ContentTitle {
+    color: {{ section.settings.title_color }};
+    margin: 0;
+    margin-bottom: 20px;
+    text-align: end;
+    border: none;
+  }
+  .portfolio__ContentPhotographer {
+    margin-bottom: 5px;
+  }
+  .portfolio__ContentPlanner {
+    margin-bottom: 5px;
+  }
+  .portfolio__MainContainer .link:hover {
+    color: {{ section.settings.text_hover_color }};
+  }
+  .portfolio__Video {
+    width: 100%;
+  }
+  .portfolio__Video video {
+    height: 100%;
+    width: 100%;
+  }
+  .portfolio__VideoThumb {
+    height: 100%;
+    width: 100%;
+    background-color: black;
+  }
+  {% unless section.settings.video_controls %}
+    video::-webkit-media-controls {
+      display: none;
+    }
+  {% endunless %}
+</style>
+
+{% schema %}
+{
+  "name": "Portfolio",
+  "class": "shopify-section--portfolio",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "planner",
+      "label": "Planner"
+    },
+    {
+      "type": "url",
+      "id": "planner_url",
+      "label": "Planner URL"
+    },
+    {
+      "type": "text",
+      "id": "photographer",
+      "label": "Photographer"
+    },
+    {
+      "type": "url",
+      "id": "photographer_url",
+      "label": "Photographer URL"
+    },
+    {
+      "type": "text",
+      "id": "featured_on",
+      "label": "Featured on"
+    },
+    {
+      "type": "url",
+      "id": "featured_on_url",
+      "label": "Featured on URL"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title Color",
+      "default": "#08210c"
+    },
+    {
+      "type": "color",
+      "id": "text_hover_color",
+      "label": "Text Hover Color",
+      "default": "#45891c"
+    },
+    {
+      "type": "color",
+      "id": "navigator_color",
+      "label": "Navigator Color",
+      "default": "#08210c"
+    },
+    {
+      "type": "checkbox",
+      "id": "video_controls",
+      "label": "Video Controls",
+      "default": true
+    }, 
+    {
+      "type": "checkbox", 
+      "id": "video_swipe_autoplay", 
+      "label": "Video Autoplay on Swipe", 
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "800 x 800px recommended"
+        }
+      ]
+    },
+    {
+      "type": "video",
+      "name": "Video",
+      "settings": [
+        {
+          "type": "video",
+          "id": "video",
+          "label": "Video",
+          "info": "Smaller than 50MB"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
