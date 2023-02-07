@@ -85,13 +85,17 @@
       ],
       "settings": {
         "title": "",
+        "planner": "Vividandvogue",
+        "planner_url": "https:\/\/instagram.com\/vividandvogue?igshid=Zjc2ZTc4Nzk=",
         "photographer": "Wreathandrosephotography",
         "photographer_url": "https:\/\/www.wreathandrosephotography.com\/",
         "featured_on": "Today's Bride",
         "featured_on_url": "https:\/\/todaysbride.ca\/articles\/matcha-made-in-heaven-39-green-wedding-ideas\/",
         "title_color": "#707c17",
         "text_hover_color": "#45891c",
-        "navigator_color": "#003872"
+        "navigator_color": "#003872",
+        "video_controls": true,
+        "video_swipe_autoplay": false
       }
     }
   },
