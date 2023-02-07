@@ -99,15 +99,17 @@
       ],
       "settings": {
         "title": "",
-        "planner": "",
-        "planner_url": "",
+        "planner": "Oweddingsandevents",
+        "planner_url": "https:\/\/instagram.com\/oweddingsandevents?igshid=Zjc2ZTc4Nzk=",
         "photographer": "Shotlifestudio",
         "photographer_url": "https:\/\/shotlifestudio.com\/",
         "featured_on": "Wedluxe",
         "featured_on_url": "https:\/\/wedluxe.com\/2019\/06\/04\/a-surreal-dream\/",
         "title_color": "#707c17",
         "text_hover_color": "#45891c",
-        "navigator_color": "#003872"
+        "navigator_color": "#003872",
+        "video_controls": true,
+        "video_swipe_autoplay": false
       }
     }
   },
