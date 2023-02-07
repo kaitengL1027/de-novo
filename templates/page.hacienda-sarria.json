@@ -104,6 +104,12 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/innayas_haciendasarriawedding_2-15.jpg"
           }
+        },
+        "66b37dcc-e5f0-4cec-a0fa-131f22028007": {
+          "type": "video",
+          "settings": {
+            "video": "shopify:\/\/files\/videos\/20190525 Christine and Andy decor_9cb76e9c-44a6-411b-a596-a80ae6423275.mov"
+          }
         }
       },
       "block_order": [
@@ -123,17 +129,22 @@
         "b721453c-1a4a-4945-abdf-5510787440ce",
         "a9afbb92-9ed2-4d3f-b85d-2e58ef75ec91",
         "c8f4cdeb-3bf3-48fa-ab22-16e4d0b5b4f0",
-        "bdb4daec-503d-4cb3-b340-ad3002ec39ad"
+        "bdb4daec-503d-4cb3-b340-ad3002ec39ad",
+        "66b37dcc-e5f0-4cec-a0fa-131f22028007"
       ],
       "settings": {
         "title": "",
+        "planner": "",
+        "planner_url": "",
         "photographer": "Innayas",
         "photographer_url": "http:\/\/www.innayas.com\/contact\/?fbclid=IwAR1Zrba5_NmDxWeiRVoGNHWkqDtphi3YbvcBVcRyyJuDc0BPpBl0kuxQAoU",
         "featured_on": "",
         "featured_on_url": "",
         "title_color": "#707c17",
         "text_hover_color": "#45891c",
-        "navigator_color": "#003872"
+        "navigator_color": "#003872",
+        "video_controls": true,
+        "video_swipe_autoplay": false
       }
     }
   },
