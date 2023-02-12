@@ -80,6 +80,18 @@
           "settings": {
             "video": "shopify:\/\/files\/videos\/20190525 Christine and Andy decor.mov"
           }
+        },
+        "acec3179-ad6c-47e7-b9c8-23b08f2d696f": {
+          "type": "video",
+          "settings": {
+            "video": "shopify:\/\/files\/videos\/202203281958 (1).mp4"
+          }
+        },
+        "8be66094-114f-4160-aada-928ee5fd72cc": {
+          "type": "video",
+          "settings": {
+            "video": "shopify:\/\/files\/videos\/1548678014007.mp4"
+          }
         }
       },
       "block_order": [
@@ -95,7 +107,9 @@
         "30f31ab8-9e11-4bbc-bab7-be0d10ac2eb9",
         "74d61093-5720-4c58-8e04-10faa41847ad",
         "ff0e7c92-5364-411d-81ae-54abb4a3cbb6",
-        "91f79e67-66db-420b-9f66-09b9dc3cc73d"
+        "91f79e67-66db-420b-9f66-09b9dc3cc73d",
+        "acec3179-ad6c-47e7-b9c8-23b08f2d696f",
+        "8be66094-114f-4160-aada-928ee5fd72cc"
       ],
       "settings": {
         "title": "",
