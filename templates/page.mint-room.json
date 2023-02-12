@@ -17,70 +17,60 @@
         },
         "669892c5-d8b5-4011-a9c9-9635596b181c": {
           "type": "image",
-          "disabled": true,
           "settings": {
             "image": "shopify:\/\/shop_images\/Shotlife_Studio_Surreal_Dream_Styled_Sho-74.jpg"
           }
         },
         "7624ddcf-04c9-486e-92d4-3cdaddadcfe6": {
           "type": "image",
-          "disabled": true,
           "settings": {
             "image": "shopify:\/\/shop_images\/Shotlife_Studio_Surreal_Dream_Styled_Sho-125.jpg"
           }
         },
         "6d277f7d-cdaa-42a6-9dd1-98251cc6e856": {
           "type": "image",
-          "disabled": true,
           "settings": {
             "image": "shopify:\/\/shop_images\/Shotlife_Studio_Surreal_Dream_Styled_Sho-128.jpg"
           }
         },
         "be9079e1-6699-405c-9e50-8196a17fcafe": {
           "type": "image",
-          "disabled": true,
           "settings": {
             "image": "shopify:\/\/shop_images\/Shotlife_Studio_Surreal_Dream_Styled_Sho-54_ffe15846-c6b2-4f37-ae54-33f20d50805d.jpg"
           }
         },
         "2bd79ebe-96a8-491f-ad3b-dd798b5262fe": {
           "type": "image",
-          "disabled": true,
           "settings": {
             "image": "shopify:\/\/shop_images\/Shotlife_Studio_Surreal_Dream_Styled_Sho-69.jpg"
           }
         },
         "009b2fff-50c4-437f-b598-70c63196575e": {
           "type": "image",
-          "disabled": true,
           "settings": {
             "image": "shopify:\/\/shop_images\/Shotlife_Studio_Surreal_Dream_Styled_Sho-84.jpg"
           }
         },
         "d3cd2125-63e1-49e5-b98c-85ecea0f401b": {
           "type": "image",
-          "disabled": true,
           "settings": {
             "image": "shopify:\/\/shop_images\/Shotlife_Studio_Surreal_Dream_Styled_Sho-95.jpg"
           }
         },
         "30f31ab8-9e11-4bbc-bab7-be0d10ac2eb9": {
           "type": "image",
-          "disabled": true,
           "settings": {
             "image": "shopify:\/\/shop_images\/Shotlife_Studio_Surreal_Dream_Styled_Sho-109.jpg"
           }
         },
         "74d61093-5720-4c58-8e04-10faa41847ad": {
           "type": "image",
-          "disabled": true,
           "settings": {
             "image": "shopify:\/\/shop_images\/Shotlife_Studio_Surreal_Dream_Styled_Sho-25.jpg"
           }
         },
         "ff0e7c92-5364-411d-81ae-54abb4a3cbb6": {
           "type": "image",
-          "disabled": true,
           "settings": {
             "image": "shopify:\/\/shop_images\/Matcha-32.jpg"
           }
@@ -99,7 +89,6 @@
         },
         "8be66094-114f-4160-aada-928ee5fd72cc": {
           "type": "video",
-          "disabled": true,
           "settings": {
             "video": "shopify:\/\/files\/videos\/1548678014007.mp4"
           }
