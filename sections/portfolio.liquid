@@ -11,8 +11,7 @@
                 {% case block.type %}
                   {% when 'video' %}
                     <div class="portfolio__Video">
-                      <script>console.log({{ block.settings.video | json }});</script>
-                      {{ block.settings.video | media_tag }}
+                      {{ block.settings.video | media_tag: image_size: '400x' }}
                     </div>
                   {% when 'image' %}
                     {%- assign image = block.settings.image -%}
