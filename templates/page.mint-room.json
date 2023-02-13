@@ -68,18 +68,6 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/Shotlife_Studio_Surreal_Dream_Styled_Sho-25.jpg"
           }
-        },
-        "ff0e7c92-5364-411d-81ae-54abb4a3cbb6": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Matcha-32.jpg"
-          }
-        },
-        "91f79e67-66db-420b-9f66-09b9dc3cc73d": {
-          "type": "video",
-          "settings": {
-            "video": "shopify:\/\/files\/videos\/20190525 Christine and Andy decor.mov"
-          }
         }
       },
       "block_order": [
@@ -93,14 +81,10 @@
         "009b2fff-50c4-437f-b598-70c63196575e",
         "d3cd2125-63e1-49e5-b98c-85ecea0f401b",
         "30f31ab8-9e11-4bbc-bab7-be0d10ac2eb9",
-        "74d61093-5720-4c58-8e04-10faa41847ad",
-        "ff0e7c92-5364-411d-81ae-54abb4a3cbb6",
-        "91f79e67-66db-420b-9f66-09b9dc3cc73d"
+        "74d61093-5720-4c58-8e04-10faa41847ad"
       ],
       "settings": {
         "title": "",
-        "planner": "",
-        "planner_url": "",
         "photographer": "Shotlifestudio",
         "photographer_url": "https:\/\/shotlifestudio.com\/",
         "featured_on": "Wedluxe",
