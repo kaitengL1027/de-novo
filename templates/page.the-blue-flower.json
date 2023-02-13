@@ -56,6 +56,12 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/Shotlife_Studio_Blue_Flower_Wedluxe_0053.jpg"
           }
+        },
+        "02e4e3ce-6830-42d7-a6a1-653c33408b9a": {
+          "type": "video",
+          "settings": {
+            "video": "shopify:\/\/files\/videos\/2019.09.11 - Blue Flower - Styled Shoot - Mint Room.mp4"
+          }
         }
       },
       "block_order": [
@@ -67,17 +73,22 @@
         "6d277f7d-cdaa-42a6-9dd1-98251cc6e856",
         "be9079e1-6699-405c-9e50-8196a17fcafe",
         "1db64014-fbfd-4782-a07e-9012cdc1827c",
-        "5a51c118-bb84-4cd1-9bfe-1a1c7a4c5bfd"
+        "5a51c118-bb84-4cd1-9bfe-1a1c7a4c5bfd",
+        "02e4e3ce-6830-42d7-a6a1-653c33408b9a"
       ],
       "settings": {
         "title": "",
+        "planner": "Loveleecelebrations",
+        "planner_url": "https:\/\/instagram.com\/loveleecelebrations?igshid=Zjc2ZTc4Nzk=",
         "photographer": "Shotlifestudio",
         "photographer_url": "https:\/\/shotlifestudio.com\/",
         "featured_on": "Wedluxe",
         "featured_on_url": "https:\/\/wedluxe.com\/2020\/01\/15\/the-blue-flower\/",
         "title_color": "#707c17",
         "text_hover_color": "#45891c",
-        "navigator_color": "#003872"
+        "navigator_color": "#003872",
+        "video_controls": true,
+        "video_swipe_autoplay": false
       }
     }
   },

@@ -110,6 +110,12 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/Shotlife_Studio_Grace_Glamour_0179.jpg"
           }
+        },
+        "149195da-ed76-4e7d-a592-8e66b5a27f56": {
+          "type": "video",
+          "settings": {
+            "video": "shopify:\/\/files\/videos\/Grace & Glam - Styled Shoot - Graydon Hall.mp4"
+          }
         }
       },
       "block_order": [
@@ -130,17 +136,22 @@
         "e1924bcf-b16e-4344-8a26-86f2695ad04f",
         "251260c0-85db-4ceb-a4af-53feae5d068a",
         "c6b6799b-cfa2-401c-8663-d296408f457b",
-        "491e1e46-2e0d-4409-b872-23c229939c8c"
+        "491e1e46-2e0d-4409-b872-23c229939c8c",
+        "149195da-ed76-4e7d-a592-8e66b5a27f56"
       ],
       "settings": {
         "title": "",
+        "planner": "Narellejanine",
+        "planner_url": "https:\/\/narellejanine.com\/hello?fbclid=PAAaY6V5YY6fUGdIRstOiFkfhpN1h4CUNqvdyCYx7V0G_kYHTzRUocM_JNrLo",
         "photographer": "Shotlifestudio",
         "photographer_url": "https:\/\/shotlifestudio.com\/",
         "featured_on": "Wedluxe",
         "featured_on_url": "https:\/\/www.instagram.com\/p\/CRrQ1siLOkH\/?igshid=Zjc2ZTc4Nzk=",
         "title_color": "#707c17",
         "text_hover_color": "#45891c",
-        "navigator_color": "#003872"
+        "navigator_color": "#003872",
+        "video_controls": true,
+        "video_swipe_autoplay": false
       }
     }
   },
