@@ -64,17 +64,13 @@
       ],
       "settings": {
         "title": "",
-        "planner": "Destinyweddingsca",
-        "planner_url": "https:\/\/instagram.com\/destinyweddingsca?igshid=Zjc2ZTc4Nzk=",
         "photographer": "Weddings.simplymayo",
         "photographer_url": "https:\/\/simplymayo.mypixieset.com\/",
         "featured_on": "",
         "featured_on_url": "",
         "title_color": "#707c17",
         "text_hover_color": "#45891c",
-        "navigator_color": "#003872",
-        "video_controls": true,
-        "video_swipe_autoplay": false
+        "navigator_color": "#003872"
       }
     }
   },
