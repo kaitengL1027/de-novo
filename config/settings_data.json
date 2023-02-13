@@ -2576,7 +2576,7 @@
     "instagram_link": "https:\/\/www.instagram.com\/denovofloral\/",
     "linkedin_link": "",
     "flickr_link": "",
-    "email_link": "Contact@denovofloral.com",
+    "email_link": "",
     "disqus_enabled": false,
     "disqus_shortname": "",
     "cart_action": "redirect_cart",
@@ -2797,24 +2797,12 @@
       "slideshow": {
         "type": "slideshow",
         "blocks": {
-          "b18c874f-63c8-4aca-b332-a21885961f72": {
-            "type": "image",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/DeNovo20220107B-93.jpg",
-              "title": "2023 Valentine's Collection",
-              "subtext": "",
-              "button_label": "SHOP NOW",
-              "link": "shopify:\/\/collections\/valentines-day",
-              "text_position": "center",
-              "text_align": "center"
-            }
-          },
           "slideshow-1": {
             "type": "image",
             "settings": {
               "image": "shopify:\/\/shop_images\/innayas_haciendasarriawedding_2-397.jpg",
               "title": "Forest Wonderland Wedding Collection",
-              "subtext": "",
+              "subtext": "Fall | 2021",
               "button_label": "View Collection",
               "link": "shopify:\/\/collections\/forest-green-collection",
               "text_position": "center",
@@ -2826,7 +2814,7 @@
             "settings": {
               "image": "shopify:\/\/shop_images\/Shotlife_Studio_Grace_Glamour_0097_a9883abc-fe46-41f0-ac2b-ec291568093b.jpg",
               "title": "Golden Provence Wedding Collection",
-              "subtext": "",
+              "subtext": "Summer | 2021",
               "button_label": "View Collection",
               "link": "shopify:\/\/collections\/lilac-theme-wedding-collection",
               "text_position": "right",
@@ -2835,7 +2823,6 @@
           }
         },
         "block_order": [
-          "b18c874f-63c8-4aca-b332-a21885961f72",
           "slideshow-1",
           "82e80870-7548-4b8c-8379-395857596020"
         ],
@@ -2886,7 +2873,7 @@
             "type": "menu",
             "settings": {
               "mega_menu_title": "VALENTINE'S COLLECTION",
-              "mega_linklist": "valentines-day",
+              "mega_linklist": "",
               "column_title": "",
               "column_text": "",
               "column_link": "",
@@ -2914,7 +2901,7 @@
           "show_currency_selector": true,
           "fix_top_bar": true,
           "search_box_top_bar": true,
-          "top_bar_linklist": "valentines-day",
+          "top_bar_linklist": "",
           "phone_number": "1-416-486-6686",
           "logo": "shopify:\/\/shop_images\/image_1.png",
           "logo_width": 360,
@@ -3012,7 +2999,7 @@
           "1628279078e9dfd040-1"
         ],
         "settings": {
-          "title": "De Novo Wedding",
+          "title": "De Novo | Wedding 2023",
           "frontpage_collections_per_row": 3,
           "frontpage_collections_title": true,
           "collection_count": false
@@ -3024,14 +3011,13 @@
           "wide_display": false,
           "enable_padding": true,
           "aspect_ratio": "16:9",
-          "autoplay": false,
+          "autoplay": true,
           "autoloop": true,
           "mute_video": false,
-          "video_controls": true,
-          "video_dark_overlay": true,
+          "video_controls": false,
+          "video_dark_overlay": false,
           "video": "https:\/\/www.youtube.com\/watch?v=Kj1OP5NMmKE&t=17s",
           "html5_video": "",
-          "image": "shopify:\/\/shop_images\/750_5407-349.jpg",
           "display_text_over_video": false,
           "heading": "",
           "subheading": "",
@@ -3103,8 +3089,8 @@
       "pina-instagram": {
         "type": "pina-instagram",
         "settings": {
-          "title": "Follow us on Instagram @denovofloral",
-          "show_profile": true,
+          "title": "#DENOVO FLORAL",
+          "show_profile": false,
           "timeline": "own",
           "small": "2",
           "medium": "3",
