@@ -92,12 +92,6 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/IMG_0470.jpg"
           }
-        },
-        "6d55ecdb-f9cb-4c29-873a-4f1e62ac1bed": {
-          "type": "video",
-          "settings": {
-            "video": "shopify:\/\/files\/videos\/2020.09.14 Denovo Collaboration.mp4"
-          }
         }
       },
       "block_order": [
@@ -115,22 +109,17 @@
         "7412f5b7-7700-4c97-b7d2-896b5ba50165",
         "690e61ff-1b6c-4a85-ad24-6b86884c3de0",
         "eef62c90-308a-4a7c-afa6-5a87491bc882",
-        "b823be74-1fbf-4813-a465-a5224e55c87c",
-        "6d55ecdb-f9cb-4c29-873a-4f1e62ac1bed"
+        "b823be74-1fbf-4813-a465-a5224e55c87c"
       ],
       "settings": {
         "title": "",
-        "planner": "",
-        "planner_url": "",
         "photographer": "Photographerwill",
         "photographer_url": "https:\/\/www.yao.gallery\/",
         "featured_on": "Pumplifestyle",
         "featured_on_url": "https:\/\/www.instagram.com\/p\/CG_09CljNOe\/?igshid=Zjc2ZTc4Nzk=",
         "title_color": "#707c17",
         "text_hover_color": "#45891c",
-        "navigator_color": "#003872",
-        "video_controls": true,
-        "video_swipe_autoplay": false
+        "navigator_color": "#003872"
       }
     }
   },
