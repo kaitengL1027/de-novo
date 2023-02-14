@@ -134,13 +134,17 @@
       ],
       "settings": {
         "title": "",
+        "planner": "Narellejanine",
+        "planner_url": "https:\/\/narellejanine.com\/hello?fbclid=PAAaYbaKFoIrt8YvojRZSoGGpmBLzUAD3X5GRH58KmgTK9_dQr0Jx6EHPN3g0",
         "photographer": "Shotlifestudio",
         "photographer_url": "https:\/\/shotlifestudio.com\/",
         "featured_on": "Wedluxe",
         "featured_on_url": "https:\/\/www.instagram.com\/p\/CRrQ1siLOkH\/?igshid=Zjc2ZTc4Nzk=",
         "title_color": "#707c17",
         "text_hover_color": "#45891c",
-        "navigator_color": "#003872"
+        "navigator_color": "#003872",
+        "video_controls": true,
+        "video_swipe_autoplay": false
       }
     }
   },
