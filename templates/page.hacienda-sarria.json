@@ -127,13 +127,17 @@
       ],
       "settings": {
         "title": "",
+        "planner": "Oweddingsandevents",
+        "planner_url": "https:\/\/instagram.com\/oweddingsandevents?igshid=YmMyMTA2M2Y=",
         "photographer": "Innayas",
         "photographer_url": "http:\/\/www.innayas.com\/contact\/?fbclid=IwAR1Zrba5_NmDxWeiRVoGNHWkqDtphi3YbvcBVcRyyJuDc0BPpBl0kuxQAoU",
         "featured_on": "",
         "featured_on_url": "",
         "title_color": "#707c17",
         "text_hover_color": "#45891c",
-        "navigator_color": "#003872"
+        "navigator_color": "#003872",
+        "video_controls": true,
+        "video_swipe_autoplay": false
       }
     }
   },
