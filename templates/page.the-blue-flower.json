@@ -71,13 +71,17 @@
       ],
       "settings": {
         "title": "",
+        "planner": "Loveleecelebrations",
+        "planner_url": "https:\/\/instagram.com\/loveleecelebrations?igshid=YmMyMTA2M2Y=",
         "photographer": "Shotlifestudio",
         "photographer_url": "https:\/\/shotlifestudio.com\/",
         "featured_on": "Wedluxe",
         "featured_on_url": "https:\/\/wedluxe.com\/2020\/01\/15\/the-blue-flower\/",
         "title_color": "#707c17",
         "text_hover_color": "#45891c",
-        "navigator_color": "#003872"
+        "navigator_color": "#003872",
+        "video_controls": true,
+        "video_swipe_autoplay": false
       }
     }
   },
