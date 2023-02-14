@@ -99,13 +99,17 @@
       ],
       "settings": {
         "title": "",
+        "planner": "Partywithchloe",
+        "planner_url": "https:\/\/instagram.com\/partywithchloe?igshid=YmMyMTA2M2Y=",
         "photographer": "Innayas",
         "photographer_url": "http:\/\/www.innayas.com\/contact\/?fbclid=IwAR1Zrba5_NmDxWeiRVoGNHWkqDtphi3YbvcBVcRyyJuDc0BPpBl0kuxQAoU",
         "featured_on": "Weddingbellsmag",
         "featured_on_url": "https:\/\/weddingbells.ca\/planning\/a-boho-luxe-styled-shoot\/",
         "title_color": "#707c17",
         "text_hover_color": "#45891c",
-        "navigator_color": "#003872"
+        "navigator_color": "#003872",
+        "video_controls": true,
+        "video_swipe_autoplay": false
       }
     }
   },
