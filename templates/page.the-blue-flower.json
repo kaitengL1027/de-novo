@@ -56,6 +56,12 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/Shotlife_Studio_Blue_Flower_Wedluxe_0053.jpg"
           }
+        },
+        "eb955cd8-55f4-4533-ad99-f8fd4d2b37fd": {
+          "type": "video",
+          "settings": {
+            "video": "shopify:\/\/files\/videos\/2019.09.11 - Blue Flower - Styled Shoot - Mint Room.mp4"
+          }
         }
       },
       "block_order": [
@@ -67,7 +73,8 @@
         "6d277f7d-cdaa-42a6-9dd1-98251cc6e856",
         "be9079e1-6699-405c-9e50-8196a17fcafe",
         "1db64014-fbfd-4782-a07e-9012cdc1827c",
-        "5a51c118-bb84-4cd1-9bfe-1a1c7a4c5bfd"
+        "5a51c118-bb84-4cd1-9bfe-1a1c7a4c5bfd",
+        "eb955cd8-55f4-4533-ad99-f8fd4d2b37fd"
       ],
       "settings": {
         "title": "",
