@@ -2881,27 +2881,11 @@
               "mega_menu_banner_bg": "#ffffff",
               "mega_menu_banner_text": "#404040"
             }
-          },
-          "dd283f01-9e6e-495f-808e-1098ad8b60f0": {
-            "type": "menu",
-            "settings": {
-              "mega_menu_title": "VALENTINE'S COLLECTION",
-              "mega_linklist": "valentines-day",
-              "column_title": "",
-              "column_text": "",
-              "column_link": "",
-              "column_position": "first_column",
-              "mega_text": "",
-              "mega_text_url": "",
-              "mega_menu_banner_bg": "#ffffff",
-              "mega_menu_banner_text": "#404040"
-            }
           }
         },
         "block_order": [
           "27d345f3-8ed6-4fba-9920-6106d5c7625a",
-          "aafd51d1-1fb0-4981-b049-e4d73dc88d75",
-          "dd283f01-9e6e-495f-808e-1098ad8b60f0"
+          "aafd51d1-1fb0-4981-b049-e4d73dc88d75"
         ],
         "settings": {
           "show_announcement_message": true,
