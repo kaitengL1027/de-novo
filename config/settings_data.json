@@ -2887,7 +2887,7 @@
             "type": "menu",
             "settings": {
               "mega_menu_title": "Portfolios",
-              "mega_linklist": "",
+              "mega_linklist": "portfolios",
               "column_title": "",
               "column_text": "",
               "column_link": "",
@@ -2915,7 +2915,7 @@
           "show_currency_selector": true,
           "fix_top_bar": true,
           "search_box_top_bar": true,
-          "top_bar_linklist": "valentines-day",
+          "top_bar_linklist": "",
           "phone_number": "1-416-486-6686",
           "logo": "shopify:\/\/shop_images\/image_1.png",
           "logo_width": 360,
