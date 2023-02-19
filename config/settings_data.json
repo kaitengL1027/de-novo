@@ -2797,19 +2797,6 @@
       "slideshow": {
         "type": "slideshow",
         "blocks": {
-          "b18c874f-63c8-4aca-b332-a21885961f72": {
-            "type": "image",
-            "disabled": true,
-            "settings": {
-              "image": "shopify:\/\/shop_images\/DeNovo20220107B-93.jpg",
-              "title": "2023 Valentine's Collection",
-              "subtext": "",
-              "button_label": "SHOP NOW",
-              "link": "shopify:\/\/collections\/valentines-day",
-              "text_position": "center",
-              "text_align": "center"
-            }
-          },
           "slideshow-1": {
             "type": "image",
             "settings": {
@@ -2836,7 +2823,6 @@
           }
         },
         "block_order": [
-          "b18c874f-63c8-4aca-b332-a21885961f72",
           "slideshow-1",
           "82e80870-7548-4b8c-8379-395857596020"
         ],
