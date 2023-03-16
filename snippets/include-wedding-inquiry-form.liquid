@@ -455,6 +455,19 @@
                required="required">
       </div>
 
+      <div class="contact__form-do-you-have-wedding-planner" style="flex-basis: 100%;">
+        <label for="contactFormDoYouHaveWeddingPlanner">Do you have a wedding planner?
+        </label>
+
+        <input type="text"
+               id="contactFormDoYouHaveWeddingPlanner"
+               name="contact[do-you-have-wedding-planner]"
+               autocorrect="off"
+               autocapitalize="off"
+               value="{% if form.do-you-have-wedding-planner %}{{ form.do-you-have-wedding-planner }}{% endif %}"
+               >
+      </div>
+
       <div class="contact__form-how-did-you-hear-about-us" style="flex-basis: 100%;">
         <label for="contactFormHowDidYouHearAboutUs">How did you hear about us?<span class="red">*</span>
         </label>
