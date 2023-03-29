@@ -2871,7 +2871,7 @@
             "type": "menu",
             "settings": {
               "mega_menu_title": "Portfolios",
-              "mega_linklist": "portfolios",
+              "mega_linklist": "portfolio",
               "column_title": "",
               "column_text": "",
               "column_link": "",
