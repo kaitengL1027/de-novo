@@ -85,13 +85,13 @@
           {%- assign first_name_attr = 'contact.form.first.name' | handle -%}
 
           <label for="contactFormFirsName">
-            {{ 'First Name' | t }} <span class="red">*</span>
+            First Name <span class="red">*</span>
           </label>
 
           <input type="text"
                 id="contactFormFirstName"
                 name="contact[{{ first_name_attr }}]"
-                placeholder="{{ 'contact.form.first.name' | t }}"
+                placeholder=""
                 autocapitalize="words"
                 value="{% if form[first_name_attr] %}{{ form[first_name_attr] }}{% elsif customer %}{{ customer.name }}{% endif %}"
                 required="required">
@@ -101,13 +101,13 @@
           {%- assign last_name_attr = 'contact.form.last.name' | handle -%}
 
           <label for="contactFormLastName">
-            {{ 'Last Name' | t }} <span class="red">*</span>
+            Last Name <span class="red">*</span>
           </label>
 
           <input type="text"
                 id="contactFormLastName"
                 name="contact[{{ last_name_attr }}]"
-                placeholder="{{ 'contact.form.last.name' | t }}"
+                placeholder=""
                 autocapitalize="words"
                 value="{% if form[last_name_attr] %}{{ form[last_name_attr] }}{% elsif customer %}{{ customer.name }}{% endif %}"
                 required="required">
