@@ -13,12 +13,16 @@
 {%- assign image = object.settings.contact_image -%}
 
 <section class="section">
-  <div class="container is-align-center
-              {% if image != blank or subheading != blank or text_content != blank %}
-                is-flex-{{ form_position }} is-flex-{{ image_position }}
-              {% else %}
-                is-justify-center
-              {% endif %}">
+  <div
+    class="
+      container is-align-center
+      {% if image != blank or subheading != blank or text_content != blank %}
+        is-flex-{{ form_position }} is-flex-{{ image_position }}
+      {% else %}
+        is-justify-center
+      {% endif %}
+    "
+  >
     {% if heading != blank %}
       <div class="one-whole column">
         <h2 class="contact__form-heading title center">
@@ -31,26 +35,22 @@
     {% if image != blank or subheading != blank or text_content != blank %}
       <div class="contact__form-content one-half column medium-down--one-whole text-align-{{ text_alignment }}">
         {% if image != blank %}
-          {% render 'image-element',
-                  image: image,
-                  alt: image.alt,
-                  additional_classes: 'contact__form-image'
-          %}
+          {% render 'image-element', image: image, alt: image.alt, additional_classes: 'contact__form-image' %}
         {% endif %}
       </div>
     {% endif %}
 
     <div class="contact__form-form one-half column medium-down--one-whole">
       {% if subheading != blank %}
-      <h3 class="contact__form-subheading">
-        {{ subheading }}
-      </h3>
+        <h3 class="contact__form-subheading">
+          {{ subheading }}
+        </h3>
       {% endif %}
 
       {% if text_content != blank %}
-      <div class="contact__form-text">
-        {{ text_content }}
-      </div>
+        <div class="contact__form-text">
+          {{ text_content }}
+        </div>
       {% endif %}
       {% form 'contact', class: 'is-flex is-flex-wrap' %}
         {% if form.posted_successfully? %}
@@ -64,7 +64,7 @@
             {{ 'general.forms.post_error' | t }}
           </p>
 
-        {% assign message = 'contact.form.message' | t %}
+          {% assign message = 'contact.form.message' | t %}
           <ul class="center">
             {% for field in form.errors %}
               {% if field == 'form' %}
@@ -84,402 +84,433 @@
         <div class="contact__form-first-name">
           {%- assign first_name_attr = 'contact.form.first.name' | handle -%}
 
-          <label for="contactFormFirsName">
-            First Name <span class="red">*</span>
-          </label>
+          <label for="contactFormFirsName"> First Name <span class="red">*</span> </label>
 
-          <input type="text"
-                id="contactFormFirstName"
-                name="contact[{{ first_name_attr }}]"
-                placeholder=""
-                autocapitalize="words"
-                value="{% if form[first_name_attr] %}{{ form[first_name_attr] }}{% elsif customer %}{{ customer.name }}{% endif %}"
-                required="required">
+          <input
+            type="text"
+            id="contactFormFirstName"
+            name="contact[{{ first_name_attr }}]"
+            placeholder=""
+            autocapitalize="words"
+            value="{% if form[first_name_attr] %}{{ form[first_name_attr] }}{% elsif customer %}{{ customer.name }}{% endif %}"
+            required="required"
+          >
         </div>
 
         <div class="contact__form-last-name">
           {%- assign last_name_attr = 'contact.form.last.name' | handle -%}
 
-          <label for="contactFormLastName">
-            Last Name <span class="red">*</span>
-          </label>
+          <label for="contactFormLastName"> Last Name <span class="red">*</span> </label>
 
-          <input type="text"
-                id="contactFormLastName"
-                name="contact[{{ last_name_attr }}]"
-                placeholder=""
-                autocapitalize="words"
-                value="{% if form[last_name_attr] %}{{ form[last_name_attr] }}{% elsif customer %}{{ customer.name }}{% endif %}"
-                required="required">
+          <input
+            type="text"
+            id="contactFormLastName"
+            name="contact[{{ last_name_attr }}]"
+            placeholder=""
+            autocapitalize="words"
+            value="{% if form[last_name_attr] %}{{ form[last_name_attr] }}{% elsif customer %}{{ customer.name }}{% endif %}"
+            required="required"
+          >
         </div>
 
         <div class="contact__form-phone">
           <label for="contactFormPhone">
-            {{ 'contact.form.phone' | t }} <span class="red">*</span>
+            {{ 'contact.form.phone' | t }}
+            <span class="red">*</span>
           </label>
 
-          <input type="text"
-                id="contactFormPhone"
-                name="contact[phone]"
-                placeholder="{{ 'contact.form.phone' | t }}"
-                autocorrect="off"
-                autocapitalize="off"
-                value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}"
-                required="required">
+          <input
+            type="text"
+            id="contactFormPhone"
+            name="contact[phone]"
+            placeholder="{{ 'contact.form.phone' | t }}"
+            autocorrect="off"
+            autocapitalize="off"
+            value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}"
+            required="required"
+          >
         </div>
 
         <div class="contact__form-email" style="flex-basis: 100%;">
           <label for="contactFormEmail">
-            {{ 'contact.form.email' | t }} <span class="red">*</span>
+            {{ 'contact.form.email' | t }}
+            <span class="red">*</span>
           </label>
 
-          <input type="email"
-                id="contactFormEmail"
-                name="contact[email]"
-                placeholder="{{ 'contact.form.email' | t }}"
-                autocorrect="off"
-                autocapitalize="off"
-                value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
-                required="required">
+          <input
+            type="email"
+            id="contactFormEmail"
+            name="contact[email]"
+            placeholder="{{ 'contact.form.email' | t }}"
+            autocorrect="off"
+            autocapitalize="off"
+            value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
+            required="required"
+          >
         </div>
 
         <div class="contact__form-date" style="flex-basis: 48%; padding-right: 4%;">
-          <label for="contactFormDate">Ceremony Date<span class="red">*</span>
-          </label>
+          <label for="contactFormDate">Ceremony Date<span class="red">*</span> </label>
 
-          <input type="date"
-                id="contactFormDate"
-                name="contact[date]"
-                placeholder="{{ 'contact.form.date' | t }}"
-                autocorrect="off"
-                autocapitalize="off"
-                value="{% if form.date %}{{ form.date }}{% endif %}"
-                required="required">
+          <input
+            type="date"
+            id="contactFormDate"
+            name="contact[date]"
+            placeholder="{{ 'contact.form.date' | t }}"
+            autocorrect="off"
+            autocapitalize="off"
+            value="{% if form.date %}{{ form.date }}{% endif %}"
+            required="required"
+          >
         </div>
 
         <div class="contact__form-time" style="flex-basis: 48%;">
-          <label for="contactFormTime">Ceremony Time<span class="red">*</span>
-          </label>
+          <label for="contactFormTime">Ceremony Time<span class="red">*</span> </label>
 
-          <input type="time"
-                id="contactFormTime"
-                name="contact[time]"
-                placeholder="{{ 'contact.form.time' | t }}"
-                autocorrect="off"
-                autocapitalize="off"
-                value="{% if form.time %}{{ form.time }}{% endif %}"
-                required="required">
+          <input
+            type="time"
+            id="contactFormTime"
+            name="contact[time]"
+            placeholder="{{ 'contact.form.time' | t }}"
+            autocorrect="off"
+            autocapitalize="off"
+            value="{% if form.time %}{{ form.time }}{% endif %}"
+            required="required"
+          >
         </div>
 
         <div class="contact__form-location" style="flex-basis: 100%;">
-          <label for="contactFormELocation">Ceremony Location<span class="red">*</span>
-          </label>
+          <label for="contactFormELocation">Ceremony Location<span class="red">*</span> </label>
 
-          <input type="text"
-                id="contactFormLocation"
-                name="contact[location]"
-                autocorrect="off"
-                autocapitalize="off"
-                value="{% if form.location %}{{ form.location }}{% endif %}"
-                required="required">
+          <input
+            type="text"
+            id="contactFormLocation"
+            name="contact[location]"
+            autocorrect="off"
+            autocapitalize="off"
+            value="{% if form.location %}{{ form.location }}{% endif %}"
+            required="required"
+          >
         </div>
 
         <div class="contact__form-number-of-guest" style="flex-basis: 30%; padding-right: 5%;">
-          <label for="contactFormNumberOfGuests"># Of Guests<span class="red">*</span>
-          </label>
+          <label for="contactFormNumberOfGuests"># Of Guests<span class="red">*</span> </label>
 
-          <input type="text"
-                id="contactFormNumberOfGuests"
-                name="contact[number-of-guests]"
-                autocorrect="off"
-                autocapitalize="off"
-                value="{% if form.number-of-guests %}{{ form.number-of-guests }}{% endif %}"
-                required="required">
+          <input
+            type="text"
+            id="contactFormNumberOfGuests"
+            name="contact[number-of-guests]"
+            autocorrect="off"
+            autocapitalize="off"
+            value="{% if form.number-of-guests %}{{ form.number-of-guests }}{% endif %}"
+            required="required"
+          >
         </div>
 
         <div class="contact__form-number-of-bridesmaids" style="flex-basis: 30%; padding-right: 5%;">
-          <label for="contactFormNumberOfBridesmaids"># Of Bridesmaids<span class="red">*</span>
-          </label>
+          <label for="contactFormNumberOfBridesmaids"># Of Bridesmaids<span class="red">*</span> </label>
 
-          <input type="text"
-                id="contactFormNumberOfBridesmaids"
-                name="contact[number-of-bridesmaids]"
-                autocorrect="off"
-                autocapitalize="off"
-                value="{% if form.number-of-bridesmaids %}{{ form.number-of-bridesmaids }}{% endif %}"
-                required="required">
+          <input
+            type="text"
+            id="contactFormNumberOfBridesmaids"
+            name="contact[number-of-bridesmaids]"
+            autocorrect="off"
+            autocapitalize="off"
+            value="{% if form.number-of-bridesmaids %}{{ form.number-of-bridesmaids }}{% endif %}"
+            required="required"
+          >
         </div>
 
         <div class="contact__form-number-of-groomsmen" style="flex-basis: 30%;">
-          <label for="contactFormNumberOfGroomsmen"># Of Groomsmen<span class="red">*</span>
-          </label>
+          <label for="contactFormNumberOfGroomsmen"># Of Groomsmen<span class="red">*</span> </label>
 
-          <input type="text"
-                id="contactFormNumberOfGroomsmen"
-                name="contact[number-of-groomsmen]"
-                autocorrect="off"
-                autocapitalize="off"
-                value="{% if form.number-of-groomsmen %}{{ form.number-of-groomsmen }}{% endif %}"
-                required="required">
+          <input
+            type="text"
+            id="contactFormNumberOfGroomsmen"
+            name="contact[number-of-groomsmen]"
+            autocorrect="off"
+            autocapitalize="off"
+            value="{% if form.number-of-groomsmen %}{{ form.number-of-groomsmen }}{% endif %}"
+            required="required"
+          >
         </div>
 
         <div class="contact__form-color" style="flex-basis: 100%;">
-          <label for="contactFormColor">Color Theme<span class="red">*</span>
+          <label for="contactFormColor">Color Theme<span class="red">*</span> </label>
+
+          <input
+            type="text"
+            id="contactFormColor"
+            name="contact[color]"
+            autocorrect="off"
+            autocapitalize="off"
+            value="{% if form.color %}{{ form.color }}{% endif %}"
+            required="required"
+          >
+        </div>
+
+        <div class="contact__form-ceremony-flower-and-decor" style="flex-basis: 100%;">
+          <label for="contactFormCeremonyFlowerAndDecor"
+            >Flowers and Decor for Ceremony {describe as best you can}
           </label>
 
-          <input type="text"
-                id="contactFormColor"
-                name="contact[color]"
-                autocorrect="off"
-                autocapitalize="off"
-                value="{% if form.color %}{{ form.color }}{% endif %}"
-                required="required">
-        </div>
-
-      <div class="contact__form-ceremony-flower-and-decor" style="flex-basis: 100%;">
-        <label for="contactFormCeremonyFlowerAndDecor">Flowers and Decor for Ceremony {describe as best you can}
-        </label>
-
-        <textarea 
-        	rows="3"
+          <textarea
+            rows="3"
             id="contactFormCeremonyFlowerAndDecor"
             name="contact[ceremony-flower-and-decor]"
-            placeholder="Tell us if you would like a decorate arch or chuppah, a hanging installation, floral/greenery backdrop, some larger standard arrangements to flank the ceremony area. Feel free to email us with inspiration pictures for your ceremony to look over when preparing your quote."></textarea>
-      </div>
+            placeholder="Tell us if you would like a decorate arch or chuppah, a hanging installation, floral/greenery backdrop, some larger standard arrangements to flank the ceremony area. Feel free to email us with inspiration pictures for your ceremony to look over when preparing your quote."
+          ></textarea>
+        </div>
 
-      <div class="contact__form-other-ceremony-flower-and-decor" style="flex-basis: 100%;">
-        <label for="contactFormOther-CeremonyFlowerAndDecor">Other Ceremony or Aisle Floral and Decor Pieces
-        </label>
+        <div class="contact__form-other-ceremony-flower-and-decor" style="flex-basis: 100%;">
+          <label for="contactFormOther-CeremonyFlowerAndDecor">Other Ceremony or Aisle Floral and Decor Pieces </label>
 
-        <textarea rows="3"
+          <textarea
+            rows="3"
             id="contactFormOtherCeremonyFlowerAndDecor"
             name="contact[other-ceremony-flower-and-decor]"
-            placeholder="Petals for the aisle, aisle markers, candles, etc. Feel free to email us with inspiration pictures for aisle decor and florals to look over when preparing your quote."></textarea>
-      </div>
-      
-      <div class="contact__form-headpiece-for-flower-girl" style="flex-basis: 48%; padding-right: 4%;">
-        <label for="contactFormHeadpieceForFlowerGirl">Headpiece for Flower Girl</label>
-        <select id="contactFormHeadpieceForFlowerGirl" name="contact[headpiece-for-flower-girl]">
-          <option value="" disabled selected hidden>--Select--</option>
-          <option value="yes">Yes</option>
-          <option value="no">No</option>
-        </select>
-      </div>
-
-      <div class="contact__form-throw-bouquet" style="flex-basis: 48%">
-        <label for="contactFormThrowBouquet">Throw Bouquet</label>
-        <select id="contactFormThrowBouquet" name="contact[throw-bouquet]">
-          <option value="" disabled selected hidden>--Select--</option>
-          <option value="yes">Yes</option>
-          <option value="no">No</option>
-        </select>
-      </div>
-
-      <div class="contact__form-corsage-for-family-member," style="flex-basis: 48%; padding-right: 4%;">
-        <label for="contactFormCorsagesForFamilyMember">Corsage for Family Member{#}</label>
-          <input type="text"
-                id="contactFormCorsageForFamilyMember"
-                name="contact[corsage-for-family-member]"
-         autocorrect="off"
-                autocapitalize="off"
-                value="{% if form.number-of-family-member %}{{ form.number-of-family-member }}{% endif %}"
-        </select>
-      </div>
-
-      <div class="contact__form-boutonnieres-for-family-member" style="flex-basis: 48%">
-        <label for="contactFormBoutonnieresForFamilyMember">Boutonnière for Family Member{#}</label>
-        <input type="text"
-                id="contactFormBoutonnieresForFamilyMember"
-                name="contact[boutonnieres-for-family-member]"
-         autocorrect="off"
-                autocapitalize="off"
-                value="{% if form.number-of-family-member %}{{ form.number-of-family-member }}{% endif %}"
-        </select>
-      </div>
-
-      <div class="contact__form-reception-date" style="flex-basis: 48%; padding-right: 4%;">
-        <label for="contactFormReceptionDate">Reception Date
-        </label>
-
-        <input type="date"
-               id="contactFormReceptionDate"
-               name="contact[reception-date]"
-               autocorrect="off"
-               autocapitalize="off"
-               value="{% if form.reception-date %}{{ form.reception-date }}{% endif %}">
-      </div>
-
-      <div class="contact__form-reception-time" style="flex-basis: 48%;">
-        <label for="contactFormReceptionTime">Reception Time
-        </label>
-
-        <input type="time"
-               id="contactFormReceptionTime"
-               name="contact[reception-time]"
-               autocorrect="off"
-               autocapitalize="off"
-               value="{% if form.reception-time %}{{ form.reception-time }}{% endif %}">
-      </div>
-
-      <div class="contact__form-number-of-person-in-head-table" style="flex-basis: 48%; padding-right: 4%;">
-        <label for="contactFormNumberOfPersonInHeadTable"># Of Person in Head Table<span class="red">*</span>
-        </label>
-
-        <input type="text"
-               id="contactFormNumberOfPersonInHeadTable"
-               name="contact[number-of-person-in-head-table]"
-               autocorrect="off"
-               autocapitalize="off"
-               value="{% if form.number-of-person-in-head-table %}{{ form.number-of-person-in-head-table }}{% endif %}"
-               required="required">
-      </div>
-
-      <div class="contact__form-number-of-centrepieces" style="flex-basis: 48%;">
-        <label for="contactFormNumberOfCentrepieces"># of Centrepieces
-        </label>
-
-        <input type="text"
-               id="contactFormNumberOfCentrepieces"
-               name="contact[number-of-centrepieces]"
-               autocorrect="off"
-               autocapitalize="off"
-               value="{% if form.number-of-centrepieces %}{{ form.number-of-centrepieces }}{% endif %}">
-      </div>
-
-
-      <div class="contact__form-number-of-guest-tables" style="flex-basis: 48%; padding-right: 4%;">
-        <label for="contactFormNumberOfGuestTables"># of Guest Tables
-        </label>
-
-        <input type="text"
-               id="contactFormNumberOfGuestTables"
-               name="contact[number-of-guest-tables]"
-               autocorrect="off"
-               autocapitalize="off"
-               value="{% if form.number-of-guest-tables %}{{ form.number-of-guest-tables }}{% endif %}">
-      </div>
-
-      <div class="contact__form-guest-table-style" style="flex-basis: 48%;">
-        <label for="contactFormGuestTableStyle">What is the Guest Table shape?</label>
-        <select id="contactFormGuestTableStyle" name="contact[guest-table-style]">
-          <option value="" disabled selected hidden>--Select--</option>
-          <option value="Long">Long</option>
-          <option value="Round">Round</option>
-        </select>
-      </div>
-      
-      <div class="contact__form-guest-table-style" style="flex-basis: 48%;">
-        <label for="contactFormGuestTableSize">Guest Table Size</label>
-
-        <input type="text"
-               id="contactFormGuestTableSize"
-               name="contact[guest-table-size]"
-               autocorrect="off"
-               autocapitalize="off"
-               value="{% if form.guest-table-size %}{{ form.guest-table-size }}{% endif %}">
-      </div>
-
-      <div class="contact__form-additional-requirements" style="flex-basis: 100%;">
-        <label for="contactFormAdditionalRequirements">Do you require delivery, set-up or teardown of your wedding flowers
-        </label>
-
-        <div id="contactFormAdditionalRequirements">
-          <label for="contactFormDelivery">
-            <input
-                   class="delivery-or-self-pick-up"
-                   id="contactFormDelivery"
-                   type="checkbox"
-                   name="contact[delivery]"
-                   value="Yes" >Delivery</label>
-
-          <label for="contactFormSetUp">
-            <input
-                   id="contactFormSetUp"
-                   type="checkbox"
-                   name="contact[set-up]"
-                   value="Yes">Set-up</label>
-
-          <label for="contactFormTear-down">
-            <input
-                   id="contactFormTear-down"
-                   type="checkbox"
-                   name="contact[tear-down]"
-                   value="Yes">Tear-down</label>
+            placeholder="Petals for the aisle, aisle markers, candles, etc. Feel free to email us with inspiration pictures for aisle decor and florals to look over when preparing your quote."
+          ></textarea>
         </div>
-      </div>
 
-      <div class="contact__form-budget" style="flex-basis: 100%">
-        <label for="contactFormBudget">Estimated Floral Budget（A La Carte Wedding Collection would be a good choice if your budget below 3k） <span class="red">*</span></label>
-        <select id="contactFormBudget" name="contact[budget]">
-          <option value="" disabled selected hidden>--Select--</option>
-                <option value="below-3000">Below 3000</option>
-                <option value="3000-5000">3000-5000</option>
-                <option value="5000-10000">5000-10000</option>
-                <option value="10000+">10000+</option>
-        </select>
-      </div>
+        <div class="contact__form-headpiece-for-flower-girl" style="flex-basis: 48%; padding-right: 4%;">
+          <label for="contactFormHeadpieceForFlowerGirl">Headpiece for Flower Girl</label>
+          <select id="contactFormHeadpieceForFlowerGirl" name="contact[headpiece-for-flower-girl]">
+            <option value="" disabled selected hidden>--Select--</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+        </div>
 
-      
-      <div class="contact__form-link-to-floral-inspiration" style="flex-basis: 100%;">
-        <label for="contactFormLinkToFloralInspiration">Link to Floral Inspiration (if you have any referencing picture to share with us, please provide the link here)
-        </label>
+        <div class="contact__form-throw-bouquet" style="flex-basis: 48%">
+          <label for="contactFormThrowBouquet">Throw Bouquet</label>
+          <select id="contactFormThrowBouquet" name="contact[throw-bouquet]">
+            <option value="" disabled selected hidden>--Select--</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+        </div>
 
-        <input type="text"
-               id="contactFormLinkToFloralInspiration"
-               name="contact[link-to-floral-inspiration]"
-               autocorrect="off"
-               autocapitalize="off"
-               value="{% if form.link-to-floral-inspiration %}{{ form.link-to-floral-inspiration }}{% endif %}"
-               required="required">
-      </div>
+        <div class="contact__form-corsage-for-family-member," style="flex-basis: 48%; padding-right: 4%;">
+          <label for="contactFormCorsagesForFamilyMember">Corsage for Family Member{#}</label>
+          <input
+            type="text"
+            id="contactFormCorsageForFamilyMember"
+            name="contact[corsage-for-family-member]"
+            autocorrect="off"
+            autocapitalize="off"
+            value="{% if form.number-of-family-member %}{{ form.number-of-family-member }}{% endif %}"
+            </select
+          >
+        </div>
 
-      <div class="contact__form-do-you-have-wedding-planner" style="flex-basis: 100%;">
-        <label for="contactFormDoYouHaveWeddingPlanner">Do you have a wedding planner?
-        </label>
+        <div class="contact__form-boutonnieres-for-family-member" style="flex-basis: 48%">
+          <label for="contactFormBoutonnieresForFamilyMember">Boutonnière for Family Member{#}</label>
+          <input
+            type="text"
+            id="contactFormBoutonnieresForFamilyMember"
+            name="contact[boutonnieres-for-family-member]"
+            autocorrect="off"
+            autocapitalize="off"
+            value="{% if form.number-of-family-member %}{{ form.number-of-family-member }}{% endif %}"
+            </select
+          >
+        </div>
 
-        <input type="text"
-               id="contactFormDoYouHaveWeddingPlanner"
-               name="contact[do-you-have-wedding-planner]"
-               autocorrect="off"
-               autocapitalize="off"
-               value="{% if form.do-you-have-wedding-planner %}{{ form.do-you-have-wedding-planner }}{% endif %}"
-               >
-      </div>
+        <div class="contact__form-reception-date" style="flex-basis: 48%; padding-right: 4%;">
+          <label for="contactFormReceptionDate">Reception Date </label>
 
-      <div class="contact__form-how-did-you-hear-about-us" style="flex-basis: 100%;">
-        <label for="contactFormHowDidYouHearAboutUs">How did you hear about us?<span class="red">*</span>
-        </label>
+          <input
+            type="date"
+            id="contactFormReceptionDate"
+            name="contact[reception-date]"
+            autocorrect="off"
+            autocapitalize="off"
+            value="{% if form.reception-date %}{{ form.reception-date }}{% endif %}"
+          >
+        </div>
 
-        <input type="text"
-               id="contactFormHowDidYouHearAboutUs"
-               name="contact[how-did-you-hear-about-us]"
-               autocorrect="off"
-               autocapitalize="off"
-               value="{% if form.how-did-you-hear-about-us %}{{ form.how-did-you-hear-about-us }}{% endif %}"
-               required="required">
-      </div>
+        <div class="contact__form-reception-time" style="flex-basis: 48%;">
+          <label for="contactFormReceptionTime">Reception Time </label>
 
-      <div class="contact__form-message">
-        <label for="contactFormMessage">
-          {{ 'contact.form.message' | t }}
-        </label>
+          <input
+            type="time"
+            id="contactFormReceptionTime"
+            name="contact[reception-time]"
+            autocorrect="off"
+            autocapitalize="off"
+            value="{% if form.reception-time %}{{ form.reception-time }}{% endif %}"
+          >
+        </div>
 
-        <textarea rows="5"
-                  id="contactFormMessage"
-                  name="contact[body]"
-                  placeholder="{{ 'contact.form.message' | t }}"
-                  ></textarea>
+        <div class="contact__form-number-of-person-in-head-table" style="flex-basis: 48%; padding-right: 4%;">
+          <label for="contactFormNumberOfPersonInHeadTable"># Of Person in Head Table<span class="red">*</span> </label>
 
-        <input type="submit" class="submit action_button" value="{{ 'contact.form.send' | t }}" />
-      </div>
+          <input
+            type="text"
+            id="contactFormNumberOfPersonInHeadTable"
+            name="contact[number-of-person-in-head-table]"
+            autocorrect="off"
+            autocapitalize="off"
+            value="{% if form.number-of-person-in-head-table %}{{ form.number-of-person-in-head-table }}{% endif %}"
+            required="required"
+          >
+        </div>
+
+        <div class="contact__form-number-of-centrepieces" style="flex-basis: 48%;">
+          <label for="contactFormNumberOfCentrepieces"># of Centrepieces </label>
+
+          <input
+            type="text"
+            id="contactFormNumberOfCentrepieces"
+            name="contact[number-of-centrepieces]"
+            autocorrect="off"
+            autocapitalize="off"
+            value="{% if form.number-of-centrepieces %}{{ form.number-of-centrepieces }}{% endif %}"
+          >
+        </div>
+
+        <div class="contact__form-number-of-guest-tables" style="flex-basis: 48%; padding-right: 4%;">
+          <label for="contactFormNumberOfGuestTables"># of Guest Tables </label>
+
+          <input
+            type="text"
+            id="contactFormNumberOfGuestTables"
+            name="contact[number-of-guest-tables]"
+            autocorrect="off"
+            autocapitalize="off"
+            value="{% if form.number-of-guest-tables %}{{ form.number-of-guest-tables }}{% endif %}"
+          >
+        </div>
+
+        <div class="contact__form-guest-table-style" style="flex-basis: 48%;">
+          <label for="contactFormGuestTableStyle">What is the Guest Table shape?</label>
+          <select id="contactFormGuestTableStyle" name="contact[guest-table-style]">
+            <option value="" disabled selected hidden>--Select--</option>
+            <option value="Long">Long</option>
+            <option value="Round">Round</option>
+          </select>
+        </div>
+
+        <div class="contact__form-additional-requirements" style="flex-basis: 100%;">
+          <label for="contactFormAdditionalRequirements"
+            >Do you require delivery, set-up or teardown of your wedding flowers
+          </label>
+
+          <div id="contactFormAdditionalRequirements">
+            <label for="contactFormDelivery">
+              <input
+                class="delivery-or-self-pick-up"
+                id="contactFormDelivery"
+                type="checkbox"
+                name="contact[delivery]"
+                value="Yes"
+
+              >Delivery</label
+            >
+
+            <label for="contactFormSetUp">
+              <input
+                id="contactFormSetUp"
+                type="checkbox"
+                name="contact[set-up]"
+                value="Yes"
+
+              >Set-up</label
+            >
+
+            <label for="contactFormTear-down">
+              <input
+                id="contactFormTear-down"
+                type="checkbox"
+                name="contact[tear-down]"
+                value="Yes"
+
+              >Tear-down</label
+            >
+          </div>
+        </div>
+
+        <div class="contact__form-budget" style="flex-basis: 100%">
+          <label for="contactFormBudget"
+            >Estimated Floral Budget（A La Carte Wedding Collection would be a good choice if your budget below 3k）
+            <span class="red">*</span></label
+          >
+          <select id="contactFormBudget" name="contact[budget]">
+            <option value="" disabled selected hidden>--Select--</option>
+            <option value="below-3000">Below 3000</option>
+            <option value="3000-5000">3000-5000</option>
+            <option value="5000-10000">5000-10000</option>
+            <option value="10000+">10000+</option>
+          </select>
+        </div>
+
+        <div class="contact__form-link-to-floral-inspiration" style="flex-basis: 100%;">
+          <label for="contactFormLinkToFloralInspiration"
+            >Link to Floral Inspiration (if you have any referencing picture to share with us, please provide the link
+            here)
+          </label>
+
+          <input
+            type="text"
+            id="contactFormLinkToFloralInspiration"
+            name="contact[link-to-floral-inspiration]"
+            autocorrect="off"
+            autocapitalize="off"
+            value="{% if form.link-to-floral-inspiration %}{{ form.link-to-floral-inspiration }}{% endif %}"
+            required="required"
+          >
+        </div>
+
+        <div class="contact__form-do-you-have-wedding-planner" style="flex-basis: 100%;">
+          <label for="contactFormDoYouHaveWeddingPlanner">Do you have a wedding planner? </label>
+
+          <input
+            type="text"
+            id="contactFormDoYouHaveWeddingPlanner"
+            name="contact[do-you-have-wedding-planner]"
+            autocorrect="off"
+            autocapitalize="off"
+            value="{% if form.do-you-have-wedding-planner %}{{ form.do-you-have-wedding-planner }}{% endif %}"
+          >
+        </div>
+
+        <div class="contact__form-how-did-you-hear-about-us" style="flex-basis: 100%;">
+          <label for="contactFormHowDidYouHearAboutUs">How did you hear about us?<span class="red">*</span> </label>
+
+          <input
+            type="text"
+            id="contactFormHowDidYouHearAboutUs"
+            name="contact[how-did-you-hear-about-us]"
+            autocorrect="off"
+            autocapitalize="off"
+            value="{% if form.how-did-you-hear-about-us %}{{ form.how-did-you-hear-about-us }}{% endif %}"
+            required="required"
+          >
+        </div>
+
+        <div class="contact__form-message">
+          <label for="contactFormMessage">
+            {{ 'contact.form.message' | t }}
+          </label>
+
+          <textarea
+            rows="5"
+            id="contactFormMessage"
+            name="contact[body]"
+            placeholder="{{ 'contact.form.message' | t }}"
+          ></textarea>
+
+          <input type="submit" class="submit action_button" value="{{ 'contact.form.send' | t }}">
+        </div>
       {% endform %}
     </div>
   </div>
 </section>
 <script>
-$(document).ready(function(){
-    $('.delivery-or-self-pick-up').click(function() {
-        $('.delivery-or-self-pick-up').not(this).prop('checked', false);
-    });
-});
+  $(document).ready(function(){
+      $('.delivery-or-self-pick-up').click(function() {
+          $('.delivery-or-self-pick-up').not(this).prop('checked', false);
+      });
+  });
 </script>
