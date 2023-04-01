@@ -262,6 +262,19 @@
           ></textarea>
         </div>
 
+        <div class="contact__form-are-you-open-to-artificial-flowers" style="flex-basis: 100%;">
+          <label for="contactFormAreYouOpenToArtificialFlowers">Are you open to artificial flowers? </label>
+
+          <input
+            type="text"
+            id="contactFormAreYouOpenToArtificialFlowers"
+            name="contact[are-you-open-to-artificial-flowers]"
+            autocorrect="off"
+            autocapitalize="off"
+            value="{% if form.are-you-open-to-artificial-flowers %}{{ form.are-you-open-to-artificial-flowers }}{% endif %}"
+          >
+        </div>
+
         <div class="contact__form-other-ceremony-flower-and-decor" style="flex-basis: 100%;">
           <label for="contactFormOther-CeremonyFlowerAndDecor">Other Ceremony or Aisle Floral and Decor Pieces </label>
 
@@ -459,6 +472,19 @@
             autocorrect="off"
             autocapitalize="off"
             value="{% if form.do-you-have-wedding-planner %}{{ form.do-you-have-wedding-planner }}{% endif %}"
+          >
+        </div>
+
+        <div class="contact__form-do-you-have-wedding-photographer" style="flex-basis: 100%;">
+          <label for="contactFormDoYouHaveWeddingPhotographer">Do you have a wedding photographer? </label>
+
+          <input
+            type="text"
+            id="contactFormDoYouHaveWeddingphotographer"
+            name="contact[do-you-have-wedding-photographer]"
+            autocorrect="off"
+            autocapitalize="off"
+            value="{% if form.do-you-have-wedding-photographer %}{{ form.do-you-have-wedding-photographer }}{% endif %}"
           >
         </div>
 
