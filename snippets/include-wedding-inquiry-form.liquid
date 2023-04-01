@@ -81,19 +81,35 @@
           </ul>
         {% endif %}
 
-        <div class="contact__form-name">
-          {%- assign name_attr = 'contact.form.name' | handle -%}
+        <div class="contact__form-first-name">
+          {%- assign first_name_attr = 'contact.form.first.name' | handle -%}
 
-          <label for="contactFormName">
-            {{ 'contact.form.name' | t }} <span class="red">*</span>
+          <label for="contactFormFirsName">
+            {{ 'contact.form.first.name' | t }} <span class="red">*</span>
           </label>
 
           <input type="text"
-                id="contactFormName"
-                name="contact[{{ name_attr }}]"
-                placeholder="{{ 'contact.form.name' | t }}"
+                id="contactFormFirstName"
+                name="contact[{{ first_name_attr }}]"
+                placeholder="{{ 'contact.form.first.name' | t }}"
                 autocapitalize="words"
-                value="{% if form[name_attr] %}{{ form[name_attr] }}{% elsif customer %}{{ customer.name }}{% endif %}"
+                value="{% if form[first_name_attr] %}{{ form[first_name_attr] }}{% elsif customer %}{{ customer.name }}{% endif %}"
+                required="required">
+        </div>
+
+        <div class="contact__form-last-name">
+          {%- assign last_name_attr = 'contact.form.last.name' | handle -%}
+
+          <label for="contactFormLastName">
+            {{ 'contact.form.last.name' | t }} <span class="red">*</span>
+          </label>
+
+          <input type="text"
+                id="contactFormLastName"
+                name="contact[{{ last_name_attr }}]"
+                placeholder="{{ 'contact.form.last.name' | t }}"
+                autocapitalize="words"
+                value="{% if form[last_name_attr] %}{{ form[last_name_attr] }}{% elsif customer %}{{ customer.name }}{% endif %}"
                 required="required">
         </div>
 
