@@ -55,7 +55,9 @@
       {% form 'contact', class: 'is-flex is-flex-wrap' %}
         {% if form.posted_successfully? %}
           <p class="quote">
-            {{ 'contact.form.post_success' | t }}
+            <b>
+              {{ 'contact.form.post_success' | t }}
+            </b>
           </p>
         {% endif %}
 
@@ -520,7 +522,9 @@
 
         {% if form.posted_successfully? %}
           <p class="quote">
-            {{ 'contact.form.post_success' | t }}
+            <b>
+              {{ 'contact.form.post_success' | t }}
+            </b>
           </p>
         {% endif %}
 
