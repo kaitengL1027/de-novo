@@ -58,9 +58,7 @@
             {{ 'contact.form.post_success' | t }}
           </p>
         {% endif %}
-        <p class="quote">
-          {{ 'contact.form.post_success' | t }}
-        </p>
+
         {% if form.errors %}
           <p class="quote">
             {{ 'general.forms.post_error' | t }}
@@ -519,6 +517,34 @@
 
           <input type="submit" class="submit action_button" value="{{ 'contact.form.send' | t }}">
         </div>
+
+        {% if form.posted_successfully? %}
+          <p class="quote">
+            {{ 'contact.form.post_success' | t }}
+          </p>
+        {% endif %}
+
+        {% if form.errors %}
+          <p class="quote">
+            {{ 'general.forms.post_error' | t }}
+          </p>
+
+          {% assign message = 'contact.form.message' | t %}
+          <ul class="center">
+            {% for field in form.errors %}
+              {% if field == 'form' %}
+                <li>
+                  {{ form.errors.messages[field] }}
+                </li>
+              {% else %}
+                <li>
+                  {% assign field_name = field | replace: 'body', message %}
+                  {{ 'general.forms.post_field_error_html' | t: field: field_name, error: form.errors.messages[field] }}
+                </li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        {% endif %}
       {% endform %}
     </div>
   </div>
