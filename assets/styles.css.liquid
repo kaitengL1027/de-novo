@@ -3225,7 +3225,7 @@ h6,
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: {{ settings.headline_font_size | times: 0.6 | floor | append: 'px' }}
+  font-size: {{ settings.headline_font_size | times: 0.4 | floor | append: 'px' }}
   ;
   color: {{ settings.headline_footer_text_color }}
   ;
@@ -6050,6 +6050,7 @@ img[data-sizes=auto] {
     top: 0;
     left: 0;
     background-color: #08210C;
+    display: none;
   }
   .announcementBar div.announcementBar__message {
     width: 95%;
