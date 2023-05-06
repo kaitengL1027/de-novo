@@ -38,8 +38,9 @@
         {% endif %}
       </div>
 
+      {% if section.settings.footer_newsletter %}
       <div class="footer__newsletter three-fifths columns medium-down--one-whole text-align-center">
-        {% if section.settings.footer_newsletter %}
+        
           {% if section.settings.newsletter_heading != blank %}
             <h6>{{ section.settings.newsletter_heading }}</h6>
           {% endif %}
@@ -60,8 +61,9 @@
               {% render 'social-icons' %}
             </div>
           {% endif %}
-        {% endif %}
+        
       </div>
+      {% endif %}
 
       <div class="footer__content-page one-fifth column medium-down--one-whole text-align--{{ section.settings.footer_alignment }}">
         {% if section.settings.title != blank %}
@@ -77,6 +79,27 @@
           {{ pages[section.settings.footer_content_page].content }}
         {% endif %}
       </div>
+
+      {% if section.settings.show_hours_and_location %}
+      <div class='footer__content-page footer__hours-location-container column'>
+        <div class='footerr__hours-container {% unless section.settings.hours_and_location_layout %}column{% endunless %}'>
+          {% if section.settings.hours_title %}
+            <div class='footer__hours-title'>{{ section.settings.hours_title }}</div>
+          {% endif %}
+          <div class='footer__hours-content'>
+            {{ section.settings.hours }}
+          </div>
+        </div>
+        <div class='footerr__location-container {% unless section.settings.hours_and_location_layout %}column{% endunless %}'>
+          {% if section.settings.location_title %}
+            <div class='footer__location-title'>{{ section.settings.location_title }}</div>
+          {% endif %}
+          <div class='footer__location-content'>
+            {{ section.settings.location }}
+          </div>
+        </div>
+      </div>
+      {% endif %}
 
       <div class="footer__disclosure {% if currency_selector == true or locale_selector == true %}footer__disclosure--true{% endif %} one-whole column text-align-center">
         {% if section.settings.footer_social_icons %}
@@ -129,6 +152,34 @@
     </div>
   </section>
 </footer>
+
+<style>
+  .footer__content-page.footer__hours-location-container {
+    display: flex;
+    flex-direction: {% if section.settings.hours_and_location_layout %}column{% else %}row{% endif %};
+  }
+  .footer__content-page.footer__hours-location-container .footer__hours-content h1, h2, h3, h4, h5, h6, p, i, ul, a {
+    margin-bottom: 0px;
+  }
+  .footer__content-page.footer__hours-location-container .footer__location-content h1, h2, h3, h4, h5, h6, p, i, ul, a {
+    margin-bottom: 0px;
+  }
+  .footer__content-page.footer__hours-location-container .footer__hours-title, .footer__location-title {
+    font-family: {{ settings.headline__font.family }}, {{ settings.headline__font.fallback_families }};
+    font-weight: {{ settings.headline__font.weight }};
+    text-transform: {{ settings.headline_font_style }};
+    line-height: 1.5;
+    color: {{ settings.headline_color }};
+    display: block;
+    letter-spacing: {{ settings.headline_letter_spacing | append: 'px' }};
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: {{ settings.headline_font_size | times: 0.4 | floor | append: 'px' }};
+    color: {{ settings.headline_footer_text_color }};
+    padding-bottom: 17px;
+  }
+</style>
 
 {% schema %}
   {
@@ -268,6 +319,38 @@
         "id": "show_currency_selector",
         "label": "Show currency selector",
         "default": true
+      }, 
+      {
+        "type": "checkbox", 
+        "id": "show_hours_and_location", 
+        "label": "Show business hours and store location", 
+        "default": true
+      }, 
+      {
+        "type": "checkbox", 
+        "id": "hours_and_location_layout", 
+        "label": "Toggle column view", 
+        "default": false
+      }, 
+      {
+        "type": "text", 
+        "id": "hours_title", 
+        "label": "Hours Title"
+      }, 
+      {
+        "type": "richtext",
+        "id": "hours",
+        "label": "Hours"
+      }, 
+      {
+        "type": "text", 
+        "id": "location_title", 
+        "label": "Location Title"
+      }, 
+      {
+        "type": "richtext",
+        "id": "location",
+        "label": "Location"
       }
     ]
   }
