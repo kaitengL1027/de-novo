@@ -57,16 +57,20 @@
     var windowsize = $window.width();
     if (windowsize > 798) {
     	$( ".sub-menu--link").css("color", "white");
+      $(".sub-menu--single-link").css("color", "white");
     	$( "#nav" ).hover(function() {
       		$( ".sub-menu--link").css("color", "#08210C");
+          $(".sub-menu--single-link").css("color", "#08210C");
       	}
     	, function() {
       		$( ".sub-menu--link").css("color", "white");
+          $(".sub-menu--single-link").css("color", "white");
     	});
   	}
     else {
       	$( ".mobile_nav" ).css("background-color", "white");
       	$( ".sub-menu--link" ).css("color", "#08210C");
+        $(".sub-menu--single-link").css("color", "#08210C");
       	$( ".slicknav_nav" ).css("padding-left", "4%");
     }
   });
@@ -270,8 +274,9 @@
             {% endcomment %}
             {% for block in section.blocks %}
               {%- assign linkHandle = link.title | handleize | lowercase -%}
+              <script>console.log({{ linkHandle | json }}, "<--linkHandle");</script>
               {%- assign blockHandle = block.settings.mega_menu_title | handleize | lowercase -%}
-
+              <script>console.log({{ blockHandle | json }}, "<--blockHandle");</script>
               {% if blockHandle == linkHandle %}
                 {%- assign mega_menu = linklists[block.settings.mega_linklist] -%}
                 {%- assign mega_text = block.settings.mega_text -%}
@@ -325,7 +330,6 @@
                       column_text: column_text,
                       column_link: column_link,
                       column_image: column_image,
-                      type: 'mega'
               %}
             {% else %}
               {% render 'menu', link: link %}
