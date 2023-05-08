@@ -2918,7 +2918,7 @@
           "top_bar_linklist": "",
           "phone_number": "1-416-486-6686",
           "logo": "shopify:\/\/shop_images\/image_1.png",
-          "logo_width": 360,
+          "logo_width": 200,
           "logo_alignment": "center",
           "logo_mobile": "shopify:\/\/shop_images\/image_1.png",
           "header_social_icons": false,
@@ -2946,7 +2946,13 @@
           "display_payment_methods": true,
           "copyright_text": "",
           "show_locale_selector": true,
-          "show_currency_selector": true
+          "show_currency_selector": true,
+          "show_hours_and_location": true,
+          "hours_and_location_layout": false,
+          "hours_title": "",
+          "hours": "",
+          "location_title": "",
+          "location": ""
         }
       },
       "1480990842836": {
