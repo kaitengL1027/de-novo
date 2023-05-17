@@ -2948,7 +2948,6 @@
           "show_locale_selector": true,
           "show_currency_selector": true,
           "show_hours_and_location": true,
-          "hours_and_location_layout": false,
           "hours_title": "HOURS",
           "hours": "<p>Mon CLOSED<\/p><p>Tue - Sat 11:00am - 5:00pm<\/p><p>Sun 11:00am - 4:00pm<\/p>",
           "location_title": "VISIT US",
@@ -3109,6 +3108,7 @@
       },
       "pina-instagram": {
         "type": "pina-instagram",
+        "disabled": true,
         "settings": {
           "title": "Follow us on Instagram @denovofloral",
           "show_profile": true,
