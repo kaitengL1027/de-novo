@@ -13,7 +13,7 @@
 <footer class="footer lazyload bcg">
   <section class="section">
     <div class="container">
-      <div class="footer__menu footer__menu--vertical one-fifth column medium-down--one-whole">
+      <div class="footer__menu footer__menu--vertical one-fourth column medium-down--one-whole">
         {% if linklists[section.settings.footer_linklist_2] != blank %}
           <h6>{{ linklists[section.settings.footer_linklist_2].title }}</h6>
           <ul>
@@ -65,7 +65,7 @@
       </div>
       {% endif %}
 
-      <div class="footer__content-page one-fifth column medium-down--one-whole text-align--{{ section.settings.footer_alignment }}">
+      <div class="footer__content-page one-fourth column medium-down--one-whole text-align--{{ section.settings.footer_alignment }}">
         {% if section.settings.title != blank %}
           <h6>{{ section.settings.title }}</h6>
         {% endif %}
@@ -81,8 +81,7 @@
       </div>
 
       {% if section.settings.show_hours_and_location %}
-      <div class='footer__content-page footer__hours-location-container column'>
-        <div class='footerr__hours-container {% unless section.settings.hours_and_location_layout %}column{% endunless %}'>
+        <div class='footer__hours-container one-fourth column medium-down--one-whole'>
           {% if section.settings.hours_title %}
             <div class='footer__hours-title'>{{ section.settings.hours_title }}</div>
           {% endif %}
@@ -90,7 +89,7 @@
             {{ section.settings.hours }}
           </div>
         </div>
-        <div class='footerr__location-container {% unless section.settings.hours_and_location_layout %}column{% endunless %}'>
+        <div class='footer__location-container one-fourth column medium-down--one-whole'>
           {% if section.settings.location_title %}
             <div class='footer__location-title'>{{ section.settings.location_title }}</div>
           {% endif %}
@@ -98,8 +97,11 @@
             {{ section.settings.location }}
           </div>
         </div>
-      </div>
       {% endif %}
+
+      {% comment %} <div style="width: 100%;margin-left: 10px;margin-right: 10px;">
+        <div id="insta-feed"></div>
+      </div> {% endcomment %}
 
       <div class="footer__disclosure {% if currency_selector == true or locale_selector == true %}footer__disclosure--true{% endif %} one-whole column text-align-center">
         {% if section.settings.footer_social_icons %}
@@ -154,17 +156,13 @@
 </footer>
 
 <style>
-  .footer__content-page.footer__hours-location-container {
-    display: flex;
-    flex-direction: {% if section.settings.hours_and_location_layout %}column{% else %}row{% endif %};
-  }
-  .footer__content-page.footer__hours-location-container .footer__hours-content h1, h2, h3, h4, h5, h6, p, i, ul, a {
+  .footer__hours-content h1, h2, h3, h4, h5, h6, p, i, ul, a {
     margin-bottom: 0px;
   }
-  .footer__content-page.footer__hours-location-container .footer__location-content h1, h2, h3, h4, h5, h6, p, i, ul, a {
+  .footer__location-content h1, h2, h3, h4, h5, h6, p, i, ul, a {
     margin-bottom: 0px;
   }
-  .footer__content-page.footer__hours-location-container .footer__hours-title, .footer__location-title {
+  .footer__hours-title, .footer__location-title {
     font-family: {{ settings.headline__font.family }}, {{ settings.headline__font.fallback_families }};
     font-weight: {{ settings.headline__font.weight }};
     text-transform: {{ settings.headline_font_style }};
@@ -178,6 +176,9 @@
     font-size: {{ settings.headline_font_size | times: 0.4 | floor | append: 'px' }};
     color: {{ settings.headline_footer_text_color }};
     padding-bottom: 17px;
+  }
+  .footer__hours-container {
+    margin-bottom: 16px;
   }
 </style>
 
@@ -325,12 +326,6 @@
         "id": "show_hours_and_location", 
         "label": "Show business hours and store location", 
         "default": true
-      }, 
-      {
-        "type": "checkbox", 
-        "id": "hours_and_location_layout", 
-        "label": "Toggle column view", 
-        "default": false
       }, 
       {
         "type": "text", 

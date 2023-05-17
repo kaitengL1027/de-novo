@@ -353,8 +353,11 @@
 <style>
   .header-logo.logo a .logo--desktop {
     max-width: {{ section.settings.logo_width }}px;
+    vertical-align: middle;
   }
-
+  .logo--mobile .image-element__wrap img {
+    max-width: 180px;
+  }
   .featured_content a, .featured_content p {
     color: {{ section.settings.announcement_color }};
   }
