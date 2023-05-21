@@ -580,19 +580,19 @@ window.header = {
 
 
     if ($('.announcementBar').length && $('.top_bar--fixed-true').length) {
-      var announcementBarHeight = $('.announcementBar').height();
-      $(window).scroll(function () {
-        if ($(this).scrollTop() >= announcementBarHeight) {
-          $('.top_bar--fixed-true').css({
-            'position': 'fixed',
-            'top': '0'
-          });
-          $('.announcementBar').css('margin-bottom', announcementBarHeight);
-        } else {
-          $('.top_bar--fixed-true').css('position', 'relative');
-          $('.announcementBar').css('margin-bottom', '0');
-        }
-      });
+      // var announcementBarHeight = $('.announcementBar').height();
+      // $(window).scroll(function () {
+      //   if ($(this).scrollTop() >= announcementBarHeight) {
+      //     $('.top_bar--fixed-true').css({
+      //       'position': 'fixed',
+      //       'top': '0'
+      //     });
+      //     $('.announcementBar').css('margin-bottom', announcementBarHeight);
+      //   } else {
+      //     $('.top_bar--fixed-true').css('position', 'relative');
+      //     $('.announcementBar').css('margin-bottom', '0');
+      //   }
+      // });
     } // Anchor link smooth scroll to avoid text cutoff
 
 

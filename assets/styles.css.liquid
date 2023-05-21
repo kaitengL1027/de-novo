@@ -13436,3 +13436,24 @@ https://flickity.metafizzy.co
       font-size: 1.2em;
     }
   }
+
+  .shopify-section--header {
+    position: sticky;
+    top: 0;
+    z-index: 99999;
+    transition: top 0.2s ease-in-out;
+  }
+  .nav-up {
+    top: -203px;
+  }
+  @media only screen and (max-width: 798px) {
+    body {
+      padding-top: 234px;
+    }
+    .nav-up {
+      top: -234px;
+    }
+    .shopify-section--header {
+      position: fixed;
+    }
+  }

@@ -1,4 +1,4 @@
- <script type="application/ld+json">
+<script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "Organization",
@@ -21,7 +21,7 @@
   }
 </script>
 
- {% if template.name == 'index' %}
+{% if template.name == 'index' %}
   <script type="application/ld+json">
     {
       "@context": "http://schema.org",
@@ -52,26 +52,65 @@
 {%- endif -%}
 
 <script>
-  $( document ).ready(function() {
+  $(document).ready(function () {
     var $window = $(window);
     var windowsize = $window.width();
     if (windowsize > 798) {
-    	$( ".sub-menu--link").css("color", "white");
-      $(".sub-menu--single-link").css("color", "white");
-    	$( "#nav" ).hover(function() {
-      		$( ".sub-menu--link").css("color", "#08210C");
-          $(".sub-menu--single-link").css("color", "#08210C");
-      	}
-    	, function() {
-      		$( ".sub-menu--link").css("color", "white");
-          $(".sub-menu--single-link").css("color", "white");
-    	});
-  	}
-    else {
-      	$( ".mobile_nav" ).css("background-color", "white");
-      	$( ".sub-menu--link" ).css("color", "#08210C");
-        $(".sub-menu--single-link").css("color", "#08210C");
-      	$( ".slicknav_nav" ).css("padding-left", "4%");
+      $('.sub-menu--link').css('color', 'white');
+      $('.sub-menu--single-link').css('color', 'white');
+      $('#nav').hover(
+        function () {
+          $('.sub-menu--link').css('color', '#08210C');
+          $('.sub-menu--single-link').css('color', '#08210C');
+        },
+        function () {
+          $('.sub-menu--link').css('color', 'white');
+          $('.sub-menu--single-link').css('color', 'white');
+        }
+      );
+    } else {
+      $('.mobile_nav').css('background-color', 'white');
+      $('.sub-menu--link').css('color', '#08210C');
+      $('.sub-menu--single-link').css('color', '#08210C');
+      $('.slicknav_nav').css('padding-left', '4%');
+    }
+    // kaiteng
+    // Hide Header on on scroll down
+    var didScroll;
+    var lastScrollTop = 0;
+    var delta = 5;
+    var navbarHeight = $('.shopify-section--header').outerHeight();
+
+    $(window).scroll(function (event) {
+      didScroll = true;
+    });
+
+    setInterval(function () {
+      if (didScroll) {
+        hasScrolled();
+        didScroll = false;
+      }
+    }, 250);
+
+    function hasScrolled() {
+      var st = $(this).scrollTop();
+
+      // Make sure they scroll more than delta
+      if (Math.abs(lastScrollTop - st) <= delta) return;
+
+      // If they scrolled down and are past the navbar, add class .nav-up.
+      // This is necessary so you never see what is "behind" the navbar.
+      if (st > lastScrollTop && st > navbarHeight) {
+        // Scroll Down
+        $('.shopify-section--header').removeClass('nav-down').addClass('nav-up');
+      } else {
+        // Scroll Up
+        if (st + $(window).height() < $(document).height()) {
+          $('.shopify-section--header').removeClass('nav-up').addClass('nav-down');
+        }
+      }
+
+      lastScrollTop = st;
     }
   });
 </script>
@@ -98,10 +137,22 @@
   <section class="section">
     <div class="container">
       {% if section.settings.search_box_top_bar %}
-        <div class="one-fourth column medium-down--one-whole top_bar_search search__form" data-autocomplete-{{ settings.enable_autocomplete }}>
+        <div
+          class="one-fourth column medium-down--one-whole top_bar_search search__form"
+          data-autocomplete-{{ settings.enable_autocomplete }}
+        >
           <form class="search" action="{{ routes.search_url }}">
-            <input type="hidden" name="type" value="{{ settings.search_option }}" />
-            <input type="text" name="q" class="search_box" placeholder="{{ 'general.search.placeholder' | t }}" value="{% if search and search.results.first.price %}{{ search.terms }}{% endif %}" autocapitalize="off" autocomplete="off" autocorrect="off" />
+            <input type="hidden" name="type" value="{{ settings.search_option }}">
+            <input
+              type="text"
+              name="q"
+              class="search_box"
+              placeholder="{{ 'general.search.placeholder' | t }}"
+              value="{% if search and search.results.first.price %}{{ search.terms }}{% endif %}"
+              autocapitalize="off"
+              autocomplete="off"
+              autocorrect="off"
+            >
           </form>
         </div>
       {% endif %}
@@ -109,9 +160,9 @@
       {% if currency_selector == true or locale_selector == true %}
         <div class="currencies-switcher one-fourth column mobile_hidden">
           {% render 'currencies-switcher',
-                  additional_classes: 'header-menu__disclosure',
-                  currency_selector: currency_selector,
-                  locale_selector: locale_selector
+            additional_classes: 'header-menu__disclosure',
+            currency_selector: currency_selector,
+            locale_selector: locale_selector
           %}
         </div>
       {% endif %}
@@ -138,19 +189,22 @@
                 {% endfor %}
               {% endfor %}
             {% endfor %}
-
           {% endif %}
 
           {% if section.settings.phone_number != blank %}
             <li>
-              <a href="tel:{{ section.settings.phone_number | replace: ' ', '' | replace: '+', '' | replace: '-', '' }}">{{ section.settings.phone_number | escape }}</a>
+              <a href="tel:{{ section.settings.phone_number | replace: ' ', '' | replace: '+', '' | replace: '-', '' }}">
+                {{- section.settings.phone_number | escape -}}
+              </a>
             </li>
           {% endif %}
 
           {% if shop.customer_accounts_enabled %}
             {% if customer %}
               <li>
-                <a href="{{ routes.account_logout_url }}" id="customer_logout_link" data-no-instant>{{ 'layout.customer.log_out' | t }}</a>
+                <a href="{{ routes.account_logout_url }}" id="customer_logout_link" data-no-instant>
+                  {{- 'layout.customer.log_out' | t -}}
+                </a>
               </li>
               {% if customer.name != blank %}
                 <li>
@@ -159,13 +213,19 @@
               {% endif %}
             {% else %}
               <li>
-                <a href="{{ routes.account_login_url }}" id="customer_login_link" data-no-instant>{{ 'layout.customer.log_in' | t }}</a>
+                <a href="{{ routes.account_login_url }}" id="customer_login_link" data-no-instant>
+                  {{- 'layout.customer.log_in' | t -}}
+                </a>
               </li>
             {% endif %}
           {% endif %}
 
           <li>
-            <a href="{{ routes.cart_url }}" class="cart_button"><span class="icon-cart"></span> {{ 'layout.general.cart' | t }} (<span class="cart_count">{{ cart.item_count }}</span>)</a>
+            <a href="{{ routes.cart_url }}" class="cart_button"
+              ><span class="icon-cart"></span> {{ 'layout.general.cart' | t }} (<span class="cart_count">
+                {{- cart.item_count -}}</span
+              >)</a
+            >
           </li>
           <li>
             {% if cart.item_count == 0 %}
@@ -230,8 +290,7 @@
           "
         >
           {% if section.settings.logo_mobile != blank %}
-            {%
-              render 'image-element',
+            {% render 'image-element',
               image: section.settings.logo_mobile,
               alt: section.settings.logo_mobile.alt,
               back_to_basics: true
@@ -245,8 +304,7 @@
 
         <span class="{{ is_hidden }} logo--desktop">
           {% if section.settings.logo != blank %}
-            {%
-              render 'image-element',
+            {% render 'image-element',
               image: section.settings.logo,
               alt: section.settings.logo.alt,
               back_to_basics: true
@@ -258,25 +316,44 @@
       </a>
     </div>
 
-    <div class="one-whole column" style="margin-bottom: 48px !important; width: 100% !important; margin-left: 0 !important; margin-right: 0 !important;">
-      <div id="mobile_nav" class="nav-align--{{ section.settings.menu_alignment }} nav-border--{{ section.settings.nav_border }}" style="margin-top: 0 !important;"></div>
-      <div id="nav" class=" nav-align--{{section.settings.menu_alignment}}
-                            nav-border--{{ section.settings.nav_border }}
-                            nav-separator--{{ section.settings.nav_separator }}"
-           style="margin-top: 0px !important;">
-        <ul class="js-navigation menu-navigation {% if disclosureEnabled %}disclosure--enabled{% endif %}" id="menu" role="navigation">
+    <div
+      class="one-whole column"
+      style="margin-bottom: 48px !important; width: 100% !important; margin-left: 0 !important; margin-right: 0 !important;"
+    >
+      <div
+        id="mobile_nav"
+        class="nav-align--{{ section.settings.menu_alignment }} nav-border--{{ section.settings.nav_border }}"
+        style="margin-top: 0 !important;"
+      ></div>
+      <div
+        id="nav"
+        class="
+          nav-align--{{section.settings.menu_alignment}}
+          nav-border--{{ section.settings.nav_border }}
+          nav-separator--{{ section.settings.nav_separator }}
+        "
+        style="margin-top: 0px !important;"
+      >
+        <ul
+          class="js-navigation menu-navigation {% if disclosureEnabled %}disclosure--enabled{% endif %}"
+          id="menu"
+          role="navigation"
+        >
           {%- assign main_menu = linklists[section.settings.main_linklist] -%}
 
           {% for link in main_menu.links %}
-
             {% comment %}
               Find which menu items get a megamenu
             {% endcomment %}
             {% for block in section.blocks %}
               {%- assign linkHandle = link.title | handleize | lowercase -%}
-              <script>console.log({{ linkHandle | json }}, "<--linkHandle");</script>
+              <script>
+                console.log({{ linkHandle | json }}, "<--linkHandle");
+              </script>
               {%- assign blockHandle = block.settings.mega_menu_title | handleize | lowercase -%}
-              <script>console.log({{ blockHandle | json }}, "<--blockHandle");</script>
+              <script>
+                console.log({{ blockHandle | json }}, "<--blockHandle");
+              </script>
               {% if blockHandle == linkHandle %}
                 {%- assign mega_menu = linklists[block.settings.mega_linklist] -%}
                 {%- assign mega_text = block.settings.mega_text -%}
@@ -315,21 +392,21 @@
               {% else %}
                 {%- assign hasMegaMenu = false -%}
               {% endif %}
-
             {% endfor %}
 
             {% if hasMegaMenu == true %}
-              {% render 'menu',
-                      link: link,
-                      mega_menu: mega_menu,
-                      mega_text: mega_text,
-                      mega_text_url: mega_text_url,
-                      mega_id: mega_id,
-                      column_position: column_position,
-                      column_title: column_title,
-                      column_text: column_text,
-                      column_link: column_link,
-                      column_image: column_image,
+              {%
+                render 'menu',
+                link: link,
+                mega_menu: mega_menu,
+                mega_text: mega_text,
+                mega_text_url: mega_text_url,
+                mega_id: mega_id,
+                column_position: column_position,
+                column_title: column_title,
+                column_text: column_text,
+                column_link: column_link,
+                column_image: column_image,
               %}
             {% else %}
               {% render 'menu', link: link %}
@@ -338,10 +415,7 @@
 
           {% if currency_selector == true or locale_selector == true %}
             <li class="menu-item__disclosure is-hidden-desktop-only">
-              {% render 'currencies-switcher',
-                      locale_selector: locale_selector,
-                      currency_selector: currency_selector
-              %}
+              {% render 'currencies-switcher', locale_selector: locale_selector, currency_selector: currency_selector %}
             </li>
           {% endif %}
         </ul>
@@ -386,305 +460,305 @@
 </style>
 
 {% schema %}
-  {
-    "name": "Header",
-    "class": "shopify-section--header",
-    "settings": [
-      {
-        "type": "header",
-        "content": "Announcement bar"
-      },
-      {
-        "type": "checkbox",
-        "id": "show_announcement_message",
-        "label": "Show announcement",
-        "default": false
-      },
-      {
-        "type": "checkbox",
-        "id": "announcement_homepage_only",
-        "label": "Home page only",
-        "default": false
-      },
-      {
-        "type": "text",
-        "id": "announcement_message",
-        "label": "Text",
-        "default": "Announcement message"
-      },
-      {
-        "type": "url",
-        "id": "announcement_link",
-        "label": "Link"
-      },
-      {
-        "type": "color",
-        "id": "announcement_color",
-        "label": "Bar",
-        "default": "#444"
-      },
-      {
-        "type": "color",
-        "id": "announcement_text_color",
-        "label": "Text",
-        "default": "#FFF"
-      },
-      {
-        "type": "header",
-        "content": "Language selector",
-        "info": "To add a language, go to your [language settings.](/admin/settings/languages)"
-      },
-      {
-        "type": "checkbox",
-        "id": "show_locale_selector",
-        "label": "Show language selector",
-        "default": true
-      },
-      {
-        "type": "header",
-        "content": "Currency selector",
-        "info": "To add a currency, go to your [payment settings.](/admin/settings/payments)"
-      },
-      {
-        "type": "checkbox",
-        "id": "show_currency_selector",
-        "label": "Show currency selector",
-        "default": true
-      },
-      {
-        "type": "header",
-        "content": "Top bar"
-      },
-      {
-       "type": "checkbox",
-       "id": "fix_top_bar",
-       "label": "Enable fixed ('sticky') top bar",
-       "default": true
-      },
-      {
-       "type": "checkbox",
-       "id": "search_box_top_bar",
-       "label": "Show search",
-       "default": true
-      },
-      {
-       "type": "link_list",
-       "id": "top_bar_linklist",
-       "label": "Menu",
-       "info": "This menu won't show drop-down items"
-      },
-      {
-        "type": "text",
-        "id": "phone_number",
-        "label": "Phone number",
-        "info": "1-800-555-5555"
-      },
-      {
-        "type": "header",
-        "content": "Logo"
-      },
-      {
-        "type": "image_picker",
-        "id": "logo",
-        "label": "Logo image",
-        "info": "720px wide recommended"
-      },
-      {
-        "type": "range",
-        "id": "logo_width",
-        "label": "Logo display width",
-        "step": 10,
-        "min": 100,
-        "max": 800,
-        "default": 360,
-        "unit": "px"
-      },
-      {
-        "type": "select",
-        "id": "logo_alignment",
-        "label": "Logo alignment",
-        "default": "center",
-        "options": [
-          {
-            "value": "left",
-            "label": "Left"
-          },
-          {
-            "value": "center",
-            "label": "Center"
-          }
-        ]
-      },
-      {
-        "type": "image_picker",
-        "id": "logo_mobile",
-        "label": "Mobile logo",
-        "info": "410px wide recommended"
-      },
-      {
-        "type": "checkbox",
-        "id": "header_social_icons",
-        "label": "Show social media header icons",
-        "default": false
-      },
-      {
-        "type": "header",
-        "content": "Navigation"
-      },
-      {
-        "type": "link_list",
-        "id": "main_linklist",
-        "label": "Main menu",
-        "default": "main-menu"
-      },
-      {
-        "type": "select",
-        "id": "menu_alignment",
-        "label": "Main menu alignment",
-        "info": "Desktop only",
-        "default": "center",
-        "options": [
-          {
-            "value": "left",
-            "label": "Left"
-          },
-          {
-            "value": "center",
-            "label": "Center"
-          }
-        ]
-      },
-      {
-        "type": "select",
-        "id": "nav_border",
-        "label": "Main menu border",
-        "default": "double",
-        "options": [
-          {
-            "value": "none",
-            "label": "None"
-          },
-          {
-            "value": "dashed",
-            "label": "Dashed"
-          },
-          {
-            "value": "dotted",
-            "label": "Dotted"
-          },
-          {
-            "value": "double",
-            "label": "Double"
-          },
-          {
-            "value": "solid",
-            "label": "Solid"
-          }
-        ]
-      },
-      {
-        "type": "select",
-        "id": "nav_separator",
-        "label": "Main menu link separator",
-        "default": "solid",
-        "options": [
-          {
-            "value": "none",
-            "label": "None"
-          },
-          {
-            "value": "solid",
-            "label": "Border"
-          }
-        ]
-      }
-    ],
-    "blocks": [
+{
+  "name": "Header",
+  "class": "shopify-section--header",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Announcement bar"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_announcement_message",
+      "label": "Show announcement",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "announcement_homepage_only",
+      "label": "Home page only",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "announcement_message",
+      "label": "Text",
+      "default": "Announcement message"
+    },
+    {
+      "type": "url",
+      "id": "announcement_link",
+      "label": "Link"
+    },
+    {
+      "type": "color",
+      "id": "announcement_color",
+      "label": "Bar",
+      "default": "#444"
+    },
+    {
+      "type": "color",
+      "id": "announcement_text_color",
+      "label": "Text",
+      "default": "#FFF"
+    },
+    {
+      "type": "header",
+      "content": "Language selector",
+      "info": "To add a language, go to your [language settings.](/admin/settings/languages)"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_locale_selector",
+      "label": "Show language selector",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Currency selector",
+      "info": "To add a currency, go to your [payment settings.](/admin/settings/payments)"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_currency_selector",
+      "label": "Show currency selector",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Top bar"
+    },
+    {
+      "type": "checkbox",
+      "id": "fix_top_bar",
+      "label": "Enable fixed ('sticky') top bar",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "search_box_top_bar",
+      "label": "Show search",
+      "default": true
+    },
+    {
+      "type": "link_list",
+      "id": "top_bar_linklist",
+      "label": "Menu",
+      "info": "This menu won't show drop-down items"
+    },
+    {
+      "type": "text",
+      "id": "phone_number",
+      "label": "Phone number",
+      "info": "1-800-555-5555"
+    },
+    {
+      "type": "header",
+      "content": "Logo"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo image",
+      "info": "720px wide recommended"
+    },
+    {
+      "type": "range",
+      "id": "logo_width",
+      "label": "Logo display width",
+      "step": 10,
+      "min": 100,
+      "max": 800,
+      "default": 360,
+      "unit": "px"
+    },
+    {
+      "type": "select",
+      "id": "logo_alignment",
+      "label": "Logo alignment",
+      "default": "center",
+      "options": [
         {
-          "type": "menu",
-          "name": "Mega menu",
-          "settings": [
-            {
-              "type": "text",
-              "id": "mega_menu_title",
-              "label": "Link title",
-              "info": "The [mega menu](https://help.outofthesandbox.com/hc/en-us/articles/360008536533) will appear below this parent link"
-            },
-            {
-              "type": "link_list",
-              "id": "mega_linklist",
-              "label": "Mega menu"
-            },
-            {
-              "type": "header",
-              "content": "Content column"
-            },
-            {
-              "type": "text",
-              "id": "column_title",
-              "label": "Heading",
-              "default": "Catalog"
-            },
-            {
-              "type": "image_picker",
-              "id": "column_image",
-              "label": "Image",
-              "info": "800 x 800px recommended"
-            },
-            {
-              "type": "text",
-              "id": "column_text",
-              "label": "Text"
-            },
-            {
-              "type": "url",
-              "id": "column_link",
-              "label": "URL"
-            },
-            {
-              "type": "select",
-              "id": "column_position",
-              "label": "Position",
-              "options": [
-                {
-                  "value": "first_column",
-                  "label": "First column"
-                },
-                {
-                  "value": "last_column",
-                  "label": "Last column"
-                }
-              ],
-              "default": "first_column"
-            },
-            {
-              "type": "header",
-              "content": "Bottom banner"
-            },
-            {
-              "type": "text",
-              "id": "mega_text",
-              "label": "Text"
-            },
-            {
-              "type": "url",
-              "id": "mega_text_url",
-              "label": "Link"
-            },
-            {
-              "type": "color",
-              "id": "mega_menu_banner_bg",
-              "label": "Background",
-              "default": "#ffffff"
-            },
-            {
-              "type": "color",
-              "id": "mega_menu_banner_text",
-              "label": "Text",
-              "default": "#404040"
-            }
-          ]
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
         }
-    ]
-  }
+      ]
+    },
+    {
+      "type": "image_picker",
+      "id": "logo_mobile",
+      "label": "Mobile logo",
+      "info": "410px wide recommended"
+    },
+    {
+      "type": "checkbox",
+      "id": "header_social_icons",
+      "label": "Show social media header icons",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Navigation"
+    },
+    {
+      "type": "link_list",
+      "id": "main_linklist",
+      "label": "Main menu",
+      "default": "main-menu"
+    },
+    {
+      "type": "select",
+      "id": "menu_alignment",
+      "label": "Main menu alignment",
+      "info": "Desktop only",
+      "default": "center",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "nav_border",
+      "label": "Main menu border",
+      "default": "double",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "dashed",
+          "label": "Dashed"
+        },
+        {
+          "value": "dotted",
+          "label": "Dotted"
+        },
+        {
+          "value": "double",
+          "label": "Double"
+        },
+        {
+          "value": "solid",
+          "label": "Solid"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "nav_separator",
+      "label": "Main menu link separator",
+      "default": "solid",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "solid",
+          "label": "Border"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "menu",
+      "name": "Mega menu",
+      "settings": [
+        {
+          "type": "text",
+          "id": "mega_menu_title",
+          "label": "Link title",
+          "info": "The [mega menu](https://help.outofthesandbox.com/hc/en-us/articles/360008536533) will appear below this parent link"
+        },
+        {
+          "type": "link_list",
+          "id": "mega_linklist",
+          "label": "Mega menu"
+        },
+        {
+          "type": "header",
+          "content": "Content column"
+        },
+        {
+          "type": "text",
+          "id": "column_title",
+          "label": "Heading",
+          "default": "Catalog"
+        },
+        {
+          "type": "image_picker",
+          "id": "column_image",
+          "label": "Image",
+          "info": "800 x 800px recommended"
+        },
+        {
+          "type": "text",
+          "id": "column_text",
+          "label": "Text"
+        },
+        {
+          "type": "url",
+          "id": "column_link",
+          "label": "URL"
+        },
+        {
+          "type": "select",
+          "id": "column_position",
+          "label": "Position",
+          "options": [
+            {
+              "value": "first_column",
+              "label": "First column"
+            },
+            {
+              "value": "last_column",
+              "label": "Last column"
+            }
+          ],
+          "default": "first_column"
+        },
+        {
+          "type": "header",
+          "content": "Bottom banner"
+        },
+        {
+          "type": "text",
+          "id": "mega_text",
+          "label": "Text"
+        },
+        {
+          "type": "url",
+          "id": "mega_text_url",
+          "label": "Link"
+        },
+        {
+          "type": "color",
+          "id": "mega_menu_banner_bg",
+          "label": "Background",
+          "default": "#ffffff"
+        },
+        {
+          "type": "color",
+          "id": "mega_menu_banner_text",
+          "label": "Text",
+          "default": "#404040"
+        }
+      ]
+    }
+  ]
+}
 {% endschema %}
