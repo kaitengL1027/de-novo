@@ -2994,21 +2994,24 @@
             "type": "collection",
             "settings": {
               "feature_collection": "down-to-earth-collection",
-              "image": "shopify:\/\/shop_images\/EmilySam_21_1.jpg"
+              "image": "shopify:\/\/shop_images\/EmilySam_21_1.jpg",
+              "collection_subheading": ""
             }
           },
           "1628279078e9dfd040-2": {
             "type": "collection",
             "settings": {
               "feature_collection": "dusty-rose-collection",
-              "image": "shopify:\/\/shop_images\/DECOR-34.jpg"
+              "image": "shopify:\/\/shop_images\/DECOR-34.jpg",
+              "collection_subheading": ""
             }
           },
           "1628279078e9dfd040-1": {
             "type": "collection",
             "settings": {
               "feature_collection": "beige-collection",
-              "image": "shopify:\/\/shop_images\/Sara_Xiaopei-wedding-S-8.jpg"
+              "image": "shopify:\/\/shop_images\/Sara_Xiaopei-wedding-S-8.jpg",
+              "collection_subheading": ""
             }
           }
         },
@@ -3021,7 +3024,11 @@
           "title": "À La Carte Wedding Collection",
           "frontpage_collections_per_row": 3,
           "frontpage_collections_title": true,
-          "collection_count": false
+          "collection_count": false,
+          "square": true,
+          "text_color": "#FFFFFF",
+          "text_hover_color": "#ffffff",
+          "animation": true
         }
       },
       "1628282372a5497551": {
