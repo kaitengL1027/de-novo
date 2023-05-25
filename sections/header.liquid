@@ -348,13 +348,7 @@
             {% endcomment %}
             {% for block in section.blocks %}
               {%- assign linkHandle = link.title | handleize | lowercase -%}
-              <script>
-                console.log({{ linkHandle | json }}, "<--linkHandle");
-              </script>
               {%- assign blockHandle = block.settings.mega_menu_title | handleize | lowercase -%}
-              <script>
-                console.log({{ blockHandle | json }}, "<--blockHandle");
-              </script>
               {% if blockHandle == linkHandle %}
                 {%- assign mega_menu = linklists[block.settings.mega_linklist] -%}
                 {%- assign mega_text = block.settings.mega_text -%}
