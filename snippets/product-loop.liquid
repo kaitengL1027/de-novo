@@ -28,9 +28,10 @@
       {%- assign skip = true -%}
     {% else %}
       {% render 'product-thumbnail',
-              product: product,
-              products_per_row: products_per_row,
-              sidebar: sidebar
+        product: product,
+        products_per_row: products_per_row,
+        sidebar: sidebar, 
+        square_product_thumbnail: square_product_thumbnail
       %}
     {% endif %}
   {% endif %}

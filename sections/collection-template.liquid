@@ -139,11 +139,13 @@
           {% else %}
             {%- assign products = collection.products -%}
             {%- assign products_per_row = section.settings.products_per_row -%}
+            {%- assign square_product_thumbnail = section.settings.square_product_thumbnail -%}
 
             {% render 'product-loop',
-                    products: products,
-                    products_per_row: products_per_row,
-                    sidebar: sidebar
+              products: products,
+              products_per_row: products_per_row,
+              sidebar: sidebar,
+              square_product_thumbnail: square_product_thumbnail
             %}
           {% endif %}
 
@@ -212,6 +214,12 @@
         "id": "toggle",
         "label": "Toggle sidebar content",
         "default": false
+      }, 
+      {
+        "type": "checkbox", 
+        "id": "square_product_thumbnail", 
+        "label": "Square Product Thumbnail", 
+        "default": true
       }
     ],
     "blocks": [

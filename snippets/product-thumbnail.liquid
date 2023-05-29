@@ -253,3 +253,29 @@
   </div>
   </div>
 {% endif %}
+
+<style>
+  .product_container .image-element__wrap {
+    {% if square_product_thumbnail %}
+      position: relative;
+      width: 100%;
+    {% endif %}
+  }
+  
+  .product_container .image-element__wrap:after {
+    {% if square_product_thumbnail %}
+      content: "";
+      display: block;
+      padding-bottom: 100%;
+    {% endif %}
+  }
+  
+  .product_container .image-element__wrap img {
+    {% if square_product_thumbnail %}
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    {% endif %}
+  }  
+</style>
