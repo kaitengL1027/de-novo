@@ -21,7 +21,8 @@
     <div class="five-eighths columns medium-down--one-whole">
       {% render 'product-images',
               video_looping: section.settings.video_looping,
-              set_product_height: section.settings.set_product_height
+              set_product_height: section.settings.set_product_height, 
+              image_sticky: section.settings.image_sticky
       %}
     </div>
 
@@ -254,6 +255,12 @@
     --progress-bar-height: 2px;
     --progress-bar-color: {{ settings.regular_color }};
   }
+  @media only screen and (min-width: 769px) {
+    .product_section .product-gallery.image_sticky {
+      position: sticky;
+      top: 80px;
+    }
+  }
 {% endstyle %}
 
 {% comment %} Shopify-XR {% endcomment %}
@@ -460,6 +467,12 @@
         "id": "video_looping",
         "label": "Enable video looping",
         "default": false
+      }, 
+      {
+        "type": "checkbox", 
+        "id": "image_sticky", 
+        "label": "Sticky Image", 
+        "default": true
       }
     ]
   }
