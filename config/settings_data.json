@@ -3026,7 +3026,7 @@
           "frontpage_collections_title": true,
           "collection_count": false,
           "square": true,
-          "text_color": "#FFFFFF",
+          "text_color": "#ffffff",
           "text_hover_color": "#ffffff",
           "animation": true
         }
@@ -3062,7 +3062,8 @@
           "collection_tags": false,
           "products_per_row": 3,
           "pagination_limit": 48,
-          "toggle": false
+          "toggle": false,
+          "square_product_thumbnail": true
         }
       },
       "product__sidebar": {
@@ -3362,16 +3363,102 @@
           "blog_date": true,
           "toggle": false
         }
+      },
+      "ef3ceea5-2f54-4f54-806e-f0f6df75bfa0": {
+        "type": "testimonial",
+        "blocks": {
+          "ef3ceea5-2f54-4f54-806e-f0f6df75bfa0-16853343891a7358dd-0": {
+            "type": "quote",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/download.png",
+              "testimonial": "<p>\"Most beautiful day of my life\"<\/p>",
+              "name": "",
+              "site_link": "https:\/\/www.google.com"
+            }
+          },
+          "ef3ceea5-2f54-4f54-806e-f0f6df75bfa0-16853343891a7358dd-1": {
+            "type": "quote",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/NOWbox_Black.webp",
+              "testimonial": "<p>\"Amazing service\"<\/p>",
+              "name": "",
+              "site_link": "https:\/\/www.google.com"
+            }
+          },
+          "ef3ceea5-2f54-4f54-806e-f0f6df75bfa0-16853343891a7358dd-2": {
+            "type": "quote",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Curiocity-Blk.webp",
+              "testimonial": "<p>\"A must visit\"<\/p>",
+              "name": "",
+              "site_link": "https:\/\/www.google.com"
+            }
+          },
+          "ef3ceea5-2f54-4f54-806e-f0f6df75bfa0-16853343891a7358dd-3": {
+            "type": "quote",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/WHITE-logo-600x312-1.webp",
+              "testimonial": "<p>\"When my husband saw me with their signature bouquet, he cried\"<\/p>",
+              "name": "",
+              "site_link": "https:\/\/www.google.com"
+            }
+          },
+          "0a638809-ca1e-420e-a25b-dc6dac05d80e": {
+            "type": "quote",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/download.png",
+              "testimonial": "",
+              "name": "",
+              "site_link": ""
+            }
+          },
+          "08693455-79db-4cae-94c0-2109fa75051f": {
+            "type": "quote",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Curiocity-Blk.webp",
+              "testimonial": "<p>\"Ann is the best\"<\/p>",
+              "name": "Justin Trudeau",
+              "site_link": ""
+            }
+          }
+        },
+        "block_order": [
+          "ef3ceea5-2f54-4f54-806e-f0f6df75bfa0-16853343891a7358dd-0",
+          "ef3ceea5-2f54-4f54-806e-f0f6df75bfa0-16853343891a7358dd-1",
+          "ef3ceea5-2f54-4f54-806e-f0f6df75bfa0-16853343891a7358dd-2",
+          "ef3ceea5-2f54-4f54-806e-f0f6df75bfa0-16853343891a7358dd-3",
+          "0a638809-ca1e-420e-a25b-dc6dac05d80e",
+          "08693455-79db-4cae-94c0-2109fa75051f"
+        ],
+        "settings": {
+          "title": "As Featured On",
+          "rounded_image": false,
+          "testimonials_per_row": 6,
+          "width": 80
+        }
+      },
+      "2b145c1e-5666-4ba3-a0bf-5724d936cc29": {
+        "type": "featured-text",
+        "settings": {
+          "title": "Storytellers, creators, and your trusted merriment makers",
+          "content": "<p>Blush + Bowties is your destination for contemporary refined weddings with a stylish and experience driven approach. Named one of the top wedding planners in Canada, we are a Toronto-based wedding planning and design company with over a decade of experience. Our team consists of open hearted creatives with an unwavering dedication to the art of wedding planning and design.<\/p>",
+          "button_label": "",
+          "button_link": "",
+          "text_size": "featured_text",
+          "text_alignment": "center"
+        }
       }
     },
     "content_for_index": [
       "slideshow",
+      "2b145c1e-5666-4ba3-a0bf-5724d936cc29",
       "1480990842836",
       "1628363643e91220c3",
       "1628279078e9dfd040",
       "1628282372a5497551",
       "pina-instagram",
-      "1535002506295"
+      "1535002506295",
+      "ef3ceea5-2f54-4f54-806e-f0f6df75bfa0"
     ]
   }
 }
