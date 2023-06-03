@@ -2827,7 +2827,7 @@
           "82e80870-7548-4b8c-8379-395857596020"
         ],
         "settings": {
-          "wide_display": false,
+          "wide_display": true,
           "enable_padding": false,
           "slideshow_animation": "fade",
           "slideshow_speed": 10,
@@ -3034,7 +3034,7 @@
       "1628282372a5497551": {
         "type": "video",
         "settings": {
-          "wide_display": false,
+          "wide_display": true,
           "enable_padding": true,
           "aspect_ratio": "16:9",
           "autoplay": false,
@@ -3094,7 +3094,8 @@
           "product_images_position": "left",
           "set_product_height": true,
           "product_height": 500,
-          "video_looping": false
+          "video_looping": false,
+          "image_sticky": true
         }
       },
       "product-recommendations": {
@@ -3447,6 +3448,14 @@
           "text_size": "featured_text",
           "text_alignment": "center"
         }
+      },
+      "ff3cfb90-4eae-434c-b306-cfd80c2d1902": {
+        "type": "instafeed",
+        "settings": {
+          "heading_size": 20,
+          "feed_width": 100,
+          "html_area": ""
+        }
       }
     },
     "content_for_index": [
@@ -3458,7 +3467,8 @@
       "1628282372a5497551",
       "pina-instagram",
       "1535002506295",
-      "ef3ceea5-2f54-4f54-806e-f0f6df75bfa0"
+      "ef3ceea5-2f54-4f54-806e-f0f6df75bfa0",
+      "ff3cfb90-4eae-434c-b306-cfd80c2d1902"
     ]
   }
 }
