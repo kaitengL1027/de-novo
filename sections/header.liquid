@@ -58,14 +58,17 @@
     if (windowsize > 798) {
       $('.sub-menu--link').css('color', 'white');
       $('.sub-menu--single-link').css('color', 'white');
+      $('.sub-menu--single-linkactive').css('color', 'white');
       $('#nav').hover(
         function () {
           $('.sub-menu--link').css('color', '#08210C');
           $('.sub-menu--single-link').css('color', '#08210C');
+          $('.sub-menu--single-linkactive').css('color', '#08210C');
         },
         function () {
           $('.sub-menu--link').css('color', 'white');
           $('.sub-menu--single-link').css('color', 'white');
+          $('.sub-menu--single-linkactive').css('color', 'white');
         }
       );
     } else {
@@ -74,8 +77,8 @@
       $('.sub-menu--single-link').css('color', '#08210C');
       $('.slicknav_nav').css('padding-left', '4%');
     }
-    // kaiteng
-    // Hide Header on on scroll down
+
+    // Hide Header on scroll down
     var didScroll;
     var lastScrollTop = 0;
     var delta = 5;
@@ -451,6 +454,9 @@
   div.announcementBar__message a,
   div.announcementBar__message p {
     color: {{ section.settings.announcement_text_color }};
+  }
+  #nav .menu-navigation li .sub-menu--single-linkactive:visited {
+    color: white;
   }
 </style>
 

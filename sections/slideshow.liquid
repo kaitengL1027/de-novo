@@ -68,6 +68,16 @@
   </section>
 {% endif %}
 
+<style>
+  {% if section.settings.wide_display %}
+    .slideshow .slideshow__gallery-cell .image-element__wrap img {
+      height: 100vh;
+      object-fit: cover;
+      object-position: center;
+    }
+  {% endif %}
+</style>
+
 {% schema %}
   {
     "name": "Slideshow",

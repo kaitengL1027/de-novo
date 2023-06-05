@@ -13440,14 +13440,17 @@ https://flickity.metafizzy.co
   .shopify-section--header {
     position: sticky;
     top: 0;
-    z-index: 99999;
+    z-index: 9999;
     transition: top 0.2s ease-in-out;
+  }
+  body.index .shopify-section--header {
+    position: fixed;
   }
   .nav-up {
     top: -203px;
   }
   @media only screen and (max-width: 798px) {
-    body {
+    body:not(.index) {
       padding-top: 234px;
     }
     .nav-up {
@@ -13457,3 +13460,6 @@ https://flickity.metafizzy.co
       position: fixed;
     }
   }
+.shopify-section #insta-feed {
+  width: auto;
+}
