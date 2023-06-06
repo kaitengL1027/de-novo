@@ -3,8 +3,8 @@
     "main": {
       "type": "featured-text",
       "settings": {
-        "title": "Talk about your brand",
-        "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>",
+        "title": "CELEBRATIONS WITH CHARACTER",
+        "content": "",
         "button_label": "",
         "button_link": "",
         "text_size": "featured_text",
@@ -14,14 +14,14 @@
     "3350a938-29d6-4ce6-847f-67d8d231fdbc": {
       "type": "divider",
       "settings": {
-        "divider_spacing": 20,
+        "divider_spacing": 0,
         "divider_border": true
       }
     },
     "e7052d27-965d-4737-9cb4-1d41796936a8": {
       "type": "featured-text",
       "settings": {
-        "title": "Talk about your brand",
+        "title": "",
         "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>",
         "button_label": "",
         "button_link": "",
@@ -52,6 +52,13 @@
         "button_link": "",
         "text_size": "featured_text",
         "text_alignment": "center"
+      }
+    },
+    "ce8e0226-ab6e-46f4-b70b-6ca1d7299cb5": {
+      "type": "divider",
+      "settings": {
+        "divider_spacing": 0,
+        "divider_border": true
       }
     },
     "4e74b20e-98a0-4629-8a28-cb1835283123": {
@@ -106,11 +113,11 @@
     "c2f41212-4c33-4403-8178-c5001924c375": {
       "type": "featured-text",
       "settings": {
-        "title": "Talk about your brand",
-        "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>",
+        "title": "",
+        "content": "<p>PLEASE <a href=\"http:\/\/www.blushandbowties.ca\/contact\/\">CONTACT US<\/a> DIRECTLY FOR PRICING AND A CUSTOM QUOTE<\/p><p>Please note we do not offer month of\/day of planning, we are a full service planning company<\/p>",
         "button_label": "",
         "button_link": "",
-        "text_size": "featured_text",
+        "text_size": "regular_text",
         "text_alignment": "center"
       }
     }
@@ -121,6 +128,7 @@
     "e7052d27-965d-4737-9cb4-1d41796936a8",
     "926722b1-82f9-4e1c-be8f-98a2c51cc3c5",
     "b24ef4b0-6814-4e4b-ab90-5a6ad097845f",
+    "ce8e0226-ab6e-46f4-b70b-6ca1d7299cb5",
     "4e74b20e-98a0-4629-8a28-cb1835283123",
     "8057f81a-685b-45d5-98ac-e94f72e3be56",
     "c2f41212-4c33-4403-8178-c5001924c375"
