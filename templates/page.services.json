@@ -1,11 +1,128 @@
 {
-  "name": "Services template", 
   "sections": {
     "main": {
-      "type": "featured-text"
+      "type": "featured-text",
+      "settings": {
+        "title": "Talk about your brand",
+        "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>",
+        "button_label": "",
+        "button_link": "",
+        "text_size": "featured_text",
+        "text_alignment": "center"
+      }
+    },
+    "3350a938-29d6-4ce6-847f-67d8d231fdbc": {
+      "type": "divider",
+      "settings": {
+        "divider_spacing": 20,
+        "divider_border": true
+      }
+    },
+    "e7052d27-965d-4737-9cb4-1d41796936a8": {
+      "type": "featured-text",
+      "settings": {
+        "title": "Talk about your brand",
+        "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>",
+        "button_label": "",
+        "button_link": "",
+        "text_size": "featured_text",
+        "text_alignment": "center"
+      }
+    },
+    "926722b1-82f9-4e1c-be8f-98a2c51cc3c5": {
+      "type": "image-with-text-overlay-section",
+      "settings": {
+        "image_stretch": false,
+        "enable_padding": false,
+        "image": "shopify:\/\/shop_images\/ERWedding514.jpg",
+        "title": "",
+        "subtext": "",
+        "button_label": "",
+        "link": "",
+        "text_position": "center",
+        "text_align": "center"
+      }
+    },
+    "b24ef4b0-6814-4e4b-ab90-5a6ad097845f": {
+      "type": "featured-text",
+      "settings": {
+        "title": "Talk about your brand",
+        "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>",
+        "button_label": "",
+        "button_link": "",
+        "text_size": "featured_text",
+        "text_alignment": "center"
+      }
+    },
+    "4e74b20e-98a0-4629-8a28-cb1835283123": {
+      "type": "featured-promotions",
+      "blocks": {
+        "template--16760645058818__4e74b20e-98a0-4629-8a28-cb1835283123-1686024087418e273c-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Colour-LizaLitvinovich-E-0713.jpg",
+            "link": "",
+            "title": "",
+            "text": ""
+          }
+        },
+        "template--16760645058818__4e74b20e-98a0-4629-8a28-cb1835283123-1686024087418e273c-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/20220528-174.jpg",
+            "link": "",
+            "title": "",
+            "text": ""
+          }
+        },
+        "template--16760645058818__4e74b20e-98a0-4629-8a28-cb1835283123-1686024087418e273c-2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/0107-83.jpg",
+            "link": "",
+            "title": "",
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--16760645058818__4e74b20e-98a0-4629-8a28-cb1835283123-1686024087418e273c-0",
+        "template--16760645058818__4e74b20e-98a0-4629-8a28-cb1835283123-1686024087418e273c-1",
+        "template--16760645058818__4e74b20e-98a0-4629-8a28-cb1835283123-1686024087418e273c-2"
+      ],
+      "settings": {
+        "wide_display": false,
+        "rounded_image": false,
+        "featured_promos_per_row": 3
+      }
+    },
+    "8057f81a-685b-45d5-98ac-e94f72e3be56": {
+      "type": "divider",
+      "settings": {
+        "divider_spacing": 15,
+        "divider_border": true
+      }
+    },
+    "c2f41212-4c33-4403-8178-c5001924c375": {
+      "type": "featured-text",
+      "settings": {
+        "title": "Talk about your brand",
+        "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>",
+        "button_label": "",
+        "button_link": "",
+        "text_size": "featured_text",
+        "text_alignment": "center"
+      }
     }
-  }, 
+  },
   "order": [
-    "main"
+    "main",
+    "3350a938-29d6-4ce6-847f-67d8d231fdbc",
+    "e7052d27-965d-4737-9cb4-1d41796936a8",
+    "926722b1-82f9-4e1c-be8f-98a2c51cc3c5",
+    "b24ef4b0-6814-4e4b-ab90-5a6ad097845f",
+    "4e74b20e-98a0-4629-8a28-cb1835283123",
+    "8057f81a-685b-45d5-98ac-e94f72e3be56",
+    "c2f41212-4c33-4403-8178-c5001924c375"
   ]
 }
