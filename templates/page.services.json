@@ -1,0 +1,11 @@
+{
+  "name": "Services template", 
+  "sections": {
+    "main": {
+      "type": "featured-text"
+    }
+  }, 
+  "order": [
+    "main"
+  ]
+}
