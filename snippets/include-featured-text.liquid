@@ -18,7 +18,7 @@
 {%- assign button_link = object.settings.button_link -%}
 {% comment %} End content settings {% endcomment %}
 
-<section class="section" style="padding-top: 48px; padding-bottom: 32px;">
+<section class="section" style="padding-top: {{ object.settings.padding_top }}px; padding-bottom: {{ object.settings.padding_bottom }}px;">
   <div class="container">
     <div class="one-whole column text-align-{{ object.settings.text_alignment }}">
       {% if image != blank %}

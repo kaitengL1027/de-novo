@@ -1,0 +1,65 @@
+<section class="section">
+  <div class="container">
+    <div class="one-half column">
+      asdfsdfsf asdfsadfa asdfasdfasf asdfasdfasdf asdfasdfa asdfasdf asdf
+      asdfsdfsf asdfsadfa asdfasdfasf asdfasdfasdf asdfasdfa asdfasdf asdf
+      asdfsdfsf asdfsadfa asdfasdfasf asdfasdfasdf asdfasdfa asdfasdf asdf
+      asdfsdfsf asdfsadfa asdfasdfasf asdfasdfasdf asdfasdfa asdfasdf asdf
+    </div>
+    <div class="one-half column">
+      asdfsdfsf asdfsadfa asdfasdfasf asdfasdfasdf asdfasdfa asdfasdf asdf
+      asdfsdfsf asdfsadfa asdfasdfasf asdfasdfasdf asdfasdfa asdfasdf asdf
+      asdfsdfsf asdfsadfa asdfasdfasf asdfasdfasdf asdfasdfa asdfasdf asdf
+      asdfsdfsf asdfsadfa asdfasdfasf asdfasdfasdf asdfasdfa asdfasdf asdf
+    </div>
+  </div>
+</section>
+
+<style>
+
+</style>
+
+{% schema %}
+  {
+    "name": "Two Column Text",
+    "class": "shopify-section--two-column-text",
+    "settings": [
+      {
+        "type": "text",
+        "id": "left-title",
+        "label": "Left Title"
+      },
+      {
+        "type": "text",
+        "id": "right-title",
+        "label": "Right Title"
+      },
+      {
+        "type": "range",
+        "id": "padding-x",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Left and right padding",
+        "default": 0
+      }, 
+      {
+        "type": "richtext",
+        "id": "left-content",
+        "label": "Left Content"
+      },
+      {
+        "type": "richtext",
+        "id": "right-content",
+        "label": "Right Content"
+      },
+      {
+        "type": "checkbox", 
+        "id": "layout", 
+        "label": "Left Content display at the top in mobile", 
+        "default": true
+      }
+    ]
+  }
+{% endschema %}
