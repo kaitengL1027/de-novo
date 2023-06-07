@@ -1,0 +1,18 @@
+{
+  "sections": {
+    "main": {
+      "type": "featured-text",
+      "settings": {
+        "title": "CELEBRATIONS WITH CHARACTER",
+        "content": "",
+        "button_label": "",
+        "button_link": "",
+        "text_size": "featured_text",
+        "text_alignment": "center"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
