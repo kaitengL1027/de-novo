@@ -29,7 +29,7 @@
                 {%- assign alt = block.settings.title -%}
               {% endif %}
 
-              <a {% if block.settings.link != blank %}href="{{ block.settings.link }}"{% endif %}>
+              <a {% if block.settings.link != blank %}href="{{ block.settings.link }}"{% endif %} class="{% if section.settings.square_image %}square_promotion{% endif %}">
                 {% render 'image-element',
                         image: image,
                         alt: image.alt
@@ -60,6 +60,25 @@
   </section>
 {% endif %}
 
+<style>
+  a.square_promotion .image-element__wrap {
+    position: relative;
+    width: 100%;
+  }
+  a.square_promotion .image-element__wrap:after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+  }
+  a.square_promotion .image-element__wrap img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+</style>
+
 {% schema %}
   {
     "name": "Featured promotions",
@@ -76,6 +95,12 @@
         "type": "checkbox",
         "id": "rounded_image",
         "label": "Rounded images",
+        "default": false
+      },
+      {
+        "type": "checkbox", 
+        "id": "square_image", 
+        "label": "Square images", 
         "default": false
       },
       {

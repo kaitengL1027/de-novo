@@ -29,9 +29,24 @@
       {% endif %}
 
       {% if title != blank %}
-        <h2 class="section-header home">
-          {{ title }}
-        </h2>
+        {% if object.settings.custom_font_size %}
+          <h2 
+            class="section-header home desktop-title {% unless object.settings.border_bottom %}title-bottom-border-none{% endunless %}"
+            style="font-size: {{ object.settings.desktop_font_size }}px;"
+          >
+            {{ title }}
+          </h2>
+          <h2 
+            class="section-header home mobile-title {% unless object.settings.border_bottom %}title-bottom-border-none{% endunless %}"
+            style="font-size: {{ object.settings.mobile_font_size }}px;"
+          >
+            {{ title }}
+          </h2>
+        {% else %}
+          <h2 class="section-header home {% unless object.settings.border_bottom %}title-bottom-border-none{% endunless %}">
+            {{ title }}
+          </h2>
+        {% endif %}
       {% endif %}
 
       <div class="{{ object.settings.text_size }} trim-last-paragraph">
@@ -48,3 +63,23 @@
     </div>
   </div>
 </section>
+
+<style>
+  .title-bottom-border-none {
+    border-bottom: none !important;
+  }
+  .desktop-title {
+    display: block !important;
+  }
+  .mobile-title {
+    display: none !important;
+  }
+  @media only screen and (max-width: 797px) {
+    .desktop-title {
+      display: none !important;
+    }
+    .mobile-title {
+      display: block !important;
+    }
+  }
+</style>
