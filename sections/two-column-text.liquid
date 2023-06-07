@@ -1,22 +1,48 @@
-<section class="section">
-  <div class="container">
-    <div class="one-half column">
-      asdfsdfsf asdfsadfa asdfasdfasf asdfasdfasdf asdfasdfa asdfasdf asdf
-      asdfsdfsf asdfsadfa asdfasdfasf asdfasdfasdf asdfasdfa asdfasdf asdf
-      asdfsdfsf asdfsadfa asdfasdfasf asdfasdfasdf asdfasdfa asdfasdf asdf
-      asdfsdfsf asdfsadfa asdfasdfasf asdfasdfasdf asdfasdfa asdfasdf asdf
+{%- assign settings = section.settings -%}
+
+<section class="section two-column-text__section">
+  <div class="container two-column-text__container">
+    <div class="one-half column two-column-text__column">
+      <h3 class="two-column-text__title">
+        {{ settings.left-title }}
+      </h3>
+      <div class="two-column-text__content">
+        {{ settings.left-content }}
+      </div>
     </div>
-    <div class="one-half column">
-      asdfsdfsf asdfsadfa asdfasdfasf asdfasdfasdf asdfasdfa asdfasdf asdf
-      asdfsdfsf asdfsadfa asdfasdfasf asdfasdfasdf asdfasdfa asdfasdf asdf
-      asdfsdfsf asdfsadfa asdfasdfasf asdfasdfasdf asdfasdfa asdfasdf asdf
-      asdfsdfsf asdfsadfa asdfasdfasf asdfasdfasdf asdfasdfa asdfasdf asdf
+    <div class="one-half column two-column-text__column">
+      <h3 class="two-column-text__title">
+        {{ settings.right-title }}
+      </h3>
+      <div class="two-column-text__content">
+        {{ settings.right-content }}
+      </div>
     </div>
   </div>
 </section>
 
 <style>
-
+  .two-column-text__content h4 {
+    font-size: 140%;
+    padding-bottom: 0px;
+  }
+  .two-column-text__content h5 {
+    font-size: 130%;
+    padding-bottom: 0px;
+  }
+  .two-column-text__content h6 {
+    font-size: 120%;
+    padding-bottom: 0px;
+  }
+  @media only screen and (max-width: 797px) {
+    .two-column-text__container {
+      flex-direction: {% if settings.layout %}column{% else %}column-reverse{% endif %};
+    }
+    .two-column-text__column {
+      width: calc(100% - 20px);
+      margin-bottom: 12px;
+    }
+  }
 </style>
 
 {% schema %}
@@ -30,24 +56,14 @@
         "label": "Left Title"
       },
       {
-        "type": "text",
-        "id": "right-title",
-        "label": "Right Title"
-      },
-      {
-        "type": "range",
-        "id": "padding-x",
-        "min": 0,
-        "max": 100,
-        "step": 1,
-        "unit": "px",
-        "label": "Left and right padding",
-        "default": 0
-      }, 
-      {
         "type": "richtext",
         "id": "left-content",
         "label": "Left Content"
+      },
+      {
+        "type": "text",
+        "id": "right-title",
+        "label": "Right Title"
       },
       {
         "type": "richtext",
@@ -57,9 +73,14 @@
       {
         "type": "checkbox", 
         "id": "layout", 
-        "label": "Left Content display at the top in mobile", 
+        "label": "Left content displays at the top in mobile", 
         "default": true
       }
-    ]
+    ], 
+    "presets": [{
+      "name": "Two Column Text",
+      "settings": {
+      }
+    }]
   }
 {% endschema %}
