@@ -65,12 +65,25 @@
         "divider_border": false
       }
     },
+    "73797a68-1d2c-4f63-a645-151dfb387c89": {
+      "type": "featured-text",
+      "settings": {
+        "title": "FULL PLANNING + DESIGN",
+        "content": "",
+        "button_label": "",
+        "button_link": "",
+        "text_size": "featured_text",
+        "text_alignment": "left",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
     "f9ee3b02-48a6-442e-9805-a722172985b4": {
       "type": "two-column-text",
       "settings": {
-        "left-title": "FULL PLANNING + DESIGN",
+        "left-title": "",
         "left-content": "<h6>We are by your side every step of the way for this full service package. We design, coordinate, and execute your wedding from start to finish, always in consultation with you to understand your needs and dreams.<\/h6>",
-        "right-title": "FULL PLANNING + DESIGNFULL PLANNING + DESIGNFULL PLANNING + DESIGN",
+        "right-title": "",
         "right-content": "<p>- Setup and management of shared online wedding folder <\/p><p>- Budget preparation, allocation and management<\/p><p>- Vendor recommendations and assisting in the selection of vendors<\/p><p>- Preparing and maintaining a wedding planning checklist for the months between now and the wedding<\/p><p>- Full design of  wedding including vision board <\/p><p>- Handling follow-ups and communication with vendors<\/p><p>- Creation of “day-of schedule”<\/p><p>- Direction of wedding ceremony rehearsal<\/p><p>- Supervision of ceremony and reception set up<\/p><p>- On site direction of wedding ceremony and wedding reception<\/p>",
         "layout": true
       }
@@ -160,6 +173,7 @@
     "f49ed581-fcf0-406b-86a5-103289d00d45",
     "926722b1-82f9-4e1c-be8f-98a2c51cc3c5",
     "eb028e78-f884-4a2a-a3a2-5f98dbe7b26d",
+    "73797a68-1d2c-4f63-a645-151dfb387c89",
     "f9ee3b02-48a6-442e-9805-a722172985b4",
     "ce8e0226-ab6e-46f4-b70b-6ca1d7299cb5",
     "fbb95612-c113-45ce-a204-8b4cdd80bbd2",
