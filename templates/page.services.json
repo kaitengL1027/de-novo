@@ -8,7 +8,9 @@
         "button_label": "",
         "button_link": "",
         "text_size": "featured_text",
-        "text_alignment": "center"
+        "text_alignment": "center",
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     },
     "3350a938-29d6-4ce6-847f-67d8d231fdbc": {
@@ -18,15 +20,28 @@
         "divider_border": true
       }
     },
-    "e7052d27-965d-4737-9cb4-1d41796936a8": {
-      "type": "featured-text",
+    "50ef67b3-8424-48b0-9e03-c945e30953d3": {
+      "type": "divider",
       "settings": {
-        "title": "",
-        "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>",
-        "button_label": "",
-        "button_link": "",
-        "text_size": "featured_text",
-        "text_alignment": "center"
+        "divider_spacing": 0,
+        "divider_border": false
+      }
+    },
+    "09166d36-1714-4c7a-a9c3-a90ae3ff063e": {
+      "type": "two-column-text",
+      "settings": {
+        "left-title": "",
+        "left-content": "<p>We are a full service wedding planning company. The key words that describe our approach are timeless, contemporary, artisanal and stylish. We focus on encouraging thoughtful choices throughout the process that are harmonious, connected and textural. We curate warm and inviting celebrations that encourage connection and conversation.<\/p>",
+        "right-title": "",
+        "right-content": "<p>Collaborating with engaged couples to plan authentic, memorable and beautiful weddings is an honour we are endlessly grateful for. From selecting talented vendors, preparing schedules, keeping you on budget and full design of the celebration, we are here to bring your vision to fruition and your wedding a joyful and stress-free occasion.<\/p>",
+        "layout": true
+      }
+    },
+    "f49ed581-fcf0-406b-86a5-103289d00d45": {
+      "type": "divider",
+      "settings": {
+        "divider_spacing": 20,
+        "divider_border": false
       }
     },
     "926722b1-82f9-4e1c-be8f-98a2c51cc3c5": {
@@ -43,22 +58,48 @@
         "text_align": "center"
       }
     },
-    "b24ef4b0-6814-4e4b-ab90-5a6ad097845f": {
+    "eb028e78-f884-4a2a-a3a2-5f98dbe7b26d": {
+      "type": "divider",
+      "settings": {
+        "divider_spacing": 20,
+        "divider_border": false
+      }
+    },
+    "73797a68-1d2c-4f63-a645-151dfb387c89": {
       "type": "featured-text",
       "settings": {
-        "title": "Talk about your brand",
-        "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>",
+        "title": "FULL PLANNING + DESIGN",
+        "content": "",
         "button_label": "",
         "button_link": "",
         "text_size": "featured_text",
-        "text_alignment": "center"
+        "text_alignment": "left",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "f9ee3b02-48a6-442e-9805-a722172985b4": {
+      "type": "two-column-text",
+      "settings": {
+        "left-title": "",
+        "left-content": "<h6>We are by your side every step of the way for this full service package. We design, coordinate, and execute your wedding from start to finish, always in consultation with you to understand your needs and dreams.<\/h6>",
+        "right-title": "",
+        "right-content": "<p>- Setup and management of shared online wedding folder <\/p><p>- Budget preparation, allocation and management<\/p><p>- Vendor recommendations and assisting in the selection of vendors<\/p><p>- Preparing and maintaining a wedding planning checklist for the months between now and the wedding<\/p><p>- Full design of  wedding including vision board <\/p><p>- Handling follow-ups and communication with vendors<\/p><p>- Creation of “day-of schedule”<\/p><p>- Direction of wedding ceremony rehearsal<\/p><p>- Supervision of ceremony and reception set up<\/p><p>- On site direction of wedding ceremony and wedding reception<\/p>",
+        "layout": true
       }
     },
     "ce8e0226-ab6e-46f4-b70b-6ca1d7299cb5": {
       "type": "divider",
       "settings": {
-        "divider_spacing": 0,
+        "divider_spacing": 30,
         "divider_border": true
+      }
+    },
+    "fbb95612-c113-45ce-a204-8b4cdd80bbd2": {
+      "type": "divider",
+      "settings": {
+        "divider_spacing": 0,
+        "divider_border": false
       }
     },
     "4e74b20e-98a0-4629-8a28-cb1835283123": {
@@ -106,7 +147,7 @@
     "8057f81a-685b-45d5-98ac-e94f72e3be56": {
       "type": "divider",
       "settings": {
-        "divider_spacing": 15,
+        "divider_spacing": 0,
         "divider_border": true
       }
     },
@@ -118,17 +159,24 @@
         "button_label": "",
         "button_link": "",
         "text_size": "regular_text",
-        "text_alignment": "center"
+        "text_alignment": "center",
+        "padding_top": 48,
+        "padding_bottom": 32
       }
     }
   },
   "order": [
     "main",
     "3350a938-29d6-4ce6-847f-67d8d231fdbc",
-    "e7052d27-965d-4737-9cb4-1d41796936a8",
+    "50ef67b3-8424-48b0-9e03-c945e30953d3",
+    "09166d36-1714-4c7a-a9c3-a90ae3ff063e",
+    "f49ed581-fcf0-406b-86a5-103289d00d45",
     "926722b1-82f9-4e1c-be8f-98a2c51cc3c5",
-    "b24ef4b0-6814-4e4b-ab90-5a6ad097845f",
+    "eb028e78-f884-4a2a-a3a2-5f98dbe7b26d",
+    "73797a68-1d2c-4f63-a645-151dfb387c89",
+    "f9ee3b02-48a6-442e-9805-a722172985b4",
     "ce8e0226-ab6e-46f4-b70b-6ca1d7299cb5",
+    "fbb95612-c113-45ce-a204-8b4cdd80bbd2",
     "4e74b20e-98a0-4629-8a28-cb1835283123",
     "8057f81a-685b-45d5-98ac-e94f72e3be56",
     "c2f41212-4c33-4403-8178-c5001924c375"
