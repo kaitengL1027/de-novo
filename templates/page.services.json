@@ -4,6 +4,10 @@
       "type": "featured-text",
       "settings": {
         "title": "CELEBRATIONS WITH CHARACTER",
+        "border_bottom": false,
+        "custom_font_size": true,
+        "desktop_font_size": 30,
+        "mobile_font_size": 20,
         "content": "",
         "button_label": "",
         "button_link": "",
@@ -30,9 +34,7 @@
     "09166d36-1714-4c7a-a9c3-a90ae3ff063e": {
       "type": "two-column-text",
       "settings": {
-        "left-title": "",
         "left-content": "<p>We are a full service wedding planning company. The key words that describe our approach are timeless, contemporary, artisanal and stylish. We focus on encouraging thoughtful choices throughout the process that are harmonious, connected and textural. We curate warm and inviting celebrations that encourage connection and conversation.<\/p>",
-        "right-title": "",
         "right-content": "<p>Collaborating with engaged couples to plan authentic, memorable and beautiful weddings is an honour we are endlessly grateful for. From selecting talented vendors, preparing schedules, keeping you on budget and full design of the celebration, we are here to bring your vision to fruition and your wedding a joyful and stress-free occasion.<\/p>",
         "layout": true
       }
@@ -69,6 +71,10 @@
       "type": "featured-text",
       "settings": {
         "title": "FULL PLANNING + DESIGN",
+        "border_bottom": false,
+        "custom_font_size": true,
+        "desktop_font_size": 30,
+        "mobile_font_size": 20,
         "content": "",
         "button_label": "",
         "button_link": "",
@@ -81,9 +87,7 @@
     "f9ee3b02-48a6-442e-9805-a722172985b4": {
       "type": "two-column-text",
       "settings": {
-        "left-title": "",
         "left-content": "<h6>We are by your side every step of the way for this full service package. We design, coordinate, and execute your wedding from start to finish, always in consultation with you to understand your needs and dreams.<\/h6>",
-        "right-title": "",
         "right-content": "<p>- Setup and management of shared online wedding folder <\/p><p>- Budget preparation, allocation and management<\/p><p>- Vendor recommendations and assisting in the selection of vendors<\/p><p>- Preparing and maintaining a wedding planning checklist for the months between now and the wedding<\/p><p>- Full design of  wedding including vision board <\/p><p>- Handling follow-ups and communication with vendors<\/p><p>- Creation of “day-of schedule”<\/p><p>- Direction of wedding ceremony rehearsal<\/p><p>- Supervision of ceremony and reception set up<\/p><p>- On site direction of wedding ceremony and wedding reception<\/p>",
         "layout": true
       }
@@ -141,6 +145,7 @@
       "settings": {
         "wide_display": false,
         "rounded_image": false,
+        "square_image": true,
         "featured_promos_per_row": 3
       }
     },
@@ -155,6 +160,10 @@
       "type": "featured-text",
       "settings": {
         "title": "",
+        "border_bottom": true,
+        "custom_font_size": false,
+        "desktop_font_size": 39,
+        "mobile_font_size": 25,
         "content": "<p>PLEASE <a href=\"http:\/\/www.blushandbowties.ca\/contact\/\">CONTACT US<\/a> DIRECTLY FOR PRICING AND A CUSTOM QUOTE<\/p><p>Please note we do not offer month of\/day of planning, we are a full service planning company<\/p>",
         "button_label": "",
         "button_link": "",
