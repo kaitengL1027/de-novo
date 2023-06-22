@@ -3464,7 +3464,7 @@
       "ff3cfb90-4eae-434c-b306-cfd80c2d1902": {
         "type": "instafeed",
         "settings": {
-          "heading_size": 20,
+          "heading_size": 25,
           "feed_width": 100,
           "html_area": ""
         }
