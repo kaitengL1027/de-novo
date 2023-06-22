@@ -3422,9 +3422,9 @@
           "08693455-79db-4cae-94c0-2109fa75051f": {
             "type": "quote",
             "settings": {
-              "image": "shopify:\/\/shop_images\/Curiocity-Blk.webp",
-              "testimonial": "<p>\"Ann is the best\"<\/p>",
-              "name": "Justin Trudeau",
+              "image": "shopify:\/\/shop_images\/og_image_default.webp",
+              "testimonial": "<p>\"An easy, breezy style wedding vibe set against the beauty of autumn is the inspiration behind this styled shoot\"<\/p>",
+              "name": "",
               "site_link": ""
             }
           }
