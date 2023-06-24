@@ -132,6 +132,16 @@
         {% endif %}
       {% endif %}
 
+      {% if product.metafields.description.flowersused %}
+        <button class="accordion">
+          <p>Flowers Used</p>
+          <i class="fa-solid fa-chevron-down"></i>
+          <i class="fa-solid fa-chevron-up"></i>
+        </button>
+        <div class="panel">
+          <p>{{ product.metafields.description.flowersused | metafield_text }}</p>
+        </div>
+      {% endif %}
       {% if product.metafields.description.dimension %}
         <button class="accordion">
           <p>Dimension</p>
