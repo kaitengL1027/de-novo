@@ -156,11 +156,13 @@
 </footer>
 
 <style>
-  .footer__hours-content h1, h2, h3, h4, h5, h6, p, i, ul, a {
+  .footer__hours-content > :is(h1, h2, h3, h4, h5, h6, p, i, ul, a) {
     margin-bottom: 0px;
+    font-size: 13px;
   }
-  .footer__location-content h1, h2, h3, h4, h5, h6, p, i, ul, a {
+  .footer__location-content > :is(h1, h2, h3, h4, h5, h6, p, i, ul, a) {
     margin-bottom: 0px;
+    font-size: 13px;
   }
   .footer__hours-title, .footer__location-title {
     font-family: {{ settings.headline__font.family }}, {{ settings.headline__font.fallback_families }};
@@ -173,12 +175,16 @@
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-size: {{ settings.headline_font_size | times: 0.4 | floor | append: 'px' }};
+    font-size: {{ settings.headline_font_size | times: 0.35 | floor | append: 'px' }};
     color: {{ settings.headline_footer_text_color }};
-    padding-bottom: 17px;
+    padding-bottom: 15px;
   }
   .footer__hours-container {
     margin-bottom: 16px;
+  }
+  .footer__content-page div {
+    line-height: 1.4em;
+    padding-bottom: 5px;
   }
 </style>
 
