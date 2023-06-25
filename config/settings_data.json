@@ -2515,7 +2515,7 @@
     "headline__font": "garamond_n4",
     "headline_font_style": "none",
     "headline_alignment": "center",
-    "headline_font_size": 44,
+    "headline_font_size": 33,
     "headline_letter_spacing": 0,
     "nav__font": "garamond_n4",
     "nav_font_style": "uppercase",
@@ -3472,6 +3472,22 @@
       "wedding-inquiry-template": {
         "type": "wedding-inquiry-template",
         "settings": {
+        }
+      },
+      "article-template": {
+        "type": "article-template",
+        "settings": {
+          "slideshow_post_enabled": false,
+          "slideshow_post_darken": false,
+          "blog_breadcrumb": false,
+          "blog_tags": false,
+          "blog_author": false,
+          "blog_date": true,
+          "blog_comment_count": true,
+          "display_social_buttons": true,
+          "blog_additional_posts": true,
+          "read_more_link": true,
+          "toggle": false
         }
       }
     },
