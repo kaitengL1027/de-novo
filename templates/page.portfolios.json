@@ -161,7 +161,7 @@
       ],
       "settings": {
         "wide_display": false,
-        "title": "Portfolios",
+        "title": "Portfolio",
         "images_per_row": 3,
         "square": true,
         "animation": true,
