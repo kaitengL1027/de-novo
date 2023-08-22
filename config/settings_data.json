@@ -2907,7 +2907,7 @@
         "settings": {
           "show_announcement_message": true,
           "announcement_homepage_only": true,
-          "announcement_message": "Review us on Google and receive a 12% discount for your next order",
+          "announcement_message": "Review us on Google and receive a 12% discount on your next purchase",
           "announcement_link": "shopify:\/\/collections\/all",
           "announcement_color": "#08210c",
           "announcement_text_color": "#ffffff",
@@ -2939,7 +2939,7 @@
           "footer_alignment": "left",
           "footer_newsletter": false,
           "newsletter_heading": "LET'S BE PEN PAL",
-          "newsletter_richtext": "<p>SAVE 10% FOR YOUR FIRST ORDER* WHEN YOU SIGN UP TO RECEIVE EMAILS.<br\/><\/p>",
+          "newsletter_richtext": "<p>SIGN UP TO RECEIVE OUR MARKETING EMAILS<br\/><\/p>",
           "display_first_name": false,
           "display_last_name": false,
           "footer_social_icons": true,
