@@ -2837,6 +2837,21 @@
       "header": {
         "type": "header",
         "blocks": {
+          "7353cd5e-b797-462c-a204-6003de24233c": {
+            "type": "menu",
+            "settings": {
+              "mega_menu_title": "Christmas Collection",
+              "mega_linklist": "christmas-collection",
+              "column_title": "",
+              "column_text": "",
+              "column_link": "",
+              "column_position": "first_column",
+              "mega_text": "",
+              "mega_text_url": "",
+              "mega_menu_banner_bg": "#ffffff",
+              "mega_menu_banner_text": "#404040"
+            }
+          },
           "27d345f3-8ed6-4fba-9920-6106d5c7625a": {
             "type": "menu",
             "settings": {
@@ -2881,28 +2896,13 @@
               "mega_menu_banner_bg": "#ffffff",
               "mega_menu_banner_text": "#404040"
             }
-          },
-          "7353cd5e-b797-462c-a204-6003de24233c": {
-            "type": "menu",
-            "settings": {
-              "mega_menu_title": "Christmas Collection",
-              "mega_linklist": "christmas-collection",
-              "column_title": "",
-              "column_text": "",
-              "column_link": "",
-              "column_position": "first_column",
-              "mega_text": "",
-              "mega_text_url": "",
-              "mega_menu_banner_bg": "#ffffff",
-              "mega_menu_banner_text": "#404040"
-            }
           }
         },
         "block_order": [
+          "7353cd5e-b797-462c-a204-6003de24233c",
           "27d345f3-8ed6-4fba-9920-6106d5c7625a",
           "aafd51d1-1fb0-4981-b049-e4d73dc88d75",
-          "f0593af0-13bd-4480-853c-9d302849f40f",
-          "7353cd5e-b797-462c-a204-6003de24233c"
+          "f0593af0-13bd-4480-853c-9d302849f40f"
         ],
         "settings": {
           "show_announcement_message": true,
