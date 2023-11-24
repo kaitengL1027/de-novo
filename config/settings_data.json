@@ -2885,8 +2885,8 @@
           "7353cd5e-b797-462c-a204-6003de24233c": {
             "type": "menu",
             "settings": {
-              "mega_menu_title": "Mother's Day",
-              "mega_linklist": "",
+              "mega_menu_title": "Christmas Collection",
+              "mega_linklist": "christmas-collection",
               "column_title": "",
               "column_text": "",
               "column_link": "",
@@ -2957,7 +2957,9 @@
           "button_label": "INQUIRE WITH US",
           "button_link": "shopify:\/\/pages\/wedding-inquiry",
           "text_size": "regular_text",
-          "text_alignment": "center"
+          "text_alignment": "center",
+          "padding_top": 48,
+          "padding_bottom": 32
         }
       },
       "1535002506295": {
