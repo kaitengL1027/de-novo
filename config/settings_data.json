@@ -2803,8 +2803,8 @@
               "image": "shopify:\/\/shop_images\/MG_8234.jpg",
               "title": "Christmas Collection",
               "subtext": "",
-              "button_label": "",
-              "link": "",
+              "button_label": "View Collection",
+              "link": "shopify:\/\/collections\/christmas-collection",
               "text_position": "center",
               "text_align": "center"
             }
