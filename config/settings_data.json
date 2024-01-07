@@ -2822,23 +2822,22 @@
               "text_align": "center"
             }
           },
-          "82e80870-7548-4b8c-8379-395857596020": {
+          "66f981ed-3bf1-41c8-b16f-38fe397fb6d3": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/Grace_Jimi20220820-S-253.jpg",
-              "title": "Golden Provence Wedding Collection",
+              "title": "",
               "subtext": "",
-              "button_label": "View Collection",
-              "link": "shopify:\/\/collections\/lilac-theme-wedding-collection",
-              "text_position": "right",
-              "text_align": "right"
+              "button_label": "",
+              "link": "",
+              "text_position": "center",
+              "text_align": "center"
             }
           }
         },
         "block_order": [
           "7bacc023-ac03-4c12-9d98-b392bd044219",
           "slideshow-1",
-          "82e80870-7548-4b8c-8379-395857596020"
+          "66f981ed-3bf1-41c8-b16f-38fe397fb6d3"
         ],
         "settings": {
           "wide_display": false,
@@ -2851,22 +2850,6 @@
       "header": {
         "type": "header",
         "blocks": {
-          "7353cd5e-b797-462c-a204-6003de24233c": {
-            "type": "menu",
-            "disabled": true,
-            "settings": {
-              "mega_menu_title": "Christmas Collection",
-              "mega_linklist": "christmas-collection",
-              "column_title": "",
-              "column_text": "",
-              "column_link": "",
-              "column_position": "first_column",
-              "mega_text": "",
-              "mega_text_url": "",
-              "mega_menu_banner_bg": "#ffffff",
-              "mega_menu_banner_text": "#404040"
-            }
-          },
           "243b9a7b-118f-4e36-b6ec-1ec22b315e9e": {
             "type": "menu",
             "settings": {
@@ -2929,7 +2912,6 @@
           }
         },
         "block_order": [
-          "7353cd5e-b797-462c-a204-6003de24233c",
           "243b9a7b-118f-4e36-b6ec-1ec22b315e9e",
           "27d345f3-8ed6-4fba-9920-6106d5c7625a",
           "aafd51d1-1fb0-4981-b049-e4d73dc88d75",
