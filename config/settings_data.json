@@ -2797,19 +2797,6 @@
       "slideshow": {
         "type": "slideshow",
         "blocks": {
-          "7bacc023-ac03-4c12-9d98-b392bd044219": {
-            "type": "image",
-            "disabled": true,
-            "settings": {
-              "image": "shopify:\/\/shop_images\/MG_8234.jpg",
-              "title": "Christmas Collection",
-              "subtext": "",
-              "button_label": "View Collection",
-              "link": "shopify:\/\/collections\/christmas-collection",
-              "text_position": "center",
-              "text_align": "center"
-            }
-          },
           "slideshow-1": {
             "type": "image",
             "settings": {
@@ -2821,23 +2808,10 @@
               "text_position": "center",
               "text_align": "center"
             }
-          },
-          "66f981ed-3bf1-41c8-b16f-38fe397fb6d3": {
-            "type": "image",
-            "settings": {
-              "title": "",
-              "subtext": "",
-              "button_label": "",
-              "link": "",
-              "text_position": "center",
-              "text_align": "center"
-            }
           }
         },
         "block_order": [
-          "7bacc023-ac03-4c12-9d98-b392bd044219",
-          "slideshow-1",
-          "66f981ed-3bf1-41c8-b16f-38fe397fb6d3"
+          "slideshow-1"
         ],
         "settings": {
           "wide_display": false,
