@@ -2799,6 +2799,7 @@
         "blocks": {
           "7bacc023-ac03-4c12-9d98-b392bd044219": {
             "type": "image",
+            "disabled": true,
             "settings": {
               "image": "shopify:\/\/shop_images\/MG_8234.jpg",
               "title": "Christmas Collection",
@@ -2852,6 +2853,7 @@
         "blocks": {
           "7353cd5e-b797-462c-a204-6003de24233c": {
             "type": "menu",
+            "disabled": true,
             "settings": {
               "mega_menu_title": "Christmas Collection",
               "mega_linklist": "christmas-collection",
