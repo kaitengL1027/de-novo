@@ -2808,15 +2808,28 @@
               "text_position": "center",
               "text_align": "center"
             }
+          },
+          "image_WCXhCA": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/DeNovo20220108C-5.jpg",
+              "title": "New Year Collection",
+              "subtext": "Celebrate Chinese New Year",
+              "button_label": "Order Now",
+              "link": "shopify:\/\/collections\/new-year-collection",
+              "text_position": "left",
+              "text_align": "left"
+            }
           }
         },
         "block_order": [
-          "slideshow-1"
+          "slideshow-1",
+          "image_WCXhCA"
         ],
         "settings": {
           "wide_display": false,
           "enable_padding": false,
-          "slideshow_animation": "fade",
+          "slideshow_animation": "slide",
           "slideshow_speed": 10,
           "adaptive_height": true
         }
