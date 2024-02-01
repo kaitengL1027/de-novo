@@ -2824,6 +2824,21 @@
       "header": {
         "type": "header",
         "blocks": {
+          "menu_kYiYFn": {
+            "type": "menu",
+            "settings": {
+              "mega_menu_title": "Valentine's Day",
+              "mega_linklist": "valentines-day",
+              "column_title": "Catalog",
+              "column_text": "",
+              "column_link": "",
+              "column_position": "first_column",
+              "mega_text": "",
+              "mega_text_url": "",
+              "mega_menu_banner_bg": "#ffffff",
+              "mega_menu_banner_text": "#404040"
+            }
+          },
           "243b9a7b-118f-4e36-b6ec-1ec22b315e9e": {
             "type": "menu",
             "settings": {
@@ -2886,6 +2901,7 @@
           }
         },
         "block_order": [
+          "menu_kYiYFn",
           "243b9a7b-118f-4e36-b6ec-1ec22b315e9e",
           "27d345f3-8ed6-4fba-9920-6106d5c7625a",
           "aafd51d1-1fb0-4981-b049-e4d73dc88d75",
@@ -2902,7 +2918,7 @@
           "show_currency_selector": true,
           "fix_top_bar": true,
           "search_box_top_bar": true,
-          "top_bar_linklist": "",
+          "top_bar_linklist": "valentines-day",
           "phone_number": "1-416-486-6686",
           "logo": "shopify:\/\/shop_images\/image_1.png",
           "logo_width": 360,
