@@ -2797,14 +2797,14 @@
       "slideshow": {
         "type": "slideshow",
         "blocks": {
-          "slideshow-1": {
+          "image_heYyNP": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/innayas_haciendasarriawedding_2-397.jpg",
-              "title": "Forest Wonderland Wedding Collection",
-              "subtext": "",
-              "button_label": "View Collection",
-              "link": "shopify:\/\/collections\/wedding-events-forest-wonderland",
+              "image": "shopify:\/\/shop_images\/DeNovo20220107B-94.jpg",
+              "title": "Valentine's Day Collection",
+              "subtext": "Celebrate Love",
+              "button_label": "Order Now",
+              "link": "shopify:\/\/collections\/valentines-day",
               "text_position": "center",
               "text_align": "center"
             }
@@ -2820,11 +2820,24 @@
               "text_position": "left",
               "text_align": "left"
             }
+          },
+          "slideshow-1": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/innayas_haciendasarriawedding_2-397.jpg",
+              "title": "Forest Wonderland Wedding Collection",
+              "subtext": "",
+              "button_label": "View Collection",
+              "link": "shopify:\/\/collections\/wedding-events-forest-wonderland",
+              "text_position": "center",
+              "text_align": "center"
+            }
           }
         },
         "block_order": [
-          "slideshow-1",
-          "image_WCXhCA"
+          "image_heYyNP",
+          "image_WCXhCA",
+          "slideshow-1"
         ],
         "settings": {
           "wide_display": false,
