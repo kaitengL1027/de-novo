@@ -2797,30 +2797,6 @@
       "slideshow": {
         "type": "slideshow",
         "blocks": {
-          "image_heYyNP": {
-            "type": "image",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/DeNovo20220107B-94.jpg",
-              "title": "Valentine's Day Collection",
-              "subtext": "Celebrate Love",
-              "button_label": "Order Now",
-              "link": "shopify:\/\/collections\/valentines-day-flowers",
-              "text_position": "center",
-              "text_align": "center"
-            }
-          },
-          "image_WCXhCA": {
-            "type": "image",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/DeNovo20220108C-5.jpg",
-              "title": "New Year Collection",
-              "subtext": "Celebrate Chinese New Year",
-              "button_label": "Order Now",
-              "link": "shopify:\/\/collections\/lunar-new-year-flowers",
-              "text_position": "left",
-              "text_align": "left"
-            }
-          },
           "slideshow-1": {
             "type": "image",
             "settings": {
@@ -2835,8 +2811,6 @@
           }
         },
         "block_order": [
-          "image_heYyNP",
-          "image_WCXhCA",
           "slideshow-1"
         ],
         "settings": {
