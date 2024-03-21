@@ -2920,7 +2920,7 @@
         "settings": {
           "show_announcement_message": true,
           "announcement_homepage_only": true,
-          "announcement_message": "",
+          "announcement_message": "Google review us for next order 12% off",
           "announcement_link": "shopify:\/\/collections\/all",
           "announcement_color": "#08210c",
           "announcement_text_color": "#ffffff",
