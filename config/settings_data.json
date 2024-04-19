@@ -2850,6 +2850,21 @@
       "header": {
         "type": "header",
         "blocks": {
+          "5ebf7e8b-d45c-42a7-92be-a6b859643a6e": {
+            "type": "menu",
+            "settings": {
+              "mega_menu_title": "Mother's Day",
+              "mega_linklist": "mothers-day",
+              "column_title": "Catalog",
+              "column_text": "",
+              "column_link": "",
+              "column_position": "first_column",
+              "mega_text": "",
+              "mega_text_url": "",
+              "mega_menu_banner_bg": "#ffffff",
+              "mega_menu_banner_text": "#404040"
+            }
+          },
           "27d345f3-8ed6-4fba-9920-6106d5c7625a": {
             "type": "menu",
             "settings": {
@@ -2894,28 +2909,13 @@
               "mega_menu_banner_bg": "#ffffff",
               "mega_menu_banner_text": "#404040"
             }
-          },
-          "5ebf7e8b-d45c-42a7-92be-a6b859643a6e": {
-            "type": "menu",
-            "settings": {
-              "mega_menu_title": "Mother's Day",
-              "mega_linklist": "mothers-day",
-              "column_title": "Catalog",
-              "column_text": "",
-              "column_link": "",
-              "column_position": "first_column",
-              "mega_text": "",
-              "mega_text_url": "",
-              "mega_menu_banner_bg": "#ffffff",
-              "mega_menu_banner_text": "#404040"
-            }
           }
         },
         "block_order": [
+          "5ebf7e8b-d45c-42a7-92be-a6b859643a6e",
           "27d345f3-8ed6-4fba-9920-6106d5c7625a",
           "aafd51d1-1fb0-4981-b049-e4d73dc88d75",
-          "f0593af0-13bd-4480-853c-9d302849f40f",
-          "5ebf7e8b-d45c-42a7-92be-a6b859643a6e"
+          "f0593af0-13bd-4480-853c-9d302849f40f"
         ],
         "settings": {
           "show_announcement_message": true,
