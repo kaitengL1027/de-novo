@@ -2797,6 +2797,18 @@
       "slideshow": {
         "type": "slideshow",
         "blocks": {
+          "image_RWeDiw": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/20220406DeNovo-7.jpg",
+              "title": "Mother's Day Collection",
+              "subtext": "",
+              "button_label": "View Collection",
+              "link": "shopify:\/\/collections\/mothers-day",
+              "text_position": "right",
+              "text_align": "right"
+            }
+          },
           "image_3NR38F": {
             "type": "image",
             "settings": {
@@ -2835,6 +2847,7 @@
           }
         },
         "block_order": [
+          "image_RWeDiw",
           "image_3NR38F",
           "slideshow-1",
           "82e80870-7548-4b8c-8379-395857596020"
