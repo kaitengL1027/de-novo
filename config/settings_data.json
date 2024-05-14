@@ -2800,13 +2800,13 @@
           "image_3NR38F": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/Shotlife_Studio_Blue_Flower_Wedluxe_0085.jpg",
+              "image": "shopify:\/\/shop_images\/Shotlife_Studio_Blue_Flower_Wedluxe_0064_d17def11-6e20-4c09-a1ff-41ad0d7b9cf8.jpg",
               "title": "Something Blue Wedding Collection",
               "subtext": "",
               "button_label": "View Collection",
               "link": "shopify:\/\/collections\/something-blue",
-              "text_position": "center",
-              "text_align": "center"
+              "text_position": "right",
+              "text_align": "right"
             }
           },
           "slideshow-1": {
