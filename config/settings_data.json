@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "presets": {
     "London": {
@@ -3515,6 +3524,31 @@
       "1535002506295",
       "ef3ceea5-2f54-4f54-806e-f0f6df75bfa0",
       "ff3cfb90-4eae-434c-b306-cfd80c2d1902"
-    ]
+    ],
+    "blocks": {
+      "5900226441112829888": {
+        "type": "shopify:\/\/apps\/pickup-delivery-date-letmepro\/blocks\/app-embed\/65000196-adf5-4701-8ca2-4f8e714c48f1",
+        "disabled": false,
+        "settings": {
+          "buy_now_class": ".shopify-payment-button__button,.shopify-payment-button__more-options",
+          "lmp_show_on_cart_page": true,
+          "padding_top": 8,
+          "padding_bottom": 8,
+          "column_gap": 8,
+          "button_color": "#000000",
+          "button_active_color": "#000000",
+          "button_bg_color": "",
+          "button_bg_active_color": "#d8f4fe",
+          "button_border_color": "#d4d4d8",
+          "active_button_border_color": "#d4d4d8",
+          "label_local_pickup_type": "Pickup at Store",
+          "label_local_delivery_type": "Local Delivery",
+          "label_shipping_type": "Standard Shipping",
+          "input_pickup_slot_placeholder": "Choose pickup date",
+          "input_shipping_date_placeholder": "Choose shipping date",
+          "input_delivery_instruction_placeholder": "Add delivery instructions"
+        }
+      }
+    }
   }
 }
