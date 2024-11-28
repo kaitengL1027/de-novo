@@ -3524,9 +3524,14 @@
       "ff3cfb90-4eae-434c-b306-cfd80c2d1902"
     ],
     "blocks": {
+      "17985673643287205206": {
+        "type": "shopify://apps/estimated-delivery-date-plus/blocks/app_setting/4a0685bc-c234-45b2-8382-5ad6a8e3e3fd",
+        "disabled": true,
+        "settings": {}
+      },
       "5900226441112829888": {
         "type": "shopify://apps/pickup-delivery-date-letmepro/blocks/app-embed/65000196-adf5-4701-8ca2-4f8e714c48f1",
-        "disabled": false,
+        "disabled": true,
         "settings": {
           "buy_now_class": ".shopify-payment-button__button,.shopify-payment-button__more-options",
           "lmp_show_on_cart_page": true,
@@ -3546,11 +3551,6 @@
           "input_shipping_date_placeholder": "Choose shipping date",
           "input_delivery_instruction_placeholder": "Add delivery instructions"
         }
-      },
-      "17985673643287205206": {
-        "type": "shopify://apps/estimated-delivery-date-plus/blocks/app_setting/4a0685bc-c234-45b2-8382-5ad6a8e3e3fd",
-        "disabled": false,
-        "settings": {}
       }
     }
   }
