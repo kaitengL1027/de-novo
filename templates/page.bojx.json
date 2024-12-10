@@ -33,37 +33,91 @@
         "7624ddcf-04c9-486e-92d4-3cdaddadcfe6": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Autumn_in_NY-Day_2-Liz_Andolina_Photography-296.jpg"
+            "image": "shopify://shop_images/D9A3017.jpg"
           }
         },
         "6d277f7d-cdaa-42a6-9dd1-98251cc6e856": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Autumn_in_NY-Day_2-Liz_Andolina_Photography-299.jpg"
+            "image": "shopify://shop_images/D9A3241.jpg"
           }
         },
         "be9079e1-6699-405c-9e50-8196a17fcafe": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Autumn_in_New_York-Liz_Andolina_Photography-21.jpg"
+            "image": "shopify://shop_images/D9A3251.jpg"
           }
         },
         "2bd79ebe-96a8-491f-ad3b-dd798b5262fe": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Autumn_in_New_York-Liz_Andolina_Photography-15.jpg"
+            "image": "shopify://shop_images/D9A3264.jpg"
           }
         },
         "009b2fff-50c4-437f-b598-70c63196575e": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Autumn_in_New_York-Liz_Andolina_Photography-11.jpg"
+            "image": "shopify://shop_images/D9A3369.jpg"
           }
         },
         "image_FhyVQz": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Autumn_in_NY-Liz_Andolina_Photography-186_607a4341-c889-47ab-baf6-9384b320a00a.jpg"
+            "image": "shopify://shop_images/D9A3417.jpg"
+          }
+        },
+        "image_TaxXmR": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/D9A3405.jpg"
+          }
+        },
+        "image_nhK8dY": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/D9A3632.jpg"
+          }
+        },
+        "image_aVTiJr": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/D9A3628.jpg"
+          }
+        },
+        "image_zh9Dzy": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/D9A3544_0a4b661f-e9e8-40dd-aff3-86c0bd019615.jpg"
+          }
+        },
+        "image_4X7h8R": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/D9A3558.jpg"
+          }
+        },
+        "image_c7UELN": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/D9A3524.jpg"
+          }
+        },
+        "image_NgWbXb": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/D9A3705_e171a56a-906d-42ea-bc03-2bd452348db7.jpg"
+          }
+        },
+        "image_B6KRwa": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/D9A3680.jpg"
+          }
+        },
+        "image_6tReJ3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/D9A2654.jpg"
           }
         }
       },
@@ -76,7 +130,16 @@
         "be9079e1-6699-405c-9e50-8196a17fcafe",
         "2bd79ebe-96a8-491f-ad3b-dd798b5262fe",
         "009b2fff-50c4-437f-b598-70c63196575e",
-        "image_FhyVQz"
+        "image_FhyVQz",
+        "image_TaxXmR",
+        "image_nhK8dY",
+        "image_aVTiJr",
+        "image_zh9Dzy",
+        "image_4X7h8R",
+        "image_c7UELN",
+        "image_NgWbXb",
+        "image_B6KRwa",
+        "image_6tReJ3"
       ],
       "settings": {
         "title": "",
