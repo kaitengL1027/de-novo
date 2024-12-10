@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -6,7 +15,7 @@
         "6a341059-f69b-4d4e-94e9-5d24926af5a8": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/5D597586-2F22-426B-BB7A-61C641810988_ff7e2f58-8a03-460e-a47c-b833f0f49839.jpg",
+            "image": "shopify://shop_images/5D597586-2F22-426B-BB7A-61C641810988_ff7e2f58-8a03-460e-a47c-b833f0f49839.jpg",
             "page": "jorge-marry",
             "page_subheading": ""
           }
@@ -14,7 +23,7 @@
         "0586fddd-f148-4b8b-8f6d-beb33ecec141": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Lune1860B-41.jpg",
+            "image": "shopify://shop_images/Lune1860B-41.jpg",
             "page": "lune-1860",
             "page_subheading": ""
           }
@@ -22,7 +31,7 @@
         "73b56bbb-8873-4d5e-a088-d8b54cbb6f64": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/EmilySam_21_1.jpg",
+            "image": "shopify://shop_images/EmilySam_21_1.jpg",
             "page": "emily-sam",
             "page_subheading": ""
           }
@@ -30,7 +39,7 @@
         "cf0fe130-ac69-4076-af29-e35a51936a40": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Shotlife_Studio_Grace_Glamour_0094.jpg",
+            "image": "shopify://shop_images/Shotlife_Studio_Grace_Glamour_0094.jpg",
             "page": "graydon-hall",
             "page_subheading": ""
           }
@@ -38,7 +47,7 @@
         "b9580058-c87b-4cbf-af60-50f8c13906d6": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/BohemianWedding_InnaYasinskaPhotography-882.jpg",
+            "image": "shopify://shop_images/BohemianWedding_InnaYasinskaPhotography-882.jpg",
             "page": "bohemian",
             "page_subheading": ""
           }
@@ -46,7 +55,7 @@
         "708c7607-5d8c-46fa-a006-ffb8ee1ef1be": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/IMG_0484.jpg",
+            "image": "shopify://shop_images/IMG_0484.jpg",
             "page": "fiat",
             "page_subheading": ""
           }
@@ -54,7 +63,7 @@
         "0e4b02cc-42bc-404a-abf4-7862dc935c2d": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/innayas_haciendasarriawedding_2-397.jpg",
+            "image": "shopify://shop_images/innayas_haciendasarriawedding_2-397.jpg",
             "page": "hacienda-sarria",
             "page_subheading": ""
           }
@@ -62,7 +71,7 @@
         "8de75738-0e74-4fe1-a8d7-e2d638c2ce41": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/mmexport1550619232966.jpg",
+            "image": "shopify://shop_images/mmexport1550619232966.jpg",
             "page": "yuan-ye",
             "page_subheading": ""
           }
@@ -70,7 +79,7 @@
         "ce278513-b186-491c-addb-2ba7fe94d5fa": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/750_5105-294.jpg",
+            "image": "shopify://shop_images/750_5105-294.jpg",
             "page": "olivia-kevin",
             "page_subheading": ""
           }
@@ -78,7 +87,7 @@
         "e51be009-e81e-49db-b75b-3c0a9e5ef0ef": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/07020028.jpg",
+            "image": "shopify://shop_images/07020028.jpg",
             "page": "yu-seafood",
             "page_subheading": ""
           }
@@ -86,7 +95,7 @@
         "f482408c-b5b5-46f2-9c75-917c84d93d87": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/NexuesEnergy20220721-43_822f953e-aa75-48f7-892d-9e0ceaff63f3.jpg",
+            "image": "shopify://shop_images/NexuesEnergy20220721-43_822f953e-aa75-48f7-892d-9e0ceaff63f3.jpg",
             "page": "the-st-regis-hotel",
             "page_subheading": ""
           }
@@ -94,7 +103,7 @@
         "094ea149-f15b-4e66-a129-94e6fa2fdafa": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/mmexport1550619734895.jpg",
+            "image": "shopify://shop_images/mmexport1550619734895.jpg",
             "page": "yuan-ye-1",
             "page_subheading": ""
           }
@@ -102,7 +111,7 @@
         "c576522a-8cc7-4e35-9e5e-d707f297a5b8": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/D-Colour-LizaLitvinovich-0553.jpg",
+            "image": "shopify://shop_images/D-Colour-LizaLitvinovich-0553.jpg",
             "page": "palais-royale",
             "page_subheading": ""
           }
@@ -110,7 +119,7 @@
         "16b348bf-bd3d-4b01-bb51-21ab730907c6": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/D85_6906.jpg",
+            "image": "shopify://shop_images/D85_6906.jpg",
             "page": "langdon-hall",
             "page_subheading": ""
           }
@@ -118,7 +127,7 @@
         "50cdb22c-9f4e-4589-8cbb-30d33cc86e93": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Shotlife_Studio_Blue_Flower_Wedluxe_0071.jpg",
+            "image": "shopify://shop_images/Shotlife_Studio_Blue_Flower_Wedluxe_0071.jpg",
             "page": "the-blue-flower",
             "page_subheading": ""
           }
@@ -126,7 +135,7 @@
         "ba2dd97a-5d15-45d7-b89b-69fbc77e9368": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Shotlife_Studio_Surreal_Dream_Styled_Sho-54.jpg",
+            "image": "shopify://shop_images/Shotlife_Studio_Surreal_Dream_Styled_Sho-54.jpg",
             "page": "mint-room",
             "page_subheading": ""
           }
@@ -134,9 +143,17 @@
         "9f0117bf-6973-41ad-90f7-c67999c792c6": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Matcha-1057.jpg",
+            "image": "shopify://shop_images/Matcha-1057.jpg",
             "page": "summerset-studio",
             "page_subheading": ""
+          }
+        },
+        "image_bUEphd": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/D9A3705.jpg",
+            "page": "objx",
+            "page_subheading": "Vibrant Eclecticism"
           }
         }
       },
@@ -157,7 +174,8 @@
         "16b348bf-bd3d-4b01-bb51-21ab730907c6",
         "50cdb22c-9f4e-4589-8cbb-30d33cc86e93",
         "ba2dd97a-5d15-45d7-b89b-69fbc77e9368",
-        "9f0117bf-6973-41ad-90f7-c67999c792c6"
+        "9f0117bf-6973-41ad-90f7-c67999c792c6",
+        "image_bUEphd"
       ],
       "settings": {
         "wide_display": false,
