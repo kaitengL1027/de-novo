@@ -2806,16 +2806,16 @@
       "slideshow": {
         "type": "slideshow",
         "blocks": {
-          "image_3NR38F": {
+          "image_NpPV9t": {
             "type": "image",
             "settings": {
-              "image": "shopify://shop_images/Shotlife_Studio_Blue_Flower_Wedluxe_0085_345690ba-ef6a-48cd-a801-1a0120d778bc.jpg",
-              "title": "Something Blue Wedding Collection",
+              "image": "shopify://shop_images/MG_8234.jpg",
+              "title": "Winter Wonderland Christmas Collection",
               "subtext": "",
               "button_label": "View Collection",
-              "link": "shopify://collections/something-blue",
-              "text_position": "left",
-              "text_align": "left"
+              "link": "shopify://collections/christmas-collection-1",
+              "text_position": "right",
+              "text_align": "right"
             }
           },
           "slideshow-1": {
@@ -2841,12 +2841,25 @@
               "text_position": "right",
               "text_align": "right"
             }
+          },
+          "image_3NR38F": {
+            "type": "image",
+            "settings": {
+              "image": "shopify://shop_images/Shotlife_Studio_Blue_Flower_Wedluxe_0085_345690ba-ef6a-48cd-a801-1a0120d778bc.jpg",
+              "title": "Something Blue Wedding Collection",
+              "subtext": "",
+              "button_label": "View Collection",
+              "link": "shopify://collections/something-blue",
+              "text_position": "left",
+              "text_align": "left"
+            }
           }
         },
         "block_order": [
-          "image_3NR38F",
+          "image_NpPV9t",
           "slideshow-1",
-          "82e80870-7548-4b8c-8379-395857596020"
+          "82e80870-7548-4b8c-8379-395857596020",
+          "image_3NR38F"
         ],
         "settings": {
           "wide_display": true,
