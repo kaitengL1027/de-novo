@@ -3139,7 +3139,7 @@
         "type": "list-collections-template",
         "settings": {
           "collection_breadcrumb": true,
-          "collections_per_row": 2,
+          "collections_per_row": 4,
           "pagination_limit": 48
         }
       },
