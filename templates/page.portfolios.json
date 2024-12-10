@@ -168,7 +168,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/1H1A069.jpg",
-            "page": "",
+            "page": "archive-studio",
             "page_subheading": "Seraphic"
           }
         }
