@@ -1,0 +1,100 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "portfolio",
+      "blocks": {
+        "f21d4c73-1af7-4401-95e8-5ea6537426fd": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Autumn_in_NY-Liz_Andolina_Photography-186.jpg"
+          }
+        },
+        "bc862532-bddb-416b-9101-350e33593864": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Autumn_in_NY-Liz_Andolina_Photography-184.jpg"
+          }
+        },
+        "669892c5-d8b5-4011-a9c9-9635596b181c": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Autumn_in_New_York-Liz_Andolina_Photography-22.jpg"
+          }
+        },
+        "7624ddcf-04c9-486e-92d4-3cdaddadcfe6": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Autumn_in_NY-Day_2-Liz_Andolina_Photography-296.jpg"
+          }
+        },
+        "6d277f7d-cdaa-42a6-9dd1-98251cc6e856": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Autumn_in_NY-Day_2-Liz_Andolina_Photography-299.jpg"
+          }
+        },
+        "be9079e1-6699-405c-9e50-8196a17fcafe": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Autumn_in_New_York-Liz_Andolina_Photography-21.jpg"
+          }
+        },
+        "2bd79ebe-96a8-491f-ad3b-dd798b5262fe": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Autumn_in_New_York-Liz_Andolina_Photography-15.jpg"
+          }
+        },
+        "009b2fff-50c4-437f-b598-70c63196575e": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Autumn_in_New_York-Liz_Andolina_Photography-11.jpg"
+          }
+        },
+        "image_FhyVQz": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Autumn_in_NY-Liz_Andolina_Photography-186_607a4341-c889-47ab-baf6-9384b320a00a.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "f21d4c73-1af7-4401-95e8-5ea6537426fd",
+        "bc862532-bddb-416b-9101-350e33593864",
+        "669892c5-d8b5-4011-a9c9-9635596b181c",
+        "7624ddcf-04c9-486e-92d4-3cdaddadcfe6",
+        "6d277f7d-cdaa-42a6-9dd1-98251cc6e856",
+        "be9079e1-6699-405c-9e50-8196a17fcafe",
+        "2bd79ebe-96a8-491f-ad3b-dd798b5262fe",
+        "009b2fff-50c4-437f-b598-70c63196575e",
+        "image_FhyVQz"
+      ],
+      "settings": {
+        "title": "",
+        "planner": "Destinyweddingsca",
+        "planner_url": "https://instagram.com/destinyweddingsca?igshid=YmMyMTA2M2Y=",
+        "photographer": "Weddings.simplymayo",
+        "photographer_url": "https://simplymayo.mypixieset.com/",
+        "featured_on": "",
+        "featured_on_url": "",
+        "title_color": "#707c17",
+        "text_hover_color": "#45891c",
+        "navigator_color": "#003872",
+        "video_controls": true,
+        "video_swipe_autoplay": false
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
