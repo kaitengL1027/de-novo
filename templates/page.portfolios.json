@@ -167,8 +167,9 @@
         "image_WDfc3c": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/1H1A069.jpg",
             "page": "",
-            "page_subheading": ""
+            "page_subheading": "Seraphic"
           }
         }
       },
