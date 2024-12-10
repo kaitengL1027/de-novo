@@ -15,62 +15,86 @@
         "8ba018c8-76f9-4973-a6ea-28e7634d56db": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Autumn_in_NY-Liz_Andolina_Photography-186_607a4341-c889-47ab-baf6-9384b320a00a.jpg"
+            "image": "shopify://shop_images/1H1A065.jpg"
           }
         },
         "bc862532-bddb-416b-9101-350e33593864": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Autumn_in_NY-Liz_Andolina_Photography-184.jpg"
+            "image": "shopify://shop_images/1H1A030.jpg"
           }
         },
         "669892c5-d8b5-4011-a9c9-9635596b181c": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Autumn_in_New_York-Liz_Andolina_Photography-22.jpg"
+            "image": "shopify://shop_images/1H1A069.jpg"
           }
         },
         "image_cxUAGG": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Autumn_in_NY-Day_2-Liz_Andolina_Photography-296.jpg"
+            "image": "shopify://shop_images/1H1A022.jpg"
           }
         },
         "7624ddcf-04c9-486e-92d4-3cdaddadcfe6": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Autumn_in_NY-Day_2-Liz_Andolina_Photography-299.jpg"
+            "image": "shopify://shop_images/1H1A013.jpg"
           }
         },
         "6d277f7d-cdaa-42a6-9dd1-98251cc6e856": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Autumn_in_New_York-Liz_Andolina_Photography-21.jpg"
+            "image": "shopify://shop_images/1H1A002.jpg"
           }
         },
         "be9079e1-6699-405c-9e50-8196a17fcafe": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Autumn_in_NY-Day_2-Liz_Andolina_Photography-523.jpg"
+            "image": "shopify://shop_images/1H1A073.jpg"
           }
         },
         "2bd79ebe-96a8-491f-ad3b-dd798b5262fe": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Autumn_in_New_York-Liz_Andolina_Photography-15.jpg"
+            "image": "shopify://shop_images/1H1A093.jpg"
           }
         },
         "009b2fff-50c4-437f-b598-70c63196575e": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Autumn_in_New_York-Liz_Andolina_Photography-11.jpg"
+            "image": "shopify://shop_images/1H1A031.jpg"
           }
         },
         "f21d4c73-1af7-4401-95e8-5ea6537426fd": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Autumn_in_NY-Liz_Andolina_Photography-346.jpg"
+            "image": "shopify://shop_images/1H1A046.jpg"
           }
+        },
+        "image_nfnxaw": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/1H1A047.jpg"
+          }
+        },
+        "image_CCAKFX": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/1H1A053.jpg"
+          }
+        },
+        "image_qykEVb": {
+          "type": "image",
+          "settings": {}
+        },
+        "image_c7X6Aa": {
+          "type": "image",
+          "settings": {}
+        },
+        "image_ECPLDY": {
+          "type": "image",
+          "settings": {}
         }
       },
       "block_order": [
@@ -83,7 +107,12 @@
         "be9079e1-6699-405c-9e50-8196a17fcafe",
         "2bd79ebe-96a8-491f-ad3b-dd798b5262fe",
         "009b2fff-50c4-437f-b598-70c63196575e",
-        "f21d4c73-1af7-4401-95e8-5ea6537426fd"
+        "f21d4c73-1af7-4401-95e8-5ea6537426fd",
+        "image_nfnxaw",
+        "image_CCAKFX",
+        "image_qykEVb",
+        "image_c7X6Aa",
+        "image_ECPLDY"
       ],
       "settings": {
         "title": "",
