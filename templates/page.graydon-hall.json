@@ -116,7 +116,9 @@
         },
         "image_6QCC83": {
           "type": "image",
-          "settings": {}
+          "settings": {
+            "image": "shopify://shop_images/1H1A029.jpg"
+          }
         },
         "image_tF8Hez": {
           "type": "image",
