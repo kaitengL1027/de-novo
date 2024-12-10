@@ -160,7 +160,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Autumn_in_NY-Liz_Andolina_Photography-186.jpg",
-            "page": "",
+            "page": "new-york",
             "page_subheading": "Radiant Splendor"
           }
         },
