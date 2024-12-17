@@ -136,7 +136,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/20220130A-49.jpg",
-            "page": "",
+            "page": "espace",
             "page_subheading": "Whispered Petals"
           }
         },
