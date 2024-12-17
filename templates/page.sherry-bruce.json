@@ -18,6 +18,12 @@
             "image": "shopify://shop_images/20220610decor-86.jpg"
           }
         },
+        "image_CnE7z9": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/20220610decor-31.jpg"
+          }
+        },
         "bc862532-bddb-416b-9101-350e33593864": {
           "type": "image",
           "settings": {
@@ -78,12 +84,6 @@
             "image": "shopify://shop_images/20220610decor-42.jpg"
           }
         },
-        "image_CnE7z9": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/20220610decor-31.jpg"
-          }
-        },
         "image_YxbT77": {
           "type": "image",
           "settings": {
@@ -105,6 +105,7 @@
       },
       "block_order": [
         "image_NH9ztt",
+        "image_CnE7z9",
         "bc862532-bddb-416b-9101-350e33593864",
         "669892c5-d8b5-4011-a9c9-9635596b181c",
         "7624ddcf-04c9-486e-92d4-3cdaddadcfe6",
@@ -115,7 +116,6 @@
         "f21d4c73-1af7-4401-95e8-5ea6537426fd",
         "image_yY3pEd",
         "image_MgGVz6",
-        "image_CnE7z9",
         "image_YxbT77",
         "image_bppDGh",
         "image_PACDj4"
