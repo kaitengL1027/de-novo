@@ -187,6 +187,14 @@
             "page": "espace",
             "page_subheading": "Whispered Petals"
           }
+        },
+        "image_gBTFxr": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/AS4A0855.jpg",
+            "page": "",
+            "page_subheading": "Garden’s Serenade"
+          }
         }
       },
       "block_order": [
@@ -211,7 +219,8 @@
         "8de75738-0e74-4fe1-a8d7-e2d638c2ce41",
         "c576522a-8cc7-4e35-9e5e-d707f297a5b8",
         "f482408c-b5b5-46f2-9c75-917c84d93d87",
-        "image_H9x8Ay"
+        "image_H9x8Ay",
+        "image_gBTFxr"
       ],
       "settings": {
         "wide_display": false,
