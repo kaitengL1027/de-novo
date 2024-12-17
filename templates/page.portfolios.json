@@ -57,7 +57,7 @@
           "settings": {
             "image": "shopify://shop_images/5D597586-2F22-426B-BB7A-61C641810988_ff7e2f58-8a03-460e-a47c-b833f0f49839.jpg",
             "page": "jorge-marry",
-            "page_subheading": ""
+            "page_subheading": "Industrial Chic"
           }
         },
         "708c7607-5d8c-46fa-a006-ffb8ee1ef1be": {
@@ -84,6 +84,14 @@
             "page_subheading": ""
           }
         },
+        "image_bUEphd": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/D9A3705.jpg",
+            "page": "objx",
+            "page_subheading": "Eclecticism"
+          }
+        },
         "cf0fe130-ac69-4076-af29-e35a51936a40": {
           "type": "image",
           "settings": {
@@ -98,14 +106,6 @@
             "image": "shopify://shop_images/D85_6906.jpg",
             "page": "langdon-hall",
             "page_subheading": ""
-          }
-        },
-        "image_bUEphd": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/D9A3705.jpg",
-            "page": "objx",
-            "page_subheading": "Eclecticism"
           }
         },
         "50cdb22c-9f4e-4589-8cbb-30d33cc86e93": {
@@ -191,9 +191,9 @@
         "708c7607-5d8c-46fa-a006-ffb8ee1ef1be",
         "b9580058-c87b-4cbf-af60-50f8c13906d6",
         "73b56bbb-8873-4d5e-a088-d8b54cbb6f64",
+        "image_bUEphd",
         "cf0fe130-ac69-4076-af29-e35a51936a40",
         "16b348bf-bd3d-4b01-bb51-21ab730907c6",
-        "image_bUEphd",
         "50cdb22c-9f4e-4589-8cbb-30d33cc86e93",
         "image_GxgwyP",
         "ba2dd97a-5d15-45d7-b89b-69fbc77e9368",
