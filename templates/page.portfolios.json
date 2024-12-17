@@ -68,19 +68,19 @@
             "page_subheading": "Eclecticism"
           }
         },
-        "708c7607-5d8c-46fa-a006-ffb8ee1ef1be": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/IMG_0484.jpg",
-            "page": "fiat",
-            "page_subheading": ""
-          }
-        },
         "b9580058-c87b-4cbf-af60-50f8c13906d6": {
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/BohemianWedding_InnaYasinskaPhotography-882.jpg",
             "page": "bohemian",
+            "page_subheading": ""
+          }
+        },
+        "708c7607-5d8c-46fa-a006-ffb8ee1ef1be": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/IMG_0484.jpg",
+            "page": "fiat",
             "page_subheading": ""
           }
         },
@@ -189,8 +189,8 @@
         "0586fddd-f148-4b8b-8f6d-beb33ecec141",
         "6a341059-f69b-4d4e-94e9-5d24926af5a8",
         "image_bUEphd",
-        "708c7607-5d8c-46fa-a006-ffb8ee1ef1be",
         "b9580058-c87b-4cbf-af60-50f8c13906d6",
+        "708c7607-5d8c-46fa-a006-ffb8ee1ef1be",
         "73b56bbb-8873-4d5e-a088-d8b54cbb6f64",
         "cf0fe130-ac69-4076-af29-e35a51936a40",
         "16b348bf-bd3d-4b01-bb51-21ab730907c6",
