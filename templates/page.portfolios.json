@@ -164,6 +164,14 @@
             "page_subheading": "Eclecticism"
           }
         },
+        "image_h4f8NV": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/DSC_0825copy.jpg",
+            "page": "esabelle-layton",
+            "page_subheading": "Subtle Reverie"
+          }
+        },
         "image_GxgwyP": {
           "type": "image",
           "settings": {
@@ -193,6 +201,7 @@
         "ba2dd97a-5d15-45d7-b89b-69fbc77e9368",
         "9f0117bf-6973-41ad-90f7-c67999c792c6",
         "image_bUEphd",
+        "image_h4f8NV",
         "image_GxgwyP"
       ],
       "settings": {
