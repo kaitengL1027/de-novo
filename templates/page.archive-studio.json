@@ -1,0 +1,212 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "portfolio",
+      "blocks": {
+        "8ba018c8-76f9-4973-a6ea-28e7634d56db": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/1H1A065.jpg"
+          }
+        },
+        "bc862532-bddb-416b-9101-350e33593864": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/1H1A030.jpg"
+          }
+        },
+        "669892c5-d8b5-4011-a9c9-9635596b181c": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/1H1A069.jpg"
+          }
+        },
+        "image_cxUAGG": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/1H1A022.jpg"
+          }
+        },
+        "image_3FwnQV": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/1H1A088.jpg"
+          }
+        },
+        "7624ddcf-04c9-486e-92d4-3cdaddadcfe6": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/1H1A013.jpg"
+          }
+        },
+        "6d277f7d-cdaa-42a6-9dd1-98251cc6e856": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/1H1A002.jpg"
+          }
+        },
+        "be9079e1-6699-405c-9e50-8196a17fcafe": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/1H1A073.jpg"
+          }
+        },
+        "2bd79ebe-96a8-491f-ad3b-dd798b5262fe": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/1H1A093.jpg"
+          }
+        },
+        "009b2fff-50c4-437f-b598-70c63196575e": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/1H1A031.jpg"
+          }
+        },
+        "image_nfnxaw": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/1H1A047.jpg"
+          }
+        },
+        "f21d4c73-1af7-4401-95e8-5ea6537426fd": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/1H1A046.jpg"
+          }
+        },
+        "image_CCAKFX": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/1H1A053.jpg"
+          }
+        },
+        "image_qykEVb": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/1H1A019.jpg"
+          }
+        },
+        "image_c7X6Aa": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/1H1A033.jpg"
+          }
+        },
+        "image_ECPLDY": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/1H1A036.jpg"
+          }
+        },
+        "image_xtahnD": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/1H1A043.jpg"
+          }
+        },
+        "image_J6JRzB": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/1H1A021.jpg"
+          }
+        },
+        "image_6QCC83": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/1H1A052.jpg"
+          }
+        },
+        "image_tF8Hez": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/1H1A076.jpg"
+          }
+        },
+        "image_dYMK7J": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/1H1A064.jpg"
+          }
+        },
+        "image_mH83jj": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/1H1A054.jpg"
+          }
+        },
+        "image_agGLLC": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/1H1A060_2.jpg"
+          }
+        },
+        "image_QTD8GM": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/1H1A016_2.jpg"
+          }
+        },
+        "image_R3d7GJ": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/1H1A063_2.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "8ba018c8-76f9-4973-a6ea-28e7634d56db",
+        "bc862532-bddb-416b-9101-350e33593864",
+        "669892c5-d8b5-4011-a9c9-9635596b181c",
+        "image_cxUAGG",
+        "image_3FwnQV",
+        "7624ddcf-04c9-486e-92d4-3cdaddadcfe6",
+        "6d277f7d-cdaa-42a6-9dd1-98251cc6e856",
+        "be9079e1-6699-405c-9e50-8196a17fcafe",
+        "2bd79ebe-96a8-491f-ad3b-dd798b5262fe",
+        "009b2fff-50c4-437f-b598-70c63196575e",
+        "image_nfnxaw",
+        "f21d4c73-1af7-4401-95e8-5ea6537426fd",
+        "image_CCAKFX",
+        "image_qykEVb",
+        "image_c7X6Aa",
+        "image_ECPLDY",
+        "image_xtahnD",
+        "image_J6JRzB",
+        "image_6QCC83",
+        "image_tF8Hez",
+        "image_dYMK7J",
+        "image_mH83jj",
+        "image_agGLLC",
+        "image_QTD8GM",
+        "image_R3d7GJ"
+      ],
+      "settings": {
+        "title": "",
+        "planner": "Destinyweddingsca",
+        "planner_url": "https://narellejanine.com/hello?fbclid=PAAaYbaKFoIrt8YvojRZSoGGpmBLzUAD3X5GRH58KmgTK9_dQr0Jx6EHPN3g0",
+        "photographer": "",
+        "photographer_url": "",
+        "featured_on": "",
+        "featured_on_url": "",
+        "title_color": "#707c17",
+        "text_hover_color": "#45891c",
+        "navigator_color": "#003872",
+        "video_controls": true,
+        "video_swipe_autoplay": false
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
