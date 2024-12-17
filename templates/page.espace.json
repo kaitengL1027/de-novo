@@ -75,55 +75,31 @@
         "image_CCAKFX": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Shotlife_Studio_Grace_Glamour_0174.jpg"
+            "image": "shopify://shop_images/20220130A-5.jpg"
           }
         },
         "image_qykEVb": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Shotlife_Studio_Grace_Glamour_0244.jpg"
+            "image": "shopify://shop_images/20220130A-18.jpg"
           }
         },
         "image_c7X6Aa": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Shotlife_Studio_Grace_Glamour_0180.jpg"
+            "image": "shopify://shop_images/20220130A-49_f5e19424-bf72-4ec0-82c9-8915d9687d3d.jpg"
           }
         },
         "image_ECPLDY": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Shotlife_Studio_Grace_Glamour_0178.jpg"
+            "image": "shopify://shop_images/20220130A-35.jpg"
           }
         },
         "image_J6JRzB": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Shotlife_Studio_Grace_Glamour_0105.jpg"
-          }
-        },
-        "image_6QCC83": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/Shotlife_Studio_Grace_Glamour_0182.jpg"
-          }
-        },
-        "image_tF8Hez": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/Shotlife_Studio_Grace_Glamour_0102.jpg"
-          }
-        },
-        "image_dYMK7J": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/Shotlife_Studio_Grace_Glamour_0179.jpg"
-          }
-        },
-        "image_R3d7GJ": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/Shotlife_Studio_Grace_Glamour_0080_4d76aad1-24bd-4ddf-b521-7e502a9ff9cc.jpg"
+            "image": "shopify://shop_images/20220130A-45.jpg"
           }
         }
       },
@@ -142,11 +118,7 @@
         "image_qykEVb",
         "image_c7X6Aa",
         "image_ECPLDY",
-        "image_J6JRzB",
-        "image_6QCC83",
-        "image_tF8Hez",
-        "image_dYMK7J",
-        "image_R3d7GJ"
+        "image_J6JRzB"
       ],
       "settings": {
         "title": "",
