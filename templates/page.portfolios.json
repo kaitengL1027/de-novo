@@ -132,14 +132,6 @@
             "page_subheading": ""
           }
         },
-        "image_H9x8Ay": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/20220130A-49.jpg",
-            "page": "espace",
-            "page_subheading": "Whispered Petals"
-          }
-        },
         "e51be009-e81e-49db-b75b-3c0a9e5ef0ef": {
           "type": "image",
           "settings": {
@@ -187,6 +179,14 @@
             "page": "the-st-regis-hotel",
             "page_subheading": ""
           }
+        },
+        "image_H9x8Ay": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/20220130A-49.jpg",
+            "page": "espace",
+            "page_subheading": "Whispered Petals"
+          }
         }
       },
       "block_order": [
@@ -205,13 +205,13 @@
         "50cdb22c-9f4e-4589-8cbb-30d33cc86e93",
         "16b348bf-bd3d-4b01-bb51-21ab730907c6",
         "ba2dd97a-5d15-45d7-b89b-69fbc77e9368",
-        "image_H9x8Ay",
         "e51be009-e81e-49db-b75b-3c0a9e5ef0ef",
         "094ea149-f15b-4e66-a129-94e6fa2fdafa",
         "9f0117bf-6973-41ad-90f7-c67999c792c6",
         "8de75738-0e74-4fe1-a8d7-e2d638c2ce41",
         "c576522a-8cc7-4e35-9e5e-d707f297a5b8",
-        "f482408c-b5b5-46f2-9c75-917c84d93d87"
+        "f482408c-b5b5-46f2-9c75-917c84d93d87",
+        "image_H9x8Ay"
       ],
       "settings": {
         "wide_display": false,
