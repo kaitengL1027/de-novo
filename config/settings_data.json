@@ -2808,6 +2808,7 @@
         "blocks": {
           "image_NpPV9t": {
             "type": "image",
+            "disabled": true,
             "settings": {
               "image": "shopify://shop_images/MG_8234.jpg",
               "title": "Holiday Charm Christmas Collection",
@@ -2940,7 +2941,7 @@
           "f0593af0-13bd-4480-853c-9d302849f40f"
         ],
         "settings": {
-          "show_announcement_message": true,
+          "show_announcement_message": false,
           "announcement_homepage_only": true,
           "announcement_message": "Google review us for next order 12% off",
           "announcement_link": "shopify://collections/all",
