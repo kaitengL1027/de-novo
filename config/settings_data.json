@@ -2806,6 +2806,18 @@
       "slideshow": {
         "type": "slideshow",
         "blocks": {
+          "image_ntHz7H": {
+            "type": "image",
+            "settings": {
+              "image": "shopify://shop_images/DeNovo20220107B-94.jpg",
+              "title": "Valentine's Day",
+              "subtext": "",
+              "button_label": "Order",
+              "link": "shopify://collections/valentines-day-flowers",
+              "text_position": "left",
+              "text_align": "left"
+            }
+          },
           "image_NpPV9t": {
             "type": "image",
             "disabled": true,
@@ -2857,6 +2869,7 @@
           }
         },
         "block_order": [
+          "image_ntHz7H",
           "image_NpPV9t",
           "slideshow-1",
           "82e80870-7548-4b8c-8379-395857596020",
@@ -2873,6 +2886,21 @@
       "header": {
         "type": "header",
         "blocks": {
+          "menu_8PcYUQ": {
+            "type": "menu",
+            "settings": {
+              "mega_menu_title": "Valentine's Day",
+              "mega_linklist": "flowers",
+              "column_title": "Catalog",
+              "column_text": "",
+              "column_link": "",
+              "column_position": "first_column",
+              "mega_text": "",
+              "mega_text_url": "",
+              "mega_menu_banner_bg": "#ffffff",
+              "mega_menu_banner_text": "#404040"
+            }
+          },
           "5ebf7e8b-d45c-42a7-92be-a6b859643a6e": {
             "type": "menu",
             "settings": {
@@ -2935,6 +2963,7 @@
           }
         },
         "block_order": [
+          "menu_8PcYUQ",
           "5ebf7e8b-d45c-42a7-92be-a6b859643a6e",
           "27d345f3-8ed6-4fba-9920-6106d5c7625a",
           "aafd51d1-1fb0-4981-b049-e4d73dc88d75",
