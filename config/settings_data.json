@@ -2808,6 +2808,7 @@
         "blocks": {
           "image_ntHz7H": {
             "type": "image",
+            "disabled": true,
             "settings": {
               "image": "shopify://shop_images/DeNovo20220107B-94.jpg",
               "title": "Valentine's Day",
