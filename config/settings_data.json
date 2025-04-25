@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "presets": {
     "London": {
@@ -109,7 +118,7 @@
       "limit_quantity": false,
       "display_inventory_left": true,
       "notify_me_form": true,
-      "notify_me_richtext": "<p>Notify me when this product is available:<\/p>",
+      "notify_me_richtext": "<p>Notify me when this product is available:</p>",
       "product_form_style": "swatches",
       "free_price_text": "Free",
       "size_chart": "size-guide",
@@ -130,8 +139,8 @@
       "currency_format": "money_format",
       "search_option": "product",
       "favicon": "",
-      "checkout_header_image": "shopify:\/\/shop_images\/banner-hail2.jpg",
-      "checkout_logo_image": "shopify:\/\/shop_images\/london-logo-white.png",
+      "checkout_header_image": "shopify://shop_images/banner-hail2.jpg",
+      "checkout_logo_image": "shopify://shop_images/london-logo-white.png",
       "checkout_logo_position": "right",
       "checkout_logo_size": "medium",
       "checkout_body_background_image": "",
@@ -357,7 +366,7 @@
                 "image": "",
                 "link": "",
                 "title": "Promo 1",
-                "text": "<p>Optional text&nbsp;can go here<\/p>"
+                "text": "<p>Optional text&nbsp;can go here</p>"
               }
             },
             "1478221000214-1": {
@@ -366,7 +375,7 @@
                 "image": "",
                 "link": "",
                 "title": "Promo 2",
-                "text": "<p>Optional text can go here<\/p>"
+                "text": "<p>Optional text can go here</p>"
               }
             },
             "1478221000214-2": {
@@ -375,7 +384,7 @@
                 "image": "",
                 "link": "",
                 "title": "Promo 3",
-                "text": "<p>Optional text&nbsp;can go here<\/p>"
+                "text": "<p>Optional text&nbsp;can go here</p>"
               }
             }
           },
@@ -436,11 +445,11 @@
             "footer_linklist_2": "footer",
             "footer_linklist_1": "",
             "title": "text column",
-            "footer_content_right": "<p>This right-hand column can be used to include some&nbsp;additional text, such as an address or contact info.<\/p>",
+            "footer_content_right": "<p>This right-hand column can be used to include some&nbsp;additional text, such as an address or contact info.</p>",
             "footer_content_page": "",
             "footer_alignment": "center",
             "footer_newsletter": true,
-            "newsletter_richtext": "<p>Sign up to get the latest on sales, new releases and more…<\/p>",
+            "newsletter_richtext": "<p>Sign up to get the latest on sales, new releases and more…</p>",
             "display_payment_methods": true,
             "copyright_text": ""
           }
@@ -459,7 +468,7 @@
           "settings": {
             "image": "",
             "title": "Talk about your brand",
-            "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>",
+            "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
             "button_label": "",
             "button_link": "",
             "text_size": "regular_text",
@@ -482,7 +491,7 @@
               "type": "quote",
               "settings": {
                 "image": "",
-                "testimonial": "<p>Include some of your favorite customer quotes and feedback here as social proof, to build credibility and trust for your services and products.<\/p>",
+                "testimonial": "<p>Include some of your favorite customer quotes and feedback here as social proof, to build credibility and trust for your services and products.</p>",
                 "name": "John Doe",
                 "site_link": ""
               }
@@ -491,7 +500,7 @@
               "type": "quote",
               "settings": {
                 "image": "",
-                "testimonial": "<p>Include some of your favorite customer quotes and feedback here as social proof, to build credibility and trust for your services and products.<\/p>",
+                "testimonial": "<p>Include some of your favorite customer quotes and feedback here as social proof, to build credibility and trust for your services and products.</p>",
                 "name": "John Doe",
                 "site_link": ""
               }
@@ -500,7 +509,7 @@
               "type": "quote",
               "settings": {
                 "image": "",
-                "testimonial": "<p>Include some of your favorite customer quotes and feedback here as social proof, to build credibility and trust for your services and products.<\/p>",
+                "testimonial": "<p>Include some of your favorite customer quotes and feedback here as social proof, to build credibility and trust for your services and products.</p>",
                 "name": "John Doe",
                 "site_link": ""
               }
@@ -524,7 +533,7 @@
             "autoplay": false,
             "autoloop": true,
             "video_dark_overlay": false,
-            "video": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+            "video": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
             "image": "",
             "display_text_over_video": false,
             "button_label": "Play Video",
@@ -583,7 +592,7 @@
             "image": "",
             "store_hours": true,
             "title": "Come and visit",
-            "address_and_hours": "<p>123 Fake Street,&nbsp;<\/p>\n<p>Toronto, Canada<\/p>\n<p>Mon - Fri, 10am - 9pm<\/p>\n<p>Saturday, 11am - 9pm<\/p>\n<p>Sunday, 11am - 5pm<\/p>",
+            "address_and_hours": "<p>123 Fake Street,&nbsp;</p>\n<p>Toronto, Canada</p>\n<p>Mon - Fri, 10am - 9pm</p>\n<p>Saturday, 11am - 9pm</p>\n<p>Sunday, 11am - 5pm</p>",
             "info_text_color": "#000000",
             "info_color": "#ededed",
             "text_alignment": "left",
@@ -717,7 +726,7 @@
       "limit_quantity": false,
       "display_inventory_left": false,
       "notify_me_form": false,
-      "notify_me_richtext": "<p>Notify me when this product is available:<\/p>",
+      "notify_me_richtext": "<p>Notify me when this product is available:</p>",
       "product_form_style": "dropdown",
       "free_price_text": "Free",
       "size_chart": "",
@@ -739,7 +748,7 @@
       "search_option": "product",
       "favicon": "",
       "checkout_header_image": "",
-      "checkout_logo_image": "shopify:\/\/shop_images\/responsive-paris-logo-08-09-18-01.png",
+      "checkout_logo_image": "shopify://shop_images/responsive-paris-logo-08-09-18-01.png",
       "checkout_logo_position": "left",
       "checkout_logo_size": "medium",
       "checkout_body_background_image": "",
@@ -965,7 +974,7 @@
                 "image": "",
                 "link": "",
                 "title": "Promo 1",
-                "text": "<p>Optional text&nbsp;can go here<\/p>"
+                "text": "<p>Optional text&nbsp;can go here</p>"
               }
             },
             "1478221000214-1": {
@@ -974,7 +983,7 @@
                 "image": "",
                 "link": "",
                 "title": "Promo 2",
-                "text": "<p>Optional text can go here<\/p>"
+                "text": "<p>Optional text can go here</p>"
               }
             },
             "1478221000214-2": {
@@ -983,7 +992,7 @@
                 "image": "",
                 "link": "",
                 "title": "Promo 3",
-                "text": "<p>Optional text&nbsp;can go here<\/p>"
+                "text": "<p>Optional text&nbsp;can go here</p>"
               }
             }
           },
@@ -1044,11 +1053,11 @@
             "footer_linklist_2": "footer",
             "footer_linklist_1": "",
             "title": "text column",
-            "footer_content_right": "<p>This right-hand column can be used to include some&nbsp;additional text, such as an address or contact info.<\/p>",
+            "footer_content_right": "<p>This right-hand column can be used to include some&nbsp;additional text, such as an address or contact info.</p>",
             "footer_content_page": "",
             "footer_alignment": "center",
             "footer_newsletter": true,
-            "newsletter_richtext": "<p>Sign up to get the latest on sales, new releases and more…<\/p>",
+            "newsletter_richtext": "<p>Sign up to get the latest on sales, new releases and more…</p>",
             "display_payment_methods": true,
             "copyright_text": ""
           }
@@ -1067,7 +1076,7 @@
           "settings": {
             "image": "",
             "title": "Talk about your brand",
-            "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>",
+            "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
             "button_label": "",
             "button_link": "",
             "text_size": "regular_text",
@@ -1090,7 +1099,7 @@
               "type": "quote",
               "settings": {
                 "image": "",
-                "testimonial": "<p>Include some of your favorite customer quotes and feedback here as social proof, to build credibility and trust for your services and products.<\/p>",
+                "testimonial": "<p>Include some of your favorite customer quotes and feedback here as social proof, to build credibility and trust for your services and products.</p>",
                 "name": "John Doe",
                 "site_link": ""
               }
@@ -1099,7 +1108,7 @@
               "type": "quote",
               "settings": {
                 "image": "",
-                "testimonial": "<p>Include some of your favorite customer quotes and feedback here as social proof, to build credibility and trust for your services and products.<\/p>",
+                "testimonial": "<p>Include some of your favorite customer quotes and feedback here as social proof, to build credibility and trust for your services and products.</p>",
                 "name": "John Doe",
                 "site_link": ""
               }
@@ -1108,7 +1117,7 @@
               "type": "quote",
               "settings": {
                 "image": "",
-                "testimonial": "<p>Include some of your favorite customer quotes and feedback here as social proof, to build credibility and trust for your services and products.<\/p>",
+                "testimonial": "<p>Include some of your favorite customer quotes and feedback here as social proof, to build credibility and trust for your services and products.</p>",
                 "name": "John Doe",
                 "site_link": ""
               }
@@ -1132,7 +1141,7 @@
             "autoplay": false,
             "autoloop": true,
             "video_dark_overlay": false,
-            "video": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+            "video": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
             "image": "",
             "display_text_over_video": false,
             "button_label": "Play Video",
@@ -1191,7 +1200,7 @@
             "image": "",
             "store_hours": true,
             "title": "Come and visit",
-            "address_and_hours": "<p>123 Fake Street,&nbsp;<\/p>\n<p>Toronto, Canada<\/p>\n<p>Mon - Fri, 10am - 9pm<\/p>\n<p>Saturday, 11am - 9pm<\/p>\n<p>Sunday, 11am - 5pm<\/p>",
+            "address_and_hours": "<p>123 Fake Street,&nbsp;</p>\n<p>Toronto, Canada</p>\n<p>Mon - Fri, 10am - 9pm</p>\n<p>Saturday, 11am - 9pm</p>\n<p>Sunday, 11am - 5pm</p>",
             "info_text_color": "#000000",
             "info_color": "#ededed",
             "text_alignment": "left",
@@ -1325,7 +1334,7 @@
       "limit_quantity": false,
       "display_inventory_left": false,
       "notify_me_form": true,
-      "notify_me_richtext": "<p>Notify me when this product is available:<\/p>",
+      "notify_me_richtext": "<p>Notify me when this product is available:</p>",
       "product_form_style": "swatches",
       "free_price_text": "Free",
       "size_chart": "",
@@ -1345,9 +1354,9 @@
       "shipping_calculator_default_country": "United States",
       "currency_format": "money_format",
       "search_option": "product",
-      "favicon": "shopify:\/\/shop_images\/favicon-ny2.png",
-      "checkout_header_image": "shopify:\/\/shop_images\/form.jpg",
-      "checkout_logo_image": "shopify:\/\/shop_images\/NYC-logo-red.png",
+      "favicon": "shopify://shop_images/favicon-ny2.png",
+      "checkout_header_image": "shopify://shop_images/form.jpg",
+      "checkout_logo_image": "shopify://shop_images/NYC-logo-red.png",
       "checkout_logo_position": "left",
       "checkout_logo_size": "medium",
       "checkout_body_background_image": "",
@@ -1598,7 +1607,7 @@
                 "image": "",
                 "link": "",
                 "title": "Promo 1",
-                "text": "<p>Optional text&nbsp;can go here<\/p>"
+                "text": "<p>Optional text&nbsp;can go here</p>"
               }
             },
             "1478221000214-1": {
@@ -1607,7 +1616,7 @@
                 "image": "",
                 "link": "",
                 "title": "Promo 2",
-                "text": "<p>Optional text can go here<\/p>"
+                "text": "<p>Optional text can go here</p>"
               }
             },
             "1478221000214-2": {
@@ -1616,7 +1625,7 @@
                 "image": "",
                 "link": "",
                 "title": "Promo 3",
-                "text": "<p>Optional text&nbsp;can go here<\/p>"
+                "text": "<p>Optional text&nbsp;can go here</p>"
               }
             }
           },
@@ -1677,11 +1686,11 @@
             "footer_linklist_2": "footer",
             "footer_linklist_1": "",
             "title": "text column",
-            "footer_content_right": "<p>This right-hand column can be used to include some&nbsp;additional text, such as an address or contact info.<\/p>",
+            "footer_content_right": "<p>This right-hand column can be used to include some&nbsp;additional text, such as an address or contact info.</p>",
             "footer_content_page": "",
             "footer_alignment": "center",
             "footer_newsletter": true,
-            "newsletter_richtext": "<p>Sign up to get the latest on sales, new releases and more…<\/p>",
+            "newsletter_richtext": "<p>Sign up to get the latest on sales, new releases and more…</p>",
             "display_payment_methods": true,
             "copyright_text": ""
           }
@@ -1700,7 +1709,7 @@
           "settings": {
             "image": "",
             "title": "Talk about your brand",
-            "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>",
+            "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
             "button_label": "",
             "button_link": "",
             "text_size": "regular_text",
@@ -1723,7 +1732,7 @@
               "type": "quote",
               "settings": {
                 "image": "",
-                "testimonial": "<p>Include some of your favorite customer quotes and feedback here as social proof, to build credibility and trust for your services and products.<\/p>",
+                "testimonial": "<p>Include some of your favorite customer quotes and feedback here as social proof, to build credibility and trust for your services and products.</p>",
                 "name": "John Doe",
                 "site_link": ""
               }
@@ -1732,7 +1741,7 @@
               "type": "quote",
               "settings": {
                 "image": "",
-                "testimonial": "<p>Include some of your favorite customer quotes and feedback here as social proof, to build credibility and trust for your services and products.<\/p>",
+                "testimonial": "<p>Include some of your favorite customer quotes and feedback here as social proof, to build credibility and trust for your services and products.</p>",
                 "name": "John Doe",
                 "site_link": ""
               }
@@ -1741,7 +1750,7 @@
               "type": "quote",
               "settings": {
                 "image": "",
-                "testimonial": "<p>Include some of your favorite customer quotes and feedback here as social proof, to build credibility and trust for your services and products.<\/p>",
+                "testimonial": "<p>Include some of your favorite customer quotes and feedback here as social proof, to build credibility and trust for your services and products.</p>",
                 "name": "John Doe",
                 "site_link": ""
               }
@@ -1765,7 +1774,7 @@
             "autoplay": false,
             "autoloop": true,
             "video_dark_overlay": false,
-            "video": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+            "video": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
             "image": "",
             "display_text_over_video": false,
             "button_label": "Play Video",
@@ -1824,7 +1833,7 @@
             "image": "",
             "store_hours": true,
             "title": "Come and visit",
-            "address_and_hours": "<p>123 Fake Street,&nbsp;<\/p>\n<p>Toronto, Canada<\/p>\n<p>Mon - Fri, 10am - 9pm<\/p>\n<p>Saturday, 11am - 9pm<\/p>\n<p>Sunday, 11am - 5pm<\/p>",
+            "address_and_hours": "<p>123 Fake Street,&nbsp;</p>\n<p>Toronto, Canada</p>\n<p>Mon - Fri, 10am - 9pm</p>\n<p>Saturday, 11am - 9pm</p>\n<p>Sunday, 11am - 5pm</p>",
             "info_text_color": "#000000",
             "info_color": "#ededed",
             "text_alignment": "left",
@@ -1958,7 +1967,7 @@
       "limit_quantity": false,
       "display_inventory_left": false,
       "notify_me_form": true,
-      "notify_me_richtext": "<p>Notify me when this product is available:<\/p>",
+      "notify_me_richtext": "<p>Notify me when this product is available:</p>",
       "product_form_style": "dropdown",
       "free_price_text": "Free",
       "size_chart": "",
@@ -1979,8 +1988,8 @@
       "currency_format": "money_format",
       "search_option": "product",
       "favicon": "",
-      "checkout_header_image": "shopify:\/\/shop_images\/SS-petals-light.jpg",
-      "checkout_logo_image": "shopify:\/\/shop_images\/logo5.png",
+      "checkout_header_image": "shopify://shop_images/SS-petals-light.jpg",
+      "checkout_logo_image": "shopify://shop_images/logo5.png",
       "checkout_logo_position": "left",
       "checkout_logo_size": "large",
       "checkout_body_background_image": "",
@@ -2206,7 +2215,7 @@
                 "image": "",
                 "link": "",
                 "title": "Promo 1",
-                "text": "<p>Optional text&nbsp;can go here<\/p>"
+                "text": "<p>Optional text&nbsp;can go here</p>"
               }
             },
             "1478221000214-1": {
@@ -2215,7 +2224,7 @@
                 "image": "",
                 "link": "",
                 "title": "Promo 2",
-                "text": "<p>Optional text can go here<\/p>"
+                "text": "<p>Optional text can go here</p>"
               }
             },
             "1478221000214-2": {
@@ -2224,7 +2233,7 @@
                 "image": "",
                 "link": "",
                 "title": "Promo 3",
-                "text": "<p>Optional text&nbsp;can go here<\/p>"
+                "text": "<p>Optional text&nbsp;can go here</p>"
               }
             }
           },
@@ -2285,11 +2294,11 @@
             "footer_linklist_2": "footer",
             "footer_linklist_1": "",
             "title": "text column",
-            "footer_content_right": "<p>This right-hand column can be used to include some&nbsp;additional text, such as an address or contact info.<\/p>",
+            "footer_content_right": "<p>This right-hand column can be used to include some&nbsp;additional text, such as an address or contact info.</p>",
             "footer_content_page": "",
             "footer_alignment": "center",
             "footer_newsletter": true,
-            "newsletter_richtext": "<p>Sign up to get the latest on sales, new releases and more…<\/p>",
+            "newsletter_richtext": "<p>Sign up to get the latest on sales, new releases and more…</p>",
             "display_payment_methods": true,
             "copyright_text": ""
           }
@@ -2308,7 +2317,7 @@
           "settings": {
             "image": "",
             "title": "Talk about your brand",
-            "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>",
+            "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
             "button_label": "",
             "button_link": "",
             "text_size": "regular_text",
@@ -2331,7 +2340,7 @@
               "type": "quote",
               "settings": {
                 "image": "",
-                "testimonial": "<p>Include some of your favorite customer quotes and feedback here as social proof, to build credibility and trust for your services and products.<\/p>",
+                "testimonial": "<p>Include some of your favorite customer quotes and feedback here as social proof, to build credibility and trust for your services and products.</p>",
                 "name": "John Doe",
                 "site_link": ""
               }
@@ -2340,7 +2349,7 @@
               "type": "quote",
               "settings": {
                 "image": "",
-                "testimonial": "<p>Include some of your favorite customer quotes and feedback here as social proof, to build credibility and trust for your services and products.<\/p>",
+                "testimonial": "<p>Include some of your favorite customer quotes and feedback here as social proof, to build credibility and trust for your services and products.</p>",
                 "name": "John Doe",
                 "site_link": ""
               }
@@ -2349,7 +2358,7 @@
               "type": "quote",
               "settings": {
                 "image": "",
-                "testimonial": "<p>Include some of your favorite customer quotes and feedback here as social proof, to build credibility and trust for your services and products.<\/p>",
+                "testimonial": "<p>Include some of your favorite customer quotes and feedback here as social proof, to build credibility and trust for your services and products.</p>",
                 "name": "John Doe",
                 "site_link": ""
               }
@@ -2373,7 +2382,7 @@
             "autoplay": false,
             "autoloop": true,
             "video_dark_overlay": false,
-            "video": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+            "video": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
             "image": "",
             "display_text_over_video": false,
             "button_label": "Play Video",
@@ -2432,7 +2441,7 @@
             "image": "",
             "store_hours": true,
             "title": "Come and visit",
-            "address_and_hours": "<p>123 Fake Street,&nbsp;<\/p>\n<p>Toronto, Canada<\/p>\n<p>Mon - Fri, 10am - 9pm<\/p>\n<p>Saturday, 11am - 9pm<\/p>\n<p>Sunday, 11am - 5pm<\/p>",
+            "address_and_hours": "<p>123 Fake Street,&nbsp;</p>\n<p>Toronto, Canada</p>\n<p>Mon - Fri, 10am - 9pm</p>\n<p>Saturday, 11am - 9pm</p>\n<p>Sunday, 11am - 5pm</p>",
             "info_text_color": "#000000",
             "info_color": "#ededed",
             "text_alignment": "left",
@@ -2555,7 +2564,7 @@
     "free_price_text": "Free",
     "size_chart": "",
     "notify_me_form": false,
-    "notify_me_richtext": "<p>Notify me when this product is available:<\/p>",
+    "notify_me_richtext": "<p>Notify me when this product is available:</p>",
     "enable_shopify_review_comments": true,
     "review_position": "bottom",
     "enable_shopify_collection_badges": false,
@@ -2568,12 +2577,12 @@
     "show_payment_button": true,
     "rounded_social_icons": false,
     "twitter_link": "",
-    "facebook_link": "https:\/\/www.facebook.com\/denovofloral\/",
+    "facebook_link": "https://www.facebook.com/denovofloral/",
     "youtube_link": "",
     "vimeo_link": "",
     "pinterest_link": "",
     "tumblr_link": "",
-    "instagram_link": "https:\/\/www.instagram.com\/denovofloral\/",
+    "instagram_link": "https://www.instagram.com/denovofloral/",
     "linkedin_link": "",
     "flickr_link": "",
     "email_link": "Contact@denovofloral.com",
@@ -2585,9 +2594,9 @@
     "shipping_calculator_default_country": "United States",
     "currency_format": "money_format",
     "search_option": "product",
-    "favicon": "shopify:\/\/shop_images\/favicon-32x32.png",
+    "favicon": "shopify://shop_images/favicon-32x32.png",
     "checkout_header_image": "",
-    "checkout_logo_image": "shopify:\/\/shop_images\/responsive-paris-logo-08-09-18-01.png",
+    "checkout_logo_image": "shopify://shop_images/responsive-paris-logo-08-09-18-01.png",
     "checkout_logo_position": "left",
     "checkout_logo_size": "medium",
     "checkout_body_background_image": "",
@@ -2800,11 +2809,11 @@
           "slideshow-1": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/innayas_haciendasarriawedding_2-397.jpg",
+              "image": "shopify://shop_images/innayas_haciendasarriawedding_2-397.jpg",
               "title": "Forest Wonderland Wedding Collection",
               "subtext": "",
               "button_label": "View Collection",
-              "link": "shopify:\/\/collections\/wedding-events-forest-wonderland",
+              "link": "shopify://collections/wedding-events-forest-wonderland",
               "text_position": "center",
               "text_align": "center"
             }
@@ -2879,19 +2888,19 @@
           "show_announcement_message": true,
           "announcement_homepage_only": true,
           "announcement_message": "Review us on Google and receive a 12% discount on your next purchase",
-          "announcement_link": "shopify:\/\/collections\/all",
+          "announcement_link": "shopify://collections/all",
           "announcement_color": "#08210c",
           "announcement_text_color": "#ffffff",
           "show_locale_selector": true,
           "show_currency_selector": true,
           "fix_top_bar": true,
           "search_box_top_bar": true,
-          "top_bar_linklist": "valentines-day",
+          "top_bar_linklist": "",
           "phone_number": "1-416-486-6686",
-          "logo": "shopify:\/\/shop_images\/image_1.png",
+          "logo": "shopify://shop_images/image_1.png",
           "logo_width": 360,
           "logo_alignment": "center",
-          "logo_mobile": "shopify:\/\/shop_images\/image_1.png",
+          "logo_mobile": "shopify://shop_images/image_1.png",
           "header_social_icons": false,
           "main_linklist": "main-menu",
           "menu_alignment": "center",
@@ -2910,7 +2919,7 @@
           "footer_alignment": "center",
           "footer_newsletter": true,
           "newsletter_heading": "LET'S BE PEN PAL",
-          "newsletter_richtext": "<p>SIGN UP TO RECEIVE OUR MARKETING EMAILS<br\/><\/p>",
+          "newsletter_richtext": "<p>SIGN UP TO RECEIVE OUR MARKETING EMAILS<br/></p>",
           "display_first_name": false,
           "display_last_name": false,
           "footer_social_icons": true,
@@ -2923,10 +2932,10 @@
       "1480990842836": {
         "type": "featured-text",
         "settings": {
-          "title": "",
-          "content": "<p>\"Let's create the best accompaniment together to every new beginning, as big as the personal event and wedding, or as little as one simple start of the day.\"<\/p>",
+          "title": "Let's Talk Vision.",
+          "content": "<p>Whether celebrating grandest of grand, or littlest of little, let us transform the dream you never even thought you had, into your whimsical reality.</p>",
           "button_label": "INQUIRE WITH US",
-          "button_link": "shopify:\/\/pages\/wedding-inquiry",
+          "button_link": "shopify://pages/wedding-inquiry",
           "text_size": "regular_text",
           "text_alignment": "center",
           "padding_top": 48,
@@ -2940,10 +2949,10 @@
           "wide_display": true,
           "enable_padding": true,
           "map_address": "Unit 21, 400 Creditstone Rd, Concord, ON  L4K3Z3",
-          "image": "shopify:\/\/shop_images\/innayas_haciendasarriawedding_2-397.jpg",
+          "image": "shopify://shop_images/innayas_haciendasarriawedding_2-397.jpg",
           "store_hours": true,
           "title": "Visit Us",
-          "address_and_hours": "<p><strong>Unit 21, 400 Creditstone Rd, Concord, ON L4K 3Z3<\/strong><\/p><p><br\/><br\/><\/p><p>Mon, Closed<\/p><p>Tue - Sat 11:00am-6:00pm<\/p><p>Sunday, 11:00am-4:00pm<\/p>",
+          "address_and_hours": "<p><strong>Unit 21, 400 Creditstone Rd, Concord, ON L4K 3Z3</strong></p><p><br/><br/></p><p>Mon, Closed</p><p>Tue - Sat 11:00am-6:00pm</p><p>Sunday, 11:00am-4:00pm</p>",
           "info_text_color": "#ffffff",
           "info_color": "#203724",
           "text_alignment": "center",
@@ -2962,21 +2971,21 @@
             "type": "collection",
             "settings": {
               "feature_collection": "angels-dream-wedding-toronto",
-              "image": "shopify:\/\/shop_images\/EmilySam_21_1.jpg"
+              "image": "shopify://shop_images/EmilySam_21_1.jpg"
             }
           },
           "1628279078e9dfd040-2": {
             "type": "collection",
             "settings": {
               "feature_collection": "dusty-rose-collection",
-              "image": "shopify:\/\/shop_images\/DECOR-34.jpg"
+              "image": "shopify://shop_images/DECOR-34.jpg"
             }
           },
           "1628279078e9dfd040-1": {
             "type": "collection",
             "settings": {
               "feature_collection": "beige-collection",
-              "image": "shopify:\/\/shop_images\/Sara_Xiaopei-wedding-S-8.jpg"
+              "image": "shopify://shop_images/Sara_Xiaopei-wedding-S-8.jpg"
             }
           }
         },
@@ -2986,7 +2995,7 @@
           "1628279078e9dfd040-1"
         ],
         "settings": {
-          "title": "À La Carte Wedding Collection",
+          "title": "À La Carte Wedding Collections...",
           "frontpage_collections_per_row": 3,
           "frontpage_collections_title": true,
           "collection_count": false
@@ -3003,9 +3012,9 @@
           "mute_video": false,
           "video_controls": true,
           "video_dark_overlay": true,
-          "video": "https:\/\/www.youtube.com\/watch?v=Kj1OP5NMmKE&t=17s",
+          "video": "https://www.youtube.com/watch?v=Kj1OP5NMmKE&t=17s",
           "html5_video": "",
-          "image": "shopify:\/\/shop_images\/750_5407-349.jpg",
+          "image": "shopify://shop_images/750_5407-349.jpg",
           "display_text_over_video": false,
           "heading": "",
           "subheading": "",
@@ -3106,9 +3115,9 @@
       "contact-template": {
         "type": "contact-template",
         "settings": {
-          "contact_image": "shopify:\/\/shop_images\/mmexport1582422706382_1602014155.jpg",
+          "contact_image": "shopify://shop_images/mmexport1582422706382_1602014155.jpg",
           "contact_subheading": "FOR GENERAL INQUIRIES",
-          "contact_content": "<p>Please fill out and submit the form below or email us at contact@denovofloral.com, we will get back to you in one business day.<\/p>",
+          "contact_content": "<p>Please fill out and submit the form below or email us at contact@denovofloral.com, we will get back to you in one business day.</p>",
           "contact_text_position": "row",
           "contact_text_alignment": "center",
           "wide_display": false,
@@ -3150,8 +3159,7 @@
       },
       "event-inquiry-template": {
         "type": "event-inquiry-template",
-        "settings": {
-        }
+        "settings": {}
       },
       "page-faq-template": {
         "type": "page-faq-template",
@@ -3166,83 +3174,83 @@
             "type": "Content",
             "settings": {
               "title": "Can I add more items to my existing order?",
-              "subtitle": "<p>No, once an order has been placed, it cannot be changed in our system. If you would like to purchase other stuff, please feel free to place another order.<\/p>"
+              "subtitle": "<p>No, once an order has been placed, it cannot be changed in our system. If you would like to purchase other stuff, please feel free to place another order.</p>"
             }
           },
           "page-faq-template-2": {
             "type": "Content",
             "settings": {
               "title": "Can I cancel my order?",
-              "subtitle": "<p>If the selected delivery date is <strong>more than 48 hours<\/strong> away, we can offer a De Novo credit for the full value of the order. If you need to cancel an order that is scheduled to be delivered <strong>within 48 hours<\/strong> of when you reach out to us, you can request change your delivery address. There is No refunds will be available for orders scheduled to be delivered within 36 hours of when you reach out to cancel, as the flowers will have already been purchased and the arrangement may already have been designed.<br\/><br\/><\/p>"
+              "subtitle": "<p>If the selected delivery date is <strong>more than 48 hours</strong> away, we can offer a De Novo credit for the full value of the order. If you need to cancel an order that is scheduled to be delivered <strong>within 48 hours</strong> of when you reach out to us, you can request change your delivery address. There is No refunds will be available for orders scheduled to be delivered within 36 hours of when you reach out to cancel, as the flowers will have already been purchased and the arrangement may already have been designed.<br/><br/></p>"
             }
           },
           "page-faq-template-3": {
             "type": "Content",
             "settings": {
               "title": "Do I have to create an account to shop?",
-              "subtitle": "<p>An account is not required in order to shop on our site! But we do recommend that you create an account, as it makes it easy to check on the status of an order and gives you access to your full order history. You can also save your shipping information for a quicker checkout experience!<br\/><br\/><\/p>"
+              "subtitle": "<p>An account is not required in order to shop on our site! But we do recommend that you create an account, as it makes it easy to check on the status of an order and gives you access to your full order history. You can also save your shipping information for a quicker checkout experience!<br/><br/></p>"
             }
           },
           "0b2111f7-32cf-4e9b-b4db-67041ae796f0": {
             "type": "Content",
             "settings": {
               "title": "What forms of payment do you accept?",
-              "subtitle": "<p>We can take Visa, Mastercard, American Express and PayPal.<\/p>"
+              "subtitle": "<p>We can take Visa, Mastercard, American Express and PayPal.</p>"
             }
           },
           "2c3a1533-05f2-4b2d-94a1-77cf2e2c9760": {
             "type": "Content",
             "settings": {
               "title": "Can I place an order for pick up?",
-              "subtitle": "<p>Of course! Please select Store Pick Up while you placing order online. But it need to be paid in full prior to pick up. Our pick up location is Unit 21, 400 Creditstone Rd, Vaughan.<\/p><p><\/p>"
+              "subtitle": "<p>Of course! Please select Store Pick Up while you placing order online. But it need to be paid in full prior to pick up. Our pick up location is Unit 21, 400 Creditstone Rd, Vaughan.</p><p></p>"
             }
           },
           "2007d895-5a32-457b-ad09-6e05c2079365": {
             "type": "Content",
             "settings": {
-              "title": "How do I look after my flowers\/plant?",
-              "subtitle": "<p>We will send care cards along with each order. These cards detail specific care instruction for the type of arrangement\/bouquet\/plant that you have received! If you further questions, feel free to get in touch with us at contact@denovofloral.com, or call us at 4164866686.<\/p>"
+              "title": "How do I look after my flowers/plant?",
+              "subtitle": "<p>We will send care cards along with each order. These cards detail specific care instruction for the type of arrangement/bouquet/plant that you have received! If you further questions, feel free to get in touch with us at contact@denovofloral.com, or call us at 4164866686.</p>"
             }
           },
           "0b577f93-9d1f-4964-b2fc-c2f0bfcc1136": {
             "type": "Content",
             "settings": {
-              "title": "Why can't I drop in to get a bouquet\/arrangement?",
-              "subtitle": "<p>As we are a private studio, we appreciate visitors place an order online or by phone ahead. Thank you for your understanding.<\/p>"
+              "title": "Why can't I drop in to get a bouquet/arrangement?",
+              "subtitle": "<p>As we are a private studio, we appreciate visitors place an order online or by phone ahead. Thank you for your understanding.</p>"
             }
           },
           "b488befa-ffa0-4e30-8047-29cc8b449e33": {
             "type": "heading",
             "settings": {
-              "heading": "About Weddings\/Events?"
+              "heading": "About Weddings/Events?"
             }
           },
           "ab7f6692-5c0a-46b2-ba7e-18619d545a2f": {
             "type": "Content",
             "settings": {
-              "title": "Can I order events\/weddings flowers from you?",
-              "subtitle": "<p>Of Course! If you do not need customize your orders, you can place order online directly. Please place order in advance <strong>(at least one week)<\/strong> for any weddings\/events. For any larger or custom orders, please email contact@denovofloral.com for further information. <\/p>"
+              "title": "Can I order events/weddings flowers from you?",
+              "subtitle": "<p>Of Course! If you do not need customize your orders, you can place order online directly. Please place order in advance <strong>(at least one week)</strong> for any weddings/events. For any larger or custom orders, please email contact@denovofloral.com for further information. </p>"
             }
           },
           "84d719d6-7c2c-4a10-bda7-7749a92f5af4": {
             "type": "Content",
             "settings": {
               "title": "Do you create custom designs and installations for events?",
-              "subtitle": "<p>Yes, we do any flowers for events or weddings. We love creative projects. Check out <a href=\"https:\/\/denovofloral.com\/pages\/weddings-events\" title=\"https:\/\/denovofloral.com\/pages\/weddings-events\">Wedding&Events<\/a> page for examples of some recent projects we have worked on. We can create custom floral designs that differ from the options on our website. Please email us contact@denovofloral.com for further information.<\/p>"
+              "subtitle": "<p>Yes, we do any flowers for events or weddings. We love creative projects. Check out <a href=\"https://denovofloral.com/pages/weddings-events\" title=\"https://denovofloral.com/pages/weddings-events\">Wedding&Events</a> page for examples of some recent projects we have worked on. We can create custom floral designs that differ from the options on our website. Please email us contact@denovofloral.com for further information.</p>"
             }
           },
           "42987534-a793-4a61-8bb9-758ad8d98bda": {
             "type": "Content",
             "settings": {
               "title": "How much do your wedding florals cost?",
-              "subtitle": "<p>Thank you for considering of us! Our minimum spend for wedding flowers during \"floral peak periods\" (May to October) is $3500 (approx 20 people). You can check it out our <a href=\"https:\/\/denovofloral.com\/collections\" title=\"https:\/\/denovofloral.com\/collections\">À la carte Floral - Wedding Collections <\/a>from our website, there is more information about what we offer. Please send inquire or email ahead during \"high-seasons\", and we apologize if there is any late response.<\/p>"
+              "subtitle": "<p>Thank you for considering of us! Our minimum spend for wedding flowers during \"floral peak periods\" (May to October) is $3500 (approx 20 people). You can check it out our <a href=\"https://denovofloral.com/collections\" title=\"https://denovofloral.com/collections\">À la carte Floral - Wedding Collections </a>from our website, there is more information about what we offer. Please send inquire or email ahead during \"high-seasons\", and we apologize if there is any late response.</p>"
             }
           },
           "9fc4ca71-25b0-4155-87b7-bb91c1b90d99": {
             "type": "Content",
             "settings": {
               "title": "Do you host workshops?",
-              "subtitle": "<p>Of course! We would love hosting workshops in our space. And we offer private group workshops as well. Whether you are planning a birthday party, team-building activity or work event, we've got you covered. If you'd like to set up your own private workshop, please get in touch at contact@denovofloral.com!<\/p>"
+              "subtitle": "<p>Of course! We would love hosting workshops in our space. And we offer private group workshops as well. Whether you are planning a birthday party, team-building activity or work event, we've got you covered. If you'd like to set up your own private workshop, please get in touch at contact@denovofloral.com!</p>"
             }
           },
           "page-faq-template-4": {
@@ -3255,14 +3263,14 @@
             "type": "Content",
             "settings": {
               "title": "Do you offer International Shipping?",
-              "subtitle": "<p>Sorry we don't offer any international shipping at this point. Also, fresh cut flower cannot be shipped due to the border restriction.<\/p>"
+              "subtitle": "<p>Sorry we don't offer any international shipping at this point. Also, fresh cut flower cannot be shipped due to the border restriction.</p>"
             }
           },
           "page-faq-template-6": {
             "type": "Content",
             "settings": {
               "title": "How long does it take before I can receive my order?",
-              "subtitle": "<p>At least 1 business day is required for us to process and deliver your order.<\/p>"
+              "subtitle": "<p>At least 1 business day is required for us to process and deliver your order.</p>"
             }
           }
         },
