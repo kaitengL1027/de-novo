@@ -2814,8 +2814,8 @@
               "subtext": "",
               "button_label": "View Collection",
               "link": "shopify://collections/wedding-events-forest-wonderland",
-              "text_position": "center",
-              "text_align": "center"
+              "text_position": "right",
+              "text_align": "right"
             }
           }
         },
