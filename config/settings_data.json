@@ -2817,10 +2817,22 @@
               "text_position": "right",
               "text_align": "right"
             }
+          },
+          "image_gbRFx3": {
+            "type": "image",
+            "settings": {
+              "title": "",
+              "subtext": "",
+              "button_label": "",
+              "link": "",
+              "text_position": "center",
+              "text_align": "center"
+            }
           }
         },
         "block_order": [
-          "slideshow-1"
+          "slideshow-1",
+          "image_gbRFx3"
         ],
         "settings": {
           "wide_display": true,
@@ -2900,7 +2912,7 @@
           "logo": "shopify://shop_images/Long_rectangular_denovo_website.png",
           "logo_width": 590,
           "logo_alignment": "center",
-          "logo_mobile": "shopify://shop_images/denovo_websit_2_Ashley_Groat_416-486-6686_contact_denovofloral.com_www.denovofloral.com_5.5_x_8.5_in_11_x_8.5_in_1.png",
+          "logo_mobile": "shopify://shop_images/Long_rectangular_denovo_website.png",
           "header_social_icons": false,
           "main_linklist": "main-menu",
           "menu_alignment": "center",
@@ -2932,9 +2944,9 @@
       "1480990842836": {
         "type": "featured-text",
         "settings": {
-          "title": "Let's Talk Vision.",
+          "title": "Booking 2025 & 2026 Weddings Now!",
           "content": "<p>Whether celebrating moments that are grandest of grand, or littlest of little, let us transform the dream you never even thought you had, into a whimsical reality.</p>",
-          "button_label": "INQUIRE WITH US",
+          "button_label": "Book your Consultation today!",
           "button_link": "shopify://pages/wedding-inquiry",
           "text_size": "regular_text",
           "text_alignment": "center",
@@ -2977,7 +2989,7 @@
           "collection_mwyQj3": {
             "type": "collection",
             "settings": {
-              "feature_collection": ""
+              "feature_collection": "something-blue"
             }
           },
           "1628279078e9dfd040-2": {
