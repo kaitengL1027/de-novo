@@ -2885,9 +2885,9 @@
           "f0593af0-13bd-4480-853c-9d302849f40f"
         ],
         "settings": {
-          "show_announcement_message": true,
+          "show_announcement_message": false,
           "announcement_homepage_only": true,
-          "announcement_message": "Review us on Google and receive a 12% discount on your next purchase",
+          "announcement_message": "",
           "announcement_link": "shopify://collections/all",
           "announcement_color": "#08210c",
           "announcement_text_color": "#ffffff",
@@ -3115,9 +3115,9 @@
       "contact-template": {
         "type": "contact-template",
         "settings": {
-          "contact_image": "shopify://shop_images/mmexport1582422706382_1602014155.jpg",
+          "contact_image": "shopify://shop_images/DSC_0422-3.jpg",
           "contact_subheading": "FOR GENERAL INQUIRIES",
-          "contact_content": "<p>Please fill out and submit the form below or email us at contact@denovofloral.com, we will get back to you in one business day.</p>",
+          "contact_content": "<p>Please complete the form below, or email us at:</p><p><strong>contact@denovofloral.com</strong></p><p>A member of our team will respond within 48 hours.</p>",
           "contact_text_position": "row",
           "contact_text_alignment": "center",
           "wide_display": false,
@@ -3330,6 +3330,10 @@
           "blog_date": true,
           "toggle": false
         }
+      },
+      "wedding-inquiry-template": {
+        "type": "wedding-inquiry-template",
+        "settings": {}
       }
     },
     "content_for_index": [
