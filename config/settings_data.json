@@ -2823,10 +2823,10 @@
           "slideshow-1"
         ],
         "settings": {
-          "wide_display": false,
+          "wide_display": true,
           "enable_padding": false,
-          "slideshow_animation": "slide",
-          "slideshow_speed": 10,
+          "slideshow_animation": "fade",
+          "slideshow_speed": 5,
           "adaptive_height": true
         }
       },
@@ -2974,6 +2974,12 @@
               "image": "shopify://shop_images/EmilySam_21_1.jpg"
             }
           },
+          "collection_mwyQj3": {
+            "type": "collection",
+            "settings": {
+              "feature_collection": ""
+            }
+          },
           "1628279078e9dfd040-2": {
             "type": "collection",
             "settings": {
@@ -2991,6 +2997,7 @@
         },
         "block_order": [
           "1628279078e9dfd040-0",
+          "collection_mwyQj3",
           "1628279078e9dfd040-2",
           "1628279078e9dfd040-1"
         ],
