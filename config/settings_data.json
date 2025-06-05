@@ -3003,7 +3003,7 @@
         ],
         "settings": {
           "title": "À La Carte Wedding Collections...",
-          "frontpage_collections_per_row": 3,
+          "frontpage_collections_per_row": 2,
           "frontpage_collections_title": true,
           "collection_count": false
         }
