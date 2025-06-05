@@ -2817,22 +2817,10 @@
               "text_position": "right",
               "text_align": "right"
             }
-          },
-          "image_gbRFx3": {
-            "type": "image",
-            "settings": {
-              "title": "",
-              "subtext": "",
-              "button_label": "",
-              "link": "",
-              "text_position": "center",
-              "text_align": "center"
-            }
           }
         },
         "block_order": [
-          "slideshow-1",
-          "image_gbRFx3"
+          "slideshow-1"
         ],
         "settings": {
           "wide_display": true,
