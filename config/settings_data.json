@@ -3341,11 +3341,79 @@
       "wedding-inquiry-template": {
         "type": "wedding-inquiry-template",
         "settings": {}
+      },
+      "slideshow_8jfJyn": {
+        "type": "slideshow",
+        "blocks": {
+          "image_TpqPjn": {
+            "type": "image",
+            "settings": {
+              "image": "shopify://shop_images/20220610decor-82.jpg",
+              "title": "The Responsive Shopify Theme",
+              "subtext": "",
+              "button_label": "",
+              "link": "",
+              "text_position": "center",
+              "text_align": "center"
+            }
+          },
+          "image_kCGFG4": {
+            "type": "image",
+            "settings": {
+              "image": "shopify://shop_images/Yennise_Alex20221111-772.jpg",
+              "title": "The Responsive Shopify Theme",
+              "subtext": "",
+              "button_label": "",
+              "link": "",
+              "text_position": "center",
+              "text_align": "center"
+            }
+          },
+          "image_cNALqk": {
+            "type": "image",
+            "settings": {
+              "image": "shopify://shop_images/DSC_0825_copy.jpg",
+              "title": "",
+              "subtext": "",
+              "button_label": "",
+              "link": "",
+              "text_position": "center",
+              "text_align": "center"
+            }
+          },
+          "image_WkpGxx": {
+            "type": "image",
+            "settings": {
+              "image": "shopify://shop_images/Autumn_in_NY-Day_2-Liz_Andolina_Photography-296.jpg",
+              "title": "",
+              "subtext": "",
+              "button_label": "",
+              "link": "",
+              "text_position": "center",
+              "text_align": "center"
+            }
+          }
+        },
+        "block_order": [
+          "image_TpqPjn",
+          "image_kCGFG4",
+          "image_cNALqk",
+          "image_WkpGxx"
+        ],
+        "name": "Slideshow",
+        "settings": {
+          "wide_display": true,
+          "enable_padding": true,
+          "slideshow_animation": "fade",
+          "slideshow_speed": 6,
+          "adaptive_height": true
+        }
       }
     },
     "content_for_index": [
-      "slideshow",
+      "slideshow_8jfJyn",
       "1480990842836",
+      "slideshow",
       "1628363643e91220c3",
       "1628279078e9dfd040",
       "1628282372a5497551",
