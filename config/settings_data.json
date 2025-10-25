@@ -2889,18 +2889,18 @@
           "announcement_homepage_only": true,
           "announcement_message": "",
           "announcement_link": "shopify://collections/all",
-          "announcement_color": "#08210c",
+          "announcement_color": "#072f0d",
           "announcement_text_color": "#ffffff",
           "show_locale_selector": true,
           "show_currency_selector": true,
           "fix_top_bar": true,
-          "search_box_top_bar": true,
+          "search_box_top_bar": false,
           "top_bar_linklist": "",
           "phone_number": "1-416-486-6686",
-          "logo": "shopify://shop_images/Long_rectangular_denovo_website.png",
-          "logo_width": 590,
+          "logo": "shopify://shop_images/2___3.png",
+          "logo_width": 800,
           "logo_alignment": "center",
-          "logo_mobile": "shopify://shop_images/Long_rectangular_denovo_website.png",
+          "logo_mobile": "shopify://shop_images/2___3.png",
           "header_social_icons": false,
           "main_linklist": "main-menu",
           "menu_alignment": "center",
@@ -2932,14 +2932,14 @@
       "1480990842836": {
         "type": "featured-text",
         "settings": {
-          "title": "Booking 2025 & 2026 Weddings Now!",
+          "title": "Booking 2026 & 2027 Weddings Now!",
           "content": "<p>Whether celebrating moments that are grandest of grand, or littlest of little, let us transform the dream you never even thought you had, into a whimsical reality.</p>",
-          "button_label": "Book your Consultation today!",
+          "button_label": "Book your Consultation today",
           "button_link": "shopify://pages/wedding-inquiry",
           "text_size": "regular_text",
           "text_alignment": "center",
-          "padding_top": 48,
-          "padding_bottom": 32
+          "padding_top": 37,
+          "padding_bottom": 52
         }
       },
       "1535002506295": {
@@ -3403,7 +3403,7 @@
         "name": "Slideshow",
         "settings": {
           "wide_display": true,
-          "enable_padding": true,
+          "enable_padding": false,
           "slideshow_animation": "fade",
           "slideshow_speed": 6,
           "adaptive_height": true
